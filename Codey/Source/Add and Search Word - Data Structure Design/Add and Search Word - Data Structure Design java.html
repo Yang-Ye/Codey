@@ -1,0 +1,152 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// Version1 use Array</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TrieNode</span> <span style="color: #333333">{</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> TrieNode<span style="color: #333333">[]</span> children<span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> hasWord<span style="color: #333333">;</span>
+    
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">TrieNode</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        children <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">26</span><span style="color: #333333">];</span>
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">26</span><span style="color: #333333">;</span> <span style="color: #333333">++</span>i<span style="color: #333333">)</span>
+            children<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        hasWord <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">WordDictionary</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">private</span> TrieNode root<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">WordDictionary</span><span style="color: #333333">(){</span>
+        root <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// Adds a word into the data structure.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">addWord</span><span style="color: #333333">(</span>String word<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Write your code here</span>
+        TrieNode now <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+            Character c <span style="color: #333333">=</span> word<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>c <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">]</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>c <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">();</span>
+            <span style="color: #333333">}</span>
+            now <span style="color: #333333">=</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>c <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">];</span>
+        <span style="color: #333333">}</span>
+        now<span style="color: #333333">.</span><span style="color: #0000CC">hasWord</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span>String word<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> index<span style="color: #333333">,</span> TrieNode now<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>index <span style="color: #333333">==</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> now<span style="color: #333333">.</span><span style="color: #0000CC">hasWord</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        Character c <span style="color: #333333">=</span> word<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>index<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>c <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;.&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">26</span><span style="color: #333333">;</span> <span style="color: #333333">++</span>i<span style="color: #333333">)</span> 
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>find<span style="color: #333333">(</span>word<span style="color: #333333">,</span> index<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>i<span style="color: #333333">]))</span>
+                    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>c <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">]</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span>word<span style="color: #333333">,</span> index<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">[</span>c <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">]);</span>  
+        <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">// Returns if the word is in the data structure. A word could</span>
+    <span style="color: #888888">// contain the dot character &#39;.&#39; to represent any one letter.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">search</span><span style="color: #333333">(</span>String word<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Write your code here</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span>word<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> root<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #888888">// Your WordDictionary object will be instantiated and called as such:</span>
+<span style="color: #888888">// WordDictionary wordDictionary = new WordDictionary();</span>
+<span style="color: #888888">// wordDictionary.addWord(&quot;word&quot;);</span>
+<span style="color: #888888">// wordDictionary.search(&quot;pattern&quot;);</span>
+
+
+
+<span style="color: #888888">// Version 2 use HashMap</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TrieNode</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">// Initialize your data structure here.</span>
+    <span style="color: #008800; font-weight: bold">public</span> HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> TrieNode<span style="color: #333333">&gt;</span> children<span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> hasWord<span style="color: #333333">;</span>
+    
+    <span style="color: #888888">// Initialize your data structure here.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">TrieNode</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        children <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> TrieNode<span style="color: #333333">&gt;();</span>
+        hasWord <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">WordDictionary</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">private</span> TrieNode root<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">WordDictionary</span><span style="color: #333333">(){</span>
+        root <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// Adds a word into the data structure.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">addWord</span><span style="color: #333333">(</span>String word<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Write your code here</span>
+        TrieNode now <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+            Character c <span style="color: #333333">=</span> word<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(!</span>now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>c<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">());</span>
+            <span style="color: #333333">}</span>
+            now <span style="color: #333333">=</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        now<span style="color: #333333">.</span><span style="color: #0000CC">hasWord</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span>String word<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> index<span style="color: #333333">,</span> TrieNode now<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>index <span style="color: #333333">==</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> 
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span> 
+            <span style="color: #008800; font-weight: bold">else</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        Character c <span style="color: #333333">=</span> word<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>index<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>c<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>index <span style="color: #333333">==</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&amp;&amp;</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c<span style="color: #333333">).</span><span style="color: #0000CC">hasWord</span><span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span>word<span style="color: #333333">,</span> index<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c<span style="color: #333333">))</span> <span style="color: #333333">;</span>  
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>c <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;.&#39;</span><span style="color: #333333">){</span>
+            <span style="color: #333399; font-weight: bold">boolean</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>Map<span style="color: #333333">.</span><span style="color: #0000CC">Entry</span><span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> TrieNode<span style="color: #333333">&gt;</span> <span style="color: #997700; font-weight: bold">child:</span> now<span style="color: #333333">.</span><span style="color: #0000CC">children</span><span style="color: #333333">.</span><span style="color: #0000CC">entrySet</span><span style="color: #333333">()){</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>index <span style="color: #333333">==</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&amp;&amp;</span> child<span style="color: #333333">.</span><span style="color: #0000CC">getValue</span><span style="color: #333333">().</span><span style="color: #0000CC">hasWord</span><span style="color: #333333">){</span>
+                    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span> 
+ 
+                <span style="color: #888888">//if any path is true, set result to be true; </span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>find<span style="color: #333333">(</span>word<span style="color: #333333">,</span> index<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> child<span style="color: #333333">.</span><span style="color: #0000CC">getValue</span><span style="color: #333333">())</span> <span style="color: #333333">){</span>
+                    result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+ 
+            <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">// Returns if the word is in the data structure. A word could</span>
+    <span style="color: #888888">// contain the dot character &#39;.&#39; to represent any one letter.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">search</span><span style="color: #333333">(</span>String word<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Write your code here</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span>word<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> root<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #888888">// Your WordDictionary object will be instantiated and called as such:</span>
+<span style="color: #888888">// WordDictionary wordDictionary = new WordDictionary();</span>
+<span style="color: #888888">// wordDictionary.addWord(&quot;word&quot;);</span>
+<span style="color: #888888">// wordDictionary.search(&quot;pattern&quot;);</span>
+</pre></div>

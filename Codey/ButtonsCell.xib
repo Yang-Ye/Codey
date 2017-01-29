@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonsCell" id="hbT-Ym-tFb" customClass="ButtonsCell" customModule="Codey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbT-Ym-tFb" id="Ms3-Rm-KTL">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-bU-vBc">
+                        <rect key="frame" x="5" y="6" width="365" height="32.5"/>
+                        <segments>
+                            <segment title="Java"/>
+                            <segment title="C++"/>
+                            <segment title="Python"/>
+                            <segment title="Hide"/>
+                        </segments>
+                    </segmentedControl>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2yb-bU-vBc" secondAttribute="trailing" constant="5" id="baG-fd-r1w"/>
+                    <constraint firstItem="2yb-bU-vBc" firstAttribute="leading" secondItem="Ms3-Rm-KTL" secondAttribute="leading" constant="5" id="c8K-y8-mCr"/>
+                    <constraint firstAttribute="bottom" secondItem="2yb-bU-vBc" secondAttribute="bottom" constant="6" id="dlx-iB-cUg"/>
+                    <constraint firstItem="2yb-bU-vBc" firstAttribute="top" secondItem="Ms3-Rm-KTL" secondAttribute="top" constant="6" id="doG-KN-FIT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="buttons" destination="2yb-bU-vBc" id="H0R-W9-A9n"/>
+            </connections>
+            <point key="canvasLocation" x="22" y="27"/>
+        </tableViewCell>
+    </objects>
+</document>

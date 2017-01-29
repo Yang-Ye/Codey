@@ -1,0 +1,23 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: Inorder in ArrayList which contains node values.</span>
+<span style="color: #888888">     */</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">inorderTraversal</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        Stack<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        TreeNode curt <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>curt <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> <span style="color: #333333">!</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>curt <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>curt<span style="color: #333333">);</span>
+                curt <span style="color: #333333">=</span> curt<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+            curt <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">();</span>
+            stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+            result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>curt<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+            curt <span style="color: #333333">=</span> curt<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

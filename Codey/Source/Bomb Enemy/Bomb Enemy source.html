@@ -1,0 +1,16 @@
+<p></p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+Given a 2D grid, each cell is either a wall&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">'Y'</code>, an enemy&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">'X'</code>&nbsp;or
+ empty&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">'0'</code>&nbsp;(the number zero), return the maximum enemies you can kill using one bomb.<br style="">
+The bomb kills all the enemies in the same row and column from the planted point until it hits the wall since the wall is too strong to be destroyed.<br style="">
+Note that you can only put the bomb at an empty cell.</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Example:</span><br style="">
+</p>
+<pre style="overflow:auto; font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:13px; padding:9.5px; margin-top:0px; margin-bottom:10px; line-height:1.42857; color:rgb(51,51,51); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); background-color:rgb(245,245,245)">For the given grid
+
+0 X 0 0
+X 0 Y X
+0 X 0 0
+
+return 3. (Placing a bomb at (1,1) kills 3 enemies)</pre>

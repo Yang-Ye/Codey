@@ -1,0 +1,40 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+
+    <span style="color: #008800; font-weight: bold">private</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> results<span style="color: #333333">;</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">combinationSum2</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> candidates<span style="color: #333333">,</span>
+            <span style="color: #333399; font-weight: bold">int</span> target<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>candidates<span style="color: #333333">.</span><span style="color: #0000CC">length</span> <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> results<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> path <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        java<span style="color: #333333">.</span><span style="color: #0000CC">util</span><span style="color: #333333">.</span><span style="color: #0000CC">Arrays</span><span style="color: #333333">.</span><span style="color: #0000CC">sort</span><span style="color: #333333">(</span>candidates<span style="color: #333333">);</span>
+        results <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #333333">();</span>
+        combinationSumHelper<span style="color: #333333">(</span>path<span style="color: #333333">,</span> candidates<span style="color: #333333">,</span> target<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> results<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">combinationSumHelper</span><span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> path<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> candidates<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> sum<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> pos<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>sum <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            results<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;(</span>path<span style="color: #333333">));</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>pos <span style="color: #333333">&gt;=</span> candidates<span style="color: #333333">.</span><span style="color: #0000CC">length</span> <span style="color: #333333">||</span> sum <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #333399; font-weight: bold">int</span> prev <span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> pos<span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> candidates<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>candidates<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">!=</span> prev<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                path<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>candidates<span style="color: #333333">[</span>i<span style="color: #333333">]);</span>
+                combinationSumHelper<span style="color: #333333">(</span>path<span style="color: #333333">,</span> candidates<span style="color: #333333">,</span> sum <span style="color: #333333">-</span> candidates<span style="color: #333333">[</span>i<span style="color: #333333">],</span> i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+                prev <span style="color: #333333">=</span> candidates<span style="color: #333333">[</span>i<span style="color: #333333">];</span>
+                path<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>path<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div>

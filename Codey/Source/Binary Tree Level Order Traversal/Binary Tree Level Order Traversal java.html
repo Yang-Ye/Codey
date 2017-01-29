@@ -1,0 +1,165 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// version 1: BFS</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">levelOrder</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">();</span>
+
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        Queue<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> queue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+        queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(!</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> level <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+            <span style="color: #333399; font-weight: bold">int</span> size <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> size<span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                TreeNode head <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+                level<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>head<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>head<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>head<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>head<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>head<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+            result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>level<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+
+<span style="color: #888888">// version 2:  DFS</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: Level order a list of lists of integer</span>
+<span style="color: #888888">     */</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">levelOrder</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> results <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;();</span>
+        
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> results<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #333399; font-weight: bold">int</span> maxLevel <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> level <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+            dfs<span style="color: #333333">(</span>root<span style="color: #333333">,</span> level<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> maxLevel<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>level<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+            
+            results<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>level<span style="color: #333333">);</span>
+            maxLevel<span style="color: #333333">++;</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">return</span> results<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dfs</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">,</span>
+                     ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> level<span style="color: #333333">,</span>
+                     <span style="color: #333399; font-weight: bold">int</span> curtLevel<span style="color: #333333">,</span>
+                     <span style="color: #333399; font-weight: bold">int</span> maxLevel<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> curtLevel <span style="color: #333333">&gt;</span> maxLevel<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>curtLevel <span style="color: #333333">==</span> maxLevel<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            level<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        dfs<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">,</span> level<span style="color: #333333">,</span> curtLevel <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> maxLevel<span style="color: #333333">);</span>
+        dfs<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">,</span> level<span style="color: #333333">,</span> curtLevel <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> maxLevel<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+
+<span style="color: #888888">// version 3: BFS. two queues</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: Level order a list of lists of integer</span>
+<span style="color: #888888">     */</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">levelOrder</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;();</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        ArrayList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> Q1 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+        ArrayList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> Q2 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+
+        Q1<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>Q1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> level <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+            Q2<span style="color: #333333">.</span><span style="color: #0000CC">clear</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> Q1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                TreeNode node <span style="color: #333333">=</span> Q1<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+                level<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    Q2<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    Q2<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+            
+            <span style="color: #888888">// swap q1 and q2</span>
+            ArrayList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> temp <span style="color: #333333">=</span> Q1<span style="color: #333333">;</span>
+            Q1 <span style="color: #333333">=</span> Q2<span style="color: #333333">;</span>
+            Q2 <span style="color: #333333">=</span> temp<span style="color: #333333">;</span>
+            
+            <span style="color: #888888">// add to result</span>
+            result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>level<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #888888">// version 4: BFS, queue with dummy node</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: Level order a list of lists of integer</span>
+<span style="color: #888888">     */</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">levelOrder</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;();</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        Queue<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> Q <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+        Q<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        Q<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">);</span> <span style="color: #888888">// dummy node</span>
+        
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> level <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(!</span>Q<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            TreeNode node <span style="color: #333333">=</span> Q<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>level<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+                result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>level<span style="color: #333333">);</span>
+                level <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+                Q<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">);</span> <span style="color: #888888">// add a new dummy node</span>
+                <span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+            
+            level<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                Q<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                Q<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

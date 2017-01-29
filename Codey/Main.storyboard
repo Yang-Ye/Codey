@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pat-DJ-NJ4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wJM-1X-u0j">
+            <objects>
+                <tabBarController id="pat-DJ-NJ4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Qfy-YV-O7K">
+                        <barButtonItem key="leftBarButtonItem" image="search" id="RGl-LU-1Kj">
+                            <color key="tintColor" red="0.97636467220000001" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="sort" id="FPl-j8-QEQ">
+                            <color key="tintColor" red="0.97636467220000001" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="QVU-qe-dxg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="f0k-NH-cph" kind="relationship" relationship="viewControllers" id="e1q-Ie-SfM"/>
+                        <segue destination="N9g-mz-LiD" kind="relationship" relationship="viewControllers" id="Gb9-eT-mLq"/>
+                        <segue destination="wn0-Di-gde" kind="relationship" relationship="viewControllers" id="IfZ-2w-cK0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iu4-Nn-Sdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2271" y="-200"/>
+        </scene>
+        <!--All-->
+        <scene sceneID="bfd-HV-sfe">
+            <objects>
+                <navigationController id="f0k-NH-cph" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All" image="problem" id="tyf-fL-Eh1"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8nJ-4P-RZK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="htM-HM-KOk" kind="relationship" relationship="rootViewController" id="wm8-59-0X2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7Z-91-k2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-970" y="-1079"/>
+        </scene>
+        <!--Problem Table View Controller-->
+        <scene sceneID="IWc-Hl-yIm">
+            <objects>
+                <viewController id="htM-HM-KOk" customClass="ProblemTableViewController" customModule="Codey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dMP-gj-jld">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="htM-HM-KOk" id="dJP-C4-EK2"/>
+                            <outlet property="delegate" destination="htM-HM-KOk" id="qCv-WC-4yY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HDA-Jn-wDW">
+                        <barButtonItem key="leftBarButtonItem" image="filter" id="pEa-uN-cfb">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="filterAction:" destination="htM-HM-KOk" id="tSd-LR-Dgs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="search-left" id="SfZ-Lr-iAa" userLabel="search">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="filter" destination="pEa-uN-cfb" id="G1d-Ms-QW7"/>
+                        <outlet property="tableView" destination="dMP-gj-jld" id="ya8-EG-QJ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPP-R7-2Oe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="-1079"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M8f-7k-8VY">
+            <objects>
+                <viewController id="9Dm-qd-l9L" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kdm-WW-UBm"/>
+                        <viewControllerLayoutGuide type="bottom" id="LZh-vM-Fka"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TLP-Ir-d9Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IV0-0v-0xw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ZA-NM-sEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="333"/>
+        </scene>
+        <!--Starred-->
+        <scene sceneID="rjk-iN-NOZ">
+            <objects>
+                <navigationController id="N9g-mz-LiD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Starred" image="startab" id="TG6-DM-ZSW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pAR-7V-baj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VCh-5l-cfx" kind="relationship" relationship="rootViewController" id="VfB-RE-Hcv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXQ-I5-Jdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-990" y="-340"/>
+        </scene>
+        <!--Starred View Controller-->
+        <scene sceneID="Rrf-ob-ceg">
+            <objects>
+                <tableViewController id="VCh-5l-cfx" customClass="StarredViewController" customModule="Codey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Blr-fb-14o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="VCh-5l-cfx" id="P3g-pP-cJY"/>
+                            <outlet property="delegate" destination="VCh-5l-cfx" id="gbd-Uw-mvg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="pOt-zN-Uob">
+                        <barButtonItem key="rightBarButtonItem" image="trash" id="VuO-mA-QrZ">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="clearAllStarredProblems:" destination="VCh-5l-cfx" id="4KB-r8-IyC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s8C-ws-o0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="-340"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="bmY-je-ROL">
+            <objects>
+                <navigationController id="wn0-Di-gde" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="0Sw-Iq-OX4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9e7-uN-3Q9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Dm-qd-l9L" kind="relationship" relationship="rootViewController" id="SJf-qB-BJz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5n-Lw-NCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-970" y="368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filter" width="22" height="22"/>
+        <image name="problem" width="22" height="22"/>
+        <image name="search" width="22" height="22"/>
+        <image name="search-left" width="22" height="22"/>
+        <image name="settings" width="22" height="22"/>
+        <image name="sort" width="22" height="22"/>
+        <image name="startab" width="22" height="22"/>
+        <image name="trash" width="22" height="22"/>
+    </resources>
+</document>

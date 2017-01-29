@@ -1,0 +1,24 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">maxProfit</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> prices<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>prices <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> prices<span style="color: #333333">.</span><span style="color: #0000CC">length</span> <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        <span style="color: #333399; font-weight: bold">int</span> b1 <span style="color: #333333">=</span> <span style="color: #333333">-</span>prices<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">];</span>
+         
+        <span style="color: #333399; font-weight: bold">int</span> s2 <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #333399; font-weight: bold">int</span> s1 <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+         
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;=</span> prices<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+            <span style="color: #333399; font-weight: bold">int</span> b0 <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>b1<span style="color: #333333">,</span> s2 <span style="color: #333333">-</span> prices<span style="color: #333333">[</span>i <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]);</span>
+            <span style="color: #333399; font-weight: bold">int</span> s0 <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>s1<span style="color: #333333">,</span> b1 <span style="color: #333333">+</span> prices<span style="color: #333333">[</span>i <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]);</span>
+             
+            b1 <span style="color: #333333">=</span> b0<span style="color: #333333">;</span>
+            s2 <span style="color: #333333">=</span> s1<span style="color: #333333">;</span>
+            s1 <span style="color: #333333">=</span> s0<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        <span style="color: #008800; font-weight: bold">return</span> s1<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

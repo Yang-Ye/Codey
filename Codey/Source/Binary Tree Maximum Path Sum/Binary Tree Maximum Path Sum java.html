@@ -1,0 +1,75 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">ResultType</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> singlePath<span style="color: #333333">,</span> maxPath<span style="color: #333333">;</span> 
+        ResultType<span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> singlePath<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> maxPath<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span> <span style="color: #333333">=</span> singlePath<span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span> <span style="color: #333333">=</span> maxPath<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">private</span> ResultType <span style="color: #0066BB; font-weight: bold">helper</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">ResultType</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #888888">// Divide</span>
+        ResultType left <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+        ResultType right <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+
+        <span style="color: #888888">// Conquer</span>
+        <span style="color: #333399; font-weight: bold">int</span> singlePath <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>left<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span><span style="color: #333333">,</span> right<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+        singlePath <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>singlePath<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+
+        <span style="color: #333399; font-weight: bold">int</span> maxPath <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>left<span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span><span style="color: #333333">,</span> right<span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span><span style="color: #333333">);</span>
+        maxPath <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>maxPath<span style="color: #333333">,</span> left<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span> <span style="color: #333333">+</span> right<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span> <span style="color: #333333">+</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">ResultType</span><span style="color: #333333">(</span>singlePath<span style="color: #333333">,</span> maxPath<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">maxPathSum</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ResultType result <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+
+<span style="color: #888888">// Version 2:</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: An integer.</span>
+<span style="color: #888888">     */</span>
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">ResultType</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> singlePath<span style="color: #333333">,</span> maxPath<span style="color: #333333">;</span>
+        ResultType<span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> singlePath<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> maxPath<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span> <span style="color: #333333">=</span> singlePath<span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span> <span style="color: #333333">=</span> maxPath<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">private</span> ResultType <span style="color: #0066BB; font-weight: bold">helper</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">ResultType</span><span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">,</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #888888">// Divide</span>
+        ResultType left <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+        ResultType right <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+
+        <span style="color: #888888">// Conquer</span>
+        <span style="color: #333399; font-weight: bold">int</span> singlePath <span style="color: #333333">=</span>
+            Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>left<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span><span style="color: #333333">,</span> right<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span><span style="color: #333333">))</span> <span style="color: #333333">+</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+
+        <span style="color: #333399; font-weight: bold">int</span> maxPath <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>left<span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span><span style="color: #333333">,</span> right<span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span><span style="color: #333333">);</span>
+        maxPath <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>maxPath<span style="color: #333333">,</span>
+                           Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>left<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> 
+                           Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>right<span style="color: #333333">.</span><span style="color: #0000CC">singlePath</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">ResultType</span><span style="color: #333333">(</span>singlePath<span style="color: #333333">,</span> maxPath<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">maxPathSum</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ResultType result <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">.</span><span style="color: #0000CC">maxPath</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div>

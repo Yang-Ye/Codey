@@ -1,0 +1,73 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;vector&gt;</span>
+<span style="color: #557799">#include &lt;queue&gt;</span>
+<span style="color: #557799">#include &lt;algorithm&gt;</span>
+<span style="color: #557799">#include &quot;lintcode.h&quot;</span>
+
+<span style="color: #008800; font-weight: bold">using</span> <span style="color: #008800; font-weight: bold">namespace</span> std;
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition of TreeNode:</span>
+<span style="color: #888888"> * class TreeNode {</span>
+<span style="color: #888888"> * public:</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode *left, *right;</span>
+<span style="color: #888888"> *     TreeNode(int val) {</span>
+<span style="color: #888888"> *         this-&gt;val = val;</span>
+<span style="color: #888888"> *         this-&gt;left = this-&gt;right = NULL;</span>
+<span style="color: #888888"> *     }</span>
+<span style="color: #888888"> * }</span>
+<span style="color: #888888"> */</span>
+ 
+<span style="color: #008800; font-weight: bold">struct</span> Node
+{
+    TreeNode <span style="color: #333333">*</span>node;
+    <span style="color: #333399; font-weight: bold">int</span> level;
+    Node(){}
+    Node(TreeNode <span style="color: #333333">*</span>n, <span style="color: #333399; font-weight: bold">int</span> l)<span style="color: #333333">:</span>node(n), level(l){}
+}; 
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: A list of lists of integer include </span>
+<span style="color: #888888">     *          the zigzag level order traversal of its nodes&#39; values </span>
+<span style="color: #888888">     */</span>
+<span style="color: #997700; font-weight: bold">public:</span>
+    vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;</span> zigzagLevelOrder(TreeNode <span style="color: #333333">*</span>root) {
+        <span style="color: #888888">// write your code here</span>
+        vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> ret;
+		ret.clear();       
+        <span style="color: #008800; font-weight: bold">if</span> (root <span style="color: #333333">==</span> <span style="color: #007020">NULL</span>)
+            <span style="color: #008800; font-weight: bold">return</span> ret;        
+        queue<span style="color: #333333">&lt;</span>Node<span style="color: #333333">&gt;</span> q;        
+        q.push(Node(root, <span style="color: #0000DD; font-weight: bold">0</span>));        
+        <span style="color: #333399; font-weight: bold">int</span> curLevel <span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>;        
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> a;        
+        <span style="color: #008800; font-weight: bold">while</span>(<span style="color: #333333">!</span>q.empty())
+        {
+            Node node <span style="color: #333333">=</span> q.front();            
+            <span style="color: #008800; font-weight: bold">if</span> (node.node<span style="color: #333333">-&gt;</span>left)
+                q.push(Node(node.node<span style="color: #333333">-&gt;</span>left, node.level <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>));           
+            <span style="color: #008800; font-weight: bold">if</span> (node.node<span style="color: #333333">-&gt;</span>right)
+                q.push(Node(node.node<span style="color: #333333">-&gt;</span>right, node.level <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>));   
+            <span style="color: #008800; font-weight: bold">if</span> (curLevel <span style="color: #333333">!=</span> node.level)
+            {
+                <span style="color: #008800; font-weight: bold">if</span> (curLevel <span style="color: #333333">!=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>)
+                {
+                    <span style="color: #008800; font-weight: bold">if</span> (curLevel <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span>)
+                        reverse(a.begin(), a.end());
+                        
+                    ret.push_back(a);
+                }
+                a.clear();
+                curLevel <span style="color: #333333">=</span> node.level;
+            }
+            a.push_back(node.node<span style="color: #333333">-&gt;</span>val);
+            q.pop();
+        }        
+        <span style="color: #008800; font-weight: bold">if</span> (curLevel <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span>)
+            reverse(a.begin(), a.end());   
+        ret.push_back(a);
+        <span style="color: #008800; font-weight: bold">return</span> ret;
+    }
+};
+</pre></div>

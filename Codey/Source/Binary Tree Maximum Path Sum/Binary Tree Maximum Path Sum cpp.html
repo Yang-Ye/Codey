@@ -1,0 +1,47 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition of TreeNode:</span>
+<span style="color: #888888"> * class TreeNode {</span>
+<span style="color: #888888"> * public:</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode *left, *right;</span>
+<span style="color: #888888"> *     TreeNode(int val) {</span>
+<span style="color: #888888"> *         this-&gt;val = val;</span>
+<span style="color: #888888"> *         this-&gt;left = this-&gt;right = NULL;</span>
+<span style="color: #888888"> *     }</span>
+<span style="color: #888888"> * }</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * @param root: The root of binary tree.</span>
+<span style="color: #888888">     * @return: An integer</span>
+<span style="color: #888888">     */</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    <span style="color: #333399; font-weight: bold">int</span> ans<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">solve_dp</span><span style="color: #333333">(</span>TreeNode <span style="color: #333333">*</span>root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> NULL<span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+        <span style="color: #333399; font-weight: bold">int</span> sum <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">;</span>
+        <span style="color: #333399; font-weight: bold">int</span> lf <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> rt <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">)</span>
+            lf <span style="color: #333333">=</span> solve_dp<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">);</span>
+         
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">)</span> 
+            rt <span style="color: #333333">=</span> solve_dp<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>lf <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+            sum <span style="color: #333333">+=</span> lf<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>rt <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+            sum <span style="color: #333333">+=</span> rt<span style="color: #333333">;</span>
+ 
+        ans <span style="color: #333333">=</span> max<span style="color: #333333">(</span>ans<span style="color: #333333">,</span> sum<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">max</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> max<span style="color: #333333">(</span>lf<span style="color: #333333">,</span> rt<span style="color: #333333">))+</span>root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">maxPathSum</span><span style="color: #333333">(</span>TreeNode <span style="color: #333333">*</span>root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// write your code here</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(!</span>root<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        ans <span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #005588; font-weight: bold">0x7fffff</span><span style="color: #333333">;</span>
+        solve_dp<span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> ans<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

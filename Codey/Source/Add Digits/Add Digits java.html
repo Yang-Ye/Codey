@@ -1,0 +1,28 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">addDigits</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> num<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>num <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+
+		    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+
+		<span style="color: #333333">}</span>
+
+		<span style="color: #333399; font-weight: bold">int</span> ans <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+
+		<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(;</span> num <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> <span style="color: #333333">)</span> <span style="color: #333333">{</span>
+
+		    <span style="color: #333399; font-weight: bold">int</span> digit <span style="color: #333333">=</span> num <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">;</span>
+
+		    ans <span style="color: #333333">=</span> <span style="color: #333333">(</span>ans <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> digit<span style="color: #333333">)</span> <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">9</span><span style="color: #333333">;</span>
+
+		    num <span style="color: #333333">/=</span> <span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">;</span>
+
+		<span style="color: #333333">}</span>
+
+		<span style="color: #008800; font-weight: bold">return</span> ans <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">?</span> <span style="color: #0000DD; font-weight: bold">9</span> <span style="color: #333333">:</span> ans<span style="color: #333333">;</span>
+
+	<span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div>

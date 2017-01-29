@@ -1,0 +1,110 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AllOne</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">// maintain a doubly linked list of Buckets</span>
+    <span style="color: #008800; font-weight: bold">private</span> Bucket head<span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">private</span> Bucket tail<span style="color: #333333">;</span>
+    <span style="color: #888888">// for accessing a specific Bucket among the Bucket list in O(1) time</span>
+    <span style="color: #008800; font-weight: bold">private</span> Map<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Bucket<span style="color: #333333">&gt;</span> countBucketMap<span style="color: #333333">;</span>
+    <span style="color: #888888">// keep track of count of keys</span>
+    <span style="color: #008800; font-weight: bold">private</span> Map<span style="color: #333333">&lt;</span>String<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;</span> keyCountMap<span style="color: #333333">;</span>
+
+    <span style="color: #888888">// each Bucket contains all the keys with the same count</span>
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Bucket</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> count<span style="color: #333333">;</span>
+        Set<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> keySet<span style="color: #333333">;</span>
+        Bucket next<span style="color: #333333">;</span>
+        Bucket pre<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Bucket</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> cnt<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            count <span style="color: #333333">=</span> cnt<span style="color: #333333">;</span>
+            keySet <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;&gt;();</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #888888">/** Initialize your data structure here. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">AllOne</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        head <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Bucket<span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">);</span>
+        tail <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Bucket<span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">);</span>
+        head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> tail<span style="color: #333333">;</span>
+        tail<span style="color: #333333">.</span><span style="color: #0000CC">pre</span> <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+        countBucketMap <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;&gt;();</span>
+        keyCountMap <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;&gt;();</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">/** Inserts a new key &lt;Key&gt; with value 1. Or increments an existing key by 1. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">inc</span><span style="color: #333333">(</span>String key<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>key<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+            changeKey<span style="color: #333333">(</span>key<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+            keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>key<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">count</span> <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> 
+                addBucketAfter<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Bucket<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">),</span> head<span style="color: #333333">);</span>
+            head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>key<span style="color: #333333">);</span>
+            countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">/** Decrements an existing key by 1. If Key&#39;s value is 1, remove it from the data structure. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dec</span><span style="color: #333333">(</span>String key<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>key<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+            <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>key<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>key<span style="color: #333333">);</span>
+                removeKeyFromBucket<span style="color: #333333">(</span>countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>count<span style="color: #333333">),</span> key<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+                changeKey<span style="color: #333333">(</span>key<span style="color: #333333">,</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">/** Returns one of the keys with maximal value. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getMaxKey</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> tail<span style="color: #333333">.</span><span style="color: #0000CC">pre</span> <span style="color: #333333">==</span> head <span style="color: #333333">?</span> <span style="background-color: #fff0f0">&quot;&quot;</span> <span style="color: #333333">:</span> <span style="color: #333333">(</span>String<span style="color: #333333">)</span> tail<span style="color: #333333">.</span><span style="color: #0000CC">pre</span><span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">.</span><span style="color: #0000CC">iterator</span><span style="color: #333333">().</span><span style="color: #0000CC">next</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">/** Returns one of the keys with Minimal value. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getMinKey</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">==</span> tail <span style="color: #333333">?</span> <span style="background-color: #fff0f0">&quot;&quot;</span> <span style="color: #333333">:</span> <span style="color: #333333">(</span>String<span style="color: #333333">)</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">.</span><span style="color: #0000CC">iterator</span><span style="color: #333333">().</span><span style="color: #0000CC">next</span><span style="color: #333333">();</span>        
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">// helper function to make change on given key according to offset</span>
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">changeKey</span><span style="color: #333333">(</span>String key<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> offset<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>key<span style="color: #333333">);</span>
+        keyCountMap<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>key<span style="color: #333333">,</span> count <span style="color: #333333">+</span> offset<span style="color: #333333">);</span>
+        Bucket curBucket <span style="color: #333333">=</span> countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>count<span style="color: #333333">);</span>
+        Bucket newBucket<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>count <span style="color: #333333">+</span> offset<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+            <span style="color: #888888">// target Bucket already exists</span>
+            newBucket <span style="color: #333333">=</span> countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>count <span style="color: #333333">+</span> offset<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+            <span style="color: #888888">// add new Bucket</span>
+            newBucket <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Bucket<span style="color: #333333">(</span>count <span style="color: #333333">+</span> offset<span style="color: #333333">);</span>
+            countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>count <span style="color: #333333">+</span> offset<span style="color: #333333">,</span> newBucket<span style="color: #333333">);</span>
+            addBucketAfter<span style="color: #333333">(</span>newBucket<span style="color: #333333">,</span> offset <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">?</span> curBucket <span style="color: #333333">:</span> curBucket<span style="color: #333333">.</span><span style="color: #0000CC">pre</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        newBucket<span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>key<span style="color: #333333">);</span>
+        removeKeyFromBucket<span style="color: #333333">(</span>curBucket<span style="color: #333333">,</span> key<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">removeKeyFromBucket</span><span style="color: #333333">(</span>Bucket bucket<span style="color: #333333">,</span> String key<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        bucket<span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>key<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>bucket<span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            removeBucketFromList<span style="color: #333333">(</span>bucket<span style="color: #333333">);</span>
+            countBucketMap<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>bucket<span style="color: #333333">.</span><span style="color: #0000CC">count</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">removeBucketFromList</span><span style="color: #333333">(</span>Bucket bucket<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        bucket<span style="color: #333333">.</span><span style="color: #0000CC">pre</span><span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> bucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+        bucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">pre</span> <span style="color: #333333">=</span> bucket<span style="color: #333333">.</span><span style="color: #0000CC">pre</span><span style="color: #333333">;</span>
+        bucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        bucket<span style="color: #333333">.</span><span style="color: #0000CC">pre</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">// add newBucket after preBucket</span>
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">addBucketAfter</span><span style="color: #333333">(</span>Bucket newBucket<span style="color: #333333">,</span> Bucket preBucket<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        newBucket<span style="color: #333333">.</span><span style="color: #0000CC">pre</span> <span style="color: #333333">=</span> preBucket<span style="color: #333333">;</span>
+        newBucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> preBucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+        preBucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">pre</span> <span style="color: #333333">=</span> newBucket<span style="color: #333333">;</span>
+        preBucket<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> newBucket<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

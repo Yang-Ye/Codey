@@ -1,0 +1,75 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Version <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span> Non<span style="color: #333333">-</span>Recursion <span style="color: #333333">(</span>Recommend<span style="color: #333333">)</span>
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition for binary tree</span>
+<span style="color: #888888"> * public class TreeNode {</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode left;</span>
+<span style="color: #888888"> *     TreeNode right;</span>
+<span style="color: #888888"> *     TreeNode(int x) { val = x; }</span>
+<span style="color: #888888"> * }</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">preorderTraversal</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        Stack<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+        List<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> preorder <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> preorder<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(!</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            TreeNode node <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+            preorder<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">return</span> preorder<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #888888">//Version 1: Traverse</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">preorderTraversal</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        traverse<span style="color: #333333">(</span>root<span style="color: #333333">,</span> result<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #888888">// 把root为跟的preorder加入result里面</span>
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">traverse</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> result<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+        traverse<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">,</span> result<span style="color: #333333">);</span>
+        traverse<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">,</span> result<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #888888">//Version 2: Divide &amp; Conquer</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">preorderTraversal</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        <span style="color: #888888">// null or leaf</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #888888">// Divide</span>
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> left <span style="color: #333333">=</span> preorderTraversal<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+        ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> right <span style="color: #333333">=</span> preorderTraversal<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+
+        <span style="color: #888888">// Conquer</span>
+        result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+        result<span style="color: #333333">.</span><span style="color: #0000CC">addAll</span><span style="color: #333333">(</span>left<span style="color: #333333">);</span>
+        result<span style="color: #333333">.</span><span style="color: #0000CC">addAll</span><span style="color: #333333">(</span>right<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

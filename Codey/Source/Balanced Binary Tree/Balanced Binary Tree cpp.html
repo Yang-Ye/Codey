@@ -1,0 +1,31 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition for binary tree</span>
+<span style="color: #888888"> * struct TreeNode {</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode *left;</span>
+<span style="color: #888888"> *     TreeNode *right;</span>
+<span style="color: #888888"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}</span>
+<span style="color: #888888"> * };</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">maxDepth</span><span style="color: #333333">(</span>TreeNode <span style="color: #333333">*</span> root<span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root<span style="color: #333333">==</span>NULL<span style="color: #333333">){</span><span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;}</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">+</span>max<span style="color: #333333">(</span>maxDepth<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">),</span>maxDepth<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+     
+    bool <span style="color: #0066BB; font-weight: bold">testNode</span><span style="color: #333333">(</span>TreeNode <span style="color: #333333">*</span> root<span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root<span style="color: #333333">==</span>NULL<span style="color: #333333">)</span> <span style="color: #333333">{</span><span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;}</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>abs<span style="color: #333333">(</span>maxDepth<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">)</span> <span style="color: #333333">-</span> maxDepth<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">))</span> <span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span><span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;}</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">(</span>testNode<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">)</span> <span style="color: #333333">&amp;&amp;</span> testNode<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+     
+     
+    bool <span style="color: #0066BB; font-weight: bold">isBalanced</span><span style="color: #333333">(</span>TreeNode <span style="color: #333333">*</span>root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Start typing your C/C++ solution below</span>
+        <span style="color: #888888">// DO NOT write int main() function</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">testNode</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+     
+<span style="color: #333333">};</span>
+</pre></div>

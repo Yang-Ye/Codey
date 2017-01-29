@@ -7,21 +7,497 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A66008C31DDA33C500FA7764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008C21DDA33C500FA7764 /* AppDelegate.swift */; };
-		A66008C51DDA33C500FA7764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008C41DDA33C500FA7764 /* ViewController.swift */; };
-		A66008C81DDA33C500FA7764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66008C61DDA33C500FA7764 /* Main.storyboard */; };
-		A66008CA1DDA33C500FA7764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66008C91DDA33C500FA7764 /* Assets.xcassets */; };
+		1D42B49AFDAEC04246748177 /* Pods_Codey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EE9D108EC0E27B160D84A2 /* Pods_Codey.framework */; };
+		A60D81AC1E2DB1CD00FAE17E /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D81AB1E2DB1CD00FAE17E /* UIColor+FlatColors.swift */; };
+		A610C5081DE161D40006CDE9 /* ProblemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610C5071DE161D40006CDE9 /* ProblemDetailViewController.swift */; };
+		A610C50A1DE16B1F0006CDE9 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610C5091DE16B1F0006CDE9 /* DescriptionCell.swift */; };
+		A610C50C1DE16B2E0006CDE9 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A610C50B1DE16B2E0006CDE9 /* DescriptionCell.xib */; };
+		A610C50E1DE16BE80006CDE9 /* ButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A610C50D1DE16BE80006CDE9 /* ButtonsCell.xib */; };
+		A610C5101DE16BF40006CDE9 /* ButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610C50F1DE16BF40006CDE9 /* ButtonsCell.swift */; };
+		A610C5121DE16BFD0006CDE9 /* SolutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610C5111DE16BFD0006CDE9 /* SolutionCell.swift */; };
+		A610C5141DE16C070006CDE9 /* SolutionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A610C5131DE16C070006CDE9 /* SolutionCell.xib */; };
+		A62E7D231DED37290033F545 /* 3 Sum cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CCA1DED37290033F545 /* 3 Sum cpp.html */; };
+		A62E7D241DED37290033F545 /* 3 Sum java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CCB1DED37290033F545 /* 3 Sum java.html */; };
+		A62E7D251DED37290033F545 /* 3 Sum py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CCC1DED37290033F545 /* 3 Sum py.html */; };
+		A62E7D261DED37290033F545 /* 3 Sum source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CCD1DED37290033F545 /* 3 Sum source.html */; };
+		A62E7D2B1DED37290033F545 /* 3 Sum Smaller cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CD41DED37290033F545 /* 3 Sum Smaller cpp.html */; };
+		A62E7D2C1DED37290033F545 /* 3 Sum Smaller java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CD51DED37290033F545 /* 3 Sum Smaller java.html */; };
+		A62E7D2D1DED37290033F545 /* 3 Sum Smaller py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CD61DED37290033F545 /* 3 Sum Smaller py.html */; };
+		A62E7D2E1DED37290033F545 /* 3 Sum Smaller source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CD71DED37290033F545 /* 3 Sum Smaller source.html */; };
+		A62E7D2F1DED37290033F545 /* 4 Sum cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CD91DED37290033F545 /* 4 Sum cpp.html */; };
+		A62E7D301DED37290033F545 /* 4 Sum java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CDA1DED37290033F545 /* 4 Sum java.html */; };
+		A62E7D311DED37290033F545 /* 4 Sum py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CDB1DED37290033F545 /* 4 Sum py.html */; };
+		A62E7D321DED37290033F545 /* 4 Sum source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CDC1DED37290033F545 /* 4 Sum source.html */; };
+		A62E7D331DED37290033F545 /* Add and Search Word - Data Structure Design cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CDE1DED37290033F545 /* Add and Search Word - Data Structure Design cpp.html */; };
+		A62E7D341DED37290033F545 /* Add and Search Word - Data Structure Design java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CDF1DED37290033F545 /* Add and Search Word - Data Structure Design java.html */; };
+		A62E7D351DED37290033F545 /* Add and Search Word - Data Structure Design py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE01DED37290033F545 /* Add and Search Word - Data Structure Design py.html */; };
+		A62E7D361DED37290033F545 /* Add and Search Word - Data Structure Design source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE11DED37290033F545 /* Add and Search Word - Data Structure Design source.html */; };
+		A62E7D371DED37290033F545 /* Add Binary cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE31DED37290033F545 /* Add Binary cpp.html */; };
+		A62E7D381DED37290033F545 /* Add Binary java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE41DED37290033F545 /* Add Binary java.html */; };
+		A62E7D391DED37290033F545 /* Add Binary py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE51DED37290033F545 /* Add Binary py.html */; };
+		A62E7D3A1DED37290033F545 /* Add Binary source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE61DED37290033F545 /* Add Binary source.html */; };
+		A62E7D3B1DED37290033F545 /* Add Digits cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE81DED37290033F545 /* Add Digits cpp.html */; };
+		A62E7D3C1DED37290033F545 /* Add Digits java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CE91DED37290033F545 /* Add Digits java.html */; };
+		A62E7D3D1DED37290033F545 /* Add Digits py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CEA1DED37290033F545 /* Add Digits py.html */; };
+		A62E7D3E1DED37290033F545 /* Add Digits source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CEB1DED37290033F545 /* Add Digits source.html */; };
+		A62E7D3F1DED37290033F545 /* Add Strings cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CED1DED37290033F545 /* Add Strings cpp.html */; };
+		A62E7D401DED37290033F545 /* Add Strings java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CEE1DED37290033F545 /* Add Strings java.html */; };
+		A62E7D411DED37290033F545 /* Add Strings py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CEF1DED37290033F545 /* Add Strings py.html */; };
+		A62E7D421DED37290033F545 /* Add Strings source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF01DED37290033F545 /* Add Strings source.html */; };
+		A62E7D431DED37290033F545 /* Add Two Numbers cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF21DED37290033F545 /* Add Two Numbers cpp.html */; };
+		A62E7D441DED37290033F545 /* Add Two Numbers java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF31DED37290033F545 /* Add Two Numbers java.html */; };
+		A62E7D451DED37290033F545 /* Add Two Numbers py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF41DED37290033F545 /* Add Two Numbers py.html */; };
+		A62E7D461DED37290033F545 /* Add Two Numbers source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF51DED37290033F545 /* Add Two Numbers source.html */; };
+		A62E7D471DED37290033F545 /* Add Two Numbers II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF71DED37290033F545 /* Add Two Numbers II cpp.html */; };
+		A62E7D481DED37290033F545 /* Add Two Numbers II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF81DED37290033F545 /* Add Two Numbers II java.html */; };
+		A62E7D491DED37290033F545 /* Add Two Numbers II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CF91DED37290033F545 /* Add Two Numbers II py.html */; };
+		A62E7D4A1DED37290033F545 /* Add Two Numbers II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CFA1DED37290033F545 /* Add Two Numbers II source.html */; };
+		A62E7D4B1DED37290033F545 /* Additive Number cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CFC1DED37290033F545 /* Additive Number cpp.html */; };
+		A62E7D4C1DED37290033F545 /* Additive Number java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CFD1DED37290033F545 /* Additive Number java.html */; };
+		A62E7D4D1DED37290033F545 /* Additive Number py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CFE1DED37290033F545 /* Additive Number py.html */; };
+		A62E7D4E1DED37290033F545 /* Additive Number source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7CFF1DED37290033F545 /* Additive Number source.html */; };
+		A62E7D4F1DED37290033F545 /* Alien Dictionary cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D011DED37290033F545 /* Alien Dictionary cpp.html */; };
+		A62E7D501DED37290033F545 /* Alien Dictionary java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D021DED37290033F545 /* Alien Dictionary java.html */; };
+		A62E7D511DED37290033F545 /* Alien Dictionary py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D031DED37290033F545 /* Alien Dictionary py.html */; };
+		A62E7D521DED37290033F545 /* Alien Dictionary source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D041DED37290033F545 /* Alien Dictionary source.html */; };
+		A62E7D531DED37290033F545 /* All O One Data Structure cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D061DED37290033F545 /* All O One Data Structure cpp.html */; };
+		A62E7D541DED37290033F545 /* All O One Data Structure java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D071DED37290033F545 /* All O One Data Structure java.html */; };
+		A62E7D551DED37290033F545 /* All O One Data Structure py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D081DED37290033F545 /* All O One Data Structure py.html */; };
+		A62E7D561DED37290033F545 /* All O One Data Structure source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D091DED37290033F545 /* All O One Data Structure source.html */; };
+		A62E7D571DED37290033F545 /* Android Unlock Patterns cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D0B1DED37290033F545 /* Android Unlock Patterns cpp.html */; };
+		A62E7D581DED37290033F545 /* Android Unlock Patterns java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D0C1DED37290033F545 /* Android Unlock Patterns java.html */; };
+		A62E7D591DED37290033F545 /* Android Unlock Patterns py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D0D1DED37290033F545 /* Android Unlock Patterns py.html */; };
+		A62E7D5A1DED37290033F545 /* Android Unlock Patterns source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D0E1DED37290033F545 /* Android Unlock Patterns source.html */; };
+		A62E7D5B1DED37290033F545 /* Arithmetic Slices cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D101DED37290033F545 /* Arithmetic Slices cpp.html */; };
+		A62E7D5C1DED37290033F545 /* Arithmetic Slices java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D111DED37290033F545 /* Arithmetic Slices java.html */; };
+		A62E7D5D1DED37290033F545 /* Arithmetic Slices py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D121DED37290033F545 /* Arithmetic Slices py.html */; };
+		A62E7D5E1DED37290033F545 /* Arithmetic Slices source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D131DED37290033F545 /* Arithmetic Slices source.html */; };
+		A62E7D5F1DED37290033F545 /* Arithmetic Slices II Subsequence cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D151DED37290033F545 /* Arithmetic Slices II Subsequence cpp.html */; };
+		A62E7D601DED37290033F545 /* Arithmetic Slices II Subsequence java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D161DED37290033F545 /* Arithmetic Slices II Subsequence java.html */; };
+		A62E7D611DED37290033F545 /* Arithmetic Slices II Subsequence py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D171DED37290033F545 /* Arithmetic Slices II Subsequence py.html */; };
+		A62E7D621DED37290033F545 /* Arithmetic Slices II Subsequence source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D181DED37290033F545 /* Arithmetic Slices II Subsequence source.html */; };
+		A62E7D631DED37290033F545 /* Arranging Coins cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D1A1DED37290033F545 /* Arranging Coins cpp.html */; };
+		A62E7D641DED37290033F545 /* Arranging Coins java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D1B1DED37290033F545 /* Arranging Coins java.html */; };
+		A62E7D651DED37290033F545 /* Arranging Coins py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D1C1DED37290033F545 /* Arranging Coins py.html */; };
+		A62E7D661DED37290033F545 /* Arranging Coins source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D1D1DED37290033F545 /* Arranging Coins source.html */; };
+		A62E7D671DED37290033F545 /* Balanced Binary Tree cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D1F1DED37290033F545 /* Balanced Binary Tree cpp.html */; };
+		A62E7D681DED37290033F545 /* Balanced Binary Tree java.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D201DED37290033F545 /* Balanced Binary Tree java.html */; };
+		A62E7D691DED37290033F545 /* Balanced Binary Tree py.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D211DED37290033F545 /* Balanced Binary Tree py.html */; };
+		A62E7D6A1DED37290033F545 /* Balanced Binary Tree source.html in Resources */ = {isa = PBXBuildFile; fileRef = A62E7D221DED37290033F545 /* Balanced Binary Tree source.html */; };
+		A632E5011E3C346800310816 /* AllProblems.json in Resources */ = {isa = PBXBuildFile; fileRef = A632E5001E3C346800310816 /* AllProblems.json */; };
+		A632E5041E3CFE8E00310816 /* RefineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632E5031E3CFE8E00310816 /* RefineViewController.swift */; };
+		A632E5061E3D166E00310816 /* RefineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A632E5051E3D166E00310816 /* RefineCell.xib */; };
+		A632E5081E3D6FEC00310816 /* RefineHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A632E5071E3D6FEC00310816 /* RefineHeaderCell.xib */; };
+		A632E50A1E3D707300310816 /* RefineHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632E5091E3D707300310816 /* RefineHeaderCell.swift */; };
+		A632E50C1E3D87DB00310816 /* RefineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632E50B1E3D87DB00310816 /* RefineCell.swift */; };
+		A632E50E1E3DB24100310816 /* Codey+Uitilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632E50D1E3DB24100310816 /* Codey+Uitilities.swift */; };
+		A65771BE1E0A48A0004AE924 /* 3 Sum Closest cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771BA1E0A48A0004AE924 /* 3 Sum Closest cpp.html */; };
+		A65771BF1E0A48A0004AE924 /* 3 Sum Closest java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771BB1E0A48A0004AE924 /* 3 Sum Closest java.html */; };
+		A65771C01E0A48A0004AE924 /* 3 Sum Closest py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771BC1E0A48A0004AE924 /* 3 Sum Closest py.html */; };
+		A65771C11E0A48A0004AE924 /* 3 Sum Closest source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771BD1E0A48A0004AE924 /* 3 Sum Closest source.html */; };
+		A657726E1E0A4988004AE924 /* Basic Calculator cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771C51E0A4988004AE924 /* Basic Calculator cpp.html */; };
+		A657726F1E0A4988004AE924 /* Basic Calculator java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771C61E0A4988004AE924 /* Basic Calculator java.html */; };
+		A65772701E0A4988004AE924 /* Basic Calculator py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771C71E0A4988004AE924 /* Basic Calculator py.html */; };
+		A65772711E0A4988004AE924 /* Basic Calculator source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771C81E0A4988004AE924 /* Basic Calculator source.html */; };
+		A65772721E0A4988004AE924 /* Basic Calculator II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771CA1E0A4988004AE924 /* Basic Calculator II cpp.html */; };
+		A65772731E0A4988004AE924 /* Basic Calculator II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771CB1E0A4988004AE924 /* Basic Calculator II java.html */; };
+		A65772741E0A4988004AE924 /* Basic Calculator II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771CC1E0A4988004AE924 /* Basic Calculator II py.html */; };
+		A65772751E0A4988004AE924 /* Basic Calculator II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771CD1E0A4988004AE924 /* Basic Calculator II source.html */; };
+		A65772761E0A4988004AE924 /* Battleships in a Board cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771CF1E0A4988004AE924 /* Battleships in a Board cpp.html */; };
+		A65772771E0A4988004AE924 /* Battleships in a Board java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D01E0A4988004AE924 /* Battleships in a Board java.html */; };
+		A65772781E0A4988004AE924 /* Battleships in a Board py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D11E0A4988004AE924 /* Battleships in a Board py.html */; };
+		A65772791E0A4988004AE924 /* Battleships in a Board source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D21E0A4988004AE924 /* Battleships in a Board source.html */; };
+		A657727A1E0A4988004AE924 /* Best Meeting Point cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D41E0A4988004AE924 /* Best Meeting Point cpp.html */; };
+		A657727B1E0A4988004AE924 /* Best Meeting Point java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D51E0A4988004AE924 /* Best Meeting Point java.html */; };
+		A657727C1E0A4988004AE924 /* Best Meeting Point py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D61E0A4988004AE924 /* Best Meeting Point py.html */; };
+		A657727D1E0A4988004AE924 /* Best Meeting Point source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D71E0A4988004AE924 /* Best Meeting Point source.html */; };
+		A657727E1E0A4988004AE924 /* Best Time to Buy and Sell Stock cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771D91E0A4988004AE924 /* Best Time to Buy and Sell Stock cpp.html */; };
+		A657727F1E0A4988004AE924 /* Best Time to Buy and Sell Stock java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771DA1E0A4988004AE924 /* Best Time to Buy and Sell Stock java.html */; };
+		A65772801E0A4988004AE924 /* Best Time to Buy and Sell Stock py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771DB1E0A4988004AE924 /* Best Time to Buy and Sell Stock py.html */; };
+		A65772811E0A4988004AE924 /* Best Time to Buy and Sell Stock source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771DC1E0A4988004AE924 /* Best Time to Buy and Sell Stock source.html */; };
+		A65772821E0A4988004AE924 /* Best Time to Buy and Sell Stock II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771DE1E0A4988004AE924 /* Best Time to Buy and Sell Stock II cpp.html */; };
+		A65772831E0A4988004AE924 /* Best Time to Buy and Sell Stock II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771DF1E0A4988004AE924 /* Best Time to Buy and Sell Stock II java.html */; };
+		A65772841E0A4988004AE924 /* Best Time to Buy and Sell Stock II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E01E0A4988004AE924 /* Best Time to Buy and Sell Stock II py.html */; };
+		A65772851E0A4988004AE924 /* Best Time to Buy and Sell Stock II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E11E0A4988004AE924 /* Best Time to Buy and Sell Stock II source.html */; };
+		A65772861E0A4988004AE924 /* Best Time to Buy and Sell Stock III cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E31E0A4988004AE924 /* Best Time to Buy and Sell Stock III cpp.html */; };
+		A65772871E0A4988004AE924 /* Best Time to Buy and Sell Stock III java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E41E0A4988004AE924 /* Best Time to Buy and Sell Stock III java.html */; };
+		A65772881E0A4988004AE924 /* Best Time to Buy and Sell Stock III py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E51E0A4988004AE924 /* Best Time to Buy and Sell Stock III py.html */; };
+		A65772891E0A4988004AE924 /* Best Time to Buy and Sell Stock III source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E61E0A4988004AE924 /* Best Time to Buy and Sell Stock III source.html */; };
+		A657728A1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E81E0A4988004AE924 /* Best Time to Buy and Sell Stock IV cpp.html */; };
+		A657728B1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771E91E0A4988004AE924 /* Best Time to Buy and Sell Stock IV java.html */; };
+		A657728C1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771EA1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV py.html */; };
+		A657728D1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771EB1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV source.html */; };
+		A657728E1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771ED1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown cpp.html */; };
+		A657728F1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771EE1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown java.html */; };
+		A65772901E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771EF1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown py.html */; };
+		A65772911E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F01E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown source.html */; };
+		A65772921E0A4988004AE924 /* Binary Search Tree Iterator cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F21E0A4988004AE924 /* Binary Search Tree Iterator cpp.html */; };
+		A65772931E0A4988004AE924 /* Binary Search Tree Iterator java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F31E0A4988004AE924 /* Binary Search Tree Iterator java.html */; };
+		A65772941E0A4988004AE924 /* Binary Search Tree Iterator py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F41E0A4988004AE924 /* Binary Search Tree Iterator py.html */; };
+		A65772951E0A4988004AE924 /* Binary Search Tree Iterator source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F51E0A4988004AE924 /* Binary Search Tree Iterator source.html */; };
+		A65772961E0A4988004AE924 /* Binary Tree Inorder Traversal cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F71E0A4988004AE924 /* Binary Tree Inorder Traversal cpp.html */; };
+		A65772971E0A4988004AE924 /* Binary Tree Inorder Traversal java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F81E0A4988004AE924 /* Binary Tree Inorder Traversal java.html */; };
+		A65772981E0A4988004AE924 /* Binary Tree Inorder Traversal py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771F91E0A4988004AE924 /* Binary Tree Inorder Traversal py.html */; };
+		A65772991E0A4988004AE924 /* Binary Tree Inorder Traversal source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771FA1E0A4988004AE924 /* Binary Tree Inorder Traversal source.html */; };
+		A657729A1E0A4988004AE924 /* Binary Tree Level Order Traversal cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771FC1E0A4988004AE924 /* Binary Tree Level Order Traversal cpp.html */; };
+		A657729B1E0A4988004AE924 /* Binary Tree Level Order Traversal java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771FD1E0A4988004AE924 /* Binary Tree Level Order Traversal java.html */; };
+		A657729C1E0A4988004AE924 /* Binary Tree Level Order Traversal py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771FE1E0A4988004AE924 /* Binary Tree Level Order Traversal py.html */; };
+		A657729D1E0A4988004AE924 /* Binary Tree Level Order Traversal source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65771FF1E0A4988004AE924 /* Binary Tree Level Order Traversal source.html */; };
+		A657729E1E0A4988004AE924 /* Binary Tree Level Order Traversal II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772011E0A4988004AE924 /* Binary Tree Level Order Traversal II cpp.html */; };
+		A657729F1E0A4988004AE924 /* Binary Tree Level Order Traversal II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772021E0A4988004AE924 /* Binary Tree Level Order Traversal II java.html */; };
+		A65772A01E0A4988004AE924 /* Binary Tree Level Order Traversal II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772031E0A4988004AE924 /* Binary Tree Level Order Traversal II py.html */; };
+		A65772A11E0A4988004AE924 /* Binary Tree Level Order Traversal II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772041E0A4988004AE924 /* Binary Tree Level Order Traversal II source.html */; };
+		A65772A21E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772061E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence cpp.html */; };
+		A65772A31E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772071E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence java.html */; };
+		A65772A41E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772081E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence py.html */; };
+		A65772A51E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772091E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence source.html */; };
+		A65772A61E0A4988004AE924 /* Binary Tree Maximum Path Sum cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657720B1E0A4988004AE924 /* Binary Tree Maximum Path Sum cpp.html */; };
+		A65772A71E0A4988004AE924 /* Binary Tree Maximum Path Sum java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657720C1E0A4988004AE924 /* Binary Tree Maximum Path Sum java.html */; };
+		A65772A81E0A4988004AE924 /* Binary Tree Maximum Path Sum py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657720D1E0A4988004AE924 /* Binary Tree Maximum Path Sum py.html */; };
+		A65772A91E0A4988004AE924 /* Binary Tree Maximum Path Sum source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657720E1E0A4988004AE924 /* Binary Tree Maximum Path Sum source.html */; };
+		A65772AA1E0A4988004AE924 /* Binary Tree Paths cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772101E0A4988004AE924 /* Binary Tree Paths cpp.html */; };
+		A65772AB1E0A4988004AE924 /* Binary Tree Paths java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772111E0A4988004AE924 /* Binary Tree Paths java.html */; };
+		A65772AC1E0A4988004AE924 /* Binary Tree Paths py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772121E0A4988004AE924 /* Binary Tree Paths py.html */; };
+		A65772AD1E0A4988004AE924 /* Binary Tree Paths source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772131E0A4988004AE924 /* Binary Tree Paths source.html */; };
+		A65772AE1E0A4988004AE924 /* Binary Tree Postorder Traversal cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772151E0A4988004AE924 /* Binary Tree Postorder Traversal cpp.html */; };
+		A65772AF1E0A4988004AE924 /* Binary Tree Postorder Traversal java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772161E0A4988004AE924 /* Binary Tree Postorder Traversal java.html */; };
+		A65772B01E0A4988004AE924 /* Binary Tree Postorder Traversal py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772171E0A4988004AE924 /* Binary Tree Postorder Traversal py.html */; };
+		A65772B11E0A4988004AE924 /* Binary Tree Postorder Traversal source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772181E0A4988004AE924 /* Binary Tree Postorder Traversal source.html */; };
+		A65772B21E0A4988004AE924 /* Binary Tree Preorder Traversal cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657721A1E0A4988004AE924 /* Binary Tree Preorder Traversal cpp.html */; };
+		A65772B31E0A4988004AE924 /* Binary Tree Preorder Traversal java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657721B1E0A4988004AE924 /* Binary Tree Preorder Traversal java.html */; };
+		A65772B41E0A4988004AE924 /* Binary Tree Preorder Traversal py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657721C1E0A4988004AE924 /* Binary Tree Preorder Traversal py.html */; };
+		A65772B51E0A4988004AE924 /* Binary Tree Preorder Traversal source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657721D1E0A4988004AE924 /* Binary Tree Preorder Traversal source.html */; };
+		A65772B61E0A4988004AE924 /* Binary Tree Right Side View cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657721F1E0A4988004AE924 /* Binary Tree Right Side View cpp.html */; };
+		A65772B71E0A4988004AE924 /* Binary Tree Right Side View java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772201E0A4988004AE924 /* Binary Tree Right Side View java.html */; };
+		A65772B81E0A4988004AE924 /* Binary Tree Right Side View py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772211E0A4988004AE924 /* Binary Tree Right Side View py.html */; };
+		A65772B91E0A4988004AE924 /* Binary Tree Right Side View source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772221E0A4988004AE924 /* Binary Tree Right Side View source.html */; };
+		A65772BA1E0A4988004AE924 /* Binary Tree Upside Down cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772241E0A4988004AE924 /* Binary Tree Upside Down cpp.html */; };
+		A65772BB1E0A4988004AE924 /* Binary Tree Upside Down java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772251E0A4988004AE924 /* Binary Tree Upside Down java.html */; };
+		A65772BC1E0A4988004AE924 /* Binary Tree Upside Down py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772261E0A4988004AE924 /* Binary Tree Upside Down py.html */; };
+		A65772BD1E0A4988004AE924 /* Binary Tree Upside Down source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772271E0A4988004AE924 /* Binary Tree Upside Down source.html */; };
+		A65772BE1E0A4988004AE924 /* Binary Tree Vertical Order Traversal cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772291E0A4988004AE924 /* Binary Tree Vertical Order Traversal cpp.html */; };
+		A65772BF1E0A4988004AE924 /* Binary Tree Vertical Order Traversal java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657722A1E0A4988004AE924 /* Binary Tree Vertical Order Traversal java.html */; };
+		A65772C01E0A4988004AE924 /* Binary Tree Vertical Order Traversal py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657722B1E0A4988004AE924 /* Binary Tree Vertical Order Traversal py.html */; };
+		A65772C11E0A4988004AE924 /* Binary Tree Vertical Order Traversal source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657722C1E0A4988004AE924 /* Binary Tree Vertical Order Traversal source.html */; };
+		A65772C21E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657722E1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal cpp.html */; };
+		A65772C31E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657722F1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal java.html */; };
+		A65772C41E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772301E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal py.html */; };
+		A65772C51E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772311E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal source.html */; };
+		A65772C61E0A4988004AE924 /* Binary Watch cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772331E0A4988004AE924 /* Binary Watch cpp.html */; };
+		A65772C71E0A4988004AE924 /* Binary Watch java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772341E0A4988004AE924 /* Binary Watch java.html */; };
+		A65772C81E0A4988004AE924 /* Binary Watch py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772351E0A4988004AE924 /* Binary Watch py.html */; };
+		A65772C91E0A4988004AE924 /* Binary Watch source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772361E0A4988004AE924 /* Binary Watch source.html */; };
+		A65772CA1E0A4988004AE924 /* Bitwise and of Numbers Range cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772381E0A4988004AE924 /* Bitwise and of Numbers Range cpp.html */; };
+		A65772CB1E0A4988004AE924 /* Bitwise and of Numbers Range java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772391E0A4988004AE924 /* Bitwise and of Numbers Range java.html */; };
+		A65772CC1E0A4988004AE924 /* Bitwise and of Numbers Range py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657723A1E0A4988004AE924 /* Bitwise and of Numbers Range py.html */; };
+		A65772CD1E0A4988004AE924 /* Bitwise and of Numbers Range source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657723B1E0A4988004AE924 /* Bitwise and of Numbers Range source.html */; };
+		A65772CE1E0A4988004AE924 /* Bomb Enemy cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657723D1E0A4988004AE924 /* Bomb Enemy cpp.html */; };
+		A65772CF1E0A4988004AE924 /* Bomb Enemy java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657723E1E0A4988004AE924 /* Bomb Enemy java.html */; };
+		A65772D01E0A4988004AE924 /* Bomb Enemy py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657723F1E0A4988004AE924 /* Bomb Enemy py.html */; };
+		A65772D11E0A4988004AE924 /* Bomb Enemy source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772401E0A4988004AE924 /* Bomb Enemy source.html */; };
+		A65772D21E0A4988004AE924 /* Bulb Switcher cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772421E0A4988004AE924 /* Bulb Switcher cpp.html */; };
+		A65772D31E0A4988004AE924 /* Bulb Switcher java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772431E0A4988004AE924 /* Bulb Switcher java.html */; };
+		A65772D41E0A4988004AE924 /* Bulb Switcher py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772441E0A4988004AE924 /* Bulb Switcher py.html */; };
+		A65772D51E0A4988004AE924 /* Bulb Switcher source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772451E0A4988004AE924 /* Bulb Switcher source.html */; };
+		A65772D61E0A4988004AE924 /* Bulls and Cows cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772471E0A4988004AE924 /* Bulls and Cows cpp.html */; };
+		A65772D71E0A4988004AE924 /* Bulls and Cows java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772481E0A4988004AE924 /* Bulls and Cows java.html */; };
+		A65772D81E0A4988004AE924 /* Bulls and Cows py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772491E0A4988004AE924 /* Bulls and Cows py.html */; };
+		A65772D91E0A4988004AE924 /* Bulls and Cows source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657724A1E0A4988004AE924 /* Bulls and Cows source.html */; };
+		A65772DA1E0A4988004AE924 /* Burst Balloons cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657724C1E0A4988004AE924 /* Burst Balloons cpp.html */; };
+		A65772DB1E0A4988004AE924 /* Burst Balloons java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657724D1E0A4988004AE924 /* Burst Balloons java.html */; };
+		A65772DC1E0A4988004AE924 /* Burst Balloons py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657724E1E0A4988004AE924 /* Burst Balloons py.html */; };
+		A65772DD1E0A4988004AE924 /* Burst Balloons source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657724F1E0A4988004AE924 /* Burst Balloons source.html */; };
+		A65772DE1E0A4988004AE924 /* Candy cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772511E0A4988004AE924 /* Candy cpp.html */; };
+		A65772DF1E0A4988004AE924 /* Candy java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772521E0A4988004AE924 /* Candy java.html */; };
+		A65772E01E0A4988004AE924 /* Candy py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772531E0A4988004AE924 /* Candy py.html */; };
+		A65772E11E0A4988004AE924 /* Candy source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772541E0A4988004AE924 /* Candy source.html */; };
+		A65772E21E0A4988004AE924 /* Climbing Stairs cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772561E0A4988004AE924 /* Climbing Stairs cpp.html */; };
+		A65772E31E0A4988004AE924 /* Climbing Stairs java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772571E0A4988004AE924 /* Climbing Stairs java.html */; };
+		A65772E41E0A4988004AE924 /* Climbing Stairs py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772581E0A4988004AE924 /* Climbing Stairs py.html */; };
+		A65772E51E0A4988004AE924 /* Climbing Stairs source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772591E0A4988004AE924 /* Climbing Stairs source.html */; };
+		A65772E61E0A4988004AE924 /* Clone Graph cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657725B1E0A4988004AE924 /* Clone Graph cpp.html */; };
+		A65772E71E0A4988004AE924 /* Clone Graph java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657725C1E0A4988004AE924 /* Clone Graph java.html */; };
+		A65772E81E0A4988004AE924 /* Clone Graph py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657725D1E0A4988004AE924 /* Clone Graph py.html */; };
+		A65772E91E0A4988004AE924 /* Clone Graph source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657725E1E0A4988004AE924 /* Clone Graph source.html */; };
+		A65772EA1E0A4988004AE924 /* Coin Change cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772601E0A4988004AE924 /* Coin Change cpp.html */; };
+		A65772EB1E0A4988004AE924 /* Coin Change java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772611E0A4988004AE924 /* Coin Change java.html */; };
+		A65772EC1E0A4988004AE924 /* Coin Change py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772621E0A4988004AE924 /* Coin Change py.html */; };
+		A65772ED1E0A4988004AE924 /* Coin Change source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772631E0A4988004AE924 /* Coin Change source.html */; };
+		A65772EE1E0A4988004AE924 /* Combination Sum cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772651E0A4988004AE924 /* Combination Sum cpp.html */; };
+		A65772EF1E0A4988004AE924 /* Combination Sum java.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772661E0A4988004AE924 /* Combination Sum java.html */; };
+		A65772F01E0A4988004AE924 /* Combination Sum py.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772671E0A4988004AE924 /* Combination Sum py.html */; };
+		A65772F11E0A4988004AE924 /* Combination Sum source.html in Resources */ = {isa = PBXBuildFile; fileRef = A65772681E0A4988004AE924 /* Combination Sum source.html */; };
+		A65772F21E0A4988004AE924 /* Combination Sum II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A657726A1E0A4988004AE924 /* Combination Sum II cpp.html */; };
+		A65772F31E0A4988004AE924 /* Combination Sum II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A657726B1E0A4988004AE924 /* Combination Sum II java.html */; };
+		A65772F41E0A4988004AE924 /* Combination Sum II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A657726C1E0A4988004AE924 /* Combination Sum II py.html */; };
+		A65772F51E0A4988004AE924 /* Combination Sum II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A657726D1E0A4988004AE924 /* Combination Sum II source.html */; };
 		A66008CD1DDA33C500FA7764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66008CB1DDA33C500FA7764 /* LaunchScreen.storyboard */; };
+		A66008D51DDA33DF00FA7764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66008D41DDA33DF00FA7764 /* Assets.xcassets */; };
+		A66008D71DDA33E600FA7764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66008D61DDA33E600FA7764 /* Main.storyboard */; };
+		A66008E21DDA341C00FA7764 /* ProblemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008DC1DDA341C00FA7764 /* ProblemCell.swift */; };
+		A66008E31DDA341C00FA7764 /* ProblemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A66008DD1DDA341C00FA7764 /* ProblemCell.xib */; };
+		A66008E71DDA341C00FA7764 /* ProblemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008E11DDA341C00FA7764 /* ProblemTableViewController.swift */; };
+		A66008EA1DDA344800FA7764 /* CodeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008E81DDA344800FA7764 /* CodeyManager.swift */; };
+		A66008EE1DDA346700FA7764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008ED1DDA346700FA7764 /* AppDelegate.swift */; };
+		A66008F71DDA348100FA7764 /* DesignTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008F61DDA348100FA7764 /* DesignTableViewController.swift */; };
+		A66008FA1DDA349500FA7764 /* StarredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008F91DDA349500FA7764 /* StarredViewController.swift */; };
+		A66008FD1DDA34B700FA7764 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008FC1DDA34B700FA7764 /* Problem.swift */; };
+		A66008FF1DDA4A0200FA7764 /* CodeyCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008FE1DDA4A0200FA7764 /* CodeyCoreDataStack.swift */; };
+		A66009021DDA56E500FA7764 /* CodeyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66009001DDA56E500FA7764 /* CodeyModel.xcdatamodeld */; };
+		A6BDE8FF1E06171B00778DD4 /* HalfSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BDE8FE1E06171B00778DD4 /* HalfSizePresentationController.swift */; };
+		A6CEA07F1DE520B400415A3D /* NameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CEA07E1DE520B400415A3D /* NameCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F8F65DA8FC29B4CF479BD0E /* Pods-Codey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codey/Pods-Codey.release.xcconfig"; sourceTree = "<group>"; };
+		A60D81AB1E2DB1CD00FAE17E /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
+		A610C5071DE161D40006CDE9 /* ProblemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemDetailViewController.swift; sourceTree = "<group>"; };
+		A610C5091DE16B1F0006CDE9 /* DescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		A610C50B1DE16B2E0006CDE9 /* DescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
+		A610C50D1DE16BE80006CDE9 /* ButtonsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsCell.xib; sourceTree = "<group>"; };
+		A610C50F1DE16BF40006CDE9 /* ButtonsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsCell.swift; sourceTree = "<group>"; };
+		A610C5111DE16BFD0006CDE9 /* SolutionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionCell.swift; sourceTree = "<group>"; };
+		A610C5131DE16C070006CDE9 /* SolutionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SolutionCell.xib; sourceTree = "<group>"; };
+		A62DE24D1E359E0700CC3FAF /* CodeyModel v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v4.xcdatamodel"; sourceTree = "<group>"; };
+		A62E7CCA1DED37290033F545 /* 3 Sum cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum cpp.html"; sourceTree = "<group>"; };
+		A62E7CCB1DED37290033F545 /* 3 Sum java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum java.html"; sourceTree = "<group>"; };
+		A62E7CCC1DED37290033F545 /* 3 Sum py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum py.html"; sourceTree = "<group>"; };
+		A62E7CCD1DED37290033F545 /* 3 Sum source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum source.html"; sourceTree = "<group>"; };
+		A62E7CD41DED37290033F545 /* 3 Sum Smaller cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Smaller cpp.html"; sourceTree = "<group>"; };
+		A62E7CD51DED37290033F545 /* 3 Sum Smaller java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Smaller java.html"; sourceTree = "<group>"; };
+		A62E7CD61DED37290033F545 /* 3 Sum Smaller py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Smaller py.html"; sourceTree = "<group>"; };
+		A62E7CD71DED37290033F545 /* 3 Sum Smaller source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Smaller source.html"; sourceTree = "<group>"; };
+		A62E7CD91DED37290033F545 /* 4 Sum cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "4 Sum cpp.html"; sourceTree = "<group>"; };
+		A62E7CDA1DED37290033F545 /* 4 Sum java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "4 Sum java.html"; sourceTree = "<group>"; };
+		A62E7CDB1DED37290033F545 /* 4 Sum py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "4 Sum py.html"; sourceTree = "<group>"; };
+		A62E7CDC1DED37290033F545 /* 4 Sum source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "4 Sum source.html"; sourceTree = "<group>"; };
+		A62E7CDE1DED37290033F545 /* Add and Search Word - Data Structure Design cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add and Search Word - Data Structure Design cpp.html"; sourceTree = "<group>"; };
+		A62E7CDF1DED37290033F545 /* Add and Search Word - Data Structure Design java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add and Search Word - Data Structure Design java.html"; sourceTree = "<group>"; };
+		A62E7CE01DED37290033F545 /* Add and Search Word - Data Structure Design py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add and Search Word - Data Structure Design py.html"; sourceTree = "<group>"; };
+		A62E7CE11DED37290033F545 /* Add and Search Word - Data Structure Design source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add and Search Word - Data Structure Design source.html"; sourceTree = "<group>"; };
+		A62E7CE31DED37290033F545 /* Add Binary cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Binary cpp.html"; sourceTree = "<group>"; };
+		A62E7CE41DED37290033F545 /* Add Binary java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Binary java.html"; sourceTree = "<group>"; };
+		A62E7CE51DED37290033F545 /* Add Binary py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Binary py.html"; sourceTree = "<group>"; };
+		A62E7CE61DED37290033F545 /* Add Binary source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Binary source.html"; sourceTree = "<group>"; };
+		A62E7CE81DED37290033F545 /* Add Digits cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Digits cpp.html"; sourceTree = "<group>"; };
+		A62E7CE91DED37290033F545 /* Add Digits java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Digits java.html"; sourceTree = "<group>"; };
+		A62E7CEA1DED37290033F545 /* Add Digits py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Digits py.html"; sourceTree = "<group>"; };
+		A62E7CEB1DED37290033F545 /* Add Digits source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Digits source.html"; sourceTree = "<group>"; };
+		A62E7CED1DED37290033F545 /* Add Strings cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Strings cpp.html"; sourceTree = "<group>"; };
+		A62E7CEE1DED37290033F545 /* Add Strings java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Strings java.html"; sourceTree = "<group>"; };
+		A62E7CEF1DED37290033F545 /* Add Strings py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Strings py.html"; sourceTree = "<group>"; };
+		A62E7CF01DED37290033F545 /* Add Strings source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Strings source.html"; sourceTree = "<group>"; };
+		A62E7CF21DED37290033F545 /* Add Two Numbers cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers cpp.html"; sourceTree = "<group>"; };
+		A62E7CF31DED37290033F545 /* Add Two Numbers java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers java.html"; sourceTree = "<group>"; };
+		A62E7CF41DED37290033F545 /* Add Two Numbers py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers py.html"; sourceTree = "<group>"; };
+		A62E7CF51DED37290033F545 /* Add Two Numbers source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers source.html"; sourceTree = "<group>"; };
+		A62E7CF71DED37290033F545 /* Add Two Numbers II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers II cpp.html"; sourceTree = "<group>"; };
+		A62E7CF81DED37290033F545 /* Add Two Numbers II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers II java.html"; sourceTree = "<group>"; };
+		A62E7CF91DED37290033F545 /* Add Two Numbers II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers II py.html"; sourceTree = "<group>"; };
+		A62E7CFA1DED37290033F545 /* Add Two Numbers II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Add Two Numbers II source.html"; sourceTree = "<group>"; };
+		A62E7CFC1DED37290033F545 /* Additive Number cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Additive Number cpp.html"; sourceTree = "<group>"; };
+		A62E7CFD1DED37290033F545 /* Additive Number java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Additive Number java.html"; sourceTree = "<group>"; };
+		A62E7CFE1DED37290033F545 /* Additive Number py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Additive Number py.html"; sourceTree = "<group>"; };
+		A62E7CFF1DED37290033F545 /* Additive Number source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Additive Number source.html"; sourceTree = "<group>"; };
+		A62E7D011DED37290033F545 /* Alien Dictionary cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Alien Dictionary cpp.html"; sourceTree = "<group>"; };
+		A62E7D021DED37290033F545 /* Alien Dictionary java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Alien Dictionary java.html"; sourceTree = "<group>"; };
+		A62E7D031DED37290033F545 /* Alien Dictionary py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Alien Dictionary py.html"; sourceTree = "<group>"; };
+		A62E7D041DED37290033F545 /* Alien Dictionary source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Alien Dictionary source.html"; sourceTree = "<group>"; };
+		A62E7D061DED37290033F545 /* All O One Data Structure cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "All O One Data Structure cpp.html"; sourceTree = "<group>"; };
+		A62E7D071DED37290033F545 /* All O One Data Structure java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "All O One Data Structure java.html"; sourceTree = "<group>"; };
+		A62E7D081DED37290033F545 /* All O One Data Structure py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "All O One Data Structure py.html"; sourceTree = "<group>"; };
+		A62E7D091DED37290033F545 /* All O One Data Structure source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "All O One Data Structure source.html"; sourceTree = "<group>"; };
+		A62E7D0B1DED37290033F545 /* Android Unlock Patterns cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Android Unlock Patterns cpp.html"; sourceTree = "<group>"; };
+		A62E7D0C1DED37290033F545 /* Android Unlock Patterns java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Android Unlock Patterns java.html"; sourceTree = "<group>"; };
+		A62E7D0D1DED37290033F545 /* Android Unlock Patterns py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Android Unlock Patterns py.html"; sourceTree = "<group>"; };
+		A62E7D0E1DED37290033F545 /* Android Unlock Patterns source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Android Unlock Patterns source.html"; sourceTree = "<group>"; };
+		A62E7D101DED37290033F545 /* Arithmetic Slices cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices cpp.html"; sourceTree = "<group>"; };
+		A62E7D111DED37290033F545 /* Arithmetic Slices java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices java.html"; sourceTree = "<group>"; };
+		A62E7D121DED37290033F545 /* Arithmetic Slices py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices py.html"; sourceTree = "<group>"; };
+		A62E7D131DED37290033F545 /* Arithmetic Slices source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices source.html"; sourceTree = "<group>"; };
+		A62E7D151DED37290033F545 /* Arithmetic Slices II Subsequence cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices II Subsequence cpp.html"; sourceTree = "<group>"; };
+		A62E7D161DED37290033F545 /* Arithmetic Slices II Subsequence java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices II Subsequence java.html"; sourceTree = "<group>"; };
+		A62E7D171DED37290033F545 /* Arithmetic Slices II Subsequence py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices II Subsequence py.html"; sourceTree = "<group>"; };
+		A62E7D181DED37290033F545 /* Arithmetic Slices II Subsequence source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arithmetic Slices II Subsequence source.html"; sourceTree = "<group>"; };
+		A62E7D1A1DED37290033F545 /* Arranging Coins cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arranging Coins cpp.html"; sourceTree = "<group>"; };
+		A62E7D1B1DED37290033F545 /* Arranging Coins java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arranging Coins java.html"; sourceTree = "<group>"; };
+		A62E7D1C1DED37290033F545 /* Arranging Coins py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arranging Coins py.html"; sourceTree = "<group>"; };
+		A62E7D1D1DED37290033F545 /* Arranging Coins source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Arranging Coins source.html"; sourceTree = "<group>"; };
+		A62E7D1F1DED37290033F545 /* Balanced Binary Tree cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Balanced Binary Tree cpp.html"; sourceTree = "<group>"; };
+		A62E7D201DED37290033F545 /* Balanced Binary Tree java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Balanced Binary Tree java.html"; sourceTree = "<group>"; };
+		A62E7D211DED37290033F545 /* Balanced Binary Tree py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Balanced Binary Tree py.html"; sourceTree = "<group>"; };
+		A62E7D221DED37290033F545 /* Balanced Binary Tree source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Balanced Binary Tree source.html"; sourceTree = "<group>"; };
+		A632E5001E3C346800310816 /* AllProblems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllProblems.json; sourceTree = "<group>"; };
+		A632E5021E3C406900310816 /* CodeyModel v5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v5.xcdatamodel"; sourceTree = "<group>"; };
+		A632E5031E3CFE8E00310816 /* RefineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefineViewController.swift; sourceTree = "<group>"; };
+		A632E5051E3D166E00310816 /* RefineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefineCell.xib; sourceTree = "<group>"; };
+		A632E5071E3D6FEC00310816 /* RefineHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefineHeaderCell.xib; sourceTree = "<group>"; };
+		A632E5091E3D707300310816 /* RefineHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefineHeaderCell.swift; sourceTree = "<group>"; };
+		A632E50B1E3D87DB00310816 /* RefineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefineCell.swift; sourceTree = "<group>"; };
+		A632E50D1E3DB24100310816 /* Codey+Uitilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codey+Uitilities.swift"; sourceTree = "<group>"; };
+		A632E50F1E3E970300310816 /* CodeyModel v6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v6.xcdatamodel"; sourceTree = "<group>"; };
+		A63BC3EB1E2AE902005902C7 /* Codey-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Codey-Bridging-Header.h"; sourceTree = "<group>"; };
+		A63BC3EF1E2BE89F005902C7 /* CodeyModel v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v3.xcdatamodel"; sourceTree = "<group>"; };
+		A65771BA1E0A48A0004AE924 /* 3 Sum Closest cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Closest cpp.html"; sourceTree = "<group>"; };
+		A65771BB1E0A48A0004AE924 /* 3 Sum Closest java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Closest java.html"; sourceTree = "<group>"; };
+		A65771BC1E0A48A0004AE924 /* 3 Sum Closest py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Closest py.html"; sourceTree = "<group>"; };
+		A65771BD1E0A48A0004AE924 /* 3 Sum Closest source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3 Sum Closest source.html"; sourceTree = "<group>"; };
+		A65771C51E0A4988004AE924 /* Basic Calculator cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator cpp.html"; sourceTree = "<group>"; };
+		A65771C61E0A4988004AE924 /* Basic Calculator java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator java.html"; sourceTree = "<group>"; };
+		A65771C71E0A4988004AE924 /* Basic Calculator py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator py.html"; sourceTree = "<group>"; };
+		A65771C81E0A4988004AE924 /* Basic Calculator source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator source.html"; sourceTree = "<group>"; };
+		A65771CA1E0A4988004AE924 /* Basic Calculator II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator II cpp.html"; sourceTree = "<group>"; };
+		A65771CB1E0A4988004AE924 /* Basic Calculator II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator II java.html"; sourceTree = "<group>"; };
+		A65771CC1E0A4988004AE924 /* Basic Calculator II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator II py.html"; sourceTree = "<group>"; };
+		A65771CD1E0A4988004AE924 /* Basic Calculator II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Basic Calculator II source.html"; sourceTree = "<group>"; };
+		A65771CF1E0A4988004AE924 /* Battleships in a Board cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Battleships in a Board cpp.html"; sourceTree = "<group>"; };
+		A65771D01E0A4988004AE924 /* Battleships in a Board java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Battleships in a Board java.html"; sourceTree = "<group>"; };
+		A65771D11E0A4988004AE924 /* Battleships in a Board py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Battleships in a Board py.html"; sourceTree = "<group>"; };
+		A65771D21E0A4988004AE924 /* Battleships in a Board source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Battleships in a Board source.html"; sourceTree = "<group>"; };
+		A65771D41E0A4988004AE924 /* Best Meeting Point cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Meeting Point cpp.html"; sourceTree = "<group>"; };
+		A65771D51E0A4988004AE924 /* Best Meeting Point java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Meeting Point java.html"; sourceTree = "<group>"; };
+		A65771D61E0A4988004AE924 /* Best Meeting Point py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Meeting Point py.html"; sourceTree = "<group>"; };
+		A65771D71E0A4988004AE924 /* Best Meeting Point source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Meeting Point source.html"; sourceTree = "<group>"; };
+		A65771D91E0A4988004AE924 /* Best Time to Buy and Sell Stock cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock cpp.html"; sourceTree = "<group>"; };
+		A65771DA1E0A4988004AE924 /* Best Time to Buy and Sell Stock java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock java.html"; sourceTree = "<group>"; };
+		A65771DB1E0A4988004AE924 /* Best Time to Buy and Sell Stock py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock py.html"; sourceTree = "<group>"; };
+		A65771DC1E0A4988004AE924 /* Best Time to Buy and Sell Stock source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock source.html"; sourceTree = "<group>"; };
+		A65771DE1E0A4988004AE924 /* Best Time to Buy and Sell Stock II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock II cpp.html"; sourceTree = "<group>"; };
+		A65771DF1E0A4988004AE924 /* Best Time to Buy and Sell Stock II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock II java.html"; sourceTree = "<group>"; };
+		A65771E01E0A4988004AE924 /* Best Time to Buy and Sell Stock II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock II py.html"; sourceTree = "<group>"; };
+		A65771E11E0A4988004AE924 /* Best Time to Buy and Sell Stock II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock II source.html"; sourceTree = "<group>"; };
+		A65771E31E0A4988004AE924 /* Best Time to Buy and Sell Stock III cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock III cpp.html"; sourceTree = "<group>"; };
+		A65771E41E0A4988004AE924 /* Best Time to Buy and Sell Stock III java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock III java.html"; sourceTree = "<group>"; };
+		A65771E51E0A4988004AE924 /* Best Time to Buy and Sell Stock III py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock III py.html"; sourceTree = "<group>"; };
+		A65771E61E0A4988004AE924 /* Best Time to Buy and Sell Stock III source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock III source.html"; sourceTree = "<group>"; };
+		A65771E81E0A4988004AE924 /* Best Time to Buy and Sell Stock IV cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock IV cpp.html"; sourceTree = "<group>"; };
+		A65771E91E0A4988004AE924 /* Best Time to Buy and Sell Stock IV java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock IV java.html"; sourceTree = "<group>"; };
+		A65771EA1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock IV py.html"; sourceTree = "<group>"; };
+		A65771EB1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock IV source.html"; sourceTree = "<group>"; };
+		A65771ED1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock With Cooldown cpp.html"; sourceTree = "<group>"; };
+		A65771EE1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock With Cooldown java.html"; sourceTree = "<group>"; };
+		A65771EF1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock With Cooldown py.html"; sourceTree = "<group>"; };
+		A65771F01E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Best Time to Buy and Sell Stock With Cooldown source.html"; sourceTree = "<group>"; };
+		A65771F21E0A4988004AE924 /* Binary Search Tree Iterator cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Search Tree Iterator cpp.html"; sourceTree = "<group>"; };
+		A65771F31E0A4988004AE924 /* Binary Search Tree Iterator java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Search Tree Iterator java.html"; sourceTree = "<group>"; };
+		A65771F41E0A4988004AE924 /* Binary Search Tree Iterator py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Search Tree Iterator py.html"; sourceTree = "<group>"; };
+		A65771F51E0A4988004AE924 /* Binary Search Tree Iterator source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Search Tree Iterator source.html"; sourceTree = "<group>"; };
+		A65771F71E0A4988004AE924 /* Binary Tree Inorder Traversal cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Inorder Traversal cpp.html"; sourceTree = "<group>"; };
+		A65771F81E0A4988004AE924 /* Binary Tree Inorder Traversal java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Inorder Traversal java.html"; sourceTree = "<group>"; };
+		A65771F91E0A4988004AE924 /* Binary Tree Inorder Traversal py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Inorder Traversal py.html"; sourceTree = "<group>"; };
+		A65771FA1E0A4988004AE924 /* Binary Tree Inorder Traversal source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Inorder Traversal source.html"; sourceTree = "<group>"; };
+		A65771FC1E0A4988004AE924 /* Binary Tree Level Order Traversal cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal cpp.html"; sourceTree = "<group>"; };
+		A65771FD1E0A4988004AE924 /* Binary Tree Level Order Traversal java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal java.html"; sourceTree = "<group>"; };
+		A65771FE1E0A4988004AE924 /* Binary Tree Level Order Traversal py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal py.html"; sourceTree = "<group>"; };
+		A65771FF1E0A4988004AE924 /* Binary Tree Level Order Traversal source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal source.html"; sourceTree = "<group>"; };
+		A65772011E0A4988004AE924 /* Binary Tree Level Order Traversal II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal II cpp.html"; sourceTree = "<group>"; };
+		A65772021E0A4988004AE924 /* Binary Tree Level Order Traversal II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal II java.html"; sourceTree = "<group>"; };
+		A65772031E0A4988004AE924 /* Binary Tree Level Order Traversal II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal II py.html"; sourceTree = "<group>"; };
+		A65772041E0A4988004AE924 /* Binary Tree Level Order Traversal II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Level Order Traversal II source.html"; sourceTree = "<group>"; };
+		A65772061E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Longest Consecutive Sequence cpp.html"; sourceTree = "<group>"; };
+		A65772071E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Longest Consecutive Sequence java.html"; sourceTree = "<group>"; };
+		A65772081E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Longest Consecutive Sequence py.html"; sourceTree = "<group>"; };
+		A65772091E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Longest Consecutive Sequence source.html"; sourceTree = "<group>"; };
+		A657720B1E0A4988004AE924 /* Binary Tree Maximum Path Sum cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Maximum Path Sum cpp.html"; sourceTree = "<group>"; };
+		A657720C1E0A4988004AE924 /* Binary Tree Maximum Path Sum java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Maximum Path Sum java.html"; sourceTree = "<group>"; };
+		A657720D1E0A4988004AE924 /* Binary Tree Maximum Path Sum py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Maximum Path Sum py.html"; sourceTree = "<group>"; };
+		A657720E1E0A4988004AE924 /* Binary Tree Maximum Path Sum source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Maximum Path Sum source.html"; sourceTree = "<group>"; };
+		A65772101E0A4988004AE924 /* Binary Tree Paths cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Paths cpp.html"; sourceTree = "<group>"; };
+		A65772111E0A4988004AE924 /* Binary Tree Paths java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Paths java.html"; sourceTree = "<group>"; };
+		A65772121E0A4988004AE924 /* Binary Tree Paths py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Paths py.html"; sourceTree = "<group>"; };
+		A65772131E0A4988004AE924 /* Binary Tree Paths source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Paths source.html"; sourceTree = "<group>"; };
+		A65772151E0A4988004AE924 /* Binary Tree Postorder Traversal cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Postorder Traversal cpp.html"; sourceTree = "<group>"; };
+		A65772161E0A4988004AE924 /* Binary Tree Postorder Traversal java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Postorder Traversal java.html"; sourceTree = "<group>"; };
+		A65772171E0A4988004AE924 /* Binary Tree Postorder Traversal py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Postorder Traversal py.html"; sourceTree = "<group>"; };
+		A65772181E0A4988004AE924 /* Binary Tree Postorder Traversal source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Postorder Traversal source.html"; sourceTree = "<group>"; };
+		A657721A1E0A4988004AE924 /* Binary Tree Preorder Traversal cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Preorder Traversal cpp.html"; sourceTree = "<group>"; };
+		A657721B1E0A4988004AE924 /* Binary Tree Preorder Traversal java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Preorder Traversal java.html"; sourceTree = "<group>"; };
+		A657721C1E0A4988004AE924 /* Binary Tree Preorder Traversal py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Preorder Traversal py.html"; sourceTree = "<group>"; };
+		A657721D1E0A4988004AE924 /* Binary Tree Preorder Traversal source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Preorder Traversal source.html"; sourceTree = "<group>"; };
+		A657721F1E0A4988004AE924 /* Binary Tree Right Side View cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Right Side View cpp.html"; sourceTree = "<group>"; };
+		A65772201E0A4988004AE924 /* Binary Tree Right Side View java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Right Side View java.html"; sourceTree = "<group>"; };
+		A65772211E0A4988004AE924 /* Binary Tree Right Side View py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Right Side View py.html"; sourceTree = "<group>"; };
+		A65772221E0A4988004AE924 /* Binary Tree Right Side View source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Right Side View source.html"; sourceTree = "<group>"; };
+		A65772241E0A4988004AE924 /* Binary Tree Upside Down cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Upside Down cpp.html"; sourceTree = "<group>"; };
+		A65772251E0A4988004AE924 /* Binary Tree Upside Down java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Upside Down java.html"; sourceTree = "<group>"; };
+		A65772261E0A4988004AE924 /* Binary Tree Upside Down py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Upside Down py.html"; sourceTree = "<group>"; };
+		A65772271E0A4988004AE924 /* Binary Tree Upside Down source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Upside Down source.html"; sourceTree = "<group>"; };
+		A65772291E0A4988004AE924 /* Binary Tree Vertical Order Traversal cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Vertical Order Traversal cpp.html"; sourceTree = "<group>"; };
+		A657722A1E0A4988004AE924 /* Binary Tree Vertical Order Traversal java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Vertical Order Traversal java.html"; sourceTree = "<group>"; };
+		A657722B1E0A4988004AE924 /* Binary Tree Vertical Order Traversal py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Vertical Order Traversal py.html"; sourceTree = "<group>"; };
+		A657722C1E0A4988004AE924 /* Binary Tree Vertical Order Traversal source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Vertical Order Traversal source.html"; sourceTree = "<group>"; };
+		A657722E1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Zigzag Level Order Traversal cpp.html"; sourceTree = "<group>"; };
+		A657722F1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Zigzag Level Order Traversal java.html"; sourceTree = "<group>"; };
+		A65772301E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Zigzag Level Order Traversal py.html"; sourceTree = "<group>"; };
+		A65772311E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Tree Zigzag Level Order Traversal source.html"; sourceTree = "<group>"; };
+		A65772331E0A4988004AE924 /* Binary Watch cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Watch cpp.html"; sourceTree = "<group>"; };
+		A65772341E0A4988004AE924 /* Binary Watch java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Watch java.html"; sourceTree = "<group>"; };
+		A65772351E0A4988004AE924 /* Binary Watch py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Watch py.html"; sourceTree = "<group>"; };
+		A65772361E0A4988004AE924 /* Binary Watch source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Binary Watch source.html"; sourceTree = "<group>"; };
+		A65772381E0A4988004AE924 /* Bitwise and of Numbers Range cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bitwise and of Numbers Range cpp.html"; sourceTree = "<group>"; };
+		A65772391E0A4988004AE924 /* Bitwise and of Numbers Range java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bitwise and of Numbers Range java.html"; sourceTree = "<group>"; };
+		A657723A1E0A4988004AE924 /* Bitwise and of Numbers Range py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bitwise and of Numbers Range py.html"; sourceTree = "<group>"; };
+		A657723B1E0A4988004AE924 /* Bitwise and of Numbers Range source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bitwise and of Numbers Range source.html"; sourceTree = "<group>"; };
+		A657723D1E0A4988004AE924 /* Bomb Enemy cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bomb Enemy cpp.html"; sourceTree = "<group>"; };
+		A657723E1E0A4988004AE924 /* Bomb Enemy java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bomb Enemy java.html"; sourceTree = "<group>"; };
+		A657723F1E0A4988004AE924 /* Bomb Enemy py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bomb Enemy py.html"; sourceTree = "<group>"; };
+		A65772401E0A4988004AE924 /* Bomb Enemy source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bomb Enemy source.html"; sourceTree = "<group>"; };
+		A65772421E0A4988004AE924 /* Bulb Switcher cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulb Switcher cpp.html"; sourceTree = "<group>"; };
+		A65772431E0A4988004AE924 /* Bulb Switcher java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulb Switcher java.html"; sourceTree = "<group>"; };
+		A65772441E0A4988004AE924 /* Bulb Switcher py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulb Switcher py.html"; sourceTree = "<group>"; };
+		A65772451E0A4988004AE924 /* Bulb Switcher source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulb Switcher source.html"; sourceTree = "<group>"; };
+		A65772471E0A4988004AE924 /* Bulls and Cows cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulls and Cows cpp.html"; sourceTree = "<group>"; };
+		A65772481E0A4988004AE924 /* Bulls and Cows java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulls and Cows java.html"; sourceTree = "<group>"; };
+		A65772491E0A4988004AE924 /* Bulls and Cows py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulls and Cows py.html"; sourceTree = "<group>"; };
+		A657724A1E0A4988004AE924 /* Bulls and Cows source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Bulls and Cows source.html"; sourceTree = "<group>"; };
+		A657724C1E0A4988004AE924 /* Burst Balloons cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Burst Balloons cpp.html"; sourceTree = "<group>"; };
+		A657724D1E0A4988004AE924 /* Burst Balloons java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Burst Balloons java.html"; sourceTree = "<group>"; };
+		A657724E1E0A4988004AE924 /* Burst Balloons py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Burst Balloons py.html"; sourceTree = "<group>"; };
+		A657724F1E0A4988004AE924 /* Burst Balloons source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Burst Balloons source.html"; sourceTree = "<group>"; };
+		A65772511E0A4988004AE924 /* Candy cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Candy cpp.html"; sourceTree = "<group>"; };
+		A65772521E0A4988004AE924 /* Candy java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Candy java.html"; sourceTree = "<group>"; };
+		A65772531E0A4988004AE924 /* Candy py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Candy py.html"; sourceTree = "<group>"; };
+		A65772541E0A4988004AE924 /* Candy source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Candy source.html"; sourceTree = "<group>"; };
+		A65772561E0A4988004AE924 /* Climbing Stairs cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Climbing Stairs cpp.html"; sourceTree = "<group>"; };
+		A65772571E0A4988004AE924 /* Climbing Stairs java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Climbing Stairs java.html"; sourceTree = "<group>"; };
+		A65772581E0A4988004AE924 /* Climbing Stairs py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Climbing Stairs py.html"; sourceTree = "<group>"; };
+		A65772591E0A4988004AE924 /* Climbing Stairs source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Climbing Stairs source.html"; sourceTree = "<group>"; };
+		A657725B1E0A4988004AE924 /* Clone Graph cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Clone Graph cpp.html"; sourceTree = "<group>"; };
+		A657725C1E0A4988004AE924 /* Clone Graph java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Clone Graph java.html"; sourceTree = "<group>"; };
+		A657725D1E0A4988004AE924 /* Clone Graph py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Clone Graph py.html"; sourceTree = "<group>"; };
+		A657725E1E0A4988004AE924 /* Clone Graph source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Clone Graph source.html"; sourceTree = "<group>"; };
+		A65772601E0A4988004AE924 /* Coin Change cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Coin Change cpp.html"; sourceTree = "<group>"; };
+		A65772611E0A4988004AE924 /* Coin Change java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Coin Change java.html"; sourceTree = "<group>"; };
+		A65772621E0A4988004AE924 /* Coin Change py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Coin Change py.html"; sourceTree = "<group>"; };
+		A65772631E0A4988004AE924 /* Coin Change source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Coin Change source.html"; sourceTree = "<group>"; };
+		A65772651E0A4988004AE924 /* Combination Sum cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum cpp.html"; sourceTree = "<group>"; };
+		A65772661E0A4988004AE924 /* Combination Sum java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum java.html"; sourceTree = "<group>"; };
+		A65772671E0A4988004AE924 /* Combination Sum py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum py.html"; sourceTree = "<group>"; };
+		A65772681E0A4988004AE924 /* Combination Sum source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum source.html"; sourceTree = "<group>"; };
+		A657726A1E0A4988004AE924 /* Combination Sum II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum II cpp.html"; sourceTree = "<group>"; };
+		A657726B1E0A4988004AE924 /* Combination Sum II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum II java.html"; sourceTree = "<group>"; };
+		A657726C1E0A4988004AE924 /* Combination Sum II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum II py.html"; sourceTree = "<group>"; };
+		A657726D1E0A4988004AE924 /* Combination Sum II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Combination Sum II source.html"; sourceTree = "<group>"; };
 		A66008BF1DDA33C500FA7764 /* Codey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Codey.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A66008C21DDA33C500FA7764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A66008C41DDA33C500FA7764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A66008C71DDA33C500FA7764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A66008C91DDA33C500FA7764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A66008CC1DDA33C500FA7764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A66008CE1DDA33C500FA7764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A66008D41DDA33DF00FA7764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A66008D61DDA33E600FA7764 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A66008DC1DDA341C00FA7764 /* ProblemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemCell.swift; sourceTree = "<group>"; };
+		A66008DD1DDA341C00FA7764 /* ProblemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemCell.xib; sourceTree = "<group>"; };
+		A66008E11DDA341C00FA7764 /* ProblemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemTableViewController.swift; sourceTree = "<group>"; };
+		A66008E81DDA344800FA7764 /* CodeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeyManager.swift; sourceTree = "<group>"; };
+		A66008ED1DDA346700FA7764 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A66008F61DDA348100FA7764 /* DesignTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTableViewController.swift; sourceTree = "<group>"; };
+		A66008F91DDA349500FA7764 /* StarredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarredViewController.swift; sourceTree = "<group>"; };
+		A66008FC1DDA34B700FA7764 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		A66008FE1DDA4A0200FA7764 /* CodeyCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeyCoreDataStack.swift; sourceTree = "<group>"; };
+		A66009011DDA56E500FA7764 /* CodeyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeyModel.xcdatamodel; sourceTree = "<group>"; };
+		A6BDE8FE1E06171B00778DD4 /* HalfSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfSizePresentationController.swift; sourceTree = "<group>"; };
+		A6BDE9001E08D43300778DD4 /* CodeyModel v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v2.xcdatamodel"; sourceTree = "<group>"; };
+		A6CEA07E1DE520B400415A3D /* NameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameCell.xib; sourceTree = "<group>"; };
+		D202237C9CDFABBDAAA45E90 /* Pods-Codey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Codey/Pods-Codey.debug.xcconfig"; sourceTree = "<group>"; };
+		F7EE9D108EC0E27B160D84A2 /* Pods_Codey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Codey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +505,668 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D42B49AFDAEC04246748177 /* Pods_Codey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6593F52AE0958541BEBF0E2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D202237C9CDFABBDAAA45E90 /* Pods-Codey.debug.xcconfig */,
+				5F8F65DA8FC29B4CF479BD0E /* Pods-Codey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		97AE18096245BFED1A7E24B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7EE9D108EC0E27B160D84A2 /* Pods_Codey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A62E7CC81DED37290033F545 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CC91DED37290033F545 /* 3 Sum */,
+				A65771B91E0A48A0004AE924 /* 3 Sum Closest */,
+				A62E7CD31DED37290033F545 /* 3 Sum Smaller */,
+				A62E7CD81DED37290033F545 /* 4 Sum */,
+				A62E7CDD1DED37290033F545 /* Add and Search Word - Data Structure Design */,
+				A62E7CE21DED37290033F545 /* Add Binary */,
+				A62E7CE71DED37290033F545 /* Add Digits */,
+				A62E7CEC1DED37290033F545 /* Add Strings */,
+				A62E7CF11DED37290033F545 /* Add Two Numbers */,
+				A62E7CF61DED37290033F545 /* Add Two Numbers II */,
+				A62E7CFB1DED37290033F545 /* Additive Number */,
+				A62E7D001DED37290033F545 /* Alien Dictionary */,
+				A62E7D051DED37290033F545 /* All O One Data Structure */,
+				A62E7D0A1DED37290033F545 /* Android Unlock Patterns */,
+				A62E7D0F1DED37290033F545 /* Arithmetic Slices */,
+				A62E7D141DED37290033F545 /* Arithmetic Slices II Subsequence */,
+				A62E7D191DED37290033F545 /* Arranging Coins */,
+				A62E7D1E1DED37290033F545 /* Balanced Binary Tree */,
+				A65771C41E0A4988004AE924 /* Basic Calculator */,
+				A65771C91E0A4988004AE924 /* Basic Calculator II */,
+				A65771CE1E0A4988004AE924 /* Battleships in a Board */,
+				A65771D31E0A4988004AE924 /* Best Meeting Point */,
+				A65771D81E0A4988004AE924 /* Best Time to Buy and Sell Stock */,
+				A65771DD1E0A4988004AE924 /* Best Time to Buy and Sell Stock II */,
+				A65771E21E0A4988004AE924 /* Best Time to Buy and Sell Stock III */,
+				A65771E71E0A4988004AE924 /* Best Time to Buy and Sell Stock IV */,
+				A65771EC1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown */,
+				A65771F11E0A4988004AE924 /* Binary Search Tree Iterator */,
+				A65771F61E0A4988004AE924 /* Binary Tree Inorder Traversal */,
+				A65771FB1E0A4988004AE924 /* Binary Tree Level Order Traversal */,
+				A65772001E0A4988004AE924 /* Binary Tree Level Order Traversal II */,
+				A65772051E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence */,
+				A657720A1E0A4988004AE924 /* Binary Tree Maximum Path Sum */,
+				A657720F1E0A4988004AE924 /* Binary Tree Paths */,
+				A65772141E0A4988004AE924 /* Binary Tree Postorder Traversal */,
+				A65772191E0A4988004AE924 /* Binary Tree Preorder Traversal */,
+				A657721E1E0A4988004AE924 /* Binary Tree Right Side View */,
+				A65772231E0A4988004AE924 /* Binary Tree Upside Down */,
+				A65772281E0A4988004AE924 /* Binary Tree Vertical Order Traversal */,
+				A657722D1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal */,
+				A65772321E0A4988004AE924 /* Binary Watch */,
+				A65772371E0A4988004AE924 /* Bitwise and of Numbers Range */,
+				A657723C1E0A4988004AE924 /* Bomb Enemy */,
+				A65772411E0A4988004AE924 /* Bulb Switcher */,
+				A65772461E0A4988004AE924 /* Bulls and Cows */,
+				A657724B1E0A4988004AE924 /* Burst Balloons */,
+				A65772501E0A4988004AE924 /* Candy */,
+				A65772551E0A4988004AE924 /* Climbing Stairs */,
+				A657725A1E0A4988004AE924 /* Clone Graph */,
+				A657725F1E0A4988004AE924 /* Coin Change */,
+				A65772641E0A4988004AE924 /* Combination Sum */,
+				A65772691E0A4988004AE924 /* Combination Sum II */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A62E7CC91DED37290033F545 /* 3 Sum */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CCA1DED37290033F545 /* 3 Sum cpp.html */,
+				A62E7CCB1DED37290033F545 /* 3 Sum java.html */,
+				A62E7CCC1DED37290033F545 /* 3 Sum py.html */,
+				A62E7CCD1DED37290033F545 /* 3 Sum source.html */,
+			);
+			path = "3 Sum";
+			sourceTree = "<group>";
+		};
+		A62E7CD31DED37290033F545 /* 3 Sum Smaller */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CD41DED37290033F545 /* 3 Sum Smaller cpp.html */,
+				A62E7CD51DED37290033F545 /* 3 Sum Smaller java.html */,
+				A62E7CD61DED37290033F545 /* 3 Sum Smaller py.html */,
+				A62E7CD71DED37290033F545 /* 3 Sum Smaller source.html */,
+			);
+			path = "3 Sum Smaller";
+			sourceTree = "<group>";
+		};
+		A62E7CD81DED37290033F545 /* 4 Sum */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CD91DED37290033F545 /* 4 Sum cpp.html */,
+				A62E7CDA1DED37290033F545 /* 4 Sum java.html */,
+				A62E7CDB1DED37290033F545 /* 4 Sum py.html */,
+				A62E7CDC1DED37290033F545 /* 4 Sum source.html */,
+			);
+			path = "4 Sum";
+			sourceTree = "<group>";
+		};
+		A62E7CDD1DED37290033F545 /* Add and Search Word - Data Structure Design */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CDE1DED37290033F545 /* Add and Search Word - Data Structure Design cpp.html */,
+				A62E7CDF1DED37290033F545 /* Add and Search Word - Data Structure Design java.html */,
+				A62E7CE01DED37290033F545 /* Add and Search Word - Data Structure Design py.html */,
+				A62E7CE11DED37290033F545 /* Add and Search Word - Data Structure Design source.html */,
+			);
+			path = "Add and Search Word - Data Structure Design";
+			sourceTree = "<group>";
+		};
+		A62E7CE21DED37290033F545 /* Add Binary */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CE31DED37290033F545 /* Add Binary cpp.html */,
+				A62E7CE41DED37290033F545 /* Add Binary java.html */,
+				A62E7CE51DED37290033F545 /* Add Binary py.html */,
+				A62E7CE61DED37290033F545 /* Add Binary source.html */,
+			);
+			path = "Add Binary";
+			sourceTree = "<group>";
+		};
+		A62E7CE71DED37290033F545 /* Add Digits */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CE81DED37290033F545 /* Add Digits cpp.html */,
+				A62E7CE91DED37290033F545 /* Add Digits java.html */,
+				A62E7CEA1DED37290033F545 /* Add Digits py.html */,
+				A62E7CEB1DED37290033F545 /* Add Digits source.html */,
+			);
+			path = "Add Digits";
+			sourceTree = "<group>";
+		};
+		A62E7CEC1DED37290033F545 /* Add Strings */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CED1DED37290033F545 /* Add Strings cpp.html */,
+				A62E7CEE1DED37290033F545 /* Add Strings java.html */,
+				A62E7CEF1DED37290033F545 /* Add Strings py.html */,
+				A62E7CF01DED37290033F545 /* Add Strings source.html */,
+			);
+			path = "Add Strings";
+			sourceTree = "<group>";
+		};
+		A62E7CF11DED37290033F545 /* Add Two Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CF21DED37290033F545 /* Add Two Numbers cpp.html */,
+				A62E7CF31DED37290033F545 /* Add Two Numbers java.html */,
+				A62E7CF41DED37290033F545 /* Add Two Numbers py.html */,
+				A62E7CF51DED37290033F545 /* Add Two Numbers source.html */,
+			);
+			path = "Add Two Numbers";
+			sourceTree = "<group>";
+		};
+		A62E7CF61DED37290033F545 /* Add Two Numbers II */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CF71DED37290033F545 /* Add Two Numbers II cpp.html */,
+				A62E7CF81DED37290033F545 /* Add Two Numbers II java.html */,
+				A62E7CF91DED37290033F545 /* Add Two Numbers II py.html */,
+				A62E7CFA1DED37290033F545 /* Add Two Numbers II source.html */,
+			);
+			path = "Add Two Numbers II";
+			sourceTree = "<group>";
+		};
+		A62E7CFB1DED37290033F545 /* Additive Number */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7CFC1DED37290033F545 /* Additive Number cpp.html */,
+				A62E7CFD1DED37290033F545 /* Additive Number java.html */,
+				A62E7CFE1DED37290033F545 /* Additive Number py.html */,
+				A62E7CFF1DED37290033F545 /* Additive Number source.html */,
+			);
+			path = "Additive Number";
+			sourceTree = "<group>";
+		};
+		A62E7D001DED37290033F545 /* Alien Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D011DED37290033F545 /* Alien Dictionary cpp.html */,
+				A62E7D021DED37290033F545 /* Alien Dictionary java.html */,
+				A62E7D031DED37290033F545 /* Alien Dictionary py.html */,
+				A62E7D041DED37290033F545 /* Alien Dictionary source.html */,
+			);
+			path = "Alien Dictionary";
+			sourceTree = "<group>";
+		};
+		A62E7D051DED37290033F545 /* All O One Data Structure */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D061DED37290033F545 /* All O One Data Structure cpp.html */,
+				A62E7D071DED37290033F545 /* All O One Data Structure java.html */,
+				A62E7D081DED37290033F545 /* All O One Data Structure py.html */,
+				A62E7D091DED37290033F545 /* All O One Data Structure source.html */,
+			);
+			path = "All O One Data Structure";
+			sourceTree = "<group>";
+		};
+		A62E7D0A1DED37290033F545 /* Android Unlock Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D0B1DED37290033F545 /* Android Unlock Patterns cpp.html */,
+				A62E7D0C1DED37290033F545 /* Android Unlock Patterns java.html */,
+				A62E7D0D1DED37290033F545 /* Android Unlock Patterns py.html */,
+				A62E7D0E1DED37290033F545 /* Android Unlock Patterns source.html */,
+			);
+			path = "Android Unlock Patterns";
+			sourceTree = "<group>";
+		};
+		A62E7D0F1DED37290033F545 /* Arithmetic Slices */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D101DED37290033F545 /* Arithmetic Slices cpp.html */,
+				A62E7D111DED37290033F545 /* Arithmetic Slices java.html */,
+				A62E7D121DED37290033F545 /* Arithmetic Slices py.html */,
+				A62E7D131DED37290033F545 /* Arithmetic Slices source.html */,
+			);
+			path = "Arithmetic Slices";
+			sourceTree = "<group>";
+		};
+		A62E7D141DED37290033F545 /* Arithmetic Slices II Subsequence */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D151DED37290033F545 /* Arithmetic Slices II Subsequence cpp.html */,
+				A62E7D161DED37290033F545 /* Arithmetic Slices II Subsequence java.html */,
+				A62E7D171DED37290033F545 /* Arithmetic Slices II Subsequence py.html */,
+				A62E7D181DED37290033F545 /* Arithmetic Slices II Subsequence source.html */,
+			);
+			path = "Arithmetic Slices II Subsequence";
+			sourceTree = "<group>";
+		};
+		A62E7D191DED37290033F545 /* Arranging Coins */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D1A1DED37290033F545 /* Arranging Coins cpp.html */,
+				A62E7D1B1DED37290033F545 /* Arranging Coins java.html */,
+				A62E7D1C1DED37290033F545 /* Arranging Coins py.html */,
+				A62E7D1D1DED37290033F545 /* Arranging Coins source.html */,
+			);
+			path = "Arranging Coins";
+			sourceTree = "<group>";
+		};
+		A62E7D1E1DED37290033F545 /* Balanced Binary Tree */ = {
+			isa = PBXGroup;
+			children = (
+				A62E7D1F1DED37290033F545 /* Balanced Binary Tree cpp.html */,
+				A62E7D201DED37290033F545 /* Balanced Binary Tree java.html */,
+				A62E7D211DED37290033F545 /* Balanced Binary Tree py.html */,
+				A62E7D221DED37290033F545 /* Balanced Binary Tree source.html */,
+			);
+			path = "Balanced Binary Tree";
+			sourceTree = "<group>";
+		};
+		A65771B91E0A48A0004AE924 /* 3 Sum Closest */ = {
+			isa = PBXGroup;
+			children = (
+				A65771BA1E0A48A0004AE924 /* 3 Sum Closest cpp.html */,
+				A65771BB1E0A48A0004AE924 /* 3 Sum Closest java.html */,
+				A65771BC1E0A48A0004AE924 /* 3 Sum Closest py.html */,
+				A65771BD1E0A48A0004AE924 /* 3 Sum Closest source.html */,
+			);
+			path = "3 Sum Closest";
+			sourceTree = "<group>";
+		};
+		A65771C41E0A4988004AE924 /* Basic Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				A65771C51E0A4988004AE924 /* Basic Calculator cpp.html */,
+				A65771C61E0A4988004AE924 /* Basic Calculator java.html */,
+				A65771C71E0A4988004AE924 /* Basic Calculator py.html */,
+				A65771C81E0A4988004AE924 /* Basic Calculator source.html */,
+			);
+			path = "Basic Calculator";
+			sourceTree = "<group>";
+		};
+		A65771C91E0A4988004AE924 /* Basic Calculator II */ = {
+			isa = PBXGroup;
+			children = (
+				A65771CA1E0A4988004AE924 /* Basic Calculator II cpp.html */,
+				A65771CB1E0A4988004AE924 /* Basic Calculator II java.html */,
+				A65771CC1E0A4988004AE924 /* Basic Calculator II py.html */,
+				A65771CD1E0A4988004AE924 /* Basic Calculator II source.html */,
+			);
+			path = "Basic Calculator II";
+			sourceTree = "<group>";
+		};
+		A65771CE1E0A4988004AE924 /* Battleships in a Board */ = {
+			isa = PBXGroup;
+			children = (
+				A65771CF1E0A4988004AE924 /* Battleships in a Board cpp.html */,
+				A65771D01E0A4988004AE924 /* Battleships in a Board java.html */,
+				A65771D11E0A4988004AE924 /* Battleships in a Board py.html */,
+				A65771D21E0A4988004AE924 /* Battleships in a Board source.html */,
+			);
+			path = "Battleships in a Board";
+			sourceTree = "<group>";
+		};
+		A65771D31E0A4988004AE924 /* Best Meeting Point */ = {
+			isa = PBXGroup;
+			children = (
+				A65771D41E0A4988004AE924 /* Best Meeting Point cpp.html */,
+				A65771D51E0A4988004AE924 /* Best Meeting Point java.html */,
+				A65771D61E0A4988004AE924 /* Best Meeting Point py.html */,
+				A65771D71E0A4988004AE924 /* Best Meeting Point source.html */,
+			);
+			path = "Best Meeting Point";
+			sourceTree = "<group>";
+		};
+		A65771D81E0A4988004AE924 /* Best Time to Buy and Sell Stock */ = {
+			isa = PBXGroup;
+			children = (
+				A65771D91E0A4988004AE924 /* Best Time to Buy and Sell Stock cpp.html */,
+				A65771DA1E0A4988004AE924 /* Best Time to Buy and Sell Stock java.html */,
+				A65771DB1E0A4988004AE924 /* Best Time to Buy and Sell Stock py.html */,
+				A65771DC1E0A4988004AE924 /* Best Time to Buy and Sell Stock source.html */,
+			);
+			path = "Best Time to Buy and Sell Stock";
+			sourceTree = "<group>";
+		};
+		A65771DD1E0A4988004AE924 /* Best Time to Buy and Sell Stock II */ = {
+			isa = PBXGroup;
+			children = (
+				A65771DE1E0A4988004AE924 /* Best Time to Buy and Sell Stock II cpp.html */,
+				A65771DF1E0A4988004AE924 /* Best Time to Buy and Sell Stock II java.html */,
+				A65771E01E0A4988004AE924 /* Best Time to Buy and Sell Stock II py.html */,
+				A65771E11E0A4988004AE924 /* Best Time to Buy and Sell Stock II source.html */,
+			);
+			path = "Best Time to Buy and Sell Stock II";
+			sourceTree = "<group>";
+		};
+		A65771E21E0A4988004AE924 /* Best Time to Buy and Sell Stock III */ = {
+			isa = PBXGroup;
+			children = (
+				A65771E31E0A4988004AE924 /* Best Time to Buy and Sell Stock III cpp.html */,
+				A65771E41E0A4988004AE924 /* Best Time to Buy and Sell Stock III java.html */,
+				A65771E51E0A4988004AE924 /* Best Time to Buy and Sell Stock III py.html */,
+				A65771E61E0A4988004AE924 /* Best Time to Buy and Sell Stock III source.html */,
+			);
+			path = "Best Time to Buy and Sell Stock III";
+			sourceTree = "<group>";
+		};
+		A65771E71E0A4988004AE924 /* Best Time to Buy and Sell Stock IV */ = {
+			isa = PBXGroup;
+			children = (
+				A65771E81E0A4988004AE924 /* Best Time to Buy and Sell Stock IV cpp.html */,
+				A65771E91E0A4988004AE924 /* Best Time to Buy and Sell Stock IV java.html */,
+				A65771EA1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV py.html */,
+				A65771EB1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV source.html */,
+			);
+			path = "Best Time to Buy and Sell Stock IV";
+			sourceTree = "<group>";
+		};
+		A65771EC1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown */ = {
+			isa = PBXGroup;
+			children = (
+				A65771ED1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown cpp.html */,
+				A65771EE1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown java.html */,
+				A65771EF1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown py.html */,
+				A65771F01E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown source.html */,
+			);
+			path = "Best Time to Buy and Sell Stock With Cooldown";
+			sourceTree = "<group>";
+		};
+		A65771F11E0A4988004AE924 /* Binary Search Tree Iterator */ = {
+			isa = PBXGroup;
+			children = (
+				A65771F21E0A4988004AE924 /* Binary Search Tree Iterator cpp.html */,
+				A65771F31E0A4988004AE924 /* Binary Search Tree Iterator java.html */,
+				A65771F41E0A4988004AE924 /* Binary Search Tree Iterator py.html */,
+				A65771F51E0A4988004AE924 /* Binary Search Tree Iterator source.html */,
+			);
+			path = "Binary Search Tree Iterator";
+			sourceTree = "<group>";
+		};
+		A65771F61E0A4988004AE924 /* Binary Tree Inorder Traversal */ = {
+			isa = PBXGroup;
+			children = (
+				A65771F71E0A4988004AE924 /* Binary Tree Inorder Traversal cpp.html */,
+				A65771F81E0A4988004AE924 /* Binary Tree Inorder Traversal java.html */,
+				A65771F91E0A4988004AE924 /* Binary Tree Inorder Traversal py.html */,
+				A65771FA1E0A4988004AE924 /* Binary Tree Inorder Traversal source.html */,
+			);
+			path = "Binary Tree Inorder Traversal";
+			sourceTree = "<group>";
+		};
+		A65771FB1E0A4988004AE924 /* Binary Tree Level Order Traversal */ = {
+			isa = PBXGroup;
+			children = (
+				A65771FC1E0A4988004AE924 /* Binary Tree Level Order Traversal cpp.html */,
+				A65771FD1E0A4988004AE924 /* Binary Tree Level Order Traversal java.html */,
+				A65771FE1E0A4988004AE924 /* Binary Tree Level Order Traversal py.html */,
+				A65771FF1E0A4988004AE924 /* Binary Tree Level Order Traversal source.html */,
+			);
+			path = "Binary Tree Level Order Traversal";
+			sourceTree = "<group>";
+		};
+		A65772001E0A4988004AE924 /* Binary Tree Level Order Traversal II */ = {
+			isa = PBXGroup;
+			children = (
+				A65772011E0A4988004AE924 /* Binary Tree Level Order Traversal II cpp.html */,
+				A65772021E0A4988004AE924 /* Binary Tree Level Order Traversal II java.html */,
+				A65772031E0A4988004AE924 /* Binary Tree Level Order Traversal II py.html */,
+				A65772041E0A4988004AE924 /* Binary Tree Level Order Traversal II source.html */,
+			);
+			path = "Binary Tree Level Order Traversal II";
+			sourceTree = "<group>";
+		};
+		A65772051E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence */ = {
+			isa = PBXGroup;
+			children = (
+				A65772061E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence cpp.html */,
+				A65772071E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence java.html */,
+				A65772081E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence py.html */,
+				A65772091E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence source.html */,
+			);
+			path = "Binary Tree Longest Consecutive Sequence";
+			sourceTree = "<group>";
+		};
+		A657720A1E0A4988004AE924 /* Binary Tree Maximum Path Sum */ = {
+			isa = PBXGroup;
+			children = (
+				A657720B1E0A4988004AE924 /* Binary Tree Maximum Path Sum cpp.html */,
+				A657720C1E0A4988004AE924 /* Binary Tree Maximum Path Sum java.html */,
+				A657720D1E0A4988004AE924 /* Binary Tree Maximum Path Sum py.html */,
+				A657720E1E0A4988004AE924 /* Binary Tree Maximum Path Sum source.html */,
+			);
+			path = "Binary Tree Maximum Path Sum";
+			sourceTree = "<group>";
+		};
+		A657720F1E0A4988004AE924 /* Binary Tree Paths */ = {
+			isa = PBXGroup;
+			children = (
+				A65772101E0A4988004AE924 /* Binary Tree Paths cpp.html */,
+				A65772111E0A4988004AE924 /* Binary Tree Paths java.html */,
+				A65772121E0A4988004AE924 /* Binary Tree Paths py.html */,
+				A65772131E0A4988004AE924 /* Binary Tree Paths source.html */,
+			);
+			path = "Binary Tree Paths";
+			sourceTree = "<group>";
+		};
+		A65772141E0A4988004AE924 /* Binary Tree Postorder Traversal */ = {
+			isa = PBXGroup;
+			children = (
+				A65772151E0A4988004AE924 /* Binary Tree Postorder Traversal cpp.html */,
+				A65772161E0A4988004AE924 /* Binary Tree Postorder Traversal java.html */,
+				A65772171E0A4988004AE924 /* Binary Tree Postorder Traversal py.html */,
+				A65772181E0A4988004AE924 /* Binary Tree Postorder Traversal source.html */,
+			);
+			path = "Binary Tree Postorder Traversal";
+			sourceTree = "<group>";
+		};
+		A65772191E0A4988004AE924 /* Binary Tree Preorder Traversal */ = {
+			isa = PBXGroup;
+			children = (
+				A657721A1E0A4988004AE924 /* Binary Tree Preorder Traversal cpp.html */,
+				A657721B1E0A4988004AE924 /* Binary Tree Preorder Traversal java.html */,
+				A657721C1E0A4988004AE924 /* Binary Tree Preorder Traversal py.html */,
+				A657721D1E0A4988004AE924 /* Binary Tree Preorder Traversal source.html */,
+			);
+			path = "Binary Tree Preorder Traversal";
+			sourceTree = "<group>";
+		};
+		A657721E1E0A4988004AE924 /* Binary Tree Right Side View */ = {
+			isa = PBXGroup;
+			children = (
+				A657721F1E0A4988004AE924 /* Binary Tree Right Side View cpp.html */,
+				A65772201E0A4988004AE924 /* Binary Tree Right Side View java.html */,
+				A65772211E0A4988004AE924 /* Binary Tree Right Side View py.html */,
+				A65772221E0A4988004AE924 /* Binary Tree Right Side View source.html */,
+			);
+			path = "Binary Tree Right Side View";
+			sourceTree = "<group>";
+		};
+		A65772231E0A4988004AE924 /* Binary Tree Upside Down */ = {
+			isa = PBXGroup;
+			children = (
+				A65772241E0A4988004AE924 /* Binary Tree Upside Down cpp.html */,
+				A65772251E0A4988004AE924 /* Binary Tree Upside Down java.html */,
+				A65772261E0A4988004AE924 /* Binary Tree Upside Down py.html */,
+				A65772271E0A4988004AE924 /* Binary Tree Upside Down source.html */,
+			);
+			path = "Binary Tree Upside Down";
+			sourceTree = "<group>";
+		};
+		A65772281E0A4988004AE924 /* Binary Tree Vertical Order Traversal */ = {
+			isa = PBXGroup;
+			children = (
+				A65772291E0A4988004AE924 /* Binary Tree Vertical Order Traversal cpp.html */,
+				A657722A1E0A4988004AE924 /* Binary Tree Vertical Order Traversal java.html */,
+				A657722B1E0A4988004AE924 /* Binary Tree Vertical Order Traversal py.html */,
+				A657722C1E0A4988004AE924 /* Binary Tree Vertical Order Traversal source.html */,
+			);
+			path = "Binary Tree Vertical Order Traversal";
+			sourceTree = "<group>";
+		};
+		A657722D1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal */ = {
+			isa = PBXGroup;
+			children = (
+				A657722E1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal cpp.html */,
+				A657722F1E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal java.html */,
+				A65772301E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal py.html */,
+				A65772311E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal source.html */,
+			);
+			path = "Binary Tree Zigzag Level Order Traversal";
+			sourceTree = "<group>";
+		};
+		A65772321E0A4988004AE924 /* Binary Watch */ = {
+			isa = PBXGroup;
+			children = (
+				A65772331E0A4988004AE924 /* Binary Watch cpp.html */,
+				A65772341E0A4988004AE924 /* Binary Watch java.html */,
+				A65772351E0A4988004AE924 /* Binary Watch py.html */,
+				A65772361E0A4988004AE924 /* Binary Watch source.html */,
+			);
+			path = "Binary Watch";
+			sourceTree = "<group>";
+		};
+		A65772371E0A4988004AE924 /* Bitwise and of Numbers Range */ = {
+			isa = PBXGroup;
+			children = (
+				A65772381E0A4988004AE924 /* Bitwise and of Numbers Range cpp.html */,
+				A65772391E0A4988004AE924 /* Bitwise and of Numbers Range java.html */,
+				A657723A1E0A4988004AE924 /* Bitwise and of Numbers Range py.html */,
+				A657723B1E0A4988004AE924 /* Bitwise and of Numbers Range source.html */,
+			);
+			path = "Bitwise and of Numbers Range";
+			sourceTree = "<group>";
+		};
+		A657723C1E0A4988004AE924 /* Bomb Enemy */ = {
+			isa = PBXGroup;
+			children = (
+				A657723D1E0A4988004AE924 /* Bomb Enemy cpp.html */,
+				A657723E1E0A4988004AE924 /* Bomb Enemy java.html */,
+				A657723F1E0A4988004AE924 /* Bomb Enemy py.html */,
+				A65772401E0A4988004AE924 /* Bomb Enemy source.html */,
+			);
+			path = "Bomb Enemy";
+			sourceTree = "<group>";
+		};
+		A65772411E0A4988004AE924 /* Bulb Switcher */ = {
+			isa = PBXGroup;
+			children = (
+				A65772421E0A4988004AE924 /* Bulb Switcher cpp.html */,
+				A65772431E0A4988004AE924 /* Bulb Switcher java.html */,
+				A65772441E0A4988004AE924 /* Bulb Switcher py.html */,
+				A65772451E0A4988004AE924 /* Bulb Switcher source.html */,
+			);
+			path = "Bulb Switcher";
+			sourceTree = "<group>";
+		};
+		A65772461E0A4988004AE924 /* Bulls and Cows */ = {
+			isa = PBXGroup;
+			children = (
+				A65772471E0A4988004AE924 /* Bulls and Cows cpp.html */,
+				A65772481E0A4988004AE924 /* Bulls and Cows java.html */,
+				A65772491E0A4988004AE924 /* Bulls and Cows py.html */,
+				A657724A1E0A4988004AE924 /* Bulls and Cows source.html */,
+			);
+			path = "Bulls and Cows";
+			sourceTree = "<group>";
+		};
+		A657724B1E0A4988004AE924 /* Burst Balloons */ = {
+			isa = PBXGroup;
+			children = (
+				A657724C1E0A4988004AE924 /* Burst Balloons cpp.html */,
+				A657724D1E0A4988004AE924 /* Burst Balloons java.html */,
+				A657724E1E0A4988004AE924 /* Burst Balloons py.html */,
+				A657724F1E0A4988004AE924 /* Burst Balloons source.html */,
+			);
+			path = "Burst Balloons";
+			sourceTree = "<group>";
+		};
+		A65772501E0A4988004AE924 /* Candy */ = {
+			isa = PBXGroup;
+			children = (
+				A65772511E0A4988004AE924 /* Candy cpp.html */,
+				A65772521E0A4988004AE924 /* Candy java.html */,
+				A65772531E0A4988004AE924 /* Candy py.html */,
+				A65772541E0A4988004AE924 /* Candy source.html */,
+			);
+			path = Candy;
+			sourceTree = "<group>";
+		};
+		A65772551E0A4988004AE924 /* Climbing Stairs */ = {
+			isa = PBXGroup;
+			children = (
+				A65772561E0A4988004AE924 /* Climbing Stairs cpp.html */,
+				A65772571E0A4988004AE924 /* Climbing Stairs java.html */,
+				A65772581E0A4988004AE924 /* Climbing Stairs py.html */,
+				A65772591E0A4988004AE924 /* Climbing Stairs source.html */,
+			);
+			path = "Climbing Stairs";
+			sourceTree = "<group>";
+		};
+		A657725A1E0A4988004AE924 /* Clone Graph */ = {
+			isa = PBXGroup;
+			children = (
+				A657725B1E0A4988004AE924 /* Clone Graph cpp.html */,
+				A657725C1E0A4988004AE924 /* Clone Graph java.html */,
+				A657725D1E0A4988004AE924 /* Clone Graph py.html */,
+				A657725E1E0A4988004AE924 /* Clone Graph source.html */,
+			);
+			path = "Clone Graph";
+			sourceTree = "<group>";
+		};
+		A657725F1E0A4988004AE924 /* Coin Change */ = {
+			isa = PBXGroup;
+			children = (
+				A65772601E0A4988004AE924 /* Coin Change cpp.html */,
+				A65772611E0A4988004AE924 /* Coin Change java.html */,
+				A65772621E0A4988004AE924 /* Coin Change py.html */,
+				A65772631E0A4988004AE924 /* Coin Change source.html */,
+			);
+			path = "Coin Change";
+			sourceTree = "<group>";
+		};
+		A65772641E0A4988004AE924 /* Combination Sum */ = {
+			isa = PBXGroup;
+			children = (
+				A65772651E0A4988004AE924 /* Combination Sum cpp.html */,
+				A65772661E0A4988004AE924 /* Combination Sum java.html */,
+				A65772671E0A4988004AE924 /* Combination Sum py.html */,
+				A65772681E0A4988004AE924 /* Combination Sum source.html */,
+			);
+			path = "Combination Sum";
+			sourceTree = "<group>";
+		};
+		A65772691E0A4988004AE924 /* Combination Sum II */ = {
+			isa = PBXGroup;
+			children = (
+				A657726A1E0A4988004AE924 /* Combination Sum II cpp.html */,
+				A657726B1E0A4988004AE924 /* Combination Sum II java.html */,
+				A657726C1E0A4988004AE924 /* Combination Sum II py.html */,
+				A657726D1E0A4988004AE924 /* Combination Sum II source.html */,
+			);
+			path = "Combination Sum II";
+			sourceTree = "<group>";
+		};
 		A66008B61DDA33C500FA7764 = {
 			isa = PBXGroup;
 			children = (
 				A66008C11DDA33C500FA7764 /* Codey */,
 				A66008C01DDA33C500FA7764 /* Products */,
+				6593F52AE0958541BEBF0E2D /* Pods */,
+				97AE18096245BFED1A7E24B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +1181,81 @@
 		A66008C11DDA33C500FA7764 /* Codey */ = {
 			isa = PBXGroup;
 			children = (
-				A66008C21DDA33C500FA7764 /* AppDelegate.swift */,
-				A66008C41DDA33C500FA7764 /* ViewController.swift */,
-				A66008C61DDA33C500FA7764 /* Main.storyboard */,
-				A66008C91DDA33C500FA7764 /* Assets.xcassets */,
-				A66008CB1DDA33C500FA7764 /* LaunchScreen.storyboard */,
-				A66008CE1DDA33C500FA7764 /* Info.plist */,
+				A66008FB1DDA34AE00FA7764 /* Model */,
+				A66008F81DDA348700FA7764 /* StarredView */,
+				A66008F51DDA347600FA7764 /* DesignView */,
+				A66008DB1DDA33FD00FA7764 /* ProblemView */,
+				A66008D81DDA33E900FA7764 /* Shared */,
 			);
 			path = Codey;
+			sourceTree = "<group>";
+		};
+		A66008D81DDA33E900FA7764 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A66008ED1DDA346700FA7764 /* AppDelegate.swift */,
+				A60D81AB1E2DB1CD00FAE17E /* UIColor+FlatColors.swift */,
+				A66008E81DDA344800FA7764 /* CodeyManager.swift */,
+				A632E50D1E3DB24100310816 /* Codey+Uitilities.swift */,
+				A6BDE8FE1E06171B00778DD4 /* HalfSizePresentationController.swift */,
+				A66008FE1DDA4A0200FA7764 /* CodeyCoreDataStack.swift */,
+				A66008D61DDA33E600FA7764 /* Main.storyboard */,
+				A66008D41DDA33DF00FA7764 /* Assets.xcassets */,
+				A66008CB1DDA33C500FA7764 /* LaunchScreen.storyboard */,
+				A66008CE1DDA33C500FA7764 /* Info.plist */,
+				A63BC3EB1E2AE902005902C7 /* Codey-Bridging-Header.h */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		A66008DB1DDA33FD00FA7764 /* ProblemView */ = {
+			isa = PBXGroup;
+			children = (
+				A66008DC1DDA341C00FA7764 /* ProblemCell.swift */,
+				A66008DD1DDA341C00FA7764 /* ProblemCell.xib */,
+				A610C5091DE16B1F0006CDE9 /* DescriptionCell.swift */,
+				A610C50B1DE16B2E0006CDE9 /* DescriptionCell.xib */,
+				A610C50F1DE16BF40006CDE9 /* ButtonsCell.swift */,
+				A610C50D1DE16BE80006CDE9 /* ButtonsCell.xib */,
+				A610C5111DE16BFD0006CDE9 /* SolutionCell.swift */,
+				A610C5131DE16C070006CDE9 /* SolutionCell.xib */,
+				A6CEA07E1DE520B400415A3D /* NameCell.xib */,
+				A610C5071DE161D40006CDE9 /* ProblemDetailViewController.swift */,
+				A66008E11DDA341C00FA7764 /* ProblemTableViewController.swift */,
+				A632E5031E3CFE8E00310816 /* RefineViewController.swift */,
+				A632E5071E3D6FEC00310816 /* RefineHeaderCell.xib */,
+				A632E5091E3D707300310816 /* RefineHeaderCell.swift */,
+				A632E5051E3D166E00310816 /* RefineCell.xib */,
+				A632E50B1E3D87DB00310816 /* RefineCell.swift */,
+			);
+			name = ProblemView;
+			sourceTree = "<group>";
+		};
+		A66008F51DDA347600FA7764 /* DesignView */ = {
+			isa = PBXGroup;
+			children = (
+				A66008F61DDA348100FA7764 /* DesignTableViewController.swift */,
+			);
+			name = DesignView;
+			sourceTree = "<group>";
+		};
+		A66008F81DDA348700FA7764 /* StarredView */ = {
+			isa = PBXGroup;
+			children = (
+				A66008F91DDA349500FA7764 /* StarredViewController.swift */,
+			);
+			name = StarredView;
+			sourceTree = "<group>";
+		};
+		A66008FB1DDA34AE00FA7764 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A66009001DDA56E500FA7764 /* CodeyModel.xcdatamodeld */,
+				A62E7CC81DED37290033F545 /* Source */,
+				A66008FC1DDA34B700FA7764 /* Problem.swift */,
+				A632E5001E3C346800310816 /* AllProblems.json */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +1265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A66008D11DDA33C500FA7764 /* Build configuration list for PBXNativeTarget "Codey" */;
 			buildPhases = (
+				6FAA18D367CE675F868E67DF /* [CP] Check Pods Manifest.lock */,
 				A66008BB1DDA33C500FA7764 /* Sources */,
 				A66008BC1DDA33C500FA7764 /* Frameworks */,
 				A66008BD1DDA33C500FA7764 /* Resources */,
+				D6ED364381A3D8FA4577A1BF /* [CP] Embed Pods Frameworks */,
+				102CAF83D9198A0C9A6BF629 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +1293,8 @@
 				TargetAttributes = {
 					A66008BE1DDA33C500FA7764 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = F3996Y58WK;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,35 +1322,308 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65772861E0A4988004AE924 /* Best Time to Buy and Sell Stock III cpp.html in Resources */,
+				A65772E71E0A4988004AE924 /* Clone Graph java.html in Resources */,
+				A65772731E0A4988004AE924 /* Basic Calculator II java.html in Resources */,
+				A62E7D351DED37290033F545 /* Add and Search Word - Data Structure Design py.html in Resources */,
+				A62E7D5D1DED37290033F545 /* Arithmetic Slices py.html in Resources */,
+				A62E7D491DED37290033F545 /* Add Two Numbers II py.html in Resources */,
+				A65772D21E0A4988004AE924 /* Bulb Switcher cpp.html in Resources */,
+				A65772B81E0A4988004AE924 /* Binary Tree Right Side View py.html in Resources */,
+				A65772AB1E0A4988004AE924 /* Binary Tree Paths java.html in Resources */,
+				A65772E51E0A4988004AE924 /* Climbing Stairs source.html in Resources */,
+				A62E7D571DED37290033F545 /* Android Unlock Patterns cpp.html in Resources */,
+				A65772F31E0A4988004AE924 /* Combination Sum II java.html in Resources */,
+				A65772BA1E0A4988004AE924 /* Binary Tree Upside Down cpp.html in Resources */,
+				A62E7D241DED37290033F545 /* 3 Sum java.html in Resources */,
+				A65772DF1E0A4988004AE924 /* Candy java.html in Resources */,
+				A62E7D3B1DED37290033F545 /* Add Digits cpp.html in Resources */,
+				A657728D1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV source.html in Resources */,
+				A65772A11E0A4988004AE924 /* Binary Tree Level Order Traversal II source.html in Resources */,
+				A65772901E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown py.html in Resources */,
+				A65772711E0A4988004AE924 /* Basic Calculator source.html in Resources */,
+				A65772B71E0A4988004AE924 /* Binary Tree Right Side View java.html in Resources */,
+				A62E7D661DED37290033F545 /* Arranging Coins source.html in Resources */,
+				A66008E31DDA341C00FA7764 /* ProblemCell.xib in Resources */,
+				A657727E1E0A4988004AE924 /* Best Time to Buy and Sell Stock cpp.html in Resources */,
+				A65772CB1E0A4988004AE924 /* Bitwise and of Numbers Range java.html in Resources */,
+				A65772B11E0A4988004AE924 /* Binary Tree Postorder Traversal source.html in Resources */,
+				A65772EB1E0A4988004AE924 /* Coin Change java.html in Resources */,
+				A65772B31E0A4988004AE924 /* Binary Tree Preorder Traversal java.html in Resources */,
+				A62E7D691DED37290033F545 /* Balanced Binary Tree py.html in Resources */,
+				A610C50C1DE16B2E0006CDE9 /* DescriptionCell.xib in Resources */,
+				A657728C1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV py.html in Resources */,
+				A65772D31E0A4988004AE924 /* Bulb Switcher java.html in Resources */,
+				A62E7D3D1DED37290033F545 /* Add Digits py.html in Resources */,
+				A65772ED1E0A4988004AE924 /* Coin Change source.html in Resources */,
+				A62E7D4F1DED37290033F545 /* Alien Dictionary cpp.html in Resources */,
+				A65772A71E0A4988004AE924 /* Binary Tree Maximum Path Sum java.html in Resources */,
+				A62E7D2E1DED37290033F545 /* 3 Sum Smaller source.html in Resources */,
+				A65772E11E0A4988004AE924 /* Candy source.html in Resources */,
+				A65772971E0A4988004AE924 /* Binary Tree Inorder Traversal java.html in Resources */,
+				A65772991E0A4988004AE924 /* Binary Tree Inorder Traversal source.html in Resources */,
+				A65771C11E0A48A0004AE924 /* 3 Sum Closest source.html in Resources */,
+				A62E7D581DED37290033F545 /* Android Unlock Patterns java.html in Resources */,
+				A65772951E0A4988004AE924 /* Binary Search Tree Iterator source.html in Resources */,
+				A62E7D6A1DED37290033F545 /* Balanced Binary Tree source.html in Resources */,
+				A62E7D381DED37290033F545 /* Add Binary java.html in Resources */,
+				A62E7D341DED37290033F545 /* Add and Search Word - Data Structure Design java.html in Resources */,
+				A65772941E0A4988004AE924 /* Binary Search Tree Iterator py.html in Resources */,
+				A632E5011E3C346800310816 /* AllProblems.json in Resources */,
+				A65772EF1E0A4988004AE924 /* Combination Sum java.html in Resources */,
+				A62E7D331DED37290033F545 /* Add and Search Word - Data Structure Design cpp.html in Resources */,
+				A65771BE1E0A48A0004AE924 /* 3 Sum Closest cpp.html in Resources */,
+				A65771C01E0A48A0004AE924 /* 3 Sum Closest py.html in Resources */,
+				A65772781E0A4988004AE924 /* Battleships in a Board py.html in Resources */,
+				A657726E1E0A4988004AE924 /* Basic Calculator cpp.html in Resources */,
+				A62E7D681DED37290033F545 /* Balanced Binary Tree java.html in Resources */,
+				A65772CD1E0A4988004AE924 /* Bitwise and of Numbers Range source.html in Resources */,
+				A65772C61E0A4988004AE924 /* Binary Watch cpp.html in Resources */,
+				A65772D11E0A4988004AE924 /* Bomb Enemy source.html in Resources */,
+				A65772A51E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence source.html in Resources */,
+				A66008D71DDA33E600FA7764 /* Main.storyboard in Resources */,
+				A65772841E0A4988004AE924 /* Best Time to Buy and Sell Stock II py.html in Resources */,
+				A62E7D551DED37290033F545 /* All O One Data Structure py.html in Resources */,
+				A62E7D441DED37290033F545 /* Add Two Numbers java.html in Resources */,
+				A62E7D311DED37290033F545 /* 4 Sum py.html in Resources */,
+				A62E7D3A1DED37290033F545 /* Add Binary source.html in Resources */,
+				A65772DD1E0A4988004AE924 /* Burst Balloons source.html in Resources */,
+				A62E7D5C1DED37290033F545 /* Arithmetic Slices java.html in Resources */,
+				A65772BC1E0A4988004AE924 /* Binary Tree Upside Down py.html in Resources */,
+				A62E7D4D1DED37290033F545 /* Additive Number py.html in Resources */,
+				A65772CC1E0A4988004AE924 /* Bitwise and of Numbers Range py.html in Resources */,
+				A65772DE1E0A4988004AE924 /* Candy cpp.html in Resources */,
+				A65772701E0A4988004AE924 /* Basic Calculator py.html in Resources */,
+				A65772921E0A4988004AE924 /* Binary Search Tree Iterator cpp.html in Resources */,
+				A657727B1E0A4988004AE924 /* Best Meeting Point java.html in Resources */,
+				A62E7D3C1DED37290033F545 /* Add Digits java.html in Resources */,
+				A62E7D361DED37290033F545 /* Add and Search Word - Data Structure Design source.html in Resources */,
+				A65772A31E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence java.html in Resources */,
+				A65772EC1E0A4988004AE924 /* Coin Change py.html in Resources */,
+				A62E7D521DED37290033F545 /* Alien Dictionary source.html in Resources */,
+				A65772F11E0A4988004AE924 /* Combination Sum source.html in Resources */,
+				A632E5061E3D166E00310816 /* RefineCell.xib in Resources */,
+				A65772791E0A4988004AE924 /* Battleships in a Board source.html in Resources */,
+				A62E7D641DED37290033F545 /* Arranging Coins java.html in Resources */,
+				A65772891E0A4988004AE924 /* Best Time to Buy and Sell Stock III source.html in Resources */,
+				A62E7D481DED37290033F545 /* Add Two Numbers II java.html in Resources */,
+				A65772C21E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal cpp.html in Resources */,
+				A65771BF1E0A48A0004AE924 /* 3 Sum Closest java.html in Resources */,
+				A657729F1E0A4988004AE924 /* Binary Tree Level Order Traversal II java.html in Resources */,
+				A62E7D2D1DED37290033F545 /* 3 Sum Smaller py.html in Resources */,
+				A65772771E0A4988004AE924 /* Battleships in a Board java.html in Resources */,
+				A62E7D4C1DED37290033F545 /* Additive Number java.html in Resources */,
+				A65772C71E0A4988004AE924 /* Binary Watch java.html in Resources */,
+				A657727A1E0A4988004AE924 /* Best Meeting Point cpp.html in Resources */,
+				A62E7D5F1DED37290033F545 /* Arithmetic Slices II Subsequence cpp.html in Resources */,
+				A65772C91E0A4988004AE924 /* Binary Watch source.html in Resources */,
+				A62E7D391DED37290033F545 /* Add Binary py.html in Resources */,
+				A657729C1E0A4988004AE924 /* Binary Tree Level Order Traversal py.html in Resources */,
+				A65772DA1E0A4988004AE924 /* Burst Balloons cpp.html in Resources */,
+				A657728E1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown cpp.html in Resources */,
+				A65772E61E0A4988004AE924 /* Clone Graph cpp.html in Resources */,
+				A65772C51E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal source.html in Resources */,
+				A65772B61E0A4988004AE924 /* Binary Tree Right Side View cpp.html in Resources */,
+				A65772761E0A4988004AE924 /* Battleships in a Board cpp.html in Resources */,
+				A65772D81E0A4988004AE924 /* Bulls and Cows py.html in Resources */,
+				A65772911E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown source.html in Resources */,
+				A65772AE1E0A4988004AE924 /* Binary Tree Postorder Traversal cpp.html in Resources */,
+				A65772AC1E0A4988004AE924 /* Binary Tree Paths py.html in Resources */,
+				A62E7D4A1DED37290033F545 /* Add Two Numbers II source.html in Resources */,
+				A62E7D541DED37290033F545 /* All O One Data Structure java.html in Resources */,
+				A62E7D511DED37290033F545 /* Alien Dictionary py.html in Resources */,
+				A65772CF1E0A4988004AE924 /* Bomb Enemy java.html in Resources */,
+				A657729D1E0A4988004AE924 /* Binary Tree Level Order Traversal source.html in Resources */,
+				A62E7D261DED37290033F545 /* 3 Sum source.html in Resources */,
+				A65772CE1E0A4988004AE924 /* Bomb Enemy cpp.html in Resources */,
+				A62E7D2C1DED37290033F545 /* 3 Sum Smaller java.html in Resources */,
+				A65772D61E0A4988004AE924 /* Bulls and Cows cpp.html in Resources */,
+				A65772EA1E0A4988004AE924 /* Coin Change cpp.html in Resources */,
+				A657727C1E0A4988004AE924 /* Best Meeting Point py.html in Resources */,
+				A610C50E1DE16BE80006CDE9 /* ButtonsCell.xib in Resources */,
+				A65772BB1E0A4988004AE924 /* Binary Tree Upside Down java.html in Resources */,
+				A62E7D671DED37290033F545 /* Balanced Binary Tree cpp.html in Resources */,
+				A65772C41E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal py.html in Resources */,
+				A65772A01E0A4988004AE924 /* Binary Tree Level Order Traversal II py.html in Resources */,
+				A65772D51E0A4988004AE924 /* Bulb Switcher source.html in Resources */,
+				A62E7D651DED37290033F545 /* Arranging Coins py.html in Resources */,
+				A65772B01E0A4988004AE924 /* Binary Tree Postorder Traversal py.html in Resources */,
+				A62E7D231DED37290033F545 /* 3 Sum cpp.html in Resources */,
+				A65772981E0A4988004AE924 /* Binary Tree Inorder Traversal py.html in Resources */,
+				A62E7D5A1DED37290033F545 /* Android Unlock Patterns source.html in Resources */,
+				A65772F51E0A4988004AE924 /* Combination Sum II source.html in Resources */,
+				A65772B41E0A4988004AE924 /* Binary Tree Preorder Traversal py.html in Resources */,
+				A65772B91E0A4988004AE924 /* Binary Tree Right Side View source.html in Resources */,
+				A62E7D321DED37290033F545 /* 4 Sum source.html in Resources */,
+				A610C5141DE16C070006CDE9 /* SolutionCell.xib in Resources */,
+				A66008D51DDA33DF00FA7764 /* Assets.xcassets in Resources */,
+				A65772A91E0A4988004AE924 /* Binary Tree Maximum Path Sum source.html in Resources */,
+				A62E7D591DED37290033F545 /* Android Unlock Patterns py.html in Resources */,
+				A62E7D2F1DED37290033F545 /* 4 Sum cpp.html in Resources */,
+				A65772AF1E0A4988004AE924 /* Binary Tree Postorder Traversal java.html in Resources */,
+				A65772AD1E0A4988004AE924 /* Binary Tree Paths source.html in Resources */,
+				A65772E21E0A4988004AE924 /* Climbing Stairs cpp.html in Resources */,
+				A62E7D561DED37290033F545 /* All O One Data Structure source.html in Resources */,
+				A65772DC1E0A4988004AE924 /* Burst Balloons py.html in Resources */,
+				A65772E41E0A4988004AE924 /* Climbing Stairs py.html in Resources */,
+				A657728B1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV java.html in Resources */,
+				A62E7D5B1DED37290033F545 /* Arithmetic Slices cpp.html in Resources */,
+				A657727F1E0A4988004AE924 /* Best Time to Buy and Sell Stock java.html in Resources */,
+				A62E7D471DED37290033F545 /* Add Two Numbers II cpp.html in Resources */,
+				A62E7D401DED37290033F545 /* Add Strings java.html in Resources */,
+				A62E7D501DED37290033F545 /* Alien Dictionary java.html in Resources */,
+				A65772A81E0A4988004AE924 /* Binary Tree Maximum Path Sum py.html in Resources */,
+				A62E7D611DED37290033F545 /* Arithmetic Slices II Subsequence py.html in Resources */,
+				A65772F21E0A4988004AE924 /* Combination Sum II cpp.html in Resources */,
+				A657729E1E0A4988004AE924 /* Binary Tree Level Order Traversal II cpp.html in Resources */,
+				A65772851E0A4988004AE924 /* Best Time to Buy and Sell Stock II source.html in Resources */,
+				A62E7D411DED37290033F545 /* Add Strings py.html in Resources */,
+				A657726F1E0A4988004AE924 /* Basic Calculator java.html in Resources */,
+				A65772741E0A4988004AE924 /* Basic Calculator II py.html in Resources */,
+				A65772871E0A4988004AE924 /* Best Time to Buy and Sell Stock III java.html in Resources */,
+				A632E5081E3D6FEC00310816 /* RefineHeaderCell.xib in Resources */,
+				A65772881E0A4988004AE924 /* Best Time to Buy and Sell Stock III py.html in Resources */,
+				A62E7D5E1DED37290033F545 /* Arithmetic Slices source.html in Resources */,
+				A65772E81E0A4988004AE924 /* Clone Graph py.html in Resources */,
+				A62E7D451DED37290033F545 /* Add Two Numbers py.html in Resources */,
+				A65772D41E0A4988004AE924 /* Bulb Switcher py.html in Resources */,
+				A657728A1E0A4988004AE924 /* Best Time to Buy and Sell Stock IV cpp.html in Resources */,
+				A65772721E0A4988004AE924 /* Basic Calculator II cpp.html in Resources */,
+				A65772751E0A4988004AE924 /* Basic Calculator II source.html in Resources */,
+				A65772C31E0A4988004AE924 /* Binary Tree Zigzag Level Order Traversal java.html in Resources */,
 				A66008CD1DDA33C500FA7764 /* LaunchScreen.storyboard in Resources */,
-				A66008CA1DDA33C500FA7764 /* Assets.xcassets in Resources */,
-				A66008C81DDA33C500FA7764 /* Main.storyboard in Resources */,
+				A62E7D421DED37290033F545 /* Add Strings source.html in Resources */,
+				A62E7D371DED37290033F545 /* Add Binary cpp.html in Resources */,
+				A65772BF1E0A4988004AE924 /* Binary Tree Vertical Order Traversal java.html in Resources */,
+				A65772961E0A4988004AE924 /* Binary Tree Inorder Traversal cpp.html in Resources */,
+				A62E7D461DED37290033F545 /* Add Two Numbers source.html in Resources */,
+				A65772A21E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence cpp.html in Resources */,
+				A65772F41E0A4988004AE924 /* Combination Sum II py.html in Resources */,
+				A65772C01E0A4988004AE924 /* Binary Tree Vertical Order Traversal py.html in Resources */,
+				A62E7D531DED37290033F545 /* All O One Data Structure cpp.html in Resources */,
+				A65772A41E0A4988004AE924 /* Binary Tree Longest Consecutive Sequence py.html in Resources */,
+				A65772E91E0A4988004AE924 /* Clone Graph source.html in Resources */,
+				A62E7D4E1DED37290033F545 /* Additive Number source.html in Resources */,
+				A62E7D631DED37290033F545 /* Arranging Coins cpp.html in Resources */,
+				A62E7D251DED37290033F545 /* 3 Sum py.html in Resources */,
+				A657729B1E0A4988004AE924 /* Binary Tree Level Order Traversal java.html in Resources */,
+				A657728F1E0A4988004AE924 /* Best Time to Buy and Sell Stock With Cooldown java.html in Resources */,
+				A65772A61E0A4988004AE924 /* Binary Tree Maximum Path Sum cpp.html in Resources */,
+				A65772E31E0A4988004AE924 /* Climbing Stairs java.html in Resources */,
+				A657727D1E0A4988004AE924 /* Best Meeting Point source.html in Resources */,
+				A657729A1E0A4988004AE924 /* Binary Tree Level Order Traversal cpp.html in Resources */,
+				A65772811E0A4988004AE924 /* Best Time to Buy and Sell Stock source.html in Resources */,
+				A65772C81E0A4988004AE924 /* Binary Watch py.html in Resources */,
+				A65772DB1E0A4988004AE924 /* Burst Balloons java.html in Resources */,
+				A62E7D2B1DED37290033F545 /* 3 Sum Smaller cpp.html in Resources */,
+				A65772D01E0A4988004AE924 /* Bomb Enemy py.html in Resources */,
+				A62E7D3F1DED37290033F545 /* Add Strings cpp.html in Resources */,
+				A65772801E0A4988004AE924 /* Best Time to Buy and Sell Stock py.html in Resources */,
+				A62E7D601DED37290033F545 /* Arithmetic Slices II Subsequence java.html in Resources */,
+				A65772EE1E0A4988004AE924 /* Combination Sum cpp.html in Resources */,
+				A62E7D301DED37290033F545 /* 4 Sum java.html in Resources */,
+				A65772BE1E0A4988004AE924 /* Binary Tree Vertical Order Traversal cpp.html in Resources */,
+				A62E7D621DED37290033F545 /* Arithmetic Slices II Subsequence source.html in Resources */,
+				A65772C11E0A4988004AE924 /* Binary Tree Vertical Order Traversal source.html in Resources */,
+				A65772CA1E0A4988004AE924 /* Bitwise and of Numbers Range cpp.html in Resources */,
+				A65772B21E0A4988004AE924 /* Binary Tree Preorder Traversal cpp.html in Resources */,
+				A62E7D4B1DED37290033F545 /* Additive Number cpp.html in Resources */,
+				A65772831E0A4988004AE924 /* Best Time to Buy and Sell Stock II java.html in Resources */,
+				A65772821E0A4988004AE924 /* Best Time to Buy and Sell Stock II cpp.html in Resources */,
+				A62E7D3E1DED37290033F545 /* Add Digits source.html in Resources */,
+				A62E7D431DED37290033F545 /* Add Two Numbers cpp.html in Resources */,
+				A65772F01E0A4988004AE924 /* Combination Sum py.html in Resources */,
+				A65772E01E0A4988004AE924 /* Candy py.html in Resources */,
+				A65772BD1E0A4988004AE924 /* Binary Tree Upside Down source.html in Resources */,
+				A65772D91E0A4988004AE924 /* Bulls and Cows source.html in Resources */,
+				A65772AA1E0A4988004AE924 /* Binary Tree Paths cpp.html in Resources */,
+				A6CEA07F1DE520B400415A3D /* NameCell.xib in Resources */,
+				A65772B51E0A4988004AE924 /* Binary Tree Preorder Traversal source.html in Resources */,
+				A65772D71E0A4988004AE924 /* Bulls and Cows java.html in Resources */,
+				A65772931E0A4988004AE924 /* Binary Search Tree Iterator java.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		102CAF83D9198A0C9A6BF629 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codey/Pods-Codey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FAA18D367CE675F868E67DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6ED364381A3D8FA4577A1BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codey/Pods-Codey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A66008BB1DDA33C500FA7764 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A66008C51DDA33C500FA7764 /* ViewController.swift in Sources */,
-				A66008C31DDA33C500FA7764 /* AppDelegate.swift in Sources */,
+				A66008FD1DDA34B700FA7764 /* Problem.swift in Sources */,
+				A6BDE8FF1E06171B00778DD4 /* HalfSizePresentationController.swift in Sources */,
+				A60D81AC1E2DB1CD00FAE17E /* UIColor+FlatColors.swift in Sources */,
+				A632E50C1E3D87DB00310816 /* RefineCell.swift in Sources */,
+				A632E50E1E3DB24100310816 /* Codey+Uitilities.swift in Sources */,
+				A632E5041E3CFE8E00310816 /* RefineViewController.swift in Sources */,
+				A66008EA1DDA344800FA7764 /* CodeyManager.swift in Sources */,
+				A66008FF1DDA4A0200FA7764 /* CodeyCoreDataStack.swift in Sources */,
+				A632E50A1E3D707300310816 /* RefineHeaderCell.swift in Sources */,
+				A66009021DDA56E500FA7764 /* CodeyModel.xcdatamodeld in Sources */,
+				A610C5081DE161D40006CDE9 /* ProblemDetailViewController.swift in Sources */,
+				A66008EE1DDA346700FA7764 /* AppDelegate.swift in Sources */,
+				A66008F71DDA348100FA7764 /* DesignTableViewController.swift in Sources */,
+				A610C5101DE16BF40006CDE9 /* ButtonsCell.swift in Sources */,
+				A610C50A1DE16B1F0006CDE9 /* DescriptionCell.swift in Sources */,
+				A610C5121DE16BFD0006CDE9 /* SolutionCell.swift in Sources */,
+				A66008E71DDA341C00FA7764 /* ProblemTableViewController.swift in Sources */,
+				A66008E21DDA341C00FA7764 /* ProblemCell.swift in Sources */,
+				A66008FA1DDA349500FA7764 /* StarredViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A66008C61DDA33C500FA7764 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A66008C71DDA33C500FA7764 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A66008CB1DDA33C500FA7764 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -181,6 +1653,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +1704,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -258,24 +1732,35 @@
 		};
 		A66008D21DDA33C500FA7764 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D202237C9CDFABBDAAA45E90 /* Pods-Codey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = F3996Y58WK;
 				INFOPLIST_FILE = Codey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.Codey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Codey/Codey-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A66008D31DDA33C500FA7764 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F8F65DA8FC29B4CF479BD0E /* Pods-Codey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = F3996Y58WK;
 				INFOPLIST_FILE = Codey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.Codey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Codey/Codey-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -299,8 +1784,27 @@
 				A66008D31DDA33C500FA7764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A66009001DDA56E500FA7764 /* CodeyModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A632E50F1E3E970300310816 /* CodeyModel v6.xcdatamodel */,
+				A632E5021E3C406900310816 /* CodeyModel v5.xcdatamodel */,
+				A62DE24D1E359E0700CC3FAF /* CodeyModel v4.xcdatamodel */,
+				A63BC3EF1E2BE89F005902C7 /* CodeyModel v3.xcdatamodel */,
+				A6BDE9001E08D43300778DD4 /* CodeyModel v2.xcdatamodel */,
+				A66009011DDA56E500FA7764 /* CodeyModel.xcdatamodel */,
+			);
+			currentVersion = A632E50F1E3E970300310816 /* CodeyModel v6.xcdatamodel */;
+			path = CodeyModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A66008B71DDA33C500FA7764 /* Project object */;
 }

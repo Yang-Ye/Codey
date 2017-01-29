@@ -1,0 +1,44 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> 2  * Definition for binary tree</span>
+<span style="color: #888888"> 3  * struct TreeNode {</span>
+<span style="color: #888888"> 4  *     int val;</span>
+<span style="color: #888888"> 5  *     TreeNode *left;</span>
+<span style="color: #888888"> 6  *     TreeNode *right;</span>
+<span style="color: #888888"> 7  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}</span>
+<span style="color: #888888"> 8  * };</span>
+<span style="color: #888888"> 9  */</span>
+<span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #0000DD; font-weight: bold">11</span> <span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+<span style="color: #0000DD; font-weight: bold">12</span>     vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> levelOrder<span style="color: #333333">(</span>TreeNode <span style="color: #333333">*</span>root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+<span style="color: #0000DD; font-weight: bold">13</span>         <span style="color: #888888">// IMPORTANT: Please reset any member data you declared, as</span>
+<span style="color: #0000DD; font-weight: bold">14</span>         <span style="color: #888888">// the same Solution instance will be reused for each test case.</span>
+<span style="color: #0000DD; font-weight: bold">15</span>         vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span>res<span style="color: #333333">;</span>
+<span style="color: #0000DD; font-weight: bold">16</span>         <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> NULL<span style="color: #333333">)</span><span style="color: #008800; font-weight: bold">return</span> res<span style="color: #333333">;</span>
+<span style="color: #0000DD; font-weight: bold">17</span>         queue<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">*&gt;</span> myqueue<span style="color: #333333">;</span>
+<span style="color: #0000DD; font-weight: bold">18</span>         myqueue<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">19</span>         myqueue<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>NULL<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">20</span>         vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> level<span style="color: #333333">;</span>
+<span style="color: #0000DD; font-weight: bold">21</span>         <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>myqueue<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">)</span>
+<span style="color: #0000DD; font-weight: bold">22</span>         <span style="color: #333333">{</span>
+<span style="color: #0000DD; font-weight: bold">23</span>             TreeNode <span style="color: #333333">*</span>p <span style="color: #333333">=</span> myqueue<span style="color: #333333">.</span><span style="color: #0000CC">front</span><span style="color: #333333">();</span>
+<span style="color: #0000DD; font-weight: bold">24</span>             myqueue<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+<span style="color: #0000DD; font-weight: bold">25</span>             <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p <span style="color: #333333">!=</span> NULL<span style="color: #333333">)</span>
+<span style="color: #0000DD; font-weight: bold">26</span>             <span style="color: #333333">{</span>
+<span style="color: #0000DD; font-weight: bold">27</span>                 level<span style="color: #333333">.</span><span style="color: #0000CC">push_back</span><span style="color: #333333">(</span>p<span style="color: #333333">-&gt;</span>val<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">28</span>                 <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">-&gt;</span>left<span style="color: #333333">)</span>myqueue<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>p<span style="color: #333333">-&gt;</span>left<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">29</span>                 <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">-&gt;</span>right<span style="color: #333333">)</span>myqueue<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>p<span style="color: #333333">-&gt;</span>right<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">30</span>             <span style="color: #333333">}</span>
+<span style="color: #0000DD; font-weight: bold">31</span>             <span style="color: #008800; font-weight: bold">else</span>
+<span style="color: #0000DD; font-weight: bold">32</span>             <span style="color: #333333">{</span>
+<span style="color: #0000DD; font-weight: bold">33</span>                 res<span style="color: #333333">.</span><span style="color: #0000CC">push_back</span><span style="color: #333333">(</span>level<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">34</span>                 <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>myqueue<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">)</span>
+<span style="color: #0000DD; font-weight: bold">35</span>                 <span style="color: #333333">{</span>
+<span style="color: #0000DD; font-weight: bold">36</span>                     level<span style="color: #333333">.</span><span style="color: #0000CC">clear</span><span style="color: #333333">();</span>
+<span style="color: #0000DD; font-weight: bold">37</span>                     myqueue<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>NULL<span style="color: #333333">);</span>
+<span style="color: #0000DD; font-weight: bold">38</span>                 <span style="color: #333333">}</span>
+<span style="color: #0000DD; font-weight: bold">39</span>             <span style="color: #333333">}</span>
+<span style="color: #0000DD; font-weight: bold">40</span>         <span style="color: #333333">}</span>
+<span style="color: #0000DD; font-weight: bold">41</span>         <span style="color: #008800; font-weight: bold">return</span> res<span style="color: #333333">;</span>
+<span style="color: #0000DD; font-weight: bold">42</span>     <span style="color: #333333">}</span>
+<span style="color: #0000DD; font-weight: bold">43</span> <span style="color: #333333">};</span>
+</pre></div>

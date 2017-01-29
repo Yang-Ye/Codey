@@ -1,0 +1,4801 @@
+{
+  "problems": {
+    "3Sum Closest": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 16,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Add Two Numbers II": {
+      "company": [],
+      "order": 445,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Arranging Coins": {
+      "company": [],
+      "order": 441,
+      "hardness": 0,
+      "tags": [
+        "Math",
+        "Binary Search"
+      ]
+    },
+    "Rotate Image": {
+      "company": [
+        "Amazon",
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 48,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Next Permutation": {
+      "company": [
+        "Google"
+      ],
+      "order": 31,
+      "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Letter Combinations of a Phone Number": {
+      "company": [
+        "Google",
+        "Uber",
+        "Facebook",
+        "Amazon",
+        "Dropbox"
+      ],
+      "order": 17,
+      "hardness": 1,
+      "tags": [
+        "String",
+        "Backtracking"
+      ]
+    },
+    "Evaluate Reverse Polish Notation": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 150,
+      "hardness": 1,
+      "tags": [
+        "Stack"
+      ]
+    },
+    "Remove Duplicates from Sorted Array II": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 80,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Range Sum Query 2D - Mutable": {
+      "company": [],
+      "order": 308,
+      "hardness": 2,
+      "tags": [
+        "Binary Indexed Tree",
+        "Segment Tree"
+      ]
+    },
+    "Binary Tree Level Order Traversal": {
+      "company": [
+        "LinkedIn",
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Apple",
+        "Bloomberg"
+      ],
+      "order": 102,
+      "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "BFS"
+      ]
+    },
+    "Remove Element": {
+      "company": [],
+      "order": 27,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Nim Game": {
+      "company": [
+        "Adobe"
+      ],
+      "order": 292,
+      "hardness": 0,
+      "tags": []
+    },
+    "Combination Sum": {
+      "company": [
+        "Uber",
+        "Snapchat"
+      ],
+      "order": 39,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Backtracking"
+      ]
+    },
+    "Unique Paths II": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 63,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Flip Game": {
+      "company": [
+        "Google"
+      ],
+      "order": 293,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Find K Pairs with Smallest Sums": {
+      "company": [],
+      "order": 373,
+      "hardness": 1,
+      "tags": [
+        "Heap"
+      ]
+    },
+    "Encode String with Shortest Length": {
+      "company": [],
+      "order": 471,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Design Twitter": {
+      "company": [],
+      "order": 355,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Heap",
+        "Design"
+      ]
+    },
+    "Valid Anagram": {
+      "company": [
+        "Uber",
+        "Amazon",
+        "Yelp"
+      ],
+      "order": 242,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Sort"
+      ]
+    },
+    "Candy": {
+      "company": [],
+      "order": 135,
+      "hardness": 2,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Count Univalue Subtrees": {
+      "company": [],
+      "order": 250,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Walls and Gates": {
+      "company": [
+        "Google",
+        "Facebook"
+      ],
+      "order": 286,
+      "hardness": 1,
+      "tags": [
+        "BFS"
+      ]
+    },
+    "Maximum Product Subarray": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 152,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Basic Calculator": {
+      "company": [
+        "Google"
+      ],
+      "order": 224,
+      "hardness": 2,
+      "tags": [
+        "Math",
+        "Stack"
+      ]
+    },
+    "Word Break": {
+      "company": [
+        "Google",
+        "Uber",
+        "Facebook",
+        "Amazon",
+        "Yahoo",
+        "Bloomberg"
+      ],
+      "order": 139,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Subsets II": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 90,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Backtracking"
+      ]
+    },
+    "Sort Characters By Frequency": {
+      "company": [],
+      "order": 451,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Heap"
+      ]
+    },
+    "Reverse String": {
+      "company": [],
+      "order": 344,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Construct Binary Tree from Preorder and Inorder Traversal": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 105,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Interleaving String": {
+      "company": [],
+      "order": 97,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming"
+      ]
+    },
+    "Design Hit Counter": {
+      "company": [],
+      "order": 362,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Number of Segments in a String": {
+      "company": [],
+      "order": 434,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Fraction to Recurring Decimal": {
+      "company": [
+        "Google"
+      ],
+      "order": 166,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Math"
+      ]
+    },
+    "Best Time to Buy and Sell Stock IV": {
+      "company": [],
+      "order": 188,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Populating Next Right Pointers in Each Node": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 116,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Search a 2D Matrix II": {
+      "company": [
+        "Google",
+        "Amazon",
+        "Apple"
+      ],
+      "order": 240,
+      "hardness": 1,
+      "tags": [
+        "Divide and Conquer",
+        "Binary Search"
+      ]
+    },
+    "Create Maximum Number": {
+      "company": [
+        "Google"
+      ],
+      "order": 321,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming",
+        "Greedy"
+      ]
+    },
+    "Shortest Distance from All Buildings": {
+      "company": [
+        "Google",
+        "Zenefit"
+      ],
+      "order": 317,
+      "hardness": 2,
+      "tags": [
+        "BFS"
+      ]
+    },
+    "Best Time to Buy and Sell Stock II": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 122,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Greedy"
+      ]
+    },
+    "Smallest Rectangle Enclosing Black Pixels": {
+      "company": [
+        "Google"
+      ],
+      "order": 302,
+      "hardness": 2,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Total Hamming Distance": {
+      "company": [],
+      "order": 477,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Perfect Rectangle": {
+      "company": [],
+      "order": 391,
+      "hardness": 2,
+      "tags": []
+    },
+    "Spiral Matrix II": {
+      "company": [],
+      "order": 59,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Maximal Rectangle": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 85,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Dynamic Programming",
+        "Stack"
+      ]
+    },
+    "Implement Trie (Prefix Tree)": {
+      "company": [
+        "Google",
+        "Uber",
+        "Facebook",
+        "Twitter",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 208,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Count The Repetitions": {
+      "company": [],
+      "order": 466,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "First Missing Positive": {
+      "company": [],
+      "order": 41,
+      "hardness": 2,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Alien Dictionary": {
+      "company": [
+        "Google",
+        "Airbnb",
+        "Facebook",
+        "Twitter",
+        "Snapchat"
+      ],
+      "order": 269,
+      "hardness": 2,
+      "tags": [
+        "Graph",
+        "Topological Sort"
+      ]
+    },
+    "Flatten 2D Vector": {
+      "company": [
+        "Google",
+        "Airbnb",
+        "Twitter",
+        "Zenefit"
+      ],
+      "order": 251,
+      "hardness": 1,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Minimum Height Trees": {
+      "company": [
+        "Google"
+      ],
+      "order": 310,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "BFS",
+        "Graph"
+      ]
+    },
+    "Find Minimum in Rotated Sorted Array II": {
+      "company": [],
+      "order": 154,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Jump Game II": {
+      "company": [],
+      "order": 45,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Greedy"
+      ]
+    },
+    "Climbing Stairs": {
+      "company": [
+        "Apple",
+        "Adobe"
+      ],
+      "order": 70,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Minimum Path Sum": {
+      "company": [],
+      "order": 64,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Odd Even Linked List": {
+      "company": [],
+      "order": 328,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Word Pattern II": {
+      "company": [
+        "Uber",
+        "Dropbox"
+      ],
+      "order": 291,
+      "hardness": 2,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Two Sum III - Data structure design": {
+      "company": [],
+      "order": 170,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Design"
+      ]
+    },
+    "Reverse Vowels of a String": {
+      "company": [],
+      "order": 345,
+      "hardness": 0,
+      "tags": [
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Logger Rate Limiter": {
+      "company": [],
+      "order": 359,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Design"
+      ]
+    },
+    "Pow(x, n)": {
+      "company": [
+        "LinkedIn",
+        "Google",
+        "Facebook",
+        "Bloomberg"
+      ],
+      "order": 50,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Binary Search"
+      ]
+    },
+    "Find All Numbers Disappeared in an Array": {
+      "company": [],
+      "order": 448,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Gas Station": {
+      "company": [],
+      "order": 134,
+      "hardness": 1,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Reconstruct Itinerary": {
+      "company": [
+        "Google"
+      ],
+      "order": 332,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "Graph"
+      ]
+    },
+    "Battleships in a Board": {
+      "company": [],
+      "order": 419,
+      "hardness": 1,
+      "tags": []
+    },
+    "Count and Say": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 38,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Compare Version Numbers": {
+      "company": [
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 165,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Top K Frequent Elements": {
+      "company": [],
+      "order": 347,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Heap"
+      ]
+    },
+    "Intersection of Two Arrays": {
+      "company": [],
+      "order": 349,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Two Pointers",
+        "Binary Search",
+        "Sort"
+      ]
+    },
+    "Linked List Cycle II": {
+      "company": [],
+      "order": 142,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Two Pointers"
+      ]
+    },
+    "Sqrt(x)": {
+      "company": [
+        "Facebook",
+        "Apple",
+        "Bloomberg"
+      ],
+      "order": 69,
+      "hardness": 0,
+      "tags": [
+        "Math",
+        "Binary Search"
+      ]
+    },
+    "Wiggle Sort II": {
+      "company": [
+        "Google"
+      ],
+      "order": 324,
+      "hardness": 1,
+      "tags": [
+        "Sort"
+      ]
+    },
+    "Intersection of Two Arrays II": {
+      "company": [],
+      "order": 350,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Two Pointers",
+        "Binary Search",
+        "Sort"
+      ]
+    },
+    "Isomorphic Strings": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 205,
+      "hardness": 0,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Zuma Game": {
+      "company": [],
+      "order": 488,
+      "hardness": 2,
+      "tags": [
+        "DFS"
+      ]
+    },
+    "House Robber II": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 213,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Evaluate Division": {
+      "company": [],
+      "order": 399,
+      "hardness": 1,
+      "tags": [
+        "Graph"
+      ]
+    },
+    "Reverse Nodes in k-Group": {
+      "company": [
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 25,
+      "hardness": 2,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Surrounded Regions": {
+      "company": [],
+      "order": 130,
+      "hardness": 1,
+      "tags": [
+        "BFS"
+      ]
+    },
+    "Merge k Sorted Lists": {
+      "company": [
+        "LinkedIn",
+        "Google",
+        "Uber",
+        "Airbnb",
+        "Facebook",
+        "Twitter",
+        "Amazon",
+        "Microsoft"
+      ],
+      "order": 23,
+        "isHot": true,
+      "hardness": 2,
+      "tags": [
+        "Linked List",
+        "Divide and Conquer",
+        "Heap"
+      ]
+    },
+    "Paint House": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 256,
+      "hardness": 0,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Verify Preorder Sequence in Binary Search Tree": {
+      "company": [
+        "Zenefit"
+      ],
+      "order": 255,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "Tree"
+      ]
+    },
+    "Remove Duplicate Letters": {
+      "company": [
+        "Google"
+      ],
+      "order": 316,
+      "hardness": 2,
+      "tags": [
+        "Stack",
+        "Greedy"
+      ]
+    },
+    "Construct the Rectangle": {
+      "company": [],
+      "order": 492,
+      "hardness": 0,
+      "tags": []
+    },
+    "Remove Duplicates from Sorted List": {
+      "company": [],
+      "order": 83,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Basic Calculator II": {
+      "company": [],
+      "order": 227,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Find Leaves of Binary Tree": {
+      "company": [],
+      "order": 366,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "LRU Cache": {
+      "company": [
+        "Google",
+        "Uber",
+        "Facebook",
+        "Twitter",
+        "Zenefit",
+        "Amazon",
+        "Microsoft",
+        "Snapchat",
+        "Yahoo",
+        "Bloomberg",
+        "Palantir"
+      ],
+      "order": 146,
+        "isHot": true,
+      "hardness": 2,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Find Peak Element": {
+      "company": [
+        "Google",
+        "Microsoft"
+      ],
+      "order": 162,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Insert Interval": {
+      "company": [
+        "LinkedIn",
+        "Google",
+        "Facebook"
+      ],
+      "order": 57,
+        "isHot": true,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Sort"
+      ]
+    },
+    "Wiggle Sort": {
+      "company": [
+        "Google"
+      ],
+      "order": 280,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Sort"
+      ]
+    },
+    "Counting Bits": {
+      "company": [],
+      "order": 338,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming",
+        "Bit Manipulation"
+      ]
+    },
+    "Smallest Good Base": {
+      "company": [],
+      "order": 483,
+      "hardness": 2,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Intersection of Two Linked Lists": {
+      "company": [
+        "Airbnb",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 160,
+      "hardness": 0,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Sudoku Solver": {
+      "company": [
+        "Uber"
+      ],
+      "order": 37,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "Backtracking"
+      ]
+    },
+    "Heaters": {
+      "company": [],
+      "order": 475,
+      "hardness": 0,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Palindrome Partitioning": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 131,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Factor Combinations": {
+      "company": [
+        "LinkedIn",
+        "Uber"
+      ],
+      "order": 254,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Delete Node in a Linked List": {
+      "company": [
+        "Microsoft",
+        "Apple",
+        "Adobe"
+      ],
+      "order": 237,
+      "hardness": 0,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Maximum Depth of Binary Tree": {
+      "company": [
+        "LinkedIn",
+        "Uber",
+        "Apple",
+        "Yahoo"
+      ],
+      "order": 104,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Course Schedule": {
+      "company": [
+        "Zenefit",
+        "Apple",
+        "Yelp"
+      ],
+      "order": 207,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS",
+        "Graph",
+        "Topological Sort"
+      ]
+    },
+    "Find Minimum in Rotated Sorted Array": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 153,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Insertion Sort List": {
+      "company": [],
+      "order": 147,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Sort"
+      ]
+    },
+    "Valid Word Square": {
+      "company": [],
+      "order": 422,
+      "hardness": 0,
+      "tags": []
+    },
+    "Generalized Abbreviation": {
+      "company": [
+        "Google"
+      ],
+      "order": 320,
+      "hardness": 1,
+      "tags": [
+        "Backtracking",
+        "Bit Manipulation"
+      ]
+    },
+    "Majority Element II": {
+      "company": [
+        "Zenefit"
+      ],
+      "order": 229,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Hamming Distance": {
+      "company": [],
+      "order": 461,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Rotate Function": {
+      "company": [],
+      "order": 396,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Longest Palindromic Substring": {
+      "company": [
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 5,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Binary Tree Paths": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Apple"
+      ],
+      "order": 257,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "First Bad Version": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 278,
+      "hardness": 0,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Ugly Number": {
+      "company": [],
+      "order": 263,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Binary Tree Longest Consecutive Sequence": {
+      "company": [
+        "Google"
+      ],
+      "order": 298,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Unique Paths": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 62,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Largest Rectangle in Histogram": {
+      "company": [],
+      "order": 84,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Stack"
+      ]
+    },
+    "Design Snake Game": {
+      "company": [],
+      "order": 353,
+      "hardness": 1,
+      "tags": [
+        "Design",
+        "Queue"
+      ]
+    },
+    "Integer to English Words": {
+      "company": [
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 273,
+      "hardness": 2,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "One Edit Distance": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Twitter",
+        "Snapchat"
+      ],
+      "order": 161,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Partition Equal Subset Sum": {
+      "company": [],
+      "order": 416,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Split Array Largest Sum": {
+      "company": [],
+      "order": 410,
+      "hardness": 2,
+      "tags": [
+        "Binary Search",
+        "Dynamic Programming"
+      ]
+    },
+    "Missing Ranges": {
+      "company": [
+        "Google"
+      ],
+      "order": 163,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Move Zeroes": {
+      "company": [
+        "Facebook",
+        "Bloomberg"
+      ],
+      "order": 283,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Meeting Rooms II": {
+      "company": [
+        "Google",
+        "Facebook"
+      ],
+      "order": 253,
+      "hardness": 1,
+      "tags": [
+        "Heap",
+        "Greedy",
+        "Sort"
+      ]
+    },
+    "Permutation Sequence": {
+      "company": [
+        "Twitter"
+      ],
+      "order": 60,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Backtracking"
+      ]
+    },
+    "Number of Islands": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Zenefit",
+        "Amazon",
+        "Microsoft"
+      ],
+      "order": 200,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS"
+      ]
+    },
+    "Merge Two Sorted Lists": {
+      "company": [
+        "LinkedIn",
+        "Amazon",
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 21,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Peeking Iterator": {
+      "company": [
+        "Google",
+        "Apple",
+        "Yahoo"
+      ],
+      "order": 284,
+      "hardness": 1,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Lowest Common Ancestor of a Binary Search Tree": {
+      "company": [
+        "Facebook",
+        "Twitter",
+        "Amazon",
+        "Microsoft"
+      ],
+      "order": 235,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Range Sum Query 2D - Immutable": {
+      "company": [],
+      "order": 304,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Binary Search Tree Iterator": {
+      "company": [
+        "LinkedIn",
+        "Google",
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 173,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "Tree",
+        "Design"
+      ]
+    },
+    "Reverse Words in a String II": {
+      "company": [
+        "Uber",
+        "Amazon",
+        "Microsoft"
+      ],
+      "order": 186,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Binary Tree Preorder Traversal": {
+      "company": [],
+      "order": 144,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "Tree"
+      ]
+    },
+    "Ransom Note": {
+      "company": [],
+      "order": 383,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Different Ways to Add Parentheses": {
+      "company": [],
+      "order": 241,
+      "hardness": 1,
+      "tags": [
+        "Divide and Conquer"
+      ]
+    },
+    "Combination Sum III": {
+      "company": [],
+      "order": 216,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Backtracking"
+      ]
+    },
+    "License Key Formatting": {
+      "company": [],
+      "order": 482,
+      "hardness": 1,
+      "tags": []
+    },
+    "Trapping Rain Water II": {
+      "company": [],
+      "order": 407,
+      "hardness": 2,
+      "tags": [
+        "Heap",
+        "BFS"
+      ]
+    },
+    "Kth Largest Element in an Array": {
+      "company": [
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Apple",
+        "Bloomberg"
+      ],
+      "order": 215,
+      "hardness": 1,
+      "tags": [
+        "Divide and Conquer",
+        "Heap"
+      ]
+    },
+    "Longest Palindrome": {
+      "company": [],
+      "order": 409,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Binary Tree Postorder Traversal": {
+      "company": [],
+      "order": 145,
+        "isHot": true,
+      "hardness": 2,
+      "tags": [
+        "Stack",
+        "Tree"
+      ]
+    },
+    "Rearrange String k Distance Apart": {
+      "company": [],
+      "order": 358,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "Heap",
+        "Greedy"
+      ]
+    },
+    "Decode String": {
+      "company": [],
+      "order": 394,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "DFS"
+      ]
+    },
+    "Repeated Substring Pattern": {
+      "company": [],
+      "order": 459,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Single Number II": {
+      "company": [],
+      "order": 137,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Nth Digit": {
+      "company": [],
+      "order": 400,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Shortest Word Distance II": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 244,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Design"
+      ]
+    },
+    "4Sum": {
+      "company": [],
+      "order": 18,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Two Pointers"
+      ]
+    },
+    "3Sum": {
+      "company": [
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg",
+        "Adobe"
+      ],
+      "order": 15,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Valid Perfect Square": {
+      "company": [],
+      "order": 367,
+      "hardness": 0,
+      "tags": [
+        "Math",
+        "Binary Search"
+      ]
+    },
+    "Largest BST Subtree": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 333,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "N-Queens": {
+      "company": [],
+      "order": 51,
+      "hardness": 2,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Two Sum II - Input array is sorted": {
+      "company": [],
+      "order": 167,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search"
+      ]
+    },
+    "Set Matrix Zeroes": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 73,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Remove Duplicates from Sorted Array": {
+      "company": [
+        "Facebook",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 26,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Convert Sorted List to Binary Search Tree": {
+      "company": [
+        "Zenefit"
+      ],
+      "order": 109,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "DFS"
+      ]
+    },
+    "Minimum Window Substring": {
+      "company": [
+        "LinkedIn",
+        "Uber",
+        "Facebook"
+      ],
+      "order": 76,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Distinct Subsequences": {
+      "company": [],
+      "order": 115,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming"
+      ]
+    },
+    "Rotate List": {
+      "company": [],
+      "order": 61,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Two Pointers"
+      ]
+    },
+    "Arithmetic Slices II - Subsequence": {
+      "company": [],
+      "order": 446,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Divide Two Integers": {
+      "company": [],
+      "order": 29,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Binary Search"
+      ]
+    },
+    "3Sum Smaller": {
+      "company": [
+        "Google"
+      ],
+      "order": 259,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Serialize and Deserialize Binary Tree": {
+      "company": [
+        "LinkedIn",
+        "Google",
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Yahoo",
+        "Bloomberg"
+      ],
+      "order": 297,
+      "hardness": 2,
+      "tags": [
+        "Tree",
+        "Design"
+      ]
+    },
+    "Implement strStr()": {
+      "company": [
+        "Facebook",
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 28,
+      "hardness": 0,
+      "tags": [
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Excel Sheet Column Title": {
+      "company": [
+        "Facebook",
+        "Zenefit",
+        "Microsoft"
+      ],
+      "order": 168,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Integer to Roman": {
+      "company": [
+        "Twitter"
+      ],
+      "order": 12,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "Decode Ways": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 91,
+      "hardness": 1,
+      "tags": [
+        "String",
+        "Dynamic Programming"
+      ]
+    },
+    "Combinations": {
+      "company": [],
+      "order": 77,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Bulls and Cows": {
+      "company": [],
+      "order": 299,
+      "hardness": 1,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Strobogrammatic Number III": {
+      "company": [],
+      "order": 248,
+      "hardness": 2,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Binary Tree Zigzag Level Order Traversal": {
+      "company": [
+        "LinkedIn",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 103,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "Tree",
+        "BFS"
+      ]
+    },
+    "Sliding Window Median": {
+      "company": [],
+      "order": 480,
+      "hardness": 2,
+      "tags": []
+    },
+    "Count Primes": {
+      "company": [
+        "Amazon",
+        "Microsoft"
+      ],
+      "order": 204,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Math"
+      ]
+    },
+    "Find the Celebrity": {
+      "company": [
+        "LinkedIn",
+        "Facebook"
+      ],
+      "order": 277,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Data Stream as Disjoint Intervals": {
+      "company": [],
+      "order": 352,
+      "hardness": 2,
+      "tags": [
+        "Binary Search Tree"
+      ]
+    },
+    "Binary Tree Vertical Order Traversal": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Snapchat"
+      ],
+      "order": 314,
+      "hardness": 1,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Pascal's Triangle II": {
+      "company": [],
+      "order": 119,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Sequence Reconstruction": {
+      "company": [],
+      "order": 444,
+      "hardness": 1,
+      "tags": [
+        "Graph",
+        "Topological Sort"
+      ]
+    },
+    "Longest Increasing Path in a Matrix": {
+      "company": [
+        "Google"
+      ],
+      "order": 329,
+      "hardness": 2,
+      "tags": [
+        "DFS",
+        "Topological Sort"
+      ]
+    },
+    "Regular Expression Matching": {
+      "company": [
+        "Google",
+        "Uber",
+        "Airbnb",
+        "Facebook",
+        "Twitter"
+      ],
+      "order": 10,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming",
+        "Backtracking"
+      ]
+    },
+    "Flip Game II": {
+      "company": [
+        "Google"
+      ],
+      "order": 294,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Max Consecutive Ones II": {
+      "company": [],
+      "order": 487,
+      "hardness": 1,
+      "tags": [
+        "Two Pointers"
+      ]
+    },
+    "Sum of Left Leaves": {
+      "company": [],
+      "order": 404,
+      "hardness": 0,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Minimum Moves to Equal Array Elements": {
+      "company": [],
+      "order": 453,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Maximum Subarray": {
+      "company": [
+        "LinkedIn",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 53,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Divide and Conquer",
+        "Dynamic Programming"
+      ]
+    },
+    "Product of Array Except Self": {
+      "company": [
+        "LinkedIn",
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 238,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Android Unlock Patterns": {
+      "company": [],
+      "order": 351,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming",
+        "Backtracking"
+      ]
+    },
+    "Sentence Screen Fitting": {
+      "company": [],
+      "order": 418,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Strobogrammatic Number II": {
+      "company": [
+        "Google"
+      ],
+      "order": 247,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Ternary Expression Parser": {
+      "company": [],
+      "order": 439,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "DFS"
+      ]
+    },
+    "Kth Smallest Element in a BST": {
+      "company": [
+        "Google",
+        "Uber",
+        "Bloomberg"
+      ],
+      "order": 230,
+      "hardness": 1,
+      "tags": [
+        "Binary Search",
+        "Tree"
+      ]
+    },
+    "Majority Element": {
+      "company": [
+        "Zenefit",
+        "Adobe"
+      ],
+      "order": 169,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Divide and Conquer",
+        "Bit Manipulation"
+      ]
+    },
+    "Range Sum Query - Mutable": {
+      "company": [],
+      "order": 307,
+      "hardness": 1,
+      "tags": [
+        "Binary Indexed Tree",
+        "Segment Tree"
+      ]
+    },
+    "Search for a Range": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 34,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Binary Tree Right Side View": {
+      "company": [
+        "Amazon"
+      ],
+      "order": 199,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS",
+        "BFS"
+      ]
+    },
+    "Count of Range Sum": {
+      "company": [
+        "Google"
+      ],
+      "order": 327,
+      "hardness": 2,
+      "tags": [
+        "Divide and Conquer",
+        "Binary Search Tree"
+      ]
+    },
+    "Clone Graph": {
+      "company": [
+        "Google",
+        "Uber",
+        "Facebook"
+      ],
+      "order": 133,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS",
+        "Graph"
+      ]
+    },
+    "Island Perimeter": {
+      "company": [],
+      "order": 463,
+      "hardness": 0,
+      "tags": []
+    },
+    "Add and Search Word - Data structure design": {
+      "company": [],
+      "order": 211,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Backtracking",
+        "Design"
+      ]
+    },
+    "Word Squares": {
+      "company": [],
+      "order": 425,
+      "hardness": 2,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "UTF-8 Validation": {
+      "company": [],
+      "order": 393,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Elimination Game": {
+      "company": [],
+      "order": 390,
+      "hardness": 1,
+      "tags": []
+    },
+    "Read N Characters Given Read4": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 157,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Valid Palindrome": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Zenefit",
+        "Microsoft"
+      ],
+      "order": 125,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Maximum Size Subarray Sum Equals k": {
+      "company": [
+        "Facebook",
+        "Palantir"
+      ],
+      "order": 325,
+      "hardness": 1,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Reverse Words in a String": {
+      "company": [
+        "Microsoft",
+        "Snapchat",
+        "Apple",
+        "Bloomberg",
+        "Yelp"
+      ],
+      "order": 151,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Generate Parentheses": {
+      "company": [
+        "Google",
+        "Uber",
+        "Zenefit"
+      ],
+      "order": 22,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "String",
+        "Backtracking"
+      ]
+    },
+    "Copy List with Random Pointer": {
+      "company": [
+        "Uber",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 138,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Linked List"
+      ]
+    },
+    "Plus One Linked List": {
+      "company": [],
+      "order": 369,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Longest Repeating Character Replacement": {
+      "company": [],
+      "order": 424,
+      "hardness": 1,
+      "tags": []
+    },
+    "Game of Life": {
+      "company": [
+        "Google",
+        "Snapchat",
+        "Dropbox"
+      ],
+      "order": 289,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Invert Binary Tree": {
+      "company": [],
+      "order": 226,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Valid Sudoku": {
+      "company": [
+        "Uber",
+        "Snapchat",
+        "Apple"
+      ],
+      "order": 36,
+      "hardness": 1,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Recover Binary Search Tree": {
+      "company": [],
+      "order": 99,
+        "isHot": true,
+      "hardness": 2,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Validate Binary Search Tree": {
+      "company": [
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 98,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Remove Duplicates from Sorted List II": {
+      "company": [],
+      "order": 82,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Group Anagrams": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Amazon",
+        "Bloomberg",
+        "Yelp"
+      ],
+      "order": 49,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "String"
+      ]
+    },
+    "Path Sum": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 112,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Maximum Product of Word Lengths": {
+      "company": [
+        "Google"
+      ],
+      "order": 318,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Expression Add Operators": {
+      "company": [
+        "Google",
+        "Facebook"
+      ],
+      "order": 282,
+      "hardness": 2,
+      "tags": [
+        "Divide and Conquer"
+      ]
+    },
+    "Wildcard Matching": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Snapchat"
+      ],
+      "order": 44,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming",
+        "Backtracking",
+        "Greedy"
+      ]
+    },
+    "Mini Parser": {
+      "company": [],
+      "order": 385,
+      "hardness": 1,
+      "tags": [
+        "String",
+        "Stack"
+      ]
+    },
+    "Triangle": {
+      "company": [],
+      "order": 120,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Search Insert Position": {
+      "company": [],
+      "order": 35,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Count Complete Tree Nodes": {
+      "company": [],
+      "order": 222,
+      "hardness": 1,
+      "tags": [
+        "Binary Search",
+        "Tree"
+      ]
+    },
+    "Number of Connected Components in an Undirected Graph": {
+      "company": [
+        "Google"
+      ],
+      "order": 323,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS",
+        "Graph"
+      ]
+    },
+    "Insert Delete GetRandom O(1)": {
+      "company": [],
+      "order": 380,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Design"
+      ]
+    },
+    "Pacific Atlantic Water Flow": {
+      "company": [],
+      "order": 417,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS"
+      ]
+    },
+    "Russian Doll Envelopes": {
+      "company": [],
+      "order": 354,
+      "hardness": 2,
+      "tags": [
+        "Binary Search",
+        "Dynamic Programming"
+      ]
+    },
+    "Encode and Decode Strings": {
+      "company": [
+        "Google"
+      ],
+      "order": 271,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Word Search II": {
+      "company": [
+        "Google",
+        "Airbnb",
+        "Microsoft"
+      ],
+      "order": 212,
+      "hardness": 2,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Longest Increasing Subsequence": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 300,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Binary Search",
+        "Dynamic Programming"
+      ]
+    },
+    "Valid Number": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 65,
+      "hardness": 2,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "Count of Smaller Numbers After Self": {
+      "company": [
+        "Google"
+      ],
+      "order": 315,
+      "hardness": 2,
+      "tags": [
+        "Divide and Conquer",
+        "Binary Indexed Tree",
+        "Segment Tree",
+        "Binary Search Tree"
+      ]
+    },
+    "Find Right Interval": {
+      "company": [],
+      "order": 436,
+      "hardness": 1,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Integer Break": {
+      "company": [],
+      "order": 343,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Dynamic Programming"
+      ]
+    },
+    "Best Meeting Point": {
+      "company": [
+        "Twitter"
+      ],
+      "order": 296,
+      "hardness": 2,
+      "tags": [
+        "Math",
+        "Sort"
+      ]
+    },
+    "4Sum II": {
+      "company": [],
+      "order": 454,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Binary Search"
+      ]
+    },
+    "Flatten Binary Tree to Linked List": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 114,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Queue Reconstruction by Height": {
+      "company": [],
+      "order": 406,
+      "hardness": 1,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Permutations": {
+      "company": [
+        "LinkedIn",
+        "Microsoft"
+      ],
+      "order": 46,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Number of 1 Bits": {
+      "company": [
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 191,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Shortest Word Distance III": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 245,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Min Stack": {
+      "company": [
+        "Google",
+        "Uber",
+        "Zenefit",
+        "Amazon",
+        "Snapchat",
+        "Bloomberg"
+      ],
+      "order": 155,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Stack",
+        "Design"
+      ]
+    },
+    "Water and Jug Problem": {
+      "company": [],
+      "order": 365,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Flatten Nested List Iterator": {
+      "company": [
+        "Google"
+      ],
+      "order": 341,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "Design"
+      ]
+    },
+    "Sort Colors": {
+      "company": [
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 75,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Sort"
+      ]
+    },
+    "Super Pow": {
+      "company": [],
+      "order": 372,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Reverse Integer": {
+      "company": [
+        "Apple",
+        "Bloomberg"
+      ],
+      "order": 7,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Ugly Number II": {
+      "company": [],
+      "order": 264,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Heap"
+      ]
+    },
+    "Merge Intervals": {
+      "company": [
+        "LinkedIn",
+        "Google",
+        "Facebook",
+        "Twitter",
+        "Microsoft",
+        "Bloomberg",
+        "Yelp"
+      ],
+      "order": 56,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Sort"
+      ]
+    },
+    "Third Maximum Number": {
+      "company": [],
+      "order": 414,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Power of Four": {
+      "company": [],
+      "order": 342,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Summary Ranges": {
+      "company": [
+        "Google"
+      ],
+      "order": 228,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Reorder List": {
+      "company": [],
+      "order": 143,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Contains Duplicate": {
+      "company": [
+        "Airbnb",
+        "Yahoo",
+        "Palantir"
+      ],
+      "order": 217,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Hash Table"
+      ]
+    },
+    "Longest Consecutive Sequence": {
+      "company": [
+        "Google",
+        "Facebook"
+      ],
+      "order": 128,
+      "hardness": 2,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Shortest Word Distance": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 243,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Meeting Rooms": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 252,
+      "hardness": 0,
+      "tags": [
+        "Sort"
+      ]
+    },
+    "Valid Parentheses": {
+      "company": [
+        "Google",
+        "Airbnb",
+        "Facebook",
+        "Twitter",
+        "Zenefit",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 20,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "String",
+        "Stack"
+      ]
+    },
+    "Remove Linked List Elements": {
+      "company": [],
+      "order": 203,
+      "hardness": 0,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Text Justification": {
+      "company": [
+        "LinkedIn",
+        "Airbnb"
+      ],
+      "order": 68,
+      "hardness": 2,
+      "tags": [
+        "String"
+      ]
+    },
+    "Nested List Weight Sum": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 339,
+      "hardness": 0,
+      "tags": [
+        "DFS"
+      ]
+    },
+    "Maximum XOR of Two Numbers in an Array": {
+      "company": [],
+      "order": 421,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Swap Nodes in Pairs": {
+      "company": [
+        "Uber",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 24,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Inorder Successor in BST": {
+      "company": [
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 285,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Longest Substring with At Most K Distinct Characters": {
+      "company": [
+        "Google"
+      ],
+      "order": 340,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "String"
+      ]
+    },
+    "Integer Replacement": {
+      "company": [],
+      "order": 397,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Bit Manipulation"
+      ]
+    },
+    "Count Numbers with Unique Digits": {
+      "company": [],
+      "order": 357,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Dynamic Programming",
+        "Backtracking"
+      ]
+    },
+    "Dungeon Game": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 174,
+      "hardness": 2,
+      "tags": [
+        "Binary Search",
+        "Dynamic Programming"
+      ]
+    },
+    "Magical String": {
+      "company": [],
+      "order": 481,
+      "hardness": 1,
+      "tags": []
+    },
+    "Arithmetic Slices": {
+      "company": [],
+      "order": 413,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Dynamic Programming"
+      ]
+    },
+    "Sort List": {
+      "company": [],
+      "order": 148,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Sort"
+      ]
+    },
+    "ZigZag Conversion": {
+      "company": [],
+      "order": 6,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Wiggle Subsequence": {
+      "company": [],
+      "order": 376,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming",
+        "Greedy"
+      ]
+    },
+    "Predict the Winner": {
+      "company": [],
+      "order": 486,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Super Ugly Number": {
+      "company": [
+        "Google"
+      ],
+      "order": 313,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Heap"
+      ]
+    },
+    "Insert Delete GetRandom O(1) - Duplicates allowed": {
+      "company": [],
+      "order": 381,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Hash Table",
+        "Design"
+      ]
+    },
+    "Increasing Triplet Subsequence": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 334,
+      "hardness": 1,
+      "tags": []
+    },
+    "Add Two Numbers": {
+      "company": [
+        "Airbnb",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg",
+        "Adobe"
+      ],
+      "order": 2,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Math"
+      ]
+    },
+    "Range Addition": {
+      "company": [],
+      "order": 370,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Is Subsequence": {
+      "company": [],
+      "order": 392,
+      "hardness": 1,
+      "tags": [
+        "Binary Search",
+        "Dynamic Programming",
+        "Greedy"
+      ]
+    },
+    "Find All Anagrams in a String": {
+      "company": [],
+      "order": 438,
+      "hardness": 0,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Shuffle an Array": {
+      "company": [],
+      "order": 384,
+      "hardness": 1,
+      "tags": []
+    },
+    "Range Sum Query - Immutable": {
+      "company": [],
+      "order": 303,
+      "hardness": 0,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Minimum Unique Word Abbreviation": {
+      "company": [],
+      "order": 411,
+      "hardness": 2,
+      "tags": [
+        "Backtracking",
+        "Bit Manipulation"
+      ]
+    },
+    "Max Sum of Rectangle No Larger Than K": {
+      "company": [],
+      "order": 363,
+      "hardness": 2,
+      "tags": [
+        "Binary Search",
+        "Dynamic Programming",
+        "Queue"
+      ]
+    },
+    "Strobogrammatic Number": {
+      "company": [
+        "Google"
+      ],
+      "order": 246,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Math"
+      ]
+    },
+    "Pascal's Triangle": {
+      "company": [],
+      "order": 118,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Additive Number": {
+      "company": [],
+      "order": 306,
+      "hardness": 1,
+      "tags": []
+    },
+    "132 Pattern": {
+      "company": [],
+      "order": 456,
+      "hardness": 1,
+      "tags": [
+        "Stack"
+      ]
+    },
+    "N-Queens II": {
+      "company": [
+        "Zenefit"
+      ],
+      "order": 52,
+      "hardness": 2,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Can I Win": {
+      "company": [],
+      "order": 464,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Nested List Weight Sum II": {
+      "company": [],
+      "order": 364,
+      "hardness": 1,
+      "tags": [
+        "DFS"
+      ]
+    },
+    "Binary Tree Maximum Path Sum": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 124,
+        "isHot": true,
+      "hardness": 2,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Matchsticks to Square": {
+      "company": [],
+      "order": 473,
+      "hardness": 1,
+      "tags": [
+        "DFS"
+      ]
+    },
+    "First Unique Character in a String": {
+      "company": [],
+      "order": 387,
+      "hardness": 0,
+      "tags": []
+    },
+    "Excel Sheet Column Number": {
+      "company": [
+        "Uber",
+        "Microsoft"
+      ],
+      "order": 171,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Coin Change": {
+      "company": [],
+      "order": 322,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Unique Binary Search Trees": {
+      "company": [
+        "Snapchat"
+      ],
+      "order": 96,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming",
+        "Tree"
+      ]
+    },
+    "Contains Duplicate II": {
+      "company": [
+        "Airbnb",
+        "Palantir"
+      ],
+      "order": 219,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Hash Table"
+      ]
+    },
+    "Paint Fence": {
+      "company": [
+        "Google"
+      ],
+      "order": 276,
+      "hardness": 0,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Convert Sorted Array to Binary Search Tree": {
+      "company": [
+        "Airbnb"
+      ],
+      "order": 108,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Palindrome Linked List": {
+      "company": [
+        "Facebook",
+        "Amazon"
+      ],
+      "order": 234,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Linked List",
+        "Two Pointers"
+      ]
+    },
+    "Patching Array": {
+      "company": [
+        "Google"
+      ],
+      "order": 330,
+      "hardness": 2,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Perfect Squares": {
+      "company": [
+        "Google"
+      ],
+      "order": 279,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Dynamic Programming",
+        "BFS"
+      ]
+    },
+    "Sum of Two Integers": {
+      "company": [],
+      "order": 371,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Closest Binary Search Tree Value": {
+      "company": [
+        "Google",
+        "Microsoft",
+        "Snapchat"
+      ],
+      "order": 270,
+      "hardness": 0,
+      "tags": [
+        "Binary Search",
+        "Tree"
+      ]
+    },
+    "Edit Distance": {
+      "company": [],
+      "order": 72,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming"
+      ]
+    },
+    "Unique Word Abbreviation": {
+      "company": [
+        "Google"
+      ],
+      "order": 288,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Design"
+      ]
+    },
+    "Restore IP Addresses": {
+      "company": [],
+      "order": 93,
+      "hardness": 1,
+      "tags": [
+        "String",
+        "Backtracking"
+      ]
+    },
+    "Find All Duplicates in an Array": {
+      "company": [],
+      "order": 442,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Find Permutation": {
+      "company": [],
+      "order": 484,
+      "hardness": 1,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Minimum Size Subarray Sum": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 209,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search"
+      ]
+    },
+    "Concatenated Words": {
+      "company": [],
+      "order": 472,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming",
+        "DFS"
+      ]
+    },
+    "Subsets": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Amazon"
+      ],
+      "order": 78,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Backtracking",
+        "Bit Manipulation"
+      ]
+    },
+    "Lowest Common Ancestor of a Binary Tree": {
+      "company": [
+        "LinkedIn",
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Apple"
+      ],
+      "order": 236,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Number of Islands II": {
+      "company": [
+        "Google"
+      ],
+      "order": 305,
+      "hardness": 2,
+      "tags": []
+    },
+    "Sliding Window Maximum": {
+      "company": [
+        "Google",
+        "Zenefit",
+        "Amazon"
+      ],
+      "order": 239,
+      "hardness": 2,
+      "tags": [
+        "Heap"
+      ]
+    },
+    "Palindrome Pairs": {
+      "company": [
+        "Google",
+        "Airbnb"
+      ],
+      "order": 336,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "String"
+      ]
+    },
+    "Spiral Matrix": {
+      "company": [
+        "Google",
+        "Uber",
+        "Microsoft"
+      ],
+      "order": 54,
+      "hardness": 1,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Longest Substring with At Least K Repeating Characters": {
+      "company": [],
+      "order": 395,
+      "hardness": 1,
+      "tags": []
+    },
+    "Container With Most Water": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 11,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "String to Integer (atoi)": {
+      "company": [
+        "Uber",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 8,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "Ones and Zeroes": {
+      "company": [],
+      "order": 474,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Bitwise AND of Numbers Range": {
+      "company": [],
+      "order": 201,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Reverse Linked List II": {
+      "company": [],
+      "order": 92,
+      "hardness": 1,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Populating Next Right Pointers in Each Node II": {
+      "company": [
+        "Facebook",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 117,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "House Robber III": {
+      "company": [
+        "Uber"
+      ],
+      "order": 337,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Group Shifted Strings": {
+      "company": [
+        "Google",
+        "Uber"
+      ],
+      "order": 249,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "String"
+      ]
+    },
+    "Read N Characters Given Read4 II - Call multiple times": {
+      "company": [],
+      "order": 158,
+      "hardness": 2,
+      "tags": [
+        "String"
+      ]
+    },
+    "Construct Binary Tree from Inorder and Postorder Traversal": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 106,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Repeated DNA Sequences": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 187,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Bit Manipulation"
+      ]
+    },
+    "H-Index II": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 275,
+      "hardness": 1,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Find Median from Data Stream": {
+      "company": [
+        "Google"
+      ],
+      "order": 295,
+      "hardness": 2,
+      "tags": [
+        "Heap",
+        "Design"
+      ]
+    },
+    "Random Pick Index": {
+      "company": [],
+      "order": 398,
+      "hardness": 1,
+      "tags": []
+    },
+    "Sort Transformed Array": {
+      "company": [],
+      "order": 360,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Two Pointers"
+      ]
+    },
+    "Roman to Integer": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Microsoft",
+        "Yahoo",
+        "Bloomberg"
+      ],
+      "order": 13,
+      "hardness": 0,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "Word Pattern": {
+      "company": [
+        "Uber",
+        "Dropbox"
+      ],
+      "order": 290,
+      "hardness": 0,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Permutations II": {
+      "company": [
+        "LinkedIn",
+        "Microsoft"
+      ],
+      "order": 47,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Binary Tree Inorder Traversal": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 94,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Stack",
+        "Tree"
+      ]
+    },
+    "Increasing Subsequences": {
+      "company": [],
+      "order": 491,
+      "hardness": 1,
+      "tags": [
+        "DFS"
+      ]
+    },
+    "Serialize and Deserialize BST": {
+      "company": [],
+      "order": 449,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Maximum Gap": {
+      "company": [],
+      "order": 164,
+      "hardness": 2,
+      "tags": [
+        "Sort"
+      ]
+    },
+    "Longest Absolute File Path": {
+      "company": [],
+      "order": 388,
+      "hardness": 1,
+      "tags": []
+    },
+    "Optimal Account Balancing": {
+      "company": [],
+      "order": 465,
+      "hardness": 2,
+      "tags": []
+    },
+    "Course Schedule II": {
+      "company": [
+        "Facebook",
+        "Zenefit"
+      ],
+      "order": 210,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS",
+        "Graph",
+        "Topological Sort"
+      ]
+    },
+    "Palindrome Number": {
+      "company": [],
+      "order": 9,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Linked List Cycle": {
+      "company": [
+        "Amazon",
+        "Microsoft",
+        "Yahoo",
+        "Bloomberg"
+      ],
+      "order": 141,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Linked List",
+        "Two Pointers"
+      ]
+    },
+    "Balanced Binary Tree": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 110,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Factorial Trailing Zeroes": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 172,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Self Crossing": {
+      "company": [],
+      "order": 335,
+      "hardness": 2,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Symmetric Tree": {
+      "company": [
+        "LinkedIn",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 101,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS",
+        "BFS"
+      ]
+    },
+    "Bulb Switcher": {
+      "company": [],
+      "order": 319,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Length of Last Word": {
+      "company": [],
+      "order": 58,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Search in Rotated Sorted Array": {
+      "company": [
+        "LinkedIn",
+        "Uber",
+        "Facebook",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 33,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Valid Word Abbreviation": {
+      "company": [],
+      "order": 408,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Design Tic-Tac-Toe": {
+      "company": [],
+      "order": 348,
+      "hardness": 1,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Assign Cookies": {
+      "company": [],
+      "order": 455,
+      "hardness": 0,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Palindrome Partitioning II": {
+      "company": [],
+      "order": 132,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Moving Average from Data Stream": {
+      "company": [],
+      "order": 346,
+      "hardness": 0,
+      "tags": [
+        "Design",
+        "Queue"
+      ]
+    },
+    "Strong Password Checker": {
+      "company": [],
+      "order": 420,
+      "hardness": 2,
+      "tags": []
+    },
+    "Substring with Concatenation of All Words": {
+      "company": [],
+      "order": 30,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Maximal Square": {
+      "company": [
+        "Airbnb",
+        "Facebook",
+        "Apple"
+      ],
+      "order": 221,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Kth Smallest Element in a Sorted Matrix": {
+      "company": [],
+      "order": 378,
+      "hardness": 1,
+      "tags": [
+        "Binary Search",
+        "Heap"
+      ]
+    },
+    "Remove Nth Node From End of List": {
+      "company": [],
+      "order": 19,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Two Pointers"
+      ]
+    },
+    "Add Digits": {
+      "company": [
+        "Microsoft",
+        "Adobe"
+      ],
+      "order": 258,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "K-th Smallest in Lexicographical Order": {
+      "company": [],
+      "order": 440,
+      "hardness": 2,
+      "tags": []
+    },
+    "Burst Balloons": {
+      "company": [
+        "Google"
+      ],
+      "order": 312,
+      "hardness": 2,
+      "tags": [
+        "Divide and Conquer",
+        "Dynamic Programming"
+      ]
+    },
+    "Non-overlapping Intervals": {
+      "company": [],
+      "order": 435,
+      "hardness": 1,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Implement Queue using Stacks": {
+      "company": [
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 232,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Stack",
+        "Design"
+      ]
+    },
+    "Plus One": {
+      "company": [
+        "Google"
+      ],
+      "order": 66,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Math"
+      ]
+    },
+    "Path Sum III": {
+      "company": [],
+      "order": 437,
+      "hardness": 0,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Word Search": {
+      "company": [
+        "Facebook",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 79,
+        "isHot": true,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Backtracking"
+      ]
+    },
+    "Guess Number Higher or Lower": {
+      "company": [],
+      "order": 374,
+      "hardness": 0,
+      "tags": [
+        "Binary Search"
+      ]
+    },
+    "Reverse Linked List": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Twitter",
+        "Zenefit",
+        "Amazon",
+        "Microsoft",
+        "Snapchat",
+        "Apple",
+        "Yahoo",
+        "Bloomberg",
+        "Yelp",
+        "Adobe"
+      ],
+      "order": 206,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Linked List"
+      ]
+    },
+    "Graph Valid Tree": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Zenefit"
+      ],
+      "order": 261,
+      "hardness": 1,
+      "tags": [
+        "DFS",
+        "BFS",
+        "Graph"
+      ]
+    },
+    "Simplify Path": {
+      "company": [
+        "Facebook",
+        "Microsoft"
+      ],
+      "order": 71,
+      "hardness": 1,
+      "tags": [
+        "String",
+        "Stack"
+      ]
+    },
+    "Reconstruct Original Digits from English": {
+      "company": [],
+      "order": 423,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Word Ladder II": {
+      "company": [
+        "Amazon",
+        "Yelp"
+      ],
+      "order": 126,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "String",
+        "Backtracking",
+        "BFS"
+      ]
+    },
+    "Merge Sorted Array": {
+      "company": [
+        "Facebook",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 88,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Two Pointers"
+      ]
+    },
+    "Number of Digit One": {
+      "company": [],
+      "order": 233,
+      "hardness": 2,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Minimum Depth of Binary Tree": {
+      "company": [],
+      "order": 111,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS",
+        "BFS"
+      ]
+    },
+    "Power of Three": {
+      "company": [
+        "Google"
+      ],
+      "order": 326,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Shortest Palindrome": {
+      "company": [
+        "Google"
+      ],
+      "order": 214,
+      "hardness": 2,
+      "tags": [
+        "String"
+      ]
+    },
+    "Best Time to Buy and Sell Stock III": {
+      "company": [],
+      "order": 123,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Binary Watch": {
+      "company": [],
+      "order": 401,
+      "hardness": 0,
+      "tags": [
+        "Backtracking",
+        "Bit Manipulation"
+      ]
+    },
+    "Longest Substring Without Repeating Characters": {
+      "company": [
+        "Amazon",
+        "Bloomberg",
+        "Yelp",
+        "Adobe"
+      ],
+      "order": 3,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "Linked List Random Node": {
+      "company": [],
+      "order": 382,
+      "hardness": 1,
+      "tags": []
+    },
+    "Rotate Array": {
+      "company": [
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 189,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Number Complement": {
+      "company": [],
+      "order": 476,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Find the Duplicate Number": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 287,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Binary Search"
+      ]
+    },
+    "H-Index": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Bloomberg"
+      ],
+      "order": 274,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Sort"
+      ]
+    },
+    "Rectangle Area": {
+      "company": [],
+      "order": 223,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Frog Jump": {
+      "company": [],
+      "order": 403,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Target Sum": {
+      "company": [],
+      "order": 494,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming",
+        "DFS"
+      ]
+    },
+    "Minimum Number of Arrows to Burst Balloons": {
+      "company": [],
+      "order": 452,
+      "hardness": 1,
+      "tags": [
+        "Greedy"
+      ]
+    },
+    "Word Ladder": {
+      "company": [
+        "LinkedIn",
+        "Facebook",
+        "Amazon",
+        "Snapchat",
+        "Yelp"
+      ],
+      "order": 127,
+        "isHot": true,
+      "hardness": 1,
+      "tags": []
+    },
+    "Same Tree": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 100,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Missing Number": {
+      "company": [
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 268,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Math",
+        "Bit Manipulation"
+      ]
+    },
+    "Partition List": {
+      "company": [],
+      "order": 86,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Two Pointers"
+      ]
+    },
+    "Zigzag Iterator": {
+      "company": [
+        "Google"
+      ],
+      "order": 281,
+      "hardness": 1,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Max Consecutive Ones": {
+      "company": [],
+      "order": 485,
+      "hardness": 0,
+      "tags": [
+        "Array"
+      ]
+    },
+    "Minimum Moves to Equal Array Elements II": {
+      "company": [],
+      "order": 462,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Contains Duplicate III": {
+      "company": [
+        "Airbnb",
+        "Palantir"
+      ],
+      "order": 220,
+      "hardness": 1,
+      "tags": [
+        "Binary Search Tree"
+      ]
+    },
+    "Sum Root to Leaf Numbers": {
+      "company": [],
+      "order": 129,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Lexicographical Numbers": {
+      "company": [],
+      "order": 386,
+      "hardness": 1,
+      "tags": []
+    },
+    "Binary Tree Level Order Traversal II": {
+      "company": [],
+      "order": 107,
+      "hardness": 0,
+      "tags": [
+        "Tree",
+        "BFS"
+      ]
+    },
+    "Scramble String": {
+      "company": [],
+      "order": 87,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming"
+      ]
+    },
+    "Convert a Number to Hexadecimal": {
+      "company": [],
+      "order": 405,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Add Strings": {
+      "company": [],
+      "order": 415,
+      "hardness": 0,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Delete Node in a BST": {
+      "company": [],
+      "order": 450,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Unique Binary Search Trees II": {
+      "company": [],
+      "order": 95,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming",
+        "Tree"
+      ]
+    },
+    "Best Time to Buy and Sell Stock": {
+      "company": [
+        "Uber",
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Bloomberg"
+      ],
+      "order": 121,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Dynamic Programming"
+      ]
+    },
+    "Longest Valid Parentheses": {
+      "company": [],
+      "order": 32,
+      "hardness": 2,
+      "tags": [
+        "String",
+        "Dynamic Programming"
+      ]
+    },
+    "Trapping Rain Water": {
+      "company": [
+        "Google",
+        "Twitter",
+        "Zenefit",
+        "Amazon",
+        "Apple",
+        "Bloomberg"
+      ],
+      "order": 42,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Two Pointers",
+        "Stack"
+      ]
+    },
+    "Two Sum": {
+      "company": [
+        "LinkedIn",
+        "Uber",
+        "Airbnb",
+        "Facebook",
+        "Amazon",
+        "Microsoft",
+        "Apple",
+        "Yahoo",
+        "Dropbox",
+        "Bloomberg",
+        "Yelp",
+        "Adobe"
+      ],
+      "order": 1,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Array",
+        "Hash Table"
+      ]
+    },
+    "Closest Binary Search Tree Value II": {
+      "company": [
+        "Google"
+      ],
+      "order": 272,
+      "hardness": 2,
+      "tags": [
+        "Stack",
+        "Tree"
+      ]
+    },
+    "Path Sum II": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 113,
+      "hardness": 1,
+      "tags": [
+        "Tree",
+        "DFS"
+      ]
+    },
+    "Longest Common Prefix": {
+      "company": [
+        "Yelp"
+      ],
+      "order": 14,
+      "hardness": 0,
+      "tags": [
+        "String"
+      ]
+    },
+    "Sparse Matrix Multiplication": {
+      "company": [
+        "LinkedIn",
+        "Facebook"
+      ],
+      "order": 311,
+      "hardness": 1,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Best Time to Buy and Sell Stock with Cooldown": {
+      "company": [
+        "Google"
+      ],
+      "order": 309,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Largest Divisible Subset": {
+      "company": [],
+      "order": 368,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "Dynamic Programming"
+      ]
+    },
+    "Binary Tree Upside Down": {
+      "company": [
+        "LinkedIn"
+      ],
+      "order": 156,
+      "hardness": 1,
+      "tags": [
+        "Tree"
+      ]
+    },
+    "Search a 2D Matrix": {
+      "company": [],
+      "order": 74,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "Line Reflection": {
+      "company": [],
+      "order": 356,
+      "hardness": 1,
+      "tags": [
+        "Hash Table",
+        "Math"
+      ]
+    },
+    "Add Binary": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 67,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "Number of Boomerangs": {
+      "company": [],
+      "order": 447,
+      "hardness": 0,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Unique Substrings in Wraparound String": {
+      "company": [],
+      "order": 467,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Jump Game": {
+      "company": [
+        "Microsoft"
+      ],
+      "order": 55,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Greedy"
+      ]
+    },
+    "House Robber": {
+      "company": [
+        "LinkedIn",
+        "Airbnb"
+      ],
+      "order": 198,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Gray Code": {
+      "company": [
+        "Amazon"
+      ],
+      "order": 89,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Validate IP Address": {
+      "company": [],
+      "order": 468,
+      "hardness": 1,
+      "tags": [
+        "String"
+      ]
+    },
+    "Paint House II": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 265,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Verify Preorder Serialization of a Binary Tree": {
+      "company": [
+        "Google"
+      ],
+      "order": 331,
+      "hardness": 1,
+      "tags": [
+        "Stack"
+      ]
+    },
+    "Max Points on a Line": {
+      "company": [
+        "LinkedIn",
+        "Twitter",
+        "Apple"
+      ],
+      "order": 149,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "Math"
+      ]
+    },
+    "Single Number": {
+      "company": [
+        "Airbnb",
+        "Palantir"
+      ],
+      "order": 136,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Bit Manipulation"
+      ]
+    },
+    "Palindrome Permutation": {
+      "company": [
+        "Google",
+        "Uber"
+      ],
+      "order": 266,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Hash Table"
+      ]
+    },
+    "Remove Invalid Parentheses": {
+      "company": [
+        "Facebook"
+      ],
+      "order": 301,
+      "hardness": 2,
+      "tags": [
+        "DFS",
+        "BFS"
+      ]
+    },
+    "Implement Stack using Queues": {
+      "company": [
+        "Bloomberg"
+      ],
+      "order": 225,
+        "isHot": true,
+      "hardness": 0,
+      "tags": [
+        "Stack",
+        "Design"
+      ]
+    },
+    "Word Break II": {
+      "company": [
+        "Google",
+        "Uber",
+        "Twitter",
+        "Snapchat",
+        "Dropbox"
+      ],
+      "order": 140,
+      "hardness": 2,
+      "tags": [
+        "Dynamic Programming",
+        "Backtracking"
+      ]
+    },
+    "Longest Substring with At Most Two Distinct Characters": {
+      "company": [
+        "Google"
+      ],
+      "order": 159,
+      "hardness": 2,
+      "tags": [
+        "Hash Table",
+        "Two Pointers",
+        "String"
+      ]
+    },
+    "All O`one Data Structure": {
+      "company": [],
+      "order": 432,
+      "hardness": 2,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Power of Two": {
+      "company": [
+        "Google"
+      ],
+      "order": 231,
+      "hardness": 0,
+      "tags": [
+        "Math",
+        "Bit Manipulation"
+      ]
+    },
+    "Remove K Digits": {
+      "company": [],
+      "order": 402,
+      "hardness": 1,
+      "tags": [
+        "Stack",
+        "Greedy"
+      ]
+    },
+    "Fizz Buzz": {
+      "company": [],
+      "order": 412,
+      "hardness": 0,
+      "tags": []
+    },
+    "Find the Difference": {
+      "company": [],
+      "order": 389,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Bit Manipulation"
+      ]
+    },
+    "Bomb Enemy": {
+      "company": [],
+      "order": 361,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Palindrome Permutation II": {
+      "company": [],
+      "order": 267,
+      "hardness": 1,
+      "tags": [
+        "Backtracking"
+      ]
+    },
+    "Search in Rotated Sorted Array II": {
+      "company": [],
+      "order": 81,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Binary Search"
+      ]
+    },
+    "LFU Cache": {
+      "company": [],
+      "order": 460,
+      "hardness": 2,
+      "tags": [
+        "Design"
+      ]
+    },
+    "Multiply Strings": {
+      "company": [
+        "Facebook",
+        "Twitter"
+      ],
+      "order": 43,
+      "hardness": 1,
+      "tags": [
+        "Math",
+        "String"
+      ]
+    },
+    "Happy Number": {
+      "company": [
+        "Uber",
+        "Airbnb",
+        "Twitter"
+      ],
+      "order": 202,
+      "hardness": 0,
+      "tags": [
+        "Hash Table",
+        "Math"
+      ]
+    },
+    "Reverse Bits": {
+      "company": [
+        "Airbnb",
+        "Apple"
+      ],
+      "order": 190,
+      "hardness": 0,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Convex Polygon": {
+      "company": [],
+      "order": 469,
+      "hardness": 1,
+      "tags": [
+        "Math"
+      ]
+    },
+    "Combination Sum II": {
+      "company": [],
+      "order": 40,
+      "hardness": 1,
+      "tags": [
+        "Array",
+        "Backtracking"
+      ]
+    },
+    "Design Phone Directory": {
+      "company": [],
+      "order": 379,
+      "hardness": 1,
+      "tags": [
+        "Linked List",
+        "Design"
+      ]
+    },
+    "Median of Two Sorted Arrays": {
+      "company": [
+        "Google",
+        "Zenefit",
+        "Microsoft",
+        "Apple",
+        "Yahoo",
+        "Dropbox",
+        "Adobe"
+      ],
+      "order": 4,
+      "hardness": 2,
+      "tags": [
+        "Array",
+        "Divide and Conquer",
+        "Binary Search"
+      ]
+    },
+    "Largest Number": {
+      "company": [],
+      "order": 179,
+      "hardness": 1,
+      "tags": [
+        "Sort"
+      ]
+    },
+    "The Skyline Problem": {
+      "company": [
+        "Google",
+        "Facebook",
+        "Twitter",
+        "Microsoft",
+        "Yelp"
+      ],
+      "order": 218,
+      "hardness": 2,
+      "tags": [
+        "Divide and Conquer",
+        "Heap",
+        "Binary Indexed Tree",
+        "Segment Tree"
+      ]
+    },
+    "Combination Sum IV": {
+      "company": [],
+      "order": 377,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    },
+    "Single Number III": {
+      "company": [],
+      "order": 260,
+      "hardness": 1,
+      "tags": [
+        "Bit Manipulation"
+      ]
+    },
+    "Guess Number Higher or Lower II": {
+      "company": [],
+      "order": 375,
+      "hardness": 1,
+      "tags": [
+        "Dynamic Programming"
+      ]
+    }
+  }
+}

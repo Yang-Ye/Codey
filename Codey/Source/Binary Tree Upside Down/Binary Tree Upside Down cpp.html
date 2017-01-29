@@ -1,0 +1,65 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition for a binary tree node.</span>
+<span style="color: #888888"> * struct TreeNode {</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode *left;</span>
+<span style="color: #888888"> *     TreeNode *right;</span>
+<span style="color: #888888"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}</span>
+<span style="color: #888888"> * };</span>
+<span style="color: #888888"> */</span>
+
+<span style="color: #888888">// recursive</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    TreeNode<span style="color: #333333">*</span> upsideDownBinaryTree<span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(!</span>root <span style="color: #333333">||</span> <span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> root<span style="color: #333333">;</span>
+
+        TreeNode <span style="color: #333333">*</span> newRoot <span style="color: #333333">=</span> upsideDownBinaryTree<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">);</span>
+
+        root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">-&gt;</span>left <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">;</span>
+        root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">-&gt;</span>right <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+        root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">=</span> NULL<span style="color: #333333">;</span>
+        root<span style="color: #333333">-&gt;</span>right <span style="color: #333333">=</span> NULL<span style="color: #333333">;</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> newRoot<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+
+<span style="color: #888888">// non-recursive</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    TreeNode<span style="color: #333333">*</span> upsideDownBinaryTree<span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(!</span>root<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> NULL<span style="color: #333333">;</span>
+
+        stack<span style="color: #333333">&lt;</span>TreeNode <span style="color: #333333">*&gt;</span> s<span style="color: #333333">;</span>
+        TreeNode <span style="color: #333333">*</span> run <span style="color: #333333">=</span> root<span style="color: #333333">,</span> <span style="color: #333333">*</span> last<span style="color: #333333">;</span>
+
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>run<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            s<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>run<span style="color: #333333">);</span>
+            run <span style="color: #333333">=</span> run<span style="color: #333333">-&gt;</span>left<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        root <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">top</span><span style="color: #333333">();</span>
+        s<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+        root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">=</span> NULL<span style="color: #333333">;</span>
+        root<span style="color: #333333">-&gt;</span>right <span style="color: #333333">=</span> NULL<span style="color: #333333">;</span>
+        last <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+
+        <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>s<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            run <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">top</span><span style="color: #333333">();</span>
+            s<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+
+            last<span style="color: #333333">-&gt;</span>left <span style="color: #333333">=</span> run<span style="color: #333333">-&gt;</span>right<span style="color: #333333">;</span>
+            last<span style="color: #333333">-&gt;</span>right <span style="color: #333333">=</span> run<span style="color: #333333">;</span>
+            run<span style="color: #333333">-&gt;</span>left <span style="color: #333333">=</span> NULL<span style="color: #333333">;</span>
+            run<span style="color: #333333">-&gt;</span>right <span style="color: #333333">=</span> NULL<span style="color: #333333">;</span>
+
+            last <span style="color: #333333">=</span> run<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> root<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

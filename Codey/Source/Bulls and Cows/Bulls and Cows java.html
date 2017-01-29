@@ -1,0 +1,46 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getHint</span><span style="color: #333333">(</span>String secret<span style="color: #333333">,</span> String guess<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span> countBull<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> countCow<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;</span> map <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;();</span>
+ 
+    <span style="color: #888888">//check bull</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>secret<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+        <span style="color: #333399; font-weight: bold">char</span> c1 <span style="color: #333333">=</span> secret<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #333399; font-weight: bold">char</span> c2 <span style="color: #333333">=</span> guess<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>c1<span style="color: #333333">==</span>c2<span style="color: #333333">){</span>
+            countBull<span style="color: #333333">++;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>c1<span style="color: #333333">)){</span>
+                <span style="color: #333399; font-weight: bold">int</span> freq <span style="color: #333333">=</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c1<span style="color: #333333">);</span>
+                freq<span style="color: #333333">++;</span>
+                map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c1<span style="color: #333333">,</span> freq<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c1<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">//check cow</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>secret<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+        <span style="color: #333399; font-weight: bold">char</span> c1 <span style="color: #333333">=</span> secret<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #333399; font-weight: bold">char</span> c2 <span style="color: #333333">=</span> guess<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>c1<span style="color: #333333">!=</span>c2<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>c2<span style="color: #333333">)){</span>
+                countCow<span style="color: #333333">++;</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c2<span style="color: #333333">)==</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+                    map<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>c2<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                    <span style="color: #333399; font-weight: bold">int</span> freq <span style="color: #333333">=</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c2<span style="color: #333333">);</span>
+                    freq<span style="color: #333333">--;</span>
+                    map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c2<span style="color: #333333">,</span> freq<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span> 
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> countBull<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;A&quot;</span><span style="color: #333333">+</span>countCow<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;B&quot;</span><span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

@@ -1,0 +1,34 @@
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+Given an Android&nbsp;<span style="font-weight:700">3x3</span>&nbsp;key lock screen and two integers&nbsp;<span style="font-weight:700">m</span>&nbsp;and&nbsp;<span style="font-weight:700">n</span>, where 1 ≤ m ≤ n ≤ 9, count the total number of unlock patterns of the Android lock
+ screen, which consist of minimum of&nbsp;<span style="font-weight:700">m</span>&nbsp;keys and maximum&nbsp;<span style="font-weight:700">n</span>&nbsp;keys.</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Rules for a valid pattern:</span><br style="">
+</p>
+<ol style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<li style="">Each pattern must connect at least&nbsp;<span style="font-weight:700">m</span>&nbsp;keys and at most&nbsp;<span style="font-weight:700">n</span>&nbsp;keys.</li><li style="">All the keys must be distinct.</li><li style="">If the line connecting two consecutive keys in the pattern passes through any other keys, the other keys must have previously selected in the pattern. No jumps through non selected key is allowed.</li><li style="">The order of keys used matters.</li></ol>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+</p>
+<img src="https://discuss.leetcode.com/uploads/files/1461680355228-cptqh.png" alt="" style="border:0px; vertical-align:middle; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px"><span style="color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px"></span>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Explanation:</span><br style="">
+</p>
+<pre style="overflow:auto; font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:13px; padding:9.5px; margin-top:0px; margin-bottom:10px; line-height:1.42857; color:rgb(51,51,51); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); background-color:rgb(245,245,245)">| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |</pre>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Invalid move:</span>&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">4 - 1 - 3 - 6&nbsp;</code><br style="">
+Line 1 - 3 passes through key 2 which had not been selected in the pattern.</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Invalid move:</span>&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">4 - 1 - 9 - 2</code><br style="">
+Line 1 - 9 passes through key 5 which had not been selected in the pattern.</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Valid move:</span>&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">2 - 4 - 1 - 3 - 6</code><br style="">
+Line 1 - 3 is valid because it passes through key 2, which had been selected in the pattern</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Valid move:</span>&nbsp;<code style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:12.6px; padding:2px 4px; color:rgb(199,37,78); background-color:rgb(249,242,244)">6 - 5 - 4 - 1 - 9 - 2</code><br style="">
+Line 1 - 9 is valid because it passes through key 5, which had been selected in the pattern.</p>
+<p style="margin-top:0px; margin-bottom:10px; color:rgb(51,51,51); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:30px">
+<span style="font-weight:700">Example:</span><br style="">
+Given&nbsp;<span style="font-weight:700">m</span>&nbsp;= 1,&nbsp;<span style="font-weight:700">n</span>&nbsp;= 1, return 9.</p>

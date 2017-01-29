@@ -1,0 +1,32 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition for a binary tree node.</span>
+<span style="color: #888888"> * public class TreeNode {</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode left;</span>
+<span style="color: #888888"> *     TreeNode right;</span>
+<span style="color: #888888"> *     TreeNode(int x) { val = x; }</span>
+<span style="color: #888888"> * }</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> TreeNode <span style="color: #0066BB; font-weight: bold">upsideDownBinaryTree</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">upsideDownBinaryTreeHelper</span><span style="color: #333333">(</span>root<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+     
+    <span style="color: #008800; font-weight: bold">private</span> TreeNode <span style="color: #0066BB; font-weight: bold">upsideDownBinaryTreeHelper</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">,</span> TreeNode parent<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> parent<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        TreeNode newNode <span style="color: #333333">=</span> upsideDownBinaryTreeHelper<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">,</span> root<span style="color: #333333">);</span>
+         
+        root<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">=</span> parent <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">:</span> parent<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+        root<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">=</span> parent<span style="color: #333333">;</span>
+         
+        <span style="color: #008800; font-weight: bold">return</span> newNode<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
