@@ -18,14 +18,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IX9-I5-Mxi">
-                        <rect key="frame" x="5" y="1" width="310" height="40.5"/>
+                        <rect key="frame" x="4" y="2" width="312" height="39.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlZ-A3-6OG">
-                                <rect key="frame" x="5" y="11" width="300" height="19"/>
+                                <rect key="frame" x="5" y="10.5" width="302" height="19"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Python" translatesAutoresizingMaskIntoConstraints="NO" id="5ys-w8-Rdc">
-                                <rect key="frame" x="8" y="8.5" width="25" height="25"/>
+                                <rect key="frame" x="8" y="8" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="msa-FU-IvC"/>
                                     <constraint firstAttribute="height" constant="25" id="pti-Kn-txC"/>
@@ -46,9 +46,9 @@
                 <color key="backgroundColor" white="0.84095594620000003" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="IX9-I5-Mxi" secondAttribute="bottom" constant="2" id="2TI-uZ-6Gz"/>
-                    <constraint firstItem="IX9-I5-Mxi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="nPa-Xv-OyX"/>
-                    <constraint firstItem="IX9-I5-Mxi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="nmF-mY-BQn"/>
-                    <constraint firstAttribute="trailing" secondItem="IX9-I5-Mxi" secondAttribute="trailing" constant="5" id="tid-34-9QI"/>
+                    <constraint firstItem="IX9-I5-Mxi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="nPa-Xv-OyX"/>
+                    <constraint firstItem="IX9-I5-Mxi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="nmF-mY-BQn"/>
+                    <constraint firstAttribute="trailing" secondItem="IX9-I5-Mxi" secondAttribute="trailing" constant="4" id="tid-34-9QI"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

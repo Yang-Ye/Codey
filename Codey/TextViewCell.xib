@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Loading......🚛" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OF-17-pGP">
-                        <rect key="frame" x="5" y="1" width="375" height="214.5"/>
+                        <rect key="frame" x="4" y="2" width="377" height="213.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -26,10 +26,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.84095594620000003" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="3OF-17-pGP" firstAttribute="leading" secondItem="xbX-xs-fVc" secondAttribute="leading" constant="5" id="aey-lu-LRw"/>
-                    <constraint firstAttribute="trailing" secondItem="3OF-17-pGP" secondAttribute="trailing" constant="5" id="brw-ft-rg4"/>
+                    <constraint firstItem="3OF-17-pGP" firstAttribute="leading" secondItem="xbX-xs-fVc" secondAttribute="leading" constant="4" id="aey-lu-LRw"/>
+                    <constraint firstAttribute="trailing" secondItem="3OF-17-pGP" secondAttribute="trailing" constant="4" id="brw-ft-rg4"/>
                     <constraint firstAttribute="bottom" secondItem="3OF-17-pGP" secondAttribute="bottom" constant="2" id="mCa-9r-lyu"/>
-                    <constraint firstItem="3OF-17-pGP" firstAttribute="top" secondItem="xbX-xs-fVc" secondAttribute="top" constant="1" id="qEd-LW-IxE"/>
+                    <constraint firstItem="3OF-17-pGP" firstAttribute="top" secondItem="xbX-xs-fVc" secondAttribute="top" constant="2" id="qEd-LW-IxE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

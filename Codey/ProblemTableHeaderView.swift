@@ -22,7 +22,7 @@ class ProblemTableHeaderView: UIView {
             loveLabel.removeFromSuperview()
         }
         makeWithLove = UILabel(frame: rect)
-        makeWithLove!.text = "Make with ❤️ by Yang Ye."
+        makeWithLove!.text = "Make with passion by Yang Ye."
         makeWithLove!.font = UIFont(name: "ArialRoundedMTBold", size: 9)
         makeWithLove!.textAlignment = .center
         makeWithLove!.textColor = UIColor.black
