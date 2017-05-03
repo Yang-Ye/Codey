@@ -1,0 +1,12 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">repeatedSubstringPattern</span>(<span style="color: #007020">self</span>, <span style="color: #007020">str</span>):
+
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type str: str</span>
+<span style="color: #DD4422">        :rtype: bool</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #007020">str</span>:
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+            
+        ss <span style="color: #333333">=</span> (<span style="color: #007020">str</span> <span style="color: #333333">+</span> <span style="color: #007020">str</span>)[<span style="color: #0000DD; font-weight: bold">1</span>:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
+        <span style="color: #008800; font-weight: bold">return</span> ss<span style="color: #333333">.</span>find(<span style="color: #007020">str</span>) <span style="color: #333333">!=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
+</pre></div>

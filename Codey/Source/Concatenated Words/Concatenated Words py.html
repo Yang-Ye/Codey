@@ -1,0 +1,21 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">S <span style="color: #333333">=</span> <span style="color: #007020">set</span>(A)
+ans <span style="color: #333333">=</span> []
+<span style="color: #008800; font-weight: bold">for</span> word <span style="color: #000000; font-weight: bold">in</span> A:
+  <span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> word: <span style="color: #008800; font-weight: bold">continue</span>
+  stack <span style="color: #333333">=</span> [<span style="color: #0000DD; font-weight: bold">0</span>]
+  seen <span style="color: #333333">=</span> {<span style="color: #0000DD; font-weight: bold">0</span>}
+  M <span style="color: #333333">=</span> <span style="color: #007020">len</span>(word)
+  <span style="color: #008800; font-weight: bold">while</span> stack:
+    node <span style="color: #333333">=</span> stack<span style="color: #333333">.</span>pop()
+    <span style="color: #008800; font-weight: bold">if</span> node <span style="color: #333333">==</span> M:
+      ans<span style="color: #333333">.</span>append(word)
+      <span style="color: #008800; font-weight: bold">break</span>
+    <span style="color: #008800; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(M <span style="color: #333333">-</span> node <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>):
+      <span style="color: #008800; font-weight: bold">if</span> (word[node:node<span style="color: #333333">+</span>j] <span style="color: #000000; font-weight: bold">in</span> S <span style="color: #000000; font-weight: bold">and</span> 
+          node <span style="color: #333333">+</span> j <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> seen <span style="color: #000000; font-weight: bold">and</span>
+          (node <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">or</span> node <span style="color: #333333">+</span> j <span style="color: #333333">!=</span> M)):
+        stack<span style="color: #333333">.</span>append(node <span style="color: #333333">+</span> j)
+        seen<span style="color: #333333">.</span>add(node <span style="color: #333333">+</span> j)
+
+<span style="color: #008800; font-weight: bold">return</span> ans
+</pre></div>

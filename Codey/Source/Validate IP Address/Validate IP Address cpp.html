@@ -1,0 +1,56 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">const</span> string validIPv6Chars <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;0123456789abcdefABCDEF&quot;</span>;
+    
+    <span style="color: #333399; font-weight: bold">bool</span> <span style="color: #0066BB; font-weight: bold">isValidIPv4Block</span>(string<span style="color: #333333">&amp;</span> block) {
+    	<span style="color: #333399; font-weight: bold">int</span> num <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    	<span style="color: #008800; font-weight: bold">if</span> (block.size() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> block.size() <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">3</span>) {
+    	    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> block.size(); i<span style="color: #333333">++</span>) {
+    	        <span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> block[i];
+    	        <span style="color: #888888">// special case: if c is a leading zero and there are characters left</span>
+    	        <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>isalnum(c) <span style="color: #333333">||</span> (i <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> c <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;0&#39;</span> <span style="color: #333333">&amp;&amp;</span> block.size() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">1</span>))
+    		    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    	        <span style="color: #008800; font-weight: bold">else</span> {
+    		    num <span style="color: #333333">*=</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+    		    num <span style="color: #333333">+=</span> c <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;0&#39;</span>;
+    	        }
+    	    }
+    	    <span style="color: #008800; font-weight: bold">return</span> num <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">255</span>;
+    	}
+    	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    }
+    
+    <span style="color: #333399; font-weight: bold">bool</span> <span style="color: #0066BB; font-weight: bold">isValidIPv6Block</span>(string<span style="color: #333333">&amp;</span> block) {
+    	<span style="color: #008800; font-weight: bold">if</span> (block.size() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> block.size() <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">4</span>) {
+    	    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> block.size(); i<span style="color: #333333">++</span>) {
+    	        <span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> block[i];
+    	        <span style="color: #008800; font-weight: bold">if</span> (validIPv6Chars.find(c) <span style="color: #333333">==</span> string<span style="color: #333333">::</span>npos)
+    	    	    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    	    }
+    	    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+    	}
+    	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    }
+    
+    string <span style="color: #0066BB; font-weight: bold">validIPAddress</span>(string IP) {
+    	string ans[<span style="color: #0000DD; font-weight: bold">3</span>] <span style="color: #333333">=</span> {<span style="background-color: #fff0f0">&quot;IPv4&quot;</span>, <span style="background-color: #fff0f0">&quot;IPv6&quot;</span>, <span style="background-color: #fff0f0">&quot;Neither&quot;</span>};
+    	stringstream ss(IP);
+    	string block;
+    	<span style="color: #888888">// ipv4 candidate</span>
+    	<span style="color: #008800; font-weight: bold">if</span> (IP.substr(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">4</span>).find(<span style="color: #0044DD">&#39;.&#39;</span>) <span style="color: #333333">!=</span> string<span style="color: #333333">::</span>npos) {
+    	    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">4</span>; i<span style="color: #333333">++</span>) {
+    		<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>getline(ss, block, <span style="color: #0044DD">&#39;.&#39;</span>) <span style="color: #333333">||</span> <span style="color: #333333">!</span>isValidIPv4Block(block))
+    	   	    <span style="color: #008800; font-weight: bold">return</span> ans[<span style="color: #0000DD; font-weight: bold">2</span>];
+    	    }
+    	    <span style="color: #008800; font-weight: bold">return</span> ss.eof() <span style="color: #333333">?</span> ans[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">:</span> ans[<span style="color: #0000DD; font-weight: bold">2</span>];
+    	}
+    	<span style="color: #888888">// ipv6 candidate</span>
+    	<span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (IP.substr(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">5</span>).find(<span style="color: #0044DD">&#39;:&#39;</span>) <span style="color: #333333">!=</span> string<span style="color: #333333">::</span>npos) {
+    	    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">8</span>; i<span style="color: #333333">++</span>) {
+    		<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>getline(ss, block, <span style="color: #0044DD">&#39;:&#39;</span>) <span style="color: #333333">||</span> <span style="color: #333333">!</span>isValidIPv6Block(block))
+    		    <span style="color: #008800; font-weight: bold">return</span> ans[<span style="color: #0000DD; font-weight: bold">2</span>];
+    	    }
+    	    <span style="color: #008800; font-weight: bold">return</span> ss.eof() <span style="color: #333333">?</span> ans[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">:</span> ans[<span style="color: #0000DD; font-weight: bold">2</span>];
+    	}
+    
+    	<span style="color: #008800; font-weight: bold">return</span> ans[<span style="color: #0000DD; font-weight: bold">2</span>];
+    }
+</pre></div>

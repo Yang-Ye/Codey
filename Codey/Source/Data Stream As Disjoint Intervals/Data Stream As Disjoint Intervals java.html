@@ -1,0 +1,43 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">SummaryRanges</span> <span style="color: #333333">{</span>
+ 
+    TreeSet<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;</span> set<span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">/** Initialize your data structure here. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">SummaryRanges</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        set <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TreeSet<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;(</span><span style="color: #008800; font-weight: bold">new</span> Comparator<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;(){</span>
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">compare</span><span style="color: #333333">(</span>Interval a<span style="color: #333333">,</span> Interval b<span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">return</span> a<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">-</span>b<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">});</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">addNum</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> val<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        Interval t <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Interval<span style="color: #333333">(</span>val<span style="color: #333333">,</span> val<span style="color: #333333">);</span>
+ 
+        Interval floor <span style="color: #333333">=</span> set<span style="color: #333333">.</span><span style="color: #0000CC">floor</span><span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>floor<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>val<span style="color: #333333">&lt;=</span>floor<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>val <span style="color: #333333">==</span> floor<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+                t<span style="color: #333333">.</span><span style="color: #0000CC">start</span> <span style="color: #333333">=</span> floor<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">;</span>
+                set<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>floor<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+        Interval ceil <span style="color: #333333">=</span> set<span style="color: #333333">.</span><span style="color: #0000CC">higher</span><span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>ceil<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>ceil<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">==</span>val<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+                t<span style="color: #333333">.</span><span style="color: #0000CC">end</span> <span style="color: #333333">=</span> ceil<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">;</span>
+                set<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>ceil<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+        set<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+ 
+    <span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">getIntervals</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> Arrays<span style="color: #333333">.</span><span style="color: #0000CC">asList</span><span style="color: #333333">(</span>set<span style="color: #333333">.</span><span style="color: #0000CC">toArray</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Interval<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]));</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

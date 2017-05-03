@@ -16,7 +16,6 @@ class RefineCell: UICollectionViewCell {
     override func awakeFromNib() {
         self.backgroundColor = UIColor.white
         self.isSelected = false
-        background.backgroundColor = UIColor.blueFlat
-        background.layer.cornerRadius = 5
+        background.layer.cornerRadius = 8
     }
 }

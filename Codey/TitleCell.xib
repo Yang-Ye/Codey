@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleCell" rowHeight="47" id="KGk-i7-Jjw" customClass="TitleCell" customModule="Codey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="388" height="47"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="388" height="46"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-MO-1YY">
+                        <rect key="frame" x="5" y="2" width="378" height="42.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ime-ZE-ykU">
+                        <rect key="frame" x="13" y="8" width="362" height="30.5"/>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.84095594620000003" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ime-ZE-ykU" secondAttribute="trailing" constant="5" id="5UG-yh-wPK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Ime-ZE-ykU" secondAttribute="bottom" id="GDm-Om-nLz"/>
+                    <constraint firstAttribute="bottom" secondItem="7bf-MO-1YY" secondAttribute="bottom" constant="2" id="VGN-Ba-CXZ"/>
+                    <constraint firstItem="7bf-MO-1YY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="YGS-JT-for"/>
+                    <constraint firstItem="7bf-MO-1YY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="e0W-38-lVt"/>
+                    <constraint firstItem="Ime-ZE-ykU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mfs-hL-6bo"/>
+                    <constraint firstItem="Ime-ZE-ykU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="qF9-gW-UhF"/>
+                    <constraint firstAttribute="trailing" secondItem="7bf-MO-1YY" secondAttribute="trailing" constant="5" id="zPg-Cs-IxN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="customBackgroundView" destination="7bf-MO-1YY" id="Wif-dR-WHA"/>
+                <outlet property="title" destination="Ime-ZE-ykU" id="nzh-he-8IB"/>
+            </connections>
+            <point key="canvasLocation" x="-186" y="5.5"/>
+        </tableViewCell>
+    </objects>
+</document>

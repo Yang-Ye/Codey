@@ -1,0 +1,39 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> restoreIpAddresses(string s) {
+        vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> ipComb;
+        vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> ipNum;
+        findIPAddr(s, <span style="color: #0000DD; font-weight: bold">0</span>, ipNum, ipComb);
+        <span style="color: #008800; font-weight: bold">return</span> ipComb;
+    }
+    
+    <span style="color: #333399; font-weight: bold">void</span> findIPAddr(string <span style="color: #333333">&amp;</span>s, <span style="color: #333399; font-weight: bold">int</span> index, vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>ipNum, vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>ipComb) {
+        <span style="color: #008800; font-weight: bold">if</span>(ipNum.size()<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">4</span>) {
+            <span style="color: #008800; font-weight: bold">if</span>(index<span style="color: #333333">==</span>s.size()) {
+                string ipAddr <span style="color: #333333">=</span> ipNum[<span style="color: #0000DD; font-weight: bold">0</span>];
+                <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>; i<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">4</span>; i<span style="color: #333333">++</span>) 
+                    ipAddr <span style="color: #333333">+=</span> (<span style="background-color: #fff0f0">&quot;.&quot;</span><span style="color: #333333">+</span>ipNum[i]);
+                ipComb.push_back(ipAddr);
+            }
+            <span style="color: #008800; font-weight: bold">return</span>;
+        }
+        
+        string curNum;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span>index; i<span style="color: #333333">&lt;</span>s.size() <span style="color: #333333">&amp;&amp;</span> i<span style="color: #333333">&lt;</span>index<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">3</span>; i<span style="color: #333333">++</span>) {
+            curNum.push_back(s[i]);
+            <span style="color: #008800; font-weight: bold">if</span>(isValidNum(curNum)) {
+                ipNum.push_back(curNum);
+                findIPAddr(s, i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>, ipNum, ipComb);
+                ipNum.pop_back();
+            }
+        }
+    }
+    
+    <span style="color: #333399; font-weight: bold">bool</span> isValidNum(string s) {
+        <span style="color: #008800; font-weight: bold">if</span>(s.empty() <span style="color: #333333">||</span> s.size()<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">3</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+        <span style="color: #008800; font-weight: bold">if</span>(s[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">==</span><span style="color: #0044DD">&#39;0&#39;</span> <span style="color: #333333">&amp;&amp;</span> s.size()<span style="color: #333333">!=</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+        <span style="color: #008800; font-weight: bold">if</span>(s.size()<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">3</span> <span style="color: #333333">&amp;&amp;</span> stoi(s)<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">255</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+    }
+};
+</pre></div>

@@ -1,0 +1,37 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> findAllConcatenatedWordsInADict(String[] words) {
+        List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;&gt;</span>();
+        Set<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> preWords <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;&gt;</span>();
+        Arrays.sort(words, <span style="color: #008800; font-weight: bold">new</span> Comparator<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span>() {
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> compare (String s1, String s2) {
+                <span style="color: #008800; font-weight: bold">return</span> s1.length() <span style="color: #333333">-</span> s2.length();
+            }
+        });
+        
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> words.length; i<span style="color: #333333">++</span>) {
+            <span style="color: #008800; font-weight: bold">if</span> (canForm(words[i], preWords)) {
+                result.add(words[i]);
+            }
+            preWords.add(words[i]);
+        }
+        
+        <span style="color: #008800; font-weight: bold">return</span> result;
+    }
+	
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #008800; font-weight: bold">static</span> boolean canForm(String word, Set<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> dict) {
+        <span style="color: #008800; font-weight: bold">if</span> (dict.isEmpty()) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+	boolean[] dp <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> boolean[word.length() <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>];
+	dp[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+	<span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>; i <span style="color: #333333">&lt;=</span> word.length(); i<span style="color: #333333">++</span>) {
+	    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; j <span style="color: #333333">&lt;</span> i; j<span style="color: #333333">++</span>) {
+		<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>dp[j]) <span style="color: #008800; font-weight: bold">continue</span>;
+		<span style="color: #008800; font-weight: bold">if</span> (dict.contains(word.substring(j, i))) {
+		    dp[i] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+		    <span style="color: #008800; font-weight: bold">break</span>;
+		}
+	    }
+	}
+	<span style="color: #008800; font-weight: bold">return</span> dp[word.length()];
+    }
+}
+</pre></div>

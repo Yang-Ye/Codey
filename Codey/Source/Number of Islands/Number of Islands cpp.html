@@ -1,0 +1,42 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+ 
+    <span style="color: #333399; font-weight: bold">void</span> search(<span style="color: #333399; font-weight: bold">int</span> i, <span style="color: #333399; font-weight: bold">int</span> j, vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">&gt;&gt;&amp;</span> grid, vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">bool</span><span style="color: #333333">&gt;&gt;&amp;</span> mark){
+        mark[i][j] <span style="color: #333333">=</span> <span style="color: #007020">false</span>;
+         
+        <span style="color: #008800; font-weight: bold">if</span> (i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&lt;</span>grid.size() <span style="color: #333333">&amp;&amp;</span> grid[i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>][j]<span style="color: #333333">==</span><span style="color: #0044DD">&#39;1&#39;</span> <span style="color: #333333">&amp;&amp;</span> mark[i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>][j]<span style="color: #333333">==</span><span style="color: #007020">true</span>){
+            search(i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>,j,grid,mark);
+        }
+        <span style="color: #008800; font-weight: bold">if</span> (j<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&lt;</span>grid[<span style="color: #0000DD; font-weight: bold">0</span>].size() <span style="color: #333333">&amp;&amp;</span> grid[i][j<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>]<span style="color: #333333">==</span><span style="color: #0044DD">&#39;1&#39;</span> <span style="color: #333333">&amp;&amp;</span> mark[i][j<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>]<span style="color: #333333">==</span><span style="color: #007020">true</span>){
+            search(i,j<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>,grid,mark);
+        }
+        <span style="color: #008800; font-weight: bold">if</span> (i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&gt;=</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> grid[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>][j]<span style="color: #333333">==</span><span style="color: #0044DD">&#39;1&#39;</span> <span style="color: #333333">&amp;&amp;</span> mark[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>][j]<span style="color: #333333">==</span><span style="color: #007020">true</span>){
+            search(i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,j,grid,mark);
+        }
+        <span style="color: #008800; font-weight: bold">if</span> (j<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&gt;=</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> grid[i][j<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]<span style="color: #333333">==</span><span style="color: #0044DD">&#39;1&#39;</span> <span style="color: #333333">&amp;&amp;</span> mark[i][j<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]<span style="color: #333333">==</span><span style="color: #007020">true</span>){
+            search(i,j<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,grid,mark);
+        }
+    }    
+ 
+    <span style="color: #333399; font-weight: bold">int</span> numIslands(vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">&gt;&gt;&amp;</span> grid) {
+        <span style="color: #333399; font-weight: bold">int</span> row <span style="color: #333333">=</span> grid.size();
+        <span style="color: #008800; font-weight: bold">if</span> (row<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #333399; font-weight: bold">int</span> col <span style="color: #333333">=</span> grid[<span style="color: #0000DD; font-weight: bold">0</span>].size();
+         
+        <span style="color: #333399; font-weight: bold">int</span> res<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;
+         
+        vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">bool</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> mark(row, vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">bool</span><span style="color: #333333">&gt;</span>(col,<span style="color: #007020">true</span>));
+         
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>row;i<span style="color: #333333">++</span>){
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> j<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;j<span style="color: #333333">&lt;</span>col;j<span style="color: #333333">++</span>){
+                <span style="color: #008800; font-weight: bold">if</span> (grid[i][j] <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;1&#39;</span> <span style="color: #333333">&amp;&amp;</span> mark[i][j] <span style="color: #333333">==</span> <span style="color: #007020">true</span>){
+                    search(i,j,grid,mark);
+                    res<span style="color: #333333">+=</span><span style="color: #0000DD; font-weight: bold">1</span>;
+                }
+            }
+        }
+        <span style="color: #008800; font-weight: bold">return</span> res;
+         
+    }
+};
+</pre></div>

@@ -1,0 +1,15 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> ListNode <span style="color: #0066BB; font-weight: bold">reverseList</span><span style="color: #333333">(</span>ListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>head<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> head<span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">//get second node    </span>
+    ListNode second <span style="color: #333333">=</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+    <span style="color: #888888">//set first&#39;s next to be null</span>
+    head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+ 
+    ListNode rest <span style="color: #333333">=</span> reverseList<span style="color: #333333">(</span>second<span style="color: #333333">);</span>
+    second<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> rest<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

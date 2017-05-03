@@ -1,0 +1,30 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">divide</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> dividend<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> divisor<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">//handle special cases</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>divisor<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>divisor<span style="color: #333333">==-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&amp;&amp;</span> dividend <span style="color: #333333">==</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">//get positive values</span>
+    <span style="color: #333399; font-weight: bold">long</span> pDividend <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">abs</span><span style="color: #333333">((</span><span style="color: #333399; font-weight: bold">long</span><span style="color: #333333">)</span>dividend<span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">long</span> pDivisor <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">abs</span><span style="color: #333333">((</span><span style="color: #333399; font-weight: bold">long</span><span style="color: #333333">)</span>divisor<span style="color: #333333">);</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>pDividend<span style="color: #333333">&gt;=</span>pDivisor<span style="color: #333333">){</span>
+        <span style="color: #888888">//calculate number of left shifts</span>
+        <span style="color: #333399; font-weight: bold">int</span> numShift <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>    
+        <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>pDividend<span style="color: #333333">&gt;=(</span>pDivisor<span style="color: #333333">&lt;&lt;</span>numShift<span style="color: #333333">)){</span>
+            numShift<span style="color: #333333">++;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #888888">//dividend minus the largest shifted divisor</span>
+        result <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&lt;&lt;(</span>numShift<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        pDividend <span style="color: #333333">-=</span> <span style="color: #333333">(</span>pDivisor<span style="color: #333333">&lt;&lt;(</span>numShift<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">((</span>dividend<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> divisor<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">||</span> <span style="color: #333333">(</span>dividend<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> divisor<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)){</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span>result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

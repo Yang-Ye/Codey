@@ -1,0 +1,14 @@
+<p>Given a target string and a set of strings in a dictionary, find an abbreviation of this target string with the smallest possible length such that it does not conflict with abbreviations of the strings in the dictionary.</p>
+
+<p>Each number or letter in the abbreviation is considered length = 1. For example, the abbreviation &quot;a32bc&quot; has length = 4.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>In the case of multiple answers as shown in the second example below, you may return any one of them.<br />
+Assume length of target string = m, and dictionary size = n. You may assume that m &le; 21, n &le; 1000, and log2(n) + m &le; 20.</p>
+
+<p>Examples:</p>
+
+<p>&quot;apple&quot;, [&quot;blade&quot;] -&gt; &quot;a4&quot; (because &quot;5&quot; or &quot;4e&quot; conflicts with &quot;blade&quot;)</p>
+
+<p>&quot;apple&quot;, [&quot;plain&quot;, &quot;amber&quot;, &quot;blade&quot;] -&gt; &quot;1p3&quot; (other valid answers include &quot;ap3&quot;, &quot;a3e&quot;, &quot;2p2&quot;, &quot;3le&quot;, &quot;3l1&quot;).</p>

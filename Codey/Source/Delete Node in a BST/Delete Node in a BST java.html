@@ -1,0 +1,29 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> TreeNode <span style="color: #0066BB; font-weight: bold">deleteNode</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> key<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>key <span style="color: #333333">&lt;</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">){</span>
+        root<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">=</span> deleteNode<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">,</span> key<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>key <span style="color: #333333">&gt;</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">){</span>
+        root<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">=</span> deleteNode<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">,</span> key<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> root<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        TreeNode minNode <span style="color: #333333">=</span> findMin<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+        root<span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">=</span> minNode<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+        root<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">=</span> deleteNode<span style="color: #333333">(</span>root<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">,</span> root<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">return</span> root<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #008800; font-weight: bold">private</span> TreeNode <span style="color: #0066BB; font-weight: bold">findMin</span><span style="color: #333333">(</span>TreeNode node<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        node <span style="color: #333333">=</span> node<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">return</span> node<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

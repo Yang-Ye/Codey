@@ -1,0 +1,17 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">int</span> sumNumbers(TreeNode <span style="color: #333333">*</span>root) {
+        <span style="color: #333399; font-weight: bold">int</span> sum <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        sumRootToLeafNum(root, <span style="color: #0000DD; font-weight: bold">0</span>, sum);
+        <span style="color: #008800; font-weight: bold">return</span> sum;
+    }
+    
+    <span style="color: #333399; font-weight: bold">void</span> sumRootToLeafNum(TreeNode <span style="color: #333333">*</span>root, <span style="color: #333399; font-weight: bold">int</span> curNum, <span style="color: #333399; font-weight: bold">int</span> <span style="color: #333333">&amp;</span>sum) {
+        <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>root) <span style="color: #008800; font-weight: bold">return</span>;
+        curNum <span style="color: #333333">=</span> curNum<span style="color: #333333">*</span><span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> root<span style="color: #333333">-&gt;</span>val;
+        <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>right) sum <span style="color: #333333">+=</span> curNum;
+        <span style="color: #008800; font-weight: bold">if</span>(root<span style="color: #333333">-&gt;</span>left) sumRootToLeafNum(root<span style="color: #333333">-&gt;</span>left, curNum, sum);
+        <span style="color: #008800; font-weight: bold">if</span>(root<span style="color: #333333">-&gt;</span>right) sumRootToLeafNum(root<span style="color: #333333">-&gt;</span>right, curNum, sum);
+    }
+};
+</pre></div>

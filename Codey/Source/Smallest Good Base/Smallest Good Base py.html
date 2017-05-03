@@ -1,0 +1,42 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">math</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">smallestGoodBase</span>(<span style="color: #007020">self</span>, n):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type n: str</span>
+<span style="color: #DD4422">        :rtype: str</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">getAnsofBase</span>(length, base):
+            <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">            Convert 11...11 (base `base`) to base 10</span>
+<span style="color: #DD4422">            &quot;&quot;&quot;</span>
+            ans <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>):
+                ans <span style="color: #333333">=</span> ans <span style="color: #333333">*</span> base <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">return</span> ans
+
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findLengthBase</span>(length, n):
+            <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">            Check whether there exist a base such that</span>
+<span style="color: #DD4422">            n in base `base` == 111...111 (length&#39;s 1s)</span>
+<span style="color: #DD4422">            &quot;&quot;&quot;</span>
+            start, end <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, n<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span>
+            <span style="color: #008800; font-weight: bold">while</span> start <span style="color: #333333">&lt;=</span> end:
+                mid <span style="color: #333333">=</span> (start <span style="color: #333333">+</span> end) <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span>
+                target <span style="color: #333333">=</span> getAnsofBase(length, mid)
+                <span style="color: #008800; font-weight: bold">if</span> target <span style="color: #333333">==</span> n:
+                    <span style="color: #008800; font-weight: bold">return</span> mid
+                <span style="color: #008800; font-weight: bold">elif</span> target <span style="color: #333333">&lt;</span> n:
+                    start <span style="color: #333333">=</span> mid <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+                <span style="color: #008800; font-weight: bold">else</span>:
+                    end <span style="color: #333333">=</span> mid <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
+
+        num <span style="color: #333333">=</span> <span style="color: #007020">int</span>(n)
+        thisLen <span style="color: #333333">=</span> <span style="color: #007020">int</span>(math<span style="color: #333333">.</span>log(num,<span style="color: #0000DD; font-weight: bold">2</span>)) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">while</span> thisLen <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">2</span>:
+            retVal <span style="color: #333333">=</span> findLengthBase(thisLen, num)
+            <span style="color: #008800; font-weight: bold">if</span> retVal <span style="color: #333333">!=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>:
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">str</span>(retVal)
+            thisLen <span style="color: #333333">-=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">str</span>(num <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>)
+</pre></div>

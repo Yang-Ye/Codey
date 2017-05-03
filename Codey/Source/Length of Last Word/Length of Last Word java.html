@@ -1,0 +1,22 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">lengthOfLastWord</span><span style="color: #333333">(</span>String s<span style="color: #333333">)</span> <span style="color: #333333">{</span> 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>s<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span>
+ 
+    <span style="color: #333399; font-weight: bold">boolean</span> flag <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span>len<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> i<span style="color: #333333">&gt;=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">--){</span>
+        <span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">((</span>c<span style="color: #333333">&gt;=</span><span style="color: #0044DD">&#39;a&#39;</span> <span style="color: #333333">&amp;&amp;</span> c<span style="color: #333333">&lt;=</span><span style="color: #0044DD">&#39;z&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">||</span> <span style="color: #333333">(</span>c<span style="color: #333333">&gt;=</span><span style="color: #0044DD">&#39;A&#39;</span> <span style="color: #333333">&amp;&amp;</span> c<span style="color: #333333">&lt;=</span><span style="color: #0044DD">&#39;Z&#39;</span><span style="color: #333333">)){</span>
+            flag <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            result<span style="color: #333333">++;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>flag<span style="color: #333333">)</span>
+                <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

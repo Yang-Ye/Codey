@@ -1,0 +1,21 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Vector2D</span> <span style="color: #333333">{</span>
+
+    <span style="color: #008800; font-weight: bold">private</span> Iterator<span style="color: #333333">&lt;</span>List<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> i<span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">private</span> Iterator<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> j<span style="color: #333333">;</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Vector2D</span><span style="color: #333333">(</span>List<span style="color: #333333">&lt;</span>List<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> vec2d<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        i <span style="color: #333333">=</span> vec2d<span style="color: #333333">.</span><span style="color: #0000CC">iterator</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">next</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        hasNext<span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">return</span> j<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">hasNext</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">((</span>j <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> <span style="color: #333333">!</span>j<span style="color: #333333">.</span><span style="color: #0000CC">hasNext</span><span style="color: #333333">())</span> <span style="color: #333333">&amp;&amp;</span> i<span style="color: #333333">.</span><span style="color: #0000CC">hasNext</span><span style="color: #333333">())</span>
+            j <span style="color: #333333">=</span> i<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">().</span><span style="color: #0000CC">iterator</span><span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">return</span> j <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> j<span style="color: #333333">.</span><span style="color: #0000CC">hasNext</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

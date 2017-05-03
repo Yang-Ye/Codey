@@ -1,0 +1,7 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">longestPalindrome</span>(string s) {
+    <span style="color: #333399; font-weight: bold">int</span> odds <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">char</span> c<span style="color: #333333">=</span><span style="color: #0044DD">&#39;A&#39;</span>; c<span style="color: #333333">&lt;=</span><span style="color: #0044DD">&#39;z&#39;</span>; c<span style="color: #333333">++</span>)
+        odds <span style="color: #333333">+=</span> count(s.begin(), s.end(), c) <span style="color: #333333">&amp;</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+    <span style="color: #008800; font-weight: bold">return</span> s.size() <span style="color: #333333">-</span> odds <span style="color: #333333">+</span> (odds <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>);
+}
+</pre></div>

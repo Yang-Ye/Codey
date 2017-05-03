@@ -1,0 +1,60 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> <span style="color: #0066BB; font-weight: bold">findOrder</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> numCourses<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[][]</span> prerequisites<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>prerequisites <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">throw</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">IllegalArgumentException</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;illegal prerequisites array&quot;</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> prerequisites<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">//if there is no prerequisites, return a sequence of courses</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>len <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> res <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span>numCourses<span style="color: #333333">];</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> m<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> m<span style="color: #333333">&lt;</span>numCourses<span style="color: #333333">;</span> m<span style="color: #333333">++){</span>
+            res<span style="color: #333333">[</span>m<span style="color: #333333">]=</span>m<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> res<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">//records the number of prerequisites each course (0,...,numCourses-1) requires</span>
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> pCounter <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span>numCourses<span style="color: #333333">];</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>len<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+        pCounter<span style="color: #333333">[</span>prerequisites<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]]++;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">//stores courses that have no prerequisites</span>
+    LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> queue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>numCourses<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>pCounter<span style="color: #333333">[</span>i<span style="color: #333333">]==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> numNoPre <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+ 
+    <span style="color: #888888">//initialize result</span>
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span>numCourses<span style="color: #333333">];</span>
+    <span style="color: #333399; font-weight: bold">int</span> j<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()){</span>
+        <span style="color: #333399; font-weight: bold">int</span> c <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">();</span>
+        result<span style="color: #333333">[</span>j<span style="color: #333333">++]=</span>c<span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>len<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>prerequisites<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]==</span>c<span style="color: #333333">){</span>
+                pCounter<span style="color: #333333">[</span>prerequisites<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]]--;</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>pCounter<span style="color: #333333">[</span>prerequisites<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]]==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+                    queue<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>prerequisites<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]);</span>
+                    numNoPre<span style="color: #333333">++;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+ 
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">//return result</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>numNoPre<span style="color: #333333">==</span>numCourses<span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">];</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

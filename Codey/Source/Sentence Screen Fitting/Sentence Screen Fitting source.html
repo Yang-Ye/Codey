@@ -1,0 +1,55 @@
+Given a&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">rows x cols</code>&nbsp;screen and a sentence represented by a list of words, find&nbsp;<b style="box-sizing: border-box;">how many times</b>&nbsp;the given sentence can be fitted on the screen.</div>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Note:</b></div>
+<ol style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; margin-bottom: 10px; margin-top: 0px;">
+<li style="box-sizing: border-box;">A word cannot be split into two lines.</li>
+<li style="box-sizing: border-box;">The order of words in the sentence must remain unchanged.</li>
+<li style="box-sizing: border-box;">Two consecutive words&nbsp;<b style="box-sizing: border-box;">in a line</b>&nbsp;must be separated by a single space.</li>
+<li style="box-sizing: border-box;">Total words in the sentence won't exceed 100.</li>
+<li style="box-sizing: border-box;">Length of each word won't exceed 10.</li>
+<li style="box-sizing: border-box;">1 &#8804; rows, cols &#8804; 20,000.</li>
+</ol>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Example 1:</b></div>
+<pre style="background: rgb(245, 245, 245); border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; line-height: 1.42857; margin-bottom: 10px; overflow: hidden; padding: 9.5px; position: relative; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;"><b style="box-sizing: border-box;">Input:</b>
+rows = 2, cols = 8, sentence = ["hello", "world"]
+
+<b style="box-sizing: border-box;">Output:</b> 
+1
+
+<b style="box-sizing: border-box;">Explanation:</b>
+hello---
+world---
+
+The character '-' signifies an empty space on the screen.
+</pre>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Example 2:</b></div>
+<pre style="background: rgb(245, 245, 245); border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; line-height: 1.42857; margin-bottom: 10px; overflow: hidden; padding: 9.5px; position: relative; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;"><b style="box-sizing: border-box;">Input:</b>
+rows = 3, cols = 6, sentence = ["a", "bcd", "e"]
+
+<b style="box-sizing: border-box;">Output:</b> 
+2
+
+<b style="box-sizing: border-box;">Explanation:</b>
+a-bcd- 
+e-a---
+bcd-e-
+
+The character '-' signifies an empty space on the screen.
+</pre>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Example 3:</b></div>
+<pre style="background: rgb(245, 245, 245); border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; line-height: 1.42857; margin-bottom: 10px; overflow: hidden; padding: 9.5px; position: relative; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;"><b style="box-sizing: border-box;">Input:</b>
+rows = 4, cols = 5, sentence = ["I", "had", "apple", "pie"]
+
+<b style="box-sizing: border-box;">Output:</b> 
+1
+
+<b style="box-sizing: border-box;">Explanation:</b>
+I-had
+apple
+pie-I
+had--
+
+The character '-' signifies an empty space on the screen.</pre>

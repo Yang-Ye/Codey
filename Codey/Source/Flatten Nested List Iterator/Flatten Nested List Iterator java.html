@@ -1,0 +1,40 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">NestedIterator</span> <span style="color: #008800; font-weight: bold">implements</span> Iterator<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> <span style="color: #333333">{</span>
+    Stack<span style="color: #333333">&lt;</span>Iterator<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>Iterator<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;&gt;();</span>
+    Integer current<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">NestedIterator</span><span style="color: #333333">(</span>List<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;</span> nestedList<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>nestedList<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+ 
+        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>nestedList<span style="color: #333333">.</span><span style="color: #0000CC">iterator</span><span style="color: #333333">());</span>    
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #555555; font-weight: bold">@Override</span>
+    <span style="color: #008800; font-weight: bold">public</span> Integer <span style="color: #0066BB; font-weight: bold">next</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        Integer result <span style="color: #333333">=</span> current<span style="color: #333333">;</span>
+        current <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #555555; font-weight: bold">@Override</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">hasNext</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()</span> <span style="color: #333333">&amp;&amp;</span> current<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            Iterator<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;</span> top <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>top<span style="color: #333333">.</span><span style="color: #0000CC">hasNext</span><span style="color: #333333">()){</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+                <span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+ 
+            NestedInteger n <span style="color: #333333">=</span> top<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>n<span style="color: #333333">.</span><span style="color: #0000CC">isInteger</span><span style="color: #333333">()){</span>
+                current <span style="color: #333333">=</span> n<span style="color: #333333">.</span><span style="color: #0000CC">getInteger</span><span style="color: #333333">();</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>n<span style="color: #333333">.</span><span style="color: #0000CC">getList</span><span style="color: #333333">().</span><span style="color: #0000CC">iterator</span><span style="color: #333333">());</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

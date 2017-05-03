@@ -1,0 +1,49 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Codec</span> <span style="color: #333333">{</span>
+ 
+    <span style="color: #888888">// Encodes a list of strings to a single string.</span>
+    <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">encode</span><span style="color: #333333">(</span>List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> strs<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>strs <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> strs<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        StringBuffer sb <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> StringBuffer<span style="color: #333333">();</span>
+         
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>String str <span style="color: #333333">:</span> strs<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> str <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">?</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">:</span> str<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span>
+            sb<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span>len<span style="color: #333333">);</span>
+            sb<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span><span style="color: #0044DD">&#39;#&#39;</span><span style="color: #333333">);</span>
+            sb<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span>str<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+         
+        <span style="color: #008800; font-weight: bold">return</span> sb<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// Decodes a single string to a list of strings.</span>
+    <span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">decode</span><span style="color: #333333">(</span>String s<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>s <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>i <span style="color: #333333">&lt;</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+            <span style="color: #888888">// Get length</span>
+            <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>i <span style="color: #333333">&lt;</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">&amp;&amp;</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">)</span> <span style="color: #333333">!=</span> <span style="color: #0044DD">&#39;#&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                len <span style="color: #333333">=</span> len <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> Character<span style="color: #333333">.</span><span style="color: #0000CC">getNumericValue</span><span style="color: #333333">(</span>s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">));</span>
+                i<span style="color: #333333">++;</span>
+            <span style="color: #333333">}</span>
+             
+            String str <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span>i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> i <span style="color: #333333">+</span> len <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>str<span style="color: #333333">);</span>
+            i <span style="color: #333333">=</span> i <span style="color: #333333">+</span> len <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+         
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #888888">// Your Codec object will be instantiated and called as such:</span>
+<span style="color: #888888">// Codec codec = new Codec();</span>
+<span style="color: #888888">// codec.decode(codec.encode(strs));</span>
+</pre></div>

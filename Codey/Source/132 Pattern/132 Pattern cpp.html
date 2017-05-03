@@ -1,0 +1,13 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"> <span style="color: #333399; font-weight: bold">bool</span> <span style="color: #0066BB; font-weight: bold">find132pattern</span>(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> nums) {
+        <span style="color: #333399; font-weight: bold">int</span> s3 <span style="color: #333333">=</span> INT_MIN;
+        stack<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> st;
+        <span style="color: #008800; font-weight: bold">for</span>( <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> nums.size()<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>; i <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">--</span> ){
+            <span style="color: #008800; font-weight: bold">if</span>( nums[i] <span style="color: #333333">&lt;</span> s3 ) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+            <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">while</span>( <span style="color: #333333">!</span>st.empty() <span style="color: #333333">&amp;&amp;</span> nums[i] <span style="color: #333333">&gt;</span> st.top() ){ 
+              s3 <span style="color: #333333">=</span> st.top(); st.pop(); 
+            }
+            st.push(nums[i]);
+        }
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    }
+</pre></div>

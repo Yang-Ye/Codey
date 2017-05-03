@@ -1,0 +1,68 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">ladderLength</span><span style="color: #333333">(</span>String start<span style="color: #333333">,</span> String end<span style="color: #333333">,</span> Set<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> dict<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>dict <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>start<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span>end<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        dict<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>start<span style="color: #333333">);</span>
+        dict<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>end<span style="color: #333333">);</span>
+
+        HashSet<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> hash <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+        Queue<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> queue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+        queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>start<span style="color: #333333">);</span>
+        hash<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>start<span style="color: #333333">);</span>
+        
+        <span style="color: #333399; font-weight: bold">int</span> length <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            length<span style="color: #333333">++;</span>
+            <span style="color: #333399; font-weight: bold">int</span> size <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> size<span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                String word <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+                <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>String <span style="color: #997700; font-weight: bold">nextWord:</span> getNextWords<span style="color: #333333">(</span>word<span style="color: #333333">,</span> dict<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>hash<span style="color: #333333">.</span><span style="color: #0000CC">contains</span><span style="color: #333333">(</span>nextWord<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                        <span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+                    <span style="color: #333333">}</span>
+                    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>nextWord<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span>end<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                        <span style="color: #008800; font-weight: bold">return</span> length<span style="color: #333333">;</span>
+                    <span style="color: #333333">}</span>
+                    
+                    hash<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>nextWord<span style="color: #333333">);</span>
+                    queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>nextWord<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #888888">// replace character of a string at given index to a given character</span>
+    <span style="color: #888888">// return a new string</span>
+    <span style="color: #008800; font-weight: bold">private</span> String <span style="color: #0066BB; font-weight: bold">replace</span><span style="color: #333333">(</span>String s<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> index<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">char</span> c<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">[]</span> chars <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">toCharArray</span><span style="color: #333333">();</span>
+        chars<span style="color: #333333">[</span>index<span style="color: #333333">]</span> <span style="color: #333333">=</span> c<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">String</span><span style="color: #333333">(</span>chars<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">// get connections with given word.</span>
+    <span style="color: #888888">// for example, given word = &#39;hot&#39;, dict = {&#39;hot&#39;, &#39;hit&#39;, &#39;hog&#39;}</span>
+    <span style="color: #888888">// it will return [&#39;hit&#39;, &#39;hog&#39;]</span>
+    <span style="color: #008800; font-weight: bold">private</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">getNextWords</span><span style="color: #333333">(</span>String word<span style="color: #333333">,</span> Set<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> dict<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> nextWords <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">;</span> c <span style="color: #333333">&lt;=</span> <span style="color: #0044DD">&#39;z&#39;</span><span style="color: #333333">;</span> c<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>c <span style="color: #333333">==</span> word<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                    <span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+                String nextWord <span style="color: #333333">=</span> replace<span style="color: #333333">(</span>word<span style="color: #333333">,</span> i<span style="color: #333333">,</span> c<span style="color: #333333">);</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>dict<span style="color: #333333">.</span><span style="color: #0000CC">contains</span><span style="color: #333333">(</span>nextWord<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                    nextWords<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>nextWord<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> nextWords<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

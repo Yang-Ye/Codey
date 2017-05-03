@@ -1,0 +1,46 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Wrapper</span><span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span> size<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> lower<span style="color: #333333">,</span> upper<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">boolean</span> isBST<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Wrapper</span><span style="color: #333333">(){</span>
+        lower <span style="color: #333333">=</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">;</span>
+        upper <span style="color: #333333">=</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">;</span>
+        isBST <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        size <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span> 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">largestBSTSubtree</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">helper</span><span style="color: #333333">(</span>root<span style="color: #333333">).</span><span style="color: #0000CC">size</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> Wrapper <span style="color: #0066BB; font-weight: bold">helper</span><span style="color: #333333">(</span>TreeNode node<span style="color: #333333">){</span>
+        Wrapper curr <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Wrapper<span style="color: #333333">();</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>node <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            curr<span style="color: #333333">.</span><span style="color: #0000CC">isBST</span><span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">return</span> curr<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        Wrapper l <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+        Wrapper r <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+ 
+        <span style="color: #888888">//current subtree&#39;s boundaries</span>
+        curr<span style="color: #333333">.</span><span style="color: #0000CC">lower</span> <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">,</span> l<span style="color: #333333">.</span><span style="color: #0000CC">lower</span><span style="color: #333333">);</span>
+        curr<span style="color: #333333">.</span><span style="color: #0000CC">upper</span> <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">,</span> r<span style="color: #333333">.</span><span style="color: #0000CC">upper</span><span style="color: #333333">);</span>
+ 
+        <span style="color: #888888">//check left and right subtrees are BST or not</span>
+        <span style="color: #888888">//check left&#39;s upper again current&#39;s value and right&#39;s lower against current&#39;s value</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>l<span style="color: #333333">.</span><span style="color: #0000CC">isBST</span> <span style="color: #333333">&amp;&amp;</span> r<span style="color: #333333">.</span><span style="color: #0000CC">isBST</span> <span style="color: #333333">&amp;&amp;</span> l<span style="color: #333333">.</span><span style="color: #0000CC">upper</span><span style="color: #333333">&lt;=</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">&amp;&amp;</span> r<span style="color: #333333">.</span><span style="color: #0000CC">lower</span><span style="color: #333333">&gt;=</span>node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">){</span>
+            curr<span style="color: #333333">.</span><span style="color: #0000CC">size</span> <span style="color: #333333">=</span> l<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">+</span>r<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+            curr<span style="color: #333333">.</span><span style="color: #0000CC">isBST</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            curr<span style="color: #333333">.</span><span style="color: #0000CC">size</span> <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>l<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">,</span> r<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">);</span>
+            curr<span style="color: #333333">.</span><span style="color: #0000CC">isBST</span>  <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> curr<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

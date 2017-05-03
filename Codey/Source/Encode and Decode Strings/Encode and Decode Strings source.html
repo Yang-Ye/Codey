@@ -1,0 +1,35 @@
+Design an algorithm to encode&nbsp;<span style="box-sizing: border-box; font-weight: 700;">a list of strings</span>&nbsp;to&nbsp;<span style="box-sizing: border-box; font-weight: 700;">a string</span>. The encoded string is then sent over the network and is decoded back to the original list of strings.</div>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+Machine 1 (sender) has the function:</div>
+<pre style="background-color: whitesmoke; border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 1.42857143; margin-bottom: 10px; overflow: auto; padding: 9.5px; word-break: break-all; word-wrap: break-word;">string encode(vector&lt;string&gt; strs) {
+  // ... your code
+  return encoded_string;
+}</pre>
+<span style="background-color: white; color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px; line-height: 30px;">Machine 2 (receiver) has the function:</span><br />
+<pre style="background-color: whitesmoke; border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 1.42857143; margin-bottom: 10px; overflow: auto; padding: 9.5px; word-break: break-all; word-wrap: break-word;">vector&lt;string&gt; decode(string s) {
+  //... your code
+  return strs;
+}</pre>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+</div>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+So Machine 1 does:</div>
+<pre style="background-color: whitesmoke; border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 1.42857143; margin-bottom: 10px; overflow: auto; padding: 9.5px; word-break: break-all; word-wrap: break-word;">string encoded_string = encode(strs);</pre>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+</div>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+and Machine 2 does:</div>
+<pre style="background-color: whitesmoke; border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 1.42857143; margin-bottom: 10px; overflow: auto; padding: 9.5px; word-break: break-all; word-wrap: break-word;">vector&lt;string&gt; strs2 = decode(encoded_string);</pre>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+</div>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6000003814697px; padding: 2px 4px;">strs2</code>&nbsp;in Machine 2 should be the same as&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6000003814697px; padding: 2px 4px;">strs</code>&nbsp;in Machine 1.</div>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+Implement the&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6000003814697px; padding: 2px 4px;">encode</code>&nbsp;and&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6000003814697px; padding: 2px 4px;">decode</code>&nbsp;methods.</div>
+<div style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px;">
+<span style="box-sizing: border-box; font-weight: 700;">Note:</span></div>
+<ul style="background-color: white; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 30px; margin-bottom: 10px; margin-top: 0px;">
+<li style="box-sizing: border-box;">The string may contain any possible characters out of 256 valid ascii characters. Your algorithm should be generalized enough to work on any possible characters.</li>
+<li style="box-sizing: border-box;">Do not use class member/global/static variables to store states. Your encode and decode algorithms should be stateless.</li>
+<li style="box-sizing: border-box;">Do not rely on any library method such as&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 12.6000003814697px; padding: 2px 4px;">eval</code>&nbsp;or serialize methods. You should implement your own encode/decode algorithm.</li>
+</ul>

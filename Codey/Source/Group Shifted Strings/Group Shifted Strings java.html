@@ -1,0 +1,38 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">groupStrings</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> strings<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    List<span style="color: #333333">&lt;</span>List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;();</span>
+    HashMap<span style="color: #333333">&lt;</span>String<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> map 
+                    <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>String<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;();</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>String <span style="color: #997700; font-weight: bold">s:</span> strings<span style="color: #333333">){</span>
+        <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">[]</span> arr <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">toCharArray</span><span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>arr<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+            <span style="color: #333399; font-weight: bold">int</span> diff <span style="color: #333333">=</span> arr<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]-</span><span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>arr<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>arr<span style="color: #333333">[</span>i<span style="color: #333333">]-</span>diff<span style="color: #333333">&lt;</span><span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">){</span>
+                   arr<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">)</span> <span style="color: #333333">(</span>arr<span style="color: #333333">[</span>i<span style="color: #333333">]-</span>diff<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">26</span><span style="color: #333333">);</span>
+                <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                   arr<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">)</span> <span style="color: #333333">(</span>arr<span style="color: #333333">[</span>i<span style="color: #333333">]-</span>diff<span style="color: #333333">);</span> 
+                <span style="color: #333333">}</span>
+ 
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>  
+ 
+        String ns <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">(</span>arr<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>ns<span style="color: #333333">)){</span>
+            map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>ns<span style="color: #333333">).</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>s<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> al <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+            al<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>s<span style="color: #333333">);</span>
+            map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>ns<span style="color: #333333">,</span> al<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>Map<span style="color: #333333">.</span><span style="color: #0000CC">Entry</span><span style="color: #333333">&lt;</span>String<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> <span style="color: #997700; font-weight: bold">entry:</span> map<span style="color: #333333">.</span><span style="color: #0000CC">entrySet</span><span style="color: #333333">()){</span>
+        Collections<span style="color: #333333">.</span><span style="color: #0000CC">sort</span><span style="color: #333333">(</span>entry<span style="color: #333333">.</span><span style="color: #0000CC">getValue</span><span style="color: #333333">());</span>
+    <span style="color: #333333">}</span>
+ 
+    result<span style="color: #333333">.</span><span style="color: #0000CC">addAll</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">values</span><span style="color: #333333">());</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

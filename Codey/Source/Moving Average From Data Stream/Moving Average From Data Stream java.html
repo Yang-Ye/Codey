@@ -1,0 +1,32 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MovingAverage</span> <span style="color: #333333">{</span>
+    LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> queue<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> size<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">double</span> avg<span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">/** Initialize your data structure here. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">MovingAverage</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> size<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">queue</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">size</span> <span style="color: #333333">=</span> size<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">next</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> val<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()&lt;</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">){</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>val<span style="color: #333333">);</span>
+            <span style="color: #333399; font-weight: bold">int</span> sum<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> <span style="color: #997700; font-weight: bold">i:</span> queue<span style="color: #333333">){</span>
+                sum<span style="color: #333333">+=</span>i<span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+            avg <span style="color: #333333">=</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span><span style="color: #333333">)</span>sum<span style="color: #333333">/</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+ 
+            <span style="color: #008800; font-weight: bold">return</span> avg<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #333399; font-weight: bold">int</span> head <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+            <span style="color: #333399; font-weight: bold">double</span> minus <span style="color: #333333">=</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span><span style="color: #333333">)</span>head<span style="color: #333333">/</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">;</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>val<span style="color: #333333">);</span>
+            <span style="color: #333399; font-weight: bold">double</span> add <span style="color: #333333">=</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span><span style="color: #333333">)</span>val<span style="color: #333333">/</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">;</span>
+            avg <span style="color: #333333">=</span> avg <span style="color: #333333">+</span> add <span style="color: #333333">-</span> minus<span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">return</span> avg<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

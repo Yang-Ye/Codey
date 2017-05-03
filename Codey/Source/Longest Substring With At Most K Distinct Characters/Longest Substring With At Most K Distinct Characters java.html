@@ -1,0 +1,42 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">lengthOfLongestSubstringKDistinct</span><span style="color: #333333">(</span>String s<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> k<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>k<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">||</span> s<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()&lt;</span>k<span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span>
+ 
+    HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;</span> map <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;();</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> maxLen<span style="color: #333333">=</span>k<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> left<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+        <span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>c<span style="color: #333333">)){</span>
+            map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c<span style="color: #333333">,</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c<span style="color: #333333">)+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()&gt;</span>k<span style="color: #333333">){</span>
+            maxLen<span style="color: #333333">=</span>Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>maxLen<span style="color: #333333">,</span> i<span style="color: #333333">-</span>left<span style="color: #333333">);</span>
+ 
+            <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()&gt;</span>k<span style="color: #333333">){</span>
+ 
+                <span style="color: #333399; font-weight: bold">char</span> fc <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>left<span style="color: #333333">);</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>fc<span style="color: #333333">)==</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+                    map<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>fc<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                    map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>fc<span style="color: #333333">,</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>fc<span style="color: #333333">)-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+ 
+                left<span style="color: #333333">++;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+    <span style="color: #333333">}</span>
+ 
+    maxLen <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>maxLen<span style="color: #333333">,</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()-</span>left<span style="color: #333333">);</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> maxLen<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

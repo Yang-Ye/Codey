@@ -1,0 +1,73 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Random</span><span style="color: #333333">;</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">RandomizedSet</span> <span style="color: #333333">{</span>
+ 
+    HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;</span> map1<span style="color: #333333">;</span>
+    HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;</span> map2<span style="color: #333333">;</span>
+    Random rand<span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">/** Initialize your data structure here. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">RandomizedSet</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        map1  <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;();</span>
+        map2  <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;();</span>
+        rand <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Random<span style="color: #333333">(</span>System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">());</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Inserts a value to the set. Returns true if the set did not already contain the specified element. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">insert</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> val<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>val<span style="color: #333333">)){</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            map1<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>val<span style="color: #333333">,</span> map1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">());</span>
+            map2<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>map2<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">(),</span> val<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Removes a value from the set. Returns true if the set contained the specified element. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">remove</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> val<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>val<span style="color: #333333">)){</span>
+            <span style="color: #333399; font-weight: bold">int</span> index <span style="color: #333333">=</span> map1<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>val<span style="color: #333333">);</span>
+ 
+            <span style="color: #888888">//remove the entry from both maps</span>
+            map1<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>val<span style="color: #333333">);</span>
+            map2<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>index<span style="color: #333333">);</span>
+ 
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+ 
+            <span style="color: #888888">//if last is deleted, do nothing </span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>index<span style="color: #333333">==</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()){</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>    
+ 
+            <span style="color: #888888">//update the last element&#39;s index     </span>
+            <span style="color: #333399; font-weight: bold">int</span> key1 <span style="color: #333333">=</span> map2<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>map2<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">());</span>
+ 
+            map1<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>key1<span style="color: #333333">,</span> index<span style="color: #333333">);</span>
+            map2<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>map2<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">());</span>
+            map2<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>index<span style="color: #333333">,</span> key1<span style="color: #333333">);</span>
+ 
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Get a random element from the set. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">getRandom</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> 
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> map2<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>    
+        <span style="color: #333333">}</span>    
+ 
+        <span style="color: #008800; font-weight: bold">return</span> map2<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Random<span style="color: #333333">().</span><span style="color: #0000CC">nextInt</span><span style="color: #333333">(</span>map1<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()));</span>
+        <span style="color: #888888">//return 0;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

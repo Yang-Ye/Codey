@@ -1,0 +1,45 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TicTacToe</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> rows<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> cols<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> dc1<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> dc2<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">;</span>
+    <span style="color: #888888">/** Initialize your data structure here. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">TicTacToe</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">n</span><span style="color: #333333">=</span>n<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">rows</span><span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span>n<span style="color: #333333">];</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">cols</span><span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span>n<span style="color: #333333">];</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Player {player} makes a move at ({row}, {col}).</span>
+<span style="color: #888888">        @param row The row of the board.</span>
+<span style="color: #888888">        @param col The column of the board.</span>
+<span style="color: #888888">        @param player The player, can be either 1 or 2.</span>
+<span style="color: #888888">        @return The current winning condition, can be either:</span>
+<span style="color: #888888">                0: No one wins.</span>
+<span style="color: #888888">                1: Player 1 wins.</span>
+<span style="color: #888888">                2: Player 2 wins. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">move</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> row<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> col<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> player<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> val <span style="color: #333333">=</span> <span style="color: #333333">(</span>player<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">?</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+ 
+        rows<span style="color: #333333">[</span>row<span style="color: #333333">]+=</span>val<span style="color: #333333">;</span>
+        cols<span style="color: #333333">[</span>col<span style="color: #333333">]+=</span>val<span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>row<span style="color: #333333">==</span>col<span style="color: #333333">){</span>
+            dc1<span style="color: #333333">+=</span>val<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>col<span style="color: #333333">==</span>n<span style="color: #333333">-</span>row<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+            dc2<span style="color: #333333">+=</span>val<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>Math<span style="color: #333333">.</span><span style="color: #0000CC">abs</span><span style="color: #333333">(</span>rows<span style="color: #333333">[</span>row<span style="color: #333333">])==</span>n 
+        <span style="color: #333333">||</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">abs</span><span style="color: #333333">(</span>cols<span style="color: #333333">[</span>col<span style="color: #333333">])==</span>n 
+        <span style="color: #333333">||</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">abs</span><span style="color: #333333">(</span>dc1<span style="color: #333333">)==</span>n 
+        <span style="color: #333333">||</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">abs</span><span style="color: #333333">(</span>dc2<span style="color: #333333">)==</span>n<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> player<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

@@ -1,0 +1,22 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">kthSmallest</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> k<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    Stack<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">&gt;();</span>
+ 
+    TreeNode p <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()</span> <span style="color: #333333">||</span> p<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>p<span style="color: #333333">);</span>
+            p <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            TreeNode t <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+            k<span style="color: #333333">--;</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>k<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+                result <span style="color: #333333">=</span> t<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+            p <span style="color: #333333">=</span> t<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

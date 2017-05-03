@@ -1,0 +1,25 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+ 
+    <span style="color: #888888">/** @param head The linked list&#39;s head. Note that the head is guanranteed to be not null, so it contains at least one node. */</span>
+    Random r<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+    ListNode h<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Solution</span><span style="color: #333333">(</span>ListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        r <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Random<span style="color: #333333">();</span>
+        h <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Returns a random node&#39;s value. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">getRandom</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> count<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        ListNode p <span style="color: #333333">=</span> h<span style="color: #333333">;</span>
+        <span style="color: #333399; font-weight: bold">int</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>p<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>r<span style="color: #333333">.</span><span style="color: #0000CC">nextInt</span><span style="color: #333333">(</span>count<span style="color: #333333">)==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+                result<span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+            count<span style="color: #333333">++;</span>
+            p <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

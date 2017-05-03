@@ -1,0 +1,6 @@
+framework module Pods_Codey {
+  umbrella header "Pods-Codey-umbrella.h"
+
+  export *
+  module * { export * }
+}

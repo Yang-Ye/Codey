@@ -1,0 +1,44 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">medianSlidingWindow</span>(<span style="color: #007020">self</span>, nums, k):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">addNumber</span>(num, i):
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(l) <span style="color: #333333">-</span> <span style="color: #007020">len</span>(s) <span style="color: #333333">&gt;</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>balance:
+            val, idx <span style="color: #333333">=</span> heapq<span style="color: #333333">.</span>heappushpop(l, (num, i))
+            heapq<span style="color: #333333">.</span>heappush(s, (<span style="color: #333333">-</span>val, idx))
+        <span style="color: #008800; font-weight: bold">else</span>:
+            val, idx <span style="color: #333333">=</span> heapq<span style="color: #333333">.</span>heappushpop(s, (<span style="color: #333333">-</span>num, i))
+            heapq<span style="color: #333333">.</span>heappush(l, (<span style="color: #333333">-</span>val, idx))
+
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">removeNumber</span>(idx):
+        <span style="color: #008800; font-weight: bold">while</span> l <span style="color: #000000; font-weight: bold">and</span> l[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;=</span> idx:
+            heapq<span style="color: #333333">.</span>heappop(l)
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">-=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+
+        <span style="color: #008800; font-weight: bold">while</span> s <span style="color: #000000; font-weight: bold">and</span> s[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&lt;=</span> idx:
+            heapq<span style="color: #333333">.</span>heappop(s)
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+
+
+    s, l, <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">=</span> [], [], <span style="color: #0000DD; font-weight: bold">0</span>
+    res <span style="color: #333333">=</span> []
+    <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(<span style="color: #007020">len</span>(nums)):
+        <span style="color: #008800; font-weight: bold">if</span> i <span style="color: #333333">&lt;</span> k:
+            addNumber(nums[i], i)
+        <span style="color: #008800; font-weight: bold">else</span>:
+            <span style="color: #008800; font-weight: bold">if</span> nums[i <span style="color: #333333">-</span> k] <span style="color: #333333">&gt;</span> l[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>]:
+                <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">elif</span> nums[i <span style="color: #333333">-</span> k] <span style="color: #333333">&lt;</span> l[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>]:
+                <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">-=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">else</span>:
+                <span style="color: #008800; font-weight: bold">for</span> val, idx <span style="color: #000000; font-weight: bold">in</span> l:
+                    <span style="color: #008800; font-weight: bold">if</span> idx <span style="color: #333333">==</span> i <span style="color: #333333">-</span> k:
+                        <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+                        <span style="color: #008800; font-weight: bold">break</span>
+                <span style="color: #008800; font-weight: bold">else</span>:
+                    <span style="color: #007020">self</span><span style="color: #333333">.</span>balance <span style="color: #333333">-=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            addNumber(nums[i], i)
+            removeNumber(i <span style="color: #333333">-</span> k)
+        <span style="color: #008800; font-weight: bold">if</span> i <span style="color: #333333">&gt;=</span> k <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>:
+            median <span style="color: #333333">=</span> l[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">*</span> <span style="color: #6600EE; font-weight: bold">1.0</span> <span style="color: #008800; font-weight: bold">if</span> k <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #008800; font-weight: bold">else</span> (l[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">-</span> s[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>]) <span style="color: #333333">/</span> <span style="color: #6600EE; font-weight: bold">2.0</span>
+            res<span style="color: #333333">.</span>append(median)
+    <span style="color: #008800; font-weight: bold">return</span> res
+</pre></div>

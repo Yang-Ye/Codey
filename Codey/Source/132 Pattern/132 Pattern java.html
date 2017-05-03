@@ -1,0 +1,27 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Pair</span>{
+        <span style="color: #333399; font-weight: bold">int</span> min, max;
+        <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Pair</span>(<span style="color: #333399; font-weight: bold">int</span> min, <span style="color: #333399; font-weight: bold">int</span> max){
+            <span style="color: #008800; font-weight: bold">this</span>.min <span style="color: #333333">=</span> min;
+            <span style="color: #008800; font-weight: bold">this</span>.max <span style="color: #333333">=</span> max;
+        }
+    }
+    <span style="color: #008800; font-weight: bold">public</span> boolean find132pattern(<span style="color: #333399; font-weight: bold">int</span>[] nums) {
+        Stack<span style="color: #333333">&lt;</span>Pair<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack();
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">:</span> nums){
+            <span style="color: #008800; font-weight: bold">if</span>(stack.isEmpty() <span style="color: #333333">||</span> n <span style="color: #333333">&lt;</span>stack.peek().min ) stack.push(<span style="color: #008800; font-weight: bold">new</span> Pair(n,n));
+            <span style="color: #008800; font-weight: bold">else</span> <span style="color: #0066BB; font-weight: bold">if</span>(n <span style="color: #333333">&gt;</span> stack.peek().min){ 
+                Pair last <span style="color: #333333">=</span> stack.pop();
+                <span style="color: #008800; font-weight: bold">if</span>(n <span style="color: #333333">&lt;</span> last.max) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+                <span style="color: #008800; font-weight: bold">else</span> {
+                    last.max <span style="color: #333333">=</span> n;
+                    <span style="color: #008800; font-weight: bold">while</span>(<span style="color: #333333">!</span>stack.isEmpty() <span style="color: #333333">&amp;&amp;</span> n <span style="color: #333333">&gt;=</span> stack.peek().max) stack.pop();
+                    <span style="color: #888888">// At this time, n &lt; stack.peek().max (if stack not empty)</span>
+                    <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>stack.isEmpty() <span style="color: #333333">&amp;&amp;</span> stack.peek().min <span style="color: #333333">&lt;</span> n) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+                    stack.push(last);
+                }
+                
+            }
+        }
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    }
+</pre></div>

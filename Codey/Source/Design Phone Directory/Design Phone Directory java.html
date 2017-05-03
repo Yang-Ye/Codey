@@ -1,0 +1,41 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">PhoneDirectory</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span> max<span style="color: #333333">;</span>
+    HashSet<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> set<span style="color: #333333">;</span>
+    LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> queue<span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">/** Initialize your data structure here</span>
+<span style="color: #888888">        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">PhoneDirectory</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> maxNumbers<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        set <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        queue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>maxNumbers<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        max<span style="color: #333333">=</span>maxNumbers<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Provide a number which is not assigned to anyone.</span>
+<span style="color: #888888">        @return - Return an available number. Return -1 if none is available. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">get</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">())</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+ 
+        <span style="color: #333399; font-weight: bold">int</span> e <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+        set<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>e<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> e<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Check if a number is available or not. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">check</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> number<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">!</span>set<span style="color: #333333">.</span><span style="color: #0000CC">contains</span><span style="color: #333333">(</span>number<span style="color: #333333">)</span> <span style="color: #333333">&amp;&amp;</span> number<span style="color: #333333">&lt;=</span>max<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Recycle or release a number. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">release</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> number<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>set<span style="color: #333333">.</span><span style="color: #0000CC">contains</span><span style="color: #333333">(</span>number<span style="color: #333333">)){</span>
+            set<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>number<span style="color: #333333">);</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>number<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

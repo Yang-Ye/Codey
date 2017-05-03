@@ -1,0 +1,40 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">evalRPN</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> tokens<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+        <span style="color: #333399; font-weight: bold">int</span> returnValue <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+        String operators <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;+-*/&quot;</span><span style="color: #333333">;</span>
+ 
+        Stack<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+ 
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>String t <span style="color: #333333">:</span> tokens<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>operators<span style="color: #333333">.</span><span style="color: #0000CC">contains</span><span style="color: #333333">(</span>t<span style="color: #333333">)){</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                <span style="color: #333399; font-weight: bold">int</span> a <span style="color: #333333">=</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">());</span>
+                <span style="color: #333399; font-weight: bold">int</span> b <span style="color: #333333">=</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">());</span>
+                <span style="color: #333399; font-weight: bold">int</span> index <span style="color: #333333">=</span> operators<span style="color: #333333">.</span><span style="color: #0000CC">indexOf</span><span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+                <span style="color: #008800; font-weight: bold">switch</span><span style="color: #333333">(</span>index<span style="color: #333333">){</span>
+                    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+                        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>String<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>a<span style="color: #333333">+</span>b<span style="color: #333333">));</span>
+                        <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:</span>
+                        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>String<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>b<span style="color: #333333">-</span>a<span style="color: #333333">));</span>
+                        <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">:</span>
+                        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>String<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>a<span style="color: #333333">*</span>b<span style="color: #333333">));</span>
+                        <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">:</span>
+                        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>String<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>b<span style="color: #333333">/</span>a<span style="color: #333333">));</span>
+                        <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+        returnValue <span style="color: #333333">=</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">());</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> returnValue<span style="color: #333333">;</span>
+ 
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

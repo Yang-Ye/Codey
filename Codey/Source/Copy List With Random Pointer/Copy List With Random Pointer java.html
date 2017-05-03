@@ -1,0 +1,37 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> RandomListNode <span style="color: #0066BB; font-weight: bold">copyRandomList</span><span style="color: #333333">(</span>RandomListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>head <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+ 
+	RandomListNode p <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+ 
+	<span style="color: #888888">// copy every node and insert to list</span>
+	<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>p <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		RandomListNode copy <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> RandomListNode<span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">label</span><span style="color: #333333">);</span>
+		copy<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+		p<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> copy<span style="color: #333333">;</span>
+		p <span style="color: #333333">=</span> copy<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #888888">// copy random pointer for each new node</span>
+	p <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+	<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>p <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">random</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+			p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">random</span> <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">random</span><span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+		p <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #888888">// break list to two</span>
+	p <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+	RandomListNode newHead <span style="color: #333333">=</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+	<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>p <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		RandomListNode temp <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+		p<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> temp<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>temp<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+			temp<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> temp<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+		p <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">return</span> newHead<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

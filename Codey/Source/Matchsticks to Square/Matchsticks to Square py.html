@@ -1,0 +1,21 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">makesquare</span>(<span style="color: #007020">self</span>, nums):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type nums: List[int]</span>
+<span style="color: #DD4422">        :rtype: bool</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">dfs</span>(nums, pos, target):
+            <span style="color: #008800; font-weight: bold">if</span> pos <span style="color: #333333">==</span> <span style="color: #007020">len</span>(nums): <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+            <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">4</span>):
+                <span style="color: #008800; font-weight: bold">if</span> target[i] <span style="color: #333333">&gt;=</span> nums[pos]:
+                    target[i] <span style="color: #333333">-=</span> nums[pos]
+                    <span style="color: #008800; font-weight: bold">if</span> dfs(nums, pos<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>, target): <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+                    target[i] <span style="color: #333333">+=</span> nums[pos]
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(nums) <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">4</span> : <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+        numSum <span style="color: #333333">=</span> <span style="color: #007020">sum</span>(nums)
+        nums<span style="color: #333333">.</span>sort(reverse<span style="color: #333333">=</span><span style="color: #007020">True</span>)
+        <span style="color: #008800; font-weight: bold">if</span> numSum <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">4</span> <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span>: <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+        target <span style="color: #333333">=</span> [numSum<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">4</span>] <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">4</span>;
+        <span style="color: #008800; font-weight: bold">return</span> dfs(nums,<span style="color: #0000DD; font-weight: bold">0</span>, target)
+</pre></div>

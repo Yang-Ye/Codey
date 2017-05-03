@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--CodeyUI Tab Bar Controller-->
         <scene sceneID="wJM-1X-u0j">
             <objects>
-                <tabBarController id="pat-DJ-NJ4" sceneMemberID="viewController">
+                <tabBarController id="pat-DJ-NJ4" customClass="CodeyUITabBarController" customModule="Codey" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Qfy-YV-O7K">
                         <barButtonItem key="leftBarButtonItem" image="search" id="RGl-LU-1Kj">
                             <color key="tintColor" red="0.97636467220000001" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -29,20 +30,20 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="f0k-NH-cph" kind="relationship" relationship="viewControllers" id="e1q-Ie-SfM"/>
-                        <segue destination="N9g-mz-LiD" kind="relationship" relationship="viewControllers" id="Gb9-eT-mLq"/>
-                        <segue destination="wn0-Di-gde" kind="relationship" relationship="viewControllers" id="IfZ-2w-cK0"/>
+                        <segue destination="N9g-mz-LiD" kind="relationship" relationship="viewControllers" id="5Mt-UM-SLb"/>
+                        <segue destination="f0k-NH-cph" kind="relationship" relationship="viewControllers" id="sfX-ww-5bA"/>
+                        <segue destination="tka-9q-Oi2" kind="relationship" relationship="viewControllers" id="Ig9-Wb-BuX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iu4-Nn-Sdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2271" y="-200"/>
+            <point key="canvasLocation" x="-3388" y="-1075"/>
         </scene>
-        <!--All-->
+        <!--Problems-->
         <scene sceneID="bfd-HV-sfe">
             <objects>
                 <navigationController id="f0k-NH-cph" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All" image="problem" id="tyf-fL-Eh1"/>
+                    <tabBarItem key="tabBarItem" title="Problems" image="Questions" id="tyf-fL-Eh1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8nJ-4P-RZK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -53,65 +54,187 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7Z-91-k2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-970" y="-1079"/>
+            <point key="canvasLocation" x="-3388" y="-260"/>
         </scene>
-        <!--Problem Table View Controller-->
+        <!--Problems-->
         <scene sceneID="IWc-Hl-yIm">
             <objects>
                 <viewController id="htM-HM-KOk" customClass="ProblemTableViewController" customModule="Codey" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dMP-gj-jld">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mtw-zE-Sg0"/>
+                        <viewControllerLayoutGuide type="bottom" id="APz-6J-YVW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fov-Gp-a9d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h6N-Qz-obV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bys-Bk-E1L" customClass="HeaderFloatingView" customModule="Codey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddT-0l-icF">
+                                        <rect key="frame" x="164.5" y="15" width="46" height="20"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fja-uG-cF5">
+                                        <rect key="frame" x="51.5" y="14" width="23" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="NhH-Ed-FEX"/>
+                                            <constraint firstAttribute="width" constant="23" id="Wzg-00-GjI"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="Filter"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7U-pV-1fT">
+                                        <rect key="frame" x="301.5" y="14" width="23" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="rlA-tI-ipv"/>
+                                            <constraint firstAttribute="width" constant="23" id="vbF-uB-0vi"/>
+                                        </constraints>
+                                        <state key="normal" image="Dice"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seperator" translatesAutoresizingMaskIntoConstraints="NO" id="x9O-mS-5wA">
+                                        <rect key="frame" x="124" y="10" width="2" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="Y1I-5m-hg6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seperator" translatesAutoresizingMaskIntoConstraints="NO" id="Js7-GU-8QJ">
+                                        <rect key="frame" x="249" y="10" width="2" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="ysV-0t-xub"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-EC-tyK" userLabel="RandomButton">
+                                        <rect key="frame" x="256" y="5" width="114" height="40"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtO-2R-hFM" userLabel="FilterButton">
+                                        <rect key="frame" x="5" y="5" width="114" height="40"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vtO-2R-hFM" firstAttribute="top" secondItem="bys-Bk-E1L" secondAttribute="top" constant="5" id="4VA-AF-oV7"/>
+                                    <constraint firstItem="ddT-0l-icF" firstAttribute="centerX" secondItem="bys-Bk-E1L" secondAttribute="centerX" id="AhE-Zu-v6j"/>
+                                    <constraint firstItem="vtO-2R-hFM" firstAttribute="leading" secondItem="bys-Bk-E1L" secondAttribute="leading" constant="5" id="BJY-IA-MYY"/>
+                                    <constraint firstItem="Js7-GU-8QJ" firstAttribute="centerX" secondItem="bys-Bk-E1L" secondAttribute="right" multiplier="0.6666" id="G4o-A5-QaF"/>
+                                    <constraint firstItem="ddT-0l-icF" firstAttribute="centerY" secondItem="bys-Bk-E1L" secondAttribute="centerY" id="GxI-dZ-ZBC"/>
+                                    <constraint firstItem="x9O-mS-5wA" firstAttribute="leading" secondItem="vtO-2R-hFM" secondAttribute="trailing" constant="5" id="HVf-ij-HFL"/>
+                                    <constraint firstItem="h7U-pV-1fT" firstAttribute="centerX" secondItem="bys-Bk-E1L" secondAttribute="right" multiplier="0.8333" id="Iif-yo-fkl"/>
+                                    <constraint firstAttribute="bottom" secondItem="x9O-mS-5wA" secondAttribute="bottom" constant="10" id="Ilx-kT-WrH"/>
+                                    <constraint firstAttribute="bottom" secondItem="eSe-EC-tyK" secondAttribute="bottom" constant="5" id="LC5-LE-v6n"/>
+                                    <constraint firstAttribute="trailing" secondItem="eSe-EC-tyK" secondAttribute="trailing" constant="5" id="OiF-sm-oui"/>
+                                    <constraint firstItem="fja-uG-cF5" firstAttribute="centerX" secondItem="bys-Bk-E1L" secondAttribute="right" multiplier="0.1666" id="Pfo-mE-Nbh"/>
+                                    <constraint firstItem="eSe-EC-tyK" firstAttribute="top" secondItem="bys-Bk-E1L" secondAttribute="top" constant="5" id="QRp-qt-PrL"/>
+                                    <constraint firstAttribute="height" constant="50" id="WCe-93-Zhf"/>
+                                    <constraint firstItem="x9O-mS-5wA" firstAttribute="top" secondItem="bys-Bk-E1L" secondAttribute="top" constant="10" id="bvu-zU-sbB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Js7-GU-8QJ" secondAttribute="bottom" constant="10" id="cOG-Bo-aUz"/>
+                                    <constraint firstItem="h7U-pV-1fT" firstAttribute="centerY" secondItem="ddT-0l-icF" secondAttribute="centerY" id="crI-q9-nNg"/>
+                                    <constraint firstAttribute="bottom" secondItem="vtO-2R-hFM" secondAttribute="bottom" constant="5" id="frP-co-yVs"/>
+                                    <constraint firstItem="eSe-EC-tyK" firstAttribute="leading" secondItem="Js7-GU-8QJ" secondAttribute="trailing" constant="5" id="nsu-JS-agK"/>
+                                    <constraint firstItem="Js7-GU-8QJ" firstAttribute="top" secondItem="bys-Bk-E1L" secondAttribute="top" constant="10" id="oId-2E-pbS"/>
+                                    <constraint firstItem="fja-uG-cF5" firstAttribute="centerY" secondItem="ddT-0l-icF" secondAttribute="centerY" id="pPj-Xd-698"/>
+                                    <constraint firstItem="x9O-mS-5wA" firstAttribute="centerX" secondItem="bys-Bk-E1L" secondAttribute="trailing" multiplier="0.3333" id="wel-rp-yAr"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="leftButton" destination="vtO-2R-hFM" id="5Yc-QM-4TR"/>
+                                    <outlet property="rightButton" destination="eSe-EC-tyK" id="0ex-RB-0Kl"/>
+                                    <outlet property="title" destination="ddT-0l-icF" id="Lw9-4W-eHa"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="htM-HM-KOk" id="dJP-C4-EK2"/>
-                            <outlet property="delegate" destination="htM-HM-KOk" id="qCv-WC-4yY"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="HDA-Jn-wDW">
-                        <barButtonItem key="leftBarButtonItem" image="filter" id="pEa-uN-cfb">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="filterAction:" destination="htM-HM-KOk" id="tSd-LR-Dgs"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="search-left" id="SfZ-Lr-iAa" userLabel="search">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="h6N-Qz-obV" secondAttribute="bottom" id="0o3-Oe-uxA"/>
+                            <constraint firstAttribute="trailing" secondItem="h6N-Qz-obV" secondAttribute="trailing" id="43D-ur-9Ao"/>
+                            <constraint firstItem="bys-Bk-E1L" firstAttribute="top" secondItem="Mtw-zE-Sg0" secondAttribute="bottom" id="5up-wz-8eD"/>
+                            <constraint firstItem="h6N-Qz-obV" firstAttribute="top" secondItem="Mtw-zE-Sg0" secondAttribute="bottom" id="Mq6-qJ-ssF"/>
+                            <constraint firstAttribute="trailing" secondItem="bys-Bk-E1L" secondAttribute="trailing" id="gUg-st-7BW"/>
+                            <constraint firstItem="bys-Bk-E1L" firstAttribute="leading" secondItem="fov-Gp-a9d" secondAttribute="leading" id="qFX-Db-uGJ"/>
+                            <constraint firstItem="h6N-Qz-obV" firstAttribute="leading" secondItem="fov-Gp-a9d" secondAttribute="leading" id="u12-ph-nhX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Problems" id="HDA-Jn-wDW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="96j-Vm-P3X"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="filter" destination="pEa-uN-cfb" id="G1d-Ms-QW7"/>
-                        <outlet property="tableView" destination="dMP-gj-jld" id="ya8-EG-QJ8"/>
+                        <outlet property="headerFloatingView" destination="bys-Bk-E1L" id="HYo-Pm-6cE"/>
+                        <outlet property="headerViewHeightConstraint" destination="WCe-93-Zhf" id="77q-sF-kRg"/>
+                        <outlet property="searchDisplayController" destination="SPY-aX-Zf2" id="INc-ax-6jh"/>
+                        <outlet property="tableView" destination="h6N-Qz-obV" id="QkW-zq-Ewo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPP-R7-2Oe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="SPY-aX-Zf2">
+                    <connections>
+                        <outlet property="delegate" destination="htM-HM-KOk" id="0Xr-Qu-IUw"/>
+                        <outlet property="searchContentsController" destination="htM-HM-KOk" id="eqc-Eu-gNv"/>
+                        <outlet property="searchResultsDataSource" destination="htM-HM-KOk" id="pCU-Dy-aeh"/>
+                        <outlet property="searchResultsDelegate" destination="htM-HM-KOk" id="hRl-si-qcF"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-202" y="-1079"/>
+            <point key="canvasLocation" x="-3388" y="515.8920539730135"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="M8f-7k-8VY">
+        <!--Lists-->
+        <scene sceneID="66j-1m-o3f">
             <objects>
-                <viewController id="9Dm-qd-l9L" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kdm-WW-UBm"/>
-                        <viewControllerLayoutGuide type="bottom" id="LZh-vM-Fka"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TLP-Ir-d9Y">
+                <tableViewController id="E7W-fm-cEg" customClass="ListTableViewController" customModule="Codey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="u7V-jf-sjF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="IV0-0v-0xw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ZA-NM-sEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="E7W-fm-cEg" id="fnp-8z-Wmz"/>
+                            <outlet property="delegate" destination="E7W-fm-cEg" id="3E5-vt-Dic"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lists" id="bCO-DJ-rpD">
+                        <barButtonItem key="leftBarButtonItem" image="Waste" id="ZVM-Xp-Dgh">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="deleteAll:" destination="E7W-fm-cEg" id="FBj-t2-xEk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" id="nkz-Rt-gPS">
+                            <color key="tintColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addList:" destination="E7W-fm-cEg" id="lne-tx-WVV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYa-MJ-lg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="333"/>
+            <point key="canvasLocation" x="-2514" y="529"/>
+        </scene>
+        <!--Lists-->
+        <scene sceneID="baK-6e-oj8">
+            <objects>
+                <navigationController id="tka-9q-Oi2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lists" image="Bulleted_List" id="dah-wD-HBu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EaS-Kp-Dns">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E7W-fm-cEg" kind="relationship" relationship="rootViewController" id="PoS-OM-N4I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvF-Bw-IuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2514" y="-260"/>
         </scene>
         <!--Starred-->
         <scene sceneID="rjk-iN-NOZ">
             <objects>
                 <navigationController id="N9g-mz-LiD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Starred" image="startab" id="TG6-DM-ZSW"/>
+                    <tabBarItem key="tabBarItem" title="Starred" image="Christmas_Star" id="TG6-DM-ZSW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pAR-7V-baj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -122,9 +245,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXQ-I5-Jdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-990" y="-340"/>
+            <point key="canvasLocation" x="-4238" y="-260"/>
         </scene>
-        <!--Starred View Controller-->
+        <!--Starred-->
         <scene sceneID="Rrf-ob-ceg">
             <objects>
                 <tableViewController id="VCh-5l-cfx" customClass="StarredViewController" customModule="Codey" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,8 +260,8 @@
                             <outlet property="delegate" destination="VCh-5l-cfx" id="gbd-Uw-mvg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pOt-zN-Uob">
-                        <barButtonItem key="rightBarButtonItem" image="trash" id="VuO-mA-QrZ">
+                    <navigationItem key="navigationItem" title="Starred" id="pOt-zN-Uob">
+                        <barButtonItem key="leftBarButtonItem" image="Waste" id="VuO-mA-QrZ">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="clearAllStarredProblems:" destination="VCh-5l-cfx" id="4KB-r8-IyC"/>
@@ -148,34 +271,19 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8C-ws-o0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202" y="-340"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="bmY-je-ROL">
-            <objects>
-                <navigationController id="wn0-Di-gde" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="0Sw-Iq-OX4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9e7-uN-3Q9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="9Dm-qd-l9L" kind="relationship" relationship="rootViewController" id="SJf-qB-BJz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p5n-Lw-NCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-970" y="368"/>
+            <point key="canvasLocation" x="-4239" y="516"/>
         </scene>
     </scenes>
     <resources>
-        <image name="filter" width="22" height="22"/>
-        <image name="problem" width="22" height="22"/>
+        <image name="Bulleted_List" width="22" height="22"/>
+        <image name="Christmas_Star" width="22" height="22"/>
+        <image name="Dice" width="50" height="50"/>
+        <image name="Filter" width="50" height="50"/>
+        <image name="Questions" width="22" height="22"/>
+        <image name="Waste" width="22" height="22"/>
+        <image name="plus" width="22" height="22"/>
         <image name="search" width="22" height="22"/>
-        <image name="search-left" width="22" height="22"/>
-        <image name="settings" width="22" height="22"/>
+        <image name="seperator" width="5" height="40"/>
         <image name="sort" width="22" height="22"/>
-        <image name="startab" width="22" height="22"/>
-        <image name="trash" width="22" height="22"/>
     </resources>
 </document>

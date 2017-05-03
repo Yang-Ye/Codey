@@ -1,0 +1,18 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> findAllConcatenatedWordsInADict(vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;&amp;</span> words) {
+        unordered_set<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> s(words.begin(), words.end());
+        vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> res;
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">auto</span> w <span style="color: #333333">:</span> words) {
+            <span style="color: #333399; font-weight: bold">int</span> n <span style="color: #333333">=</span> w.size();
+            vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> dp(n<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>);
+            dp[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> n; i<span style="color: #333333">++</span>) {
+                <span style="color: #008800; font-weight: bold">if</span> (dp[i] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>) <span style="color: #008800; font-weight: bold">continue</span>;
+                <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>; j <span style="color: #333333">&lt;=</span> n; j<span style="color: #333333">++</span>) {
+                    <span style="color: #008800; font-weight: bold">if</span> (j <span style="color: #333333">-</span> i <span style="color: #333333">&lt;</span> n <span style="color: #333333">&amp;&amp;</span> s.count(w.substr(i, j<span style="color: #333333">-</span>i))) dp[j] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+                }
+                <span style="color: #008800; font-weight: bold">if</span> (dp[n]) { res.push_back(w); <span style="color: #008800; font-weight: bold">break</span>; }
+            }
+        }
+        <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+</pre></div>

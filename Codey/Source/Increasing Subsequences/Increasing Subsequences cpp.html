@@ -1,0 +1,23 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;</span> findSubsequences(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> nums) {
+        vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;</span> res;
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> seq;
+        dfs(res, seq, nums, <span style="color: #0000DD; font-weight: bold">0</span>);
+        <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+    
+    <span style="color: #333399; font-weight: bold">void</span> dfs(vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;&amp;</span> res, vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> seq, vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> nums, <span style="color: #333399; font-weight: bold">int</span> pos) {
+        <span style="color: #008800; font-weight: bold">if</span>(seq.size() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">1</span>) res.push_back(seq);
+        unordered_set<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> hash;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> pos; i <span style="color: #333333">&lt;</span> nums.size(); <span style="color: #333333">++</span>i) {
+            <span style="color: #008800; font-weight: bold">if</span>((seq.empty() <span style="color: #333333">||</span> nums[i] <span style="color: #333333">&gt;=</span> seq.back()) <span style="color: #333333">&amp;&amp;</span> hash.find(nums[i]) <span style="color: #333333">==</span> hash.end()) {
+                seq.push_back(nums[i]);
+                dfs(res, seq, nums, i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+                seq.pop_back();
+                hash.insert(nums[i]);
+            }
+        }
+    }
+};
+</pre></div>

@@ -8,18 +8,11 @@
 
 import Foundation
 import UIKit
-import WebKit
-
-let initNameHeight:CGFloat = 30.0
-let initDescriptionHeight: CGFloat = 30.0
-let initButtonsHeight: CGFloat = 50.0
-let initSolutionHeight: CGFloat = 30.0
 
 enum SelectedSolution: Int {
     case java = 0
     case cpp = 1
     case py = 2
-    case hide = 3
 
     func toStringType() -> String {
         switch self {
@@ -29,20 +22,32 @@ enum SelectedSolution: Int {
             return "cpp"
         case .py:
             return "py"
-        default:
-            return "hide"
         }
     }
 }
 
-class ProblemDetailViewController: UITableViewController, UIWebViewDelegate {
+enum ProblemDetailViewCellHeightRatio: CGFloat {
+    case info = 0.2
+    case source = 0.80
+}
+
+enum ModelAuxView {
+    case addToList
+    case addNote
+}
+
+let problemDetailViewCornerRadius: CGFloat = 2.0
+
+protocol ProblemDetailViewCellProtocol {
+    var cellHeight: CGFloat { get }
+}
+
+class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UIViewControllerTransitioningDelegate {
     var problem: Problem!
-    var descriptionCell: DescriptionCell!
-    var solutionCell: SolutionCell!
-    var currentSelectedSolution: SelectedSolution = .hide
-    var buttonCell: ButtonsCell?
-    var heightDict: [CGFloat] = [initNameHeight, initDescriptionHeight, initButtonsHeight, initSolutionHeight]
-    var heightloaded: [String: Bool] = ["desc": false, "solu": false]
+    var viewHeight: CGFloat = 0.0
+    var codey: CodeyManger = CodeyManger.sharedInstance
+    var firstLoaded: Bool = true
+    var auxModalView: ModelAuxView = .addToList
 
     init(problem: Problem) {
         super.init(nibName: nil, bundle: nil)
@@ -53,55 +58,103 @@ class ProblemDetailViewController: UITableViewController, UIWebViewDelegate {
         super.init(coder: aDecoder)
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-
-    }
-
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(UINib.init(nibName: "DescriptionCell", bundle: nil), forCellReuseIdentifier: "DescriptionCell")
-        tableView.register(UINib.init(nibName: "ButtonsCell", bundle: nil), forCellReuseIdentifier: "ButtonsCell")
+        tableView.register(UINib.init(nibName: "TextViewCell", bundle: nil), forCellReuseIdentifier: "TextViewCell")
+        tableView.register(UINib.init(nibName: "InfoCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
+        tableView.register(UINib.init(nibName: "TitleCell", bundle: nil), forCellReuseIdentifier: "TitleCell")
+        tableView.register(UINib.init(nibName: "TagCell", bundle: nil), forCellReuseIdentifier: "TagCell")
         tableView.register(UINib.init(nibName: "SolutionCell", bundle: nil), forCellReuseIdentifier: "SolutionCell")
-        tableView.register(UINib.init(nibName: "NameCell", bundle: nil), forCellReuseIdentifier: "NameCell")
+        tableView.register(UINib.init(nibName: "SolutionCellLandscape", bundle: nil), forCellReuseIdentifier: "SolutionCellLandscape")
+        tableView.backgroundColor = CodeyManger.tableViewBackgroundColor()
         tableView.separatorStyle = .none
-        tableView.allowsSelection = false
-        setupNavigationBar()
+        tableView.isScrollEnabled = false
+        setupNavigationBarItems()
+
+        viewHeight = self.tableView.bounds.height - (self.tabBarController?.tabBar.frame.size.height ?? 0) - (self.navigationController?.navigationBar.frame.size.height ?? 0)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(_:)), name: NSNotification.Name(rawValue: "OrientationChageNotification"), object: nil)
+
+        super.viewDidLoad()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
-            cell.textLabel?.numberOfLines = 1;
-            cell.textLabel?.adjustsFontSizeToFitWidth = true
-            cell.textLabel?.text = problem.name
-            cell.textLabel?.textAlignment = NSTextAlignment.center
+            let cell: TitleCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
+            cell.title.text = problem.name
+            cell.title.font = CodeyManger.titleCellFont()
+            cell.selectionStyle = .none
             return cell
         case 1:
-            let cell: DescriptionCell = tableView.dequeueReusableCell(withIdentifier: "DescriptionCell", for: indexPath) as! DescriptionCell
-            cell.webView.delegate = self
-            cell.webView.scrollView.delegate = self
-            cell.loadHTML(problem: problem, realLoad: heightloaded["desc"]!)
-            descriptionCell = cell
+            let cell: InfoCell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! InfoCell
+            cell.hardness.text = problem.hardness.stringValue
+            cell.hardness.textColor = problem.themeColor
+            cell.isHot.isHidden = !problem.isHot
+            cell.selectionStyle = .none
             return cell
         case 2:
-            let cell: ButtonsCell = tableView.dequeueReusableCell(withIdentifier: "ButtonsCell", for: indexPath) as! ButtonsCell
-            cell.loadButtonColor(problem: problem)
-            cell.buttons.addObserver(self, forKeyPath: "selectedSegmentIndex", options: NSKeyValueObservingOptions([.new, .old]), context: nil)
-            buttonCell = cell
+            let cell: TextViewCell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath) as! TextViewCell
+            cell.loadHTML(type: .source, problem: problem)
+            cell.selectionStyle = .none
             return cell
         default:
-            let cell: SolutionCell  = tableView.dequeueReusableCell(withIdentifier: "SolutionCell", for: indexPath) as! SolutionCell
-            cell.webView.delegate = self
-            cell.webView.scrollView.delegate = self
-            cell.loadSolution(type: currentSelectedSolution.toStringType(), problem: problem)
-            solutionCell = cell
-            return cell
+            let orientation = UIApplication.shared.statusBarOrientation
+            if  orientation == .landscapeLeft || orientation == .landscapeRight {
+                let cell: SolutionCellLandscape = tableView.dequeueReusableCell(withIdentifier: "SolutionCellLandscape", for: indexPath) as! SolutionCellLandscape
+                cell.javaButton.addTarget(self, action: #selector(pushJavaSolution), for: .touchUpInside)
+                cell.cppButton.addTarget(self, action: #selector(pushCppSolution), for: .touchUpInside)
+                cell.pythonButton.addTarget(self, action: #selector(pushPythonSolution), for: .touchUpInside)
+                cell.selectionStyle = .none
+                let font = CodeyManger.solutionCellFont()
+                cell.javaButton.titleLabel?.font = font
+                cell.cppButton.titleLabel?.font = font
+                cell.pythonButton.titleLabel?.font = font
+                return cell
+            } else {
+                let cell: SolutionCell = tableView.dequeueReusableCell(withIdentifier: "SolutionCell", for: indexPath) as! SolutionCell
+                switch indexPath.row {
+                case 3:
+                    cell.solutionTitle.text = "Java Solution"
+                    cell.solutionImage.image = #imageLiteral(resourceName: "Java")
+                case 4:
+                    cell.solutionTitle.text = "C++ Solution"
+                    cell.solutionImage.image = #imageLiteral(resourceName: "C_Plus_Plus")
+                default:
+                    cell.solutionTitle.text = "Python Solution"
+                    cell.solutionImage.image = #imageLiteral(resourceName: "Python")
+                }
+                cell.solutionTitle.font = CodeyManger.solutionCellFont()
+                cell.selectionStyle = .none
+                return cell
+            }
         }
+    }
+
+    func pushSolutionWithType(type: HTMLType, title: String) {
+        let solutionViewController = SolutionViewViewController(nibName: nil, bundle: nil)
+        self.navigationController?.pushViewController(solutionViewController, animated: true)
+        solutionViewController.navigationItem.title = title
+        solutionViewController.loadHTML(type: type, problem: self.problem)
+    }
+
+    func pushJavaSolution() {
+        self.pushSolutionWithType(type: .java, title: "Java")
+    }
+
+    func pushCppSolution() {
+        self.pushSolutionWithType(type: .cpp, title: "C++")
+    }
+
+    func pushPythonSolution() {
+        self.pushSolutionWithType(type: .python, title: "Python")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,50 +162,92 @@ class ProblemDetailViewController: UITableViewController, UIWebViewDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        let orientation = UIApplication.shared.statusBarOrientation
+        if  orientation == .landscapeLeft || orientation == .landscapeRight {
+            return 4
+        }
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return heightDict[indexPath.row]
-    }
+        let orientation = UIApplication.shared.statusBarOrientation
+        if  orientation == .landscapeLeft || orientation == .landscapeRight {
+            switch indexPath.row {
+            case 0: return viewHeight * 4.5/40
+            case 1: return viewHeight * 4.5/40
+            case 2: return viewHeight * 5.3/8
+            default: return viewHeight * 4.5/40
+            }
+        }
 
-    func setupNavigationBar() {
-        navigationController?.navigationBar.barTintColor = CodeyManger.sharedInstance.themeColor
-        setupNavigationBarItems()
+        switch indexPath.row {
+        case 0: return viewHeight * 3/40
+        case 1: return viewHeight * 3/40
+        case 2: return viewHeight * 5/8
+        default: return viewHeight * 3/40
+        }
     }
 
     func setupNavigationBarItems() {
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        
-        let rotateButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "rotate"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(rotateSelf))
-        rotateButtonItem.tintColor = UIColor.black
-
-        let backButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popSelf))
-        backButtonItem.tintColor = UIColor.black
-        navigationItem.leftBarButtonItem = backButtonItem
 
         let starButton: UIButton!
         if !problem.isStared {
-            starButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "star2"))
+            starButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Christmas_Star"))
         } else {
-            starButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "star3"))
+            starButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Christmas_Star_Filled"))
         }
         starButton.addTarget(self, action: #selector(starSelf), for: UIControlEvents.touchUpInside)
         starButton.tintColor = UIColor.black
         let starButtonItem = UIBarButtonItem(customView: starButton)
-        navigationItem.rightBarButtonItems = [starButtonItem, rotateButtonItem]
+
+        let tagButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Tags"))
+        tagButton.addTarget(self, action: #selector(tags), for: UIControlEvents.touchUpInside)
+        tagButton.tintColor = UIColor.black
+        let tagButtonItem = UIBarButtonItem(customView: tagButton)
+
+        let listButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Bulleted_List"))
+        listButton.addTarget(self, action: #selector(lists), for: UIControlEvents.touchUpInside)
+        listButton.tintColor = UIColor.black
+        let listButtonItem = UIBarButtonItem(customView: listButton)
+
+        let noteButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "note"))
+        noteButton.addTarget(self, action: #selector(takeNote), for: UIControlEvents.touchUpInside)
+        noteButton.tintColor = UIColor.black
+        let noteButtonItem = UIBarButtonItem(customView: noteButton)
+
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spaceItem.width = 25
+
+        navigationItem.rightBarButtonItems = [starButtonItem, spaceItem, tagButtonItem, spaceItem, listButtonItem, spaceItem,noteButtonItem]
     }
 
     func popSelf() {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let orientation = UIApplication.shared.statusBarOrientation
+        if  orientation == .landscapeLeft || orientation == .landscapeRight {
+            return
+        }
+
+        if indexPath.row == 3 {
+            self.pushJavaSolution()
+        } else if indexPath.row == 4 {
+            self.pushCppSolution()
+        } else if indexPath.row == 5 {
+            self.pushPythonSolution()
+        }
+    }
+
     func starSelf() {
         if !problem.isStared {
             problem.isStared = true
+            problem.timeStarred = Date()
             CodeyManger.sharedInstance.starredProblems.insert(problem)
 
-            let button = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "star3"))
+            let button = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Christmas_Star_Filled"))
             button.tintColor = UIColor.black
             button.addTarget(self, action: #selector(self.starSelf), for: UIControlEvents.touchUpInside)
             self.navigationItem.rightBarButtonItems?[0].customView = button
@@ -160,72 +255,77 @@ class ProblemDetailViewController: UITableViewController, UIWebViewDelegate {
             problem.isStared = false
             CodeyManger.sharedInstance.starredProblems.remove(problem)
 
-            let button = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "star2"))
+            let button = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Christmas_Star"))
             button.tintColor = UIColor.black
             button.addTarget(self, action: #selector(self.starSelf), for: UIControlEvents.touchUpInside)
             self.navigationItem.rightBarButtonItems?[0].customView = button
         }
     }
 
-    func rotateSelf() {
-        if tableView.frame.size.width <  tableView.frame.size.height {
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
-        } else {
-            let value = UIInterfaceOrientation.portrait.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
+    func lists() {
+        auxModalView = .addToList
+        let pvc = AddToListTableViewController(style: .plain)
+        pvc.problem = self.problem
+
+        let pvcNavigationVC = UINavigationController(rootViewController: pvc)
+        pvcNavigationVC.modalPresentationStyle = UIModalPresentationStyle.custom
+        pvcNavigationVC.transitioningDelegate = self
+
+        self.present(pvcNavigationVC, animated: true, completion:nil)
+    }
+
+    func takeNote() {
+        auxModalView = .addNote
+        let pvc = NoteViewController()
+        pvc.problem = self.problem
+
+        let pvcNavigationVC = UINavigationController(rootViewController: pvc)
+        pvcNavigationVC.modalPresentationStyle = UIModalPresentationStyle.custom
+        pvcNavigationVC.transitioningDelegate = self
+
+        self.present(pvcNavigationVC, animated: true, completion:nil)
+    }
+
+    func presentationController(forPresented presented: UIViewController, presenting:
+        UIViewController?, source: UIViewController) -> UIPresentationController? {
+        switch auxModalView {
+        case .addToList:
+            let halfSizePresentationVC =  HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+            halfSizePresentationVC.dimmingView.touchedAction = {self.dismiss(animated: true, completion: nil)}
+            return halfSizePresentationVC
+        default:
+            let halfSizePresentationVC =  SmallSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+            halfSizePresentationVC.dimmingView.touchedAction = {self.dismiss(animated: true, completion: nil)}
+            return halfSizePresentationVC
         }
     }
 
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        if webView.tag == 0 {
-            if heightloaded["desc"] == false {
-                heightloaded["desc"] = true
-                heightDict[1] = webView.scrollView.contentSize.height
-                tableView.reloadRows(at: [IndexPath.init(row: 1, section: 0)], with: UITableViewRowAnimation.fade)
-            }
-        } else {
-            if heightloaded["solu"] == false {
-                heightloaded["solu"] = true
-                if webView.tag == 4 {
-                    heightDict[3] = 40.0
-                } else {
-                    heightDict[3] = webView.scrollView.contentSize.height
-                }
-                tableView.reloadRows(at: [IndexPath.init(row: 3, section: 0)], with: UITableViewRowAnimation.fade)
-            }
+    func tags() {
+        var tagsMessage = ""
+        if self.problem.tags.count > 0 {
+            tagsMessage = self.problem.tags.reduce("") { $0 + $1 + ", "}
         }
-    }
-
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "selectedSegmentIndex" {
-            if let object = object as? UISegmentedControl {
-                if  object.selectedSegmentIndex != currentSelectedSolution.rawValue {
-                    heightloaded["solu"] = false
-                    switch object.selectedSegmentIndex {
-                    case 0:
-                        currentSelectedSolution = .java
-                    case 1:
-                        currentSelectedSolution = .cpp
-                    case 2:
-                        currentSelectedSolution = .py
-                    default:
-                        currentSelectedSolution = .hide
-                    }
-                    tableView.reloadRows(at: [IndexPath.init(row: 3, section: 0)], with: UITableViewRowAnimation.fade)
-                }
-            }
+        if self.problem.company.count > 0 {
+            tagsMessage = tagsMessage + self.problem.company.reduce("") { $0 + $1 + ", "}
         }
-    }
-
-    deinit {
-        buttonCell?.buttons.removeObserver(self, forKeyPath: "selectedSegmentIndex")
+        let alertView = UIAlertController(title: "Tags", message: tagsMessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertView.addAction(action)
+        self.present(alertView, animated: true, completion: nil)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: nil, completion: { coordinator in
+            self.viewHeight = self.tableView.bounds.height
             self.tableView.reloadData()
         })
     }
-}
 
+    func orientationDidChange(_ notification:Notification) {
+        if let userInfo = notification.userInfo {
+            if let height = userInfo["height"] as? CGFloat {
+                self.viewHeight = height
+            }
+        }
+    }
+}

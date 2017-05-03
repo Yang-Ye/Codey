@@ -1,0 +1,143 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">KeyNode</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, key, value, freq <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>key <span style="color: #333333">=</span> key
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>value <span style="color: #333333">=</span> value
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>freq <span style="color: #333333">=</span> freq
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>prev <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>next <span style="color: #333333">=</span> <span style="color: #007020">None</span>
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">FreqNode</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, freq, prev, <span style="color: #007020">next</span>):
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>freq <span style="color: #333333">=</span> freq
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>prev <span style="color: #333333">=</span> prev
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>next <span style="color: #333333">=</span> <span style="color: #007020">next</span>
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>first <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>last <span style="color: #333333">=</span> <span style="color: #007020">None</span>
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">LFUCache</span>(<span style="color: #007020">object</span>):
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, capacity):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        </span>
+<span style="color: #DD4422">        :type capacity: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>capacity <span style="color: #333333">=</span> capacity
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict <span style="color: #333333">=</span> <span style="color: #007020">dict</span>()
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict <span style="color: #333333">=</span> <span style="color: #007020">dict</span>()
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>head <span style="color: #333333">=</span> <span style="color: #007020">None</span>
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get</span>(<span style="color: #007020">self</span>, key):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type key: int</span>
+<span style="color: #DD4422">        :rtype: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">if</span> key <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict:
+            keyNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict[key]
+            value <span style="color: #333333">=</span> keyNode<span style="color: #333333">.</span>value
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>increase(key, value)
+            <span style="color: #008800; font-weight: bold">return</span> value
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">set</span>(<span style="color: #007020">self</span>, key, value):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type key: int</span>
+<span style="color: #DD4422">        :type value: int</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>capacity <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>:
+            <span style="color: #008800; font-weight: bold">return</span>
+        <span style="color: #008800; font-weight: bold">if</span> key <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict:
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>increase(key, value)
+            <span style="color: #008800; font-weight: bold">return</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(<span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict) <span style="color: #333333">==</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>capacity:
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>removeKeyNode(<span style="color: #007020">self</span><span style="color: #333333">.</span>head<span style="color: #333333">.</span>last)
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>insertKeyNode(key, value)
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">increase</span>(<span style="color: #007020">self</span>, key, value):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Increments the freq of an existing KeyNode&lt;key, value&gt; by 1.</span>
+<span style="color: #DD4422">        :type key: str</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        keyNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict[key]
+        keyNode<span style="color: #333333">.</span>value <span style="color: #333333">=</span> value
+        freqNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict[keyNode<span style="color: #333333">.</span>freq]
+        nextFreqNode <span style="color: #333333">=</span> freqNode<span style="color: #333333">.</span>next
+        keyNode<span style="color: #333333">.</span>freq <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">if</span> nextFreqNode <span style="color: #000000; font-weight: bold">is</span> <span style="color: #007020">None</span> <span style="color: #000000; font-weight: bold">or</span> nextFreqNode<span style="color: #333333">.</span>freq <span style="color: #333333">&gt;</span> keyNode<span style="color: #333333">.</span>freq:
+            nextFreqNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>insertFreqNodeAfter(keyNode<span style="color: #333333">.</span>freq, freqNode)
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>unlinkKey(keyNode, freqNode)
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>linkKey(keyNode, nextFreqNode)
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">insertKeyNode</span>(<span style="color: #007020">self</span>, key, value):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Inserts a new KeyNode&lt;key, value&gt; with freq 1.</span>
+<span style="color: #DD4422">        :type key: str</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        keyNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict[key] <span style="color: #333333">=</span> KeyNode(key, value)
+        freqNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict<span style="color: #333333">.</span>get(<span style="color: #0000DD; font-weight: bold">1</span>)
+        <span style="color: #008800; font-weight: bold">if</span> freqNode <span style="color: #000000; font-weight: bold">is</span> <span style="color: #007020">None</span>:
+            freqNode <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> FreqNode(<span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #007020">None</span>, <span style="color: #007020">self</span><span style="color: #333333">.</span>head)
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>head:
+                <span style="color: #007020">self</span><span style="color: #333333">.</span>head<span style="color: #333333">.</span>prev <span style="color: #333333">=</span> freqNode
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>head <span style="color: #333333">=</span> freqNode
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>linkKey(keyNode, freqNode)
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">delFreqNode</span>(<span style="color: #007020">self</span>, freqNode):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Delete freqNode.</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        prev, <span style="color: #007020">next</span> <span style="color: #333333">=</span> freqNode<span style="color: #333333">.</span>prev, freqNode<span style="color: #333333">.</span>next
+        <span style="color: #008800; font-weight: bold">if</span> prev: prev<span style="color: #333333">.</span>next <span style="color: #333333">=</span> <span style="color: #007020">next</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">next</span>: <span style="color: #007020">next</span><span style="color: #333333">.</span>prev <span style="color: #333333">=</span> prev
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>head <span style="color: #333333">==</span> freqNode: <span style="color: #007020">self</span><span style="color: #333333">.</span>head <span style="color: #333333">=</span> <span style="color: #007020">next</span>
+        <span style="color: #008800; font-weight: bold">del</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict[freqNode<span style="color: #333333">.</span>freq]
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">insertFreqNodeAfter</span>(<span style="color: #007020">self</span>, freq, node):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Insert a new FreqNode(freq) after node.</span>
+<span style="color: #DD4422">        :rtype: FreqNode</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        newNode <span style="color: #333333">=</span> FreqNode(freq, node, node<span style="color: #333333">.</span>next)
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict[freq] <span style="color: #333333">=</span> newNode
+        <span style="color: #008800; font-weight: bold">if</span> node<span style="color: #333333">.</span>next: node<span style="color: #333333">.</span>next<span style="color: #333333">.</span>prev <span style="color: #333333">=</span> newNode
+        node<span style="color: #333333">.</span>next <span style="color: #333333">=</span> newNode
+        <span style="color: #008800; font-weight: bold">return</span> newNode
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">removeKeyNode</span>(<span style="color: #007020">self</span>, keyNode):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Remove keyNode</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>unlinkKey(keyNode, <span style="color: #007020">self</span><span style="color: #333333">.</span>freqDict[keyNode<span style="color: #333333">.</span>freq])
+        <span style="color: #008800; font-weight: bold">del</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>keyDict[keyNode<span style="color: #333333">.</span>key]
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">unlinkKey</span>(<span style="color: #007020">self</span>, keyNode, freqNode):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Unlink keyNode from freqNode</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #007020">next</span>, prev <span style="color: #333333">=</span> keyNode<span style="color: #333333">.</span>next, keyNode<span style="color: #333333">.</span>prev
+        <span style="color: #008800; font-weight: bold">if</span> prev: prev<span style="color: #333333">.</span>next <span style="color: #333333">=</span> <span style="color: #007020">next</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">next</span>: <span style="color: #007020">next</span><span style="color: #333333">.</span>prev <span style="color: #333333">=</span> prev
+        <span style="color: #008800; font-weight: bold">if</span> freqNode<span style="color: #333333">.</span>first <span style="color: #333333">==</span> keyNode: freqNode<span style="color: #333333">.</span>first <span style="color: #333333">=</span> <span style="color: #007020">next</span>
+        <span style="color: #008800; font-weight: bold">if</span> freqNode<span style="color: #333333">.</span>last <span style="color: #333333">==</span> keyNode: freqNode<span style="color: #333333">.</span>last <span style="color: #333333">=</span> prev
+        <span style="color: #008800; font-weight: bold">if</span> freqNode<span style="color: #333333">.</span>first <span style="color: #000000; font-weight: bold">is</span> <span style="color: #007020">None</span>: <span style="color: #007020">self</span><span style="color: #333333">.</span>delFreqNode(freqNode)
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">linkKey</span>(<span style="color: #007020">self</span>, keyNode, freqNode):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        Link keyNode to freqNode</span>
+<span style="color: #DD4422">        :rtype: void</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        firstKeyNode <span style="color: #333333">=</span> freqNode<span style="color: #333333">.</span>first
+        keyNode<span style="color: #333333">.</span>prev <span style="color: #333333">=</span> <span style="color: #007020">None</span>
+        keyNode<span style="color: #333333">.</span>next <span style="color: #333333">=</span> firstKeyNode
+        <span style="color: #008800; font-weight: bold">if</span> firstKeyNode: firstKeyNode<span style="color: #333333">.</span>prev <span style="color: #333333">=</span> keyNode
+        freqNode<span style="color: #333333">.</span>first <span style="color: #333333">=</span> keyNode
+        <span style="color: #008800; font-weight: bold">if</span> freqNode<span style="color: #333333">.</span>last <span style="color: #000000; font-weight: bold">is</span> <span style="color: #007020">None</span>: freqNode<span style="color: #333333">.</span>last <span style="color: #333333">=</span> keyNode
+
+<span style="color: #888888"># Your LFUCache object will be instantiated and called as such:</span>
+<span style="color: #888888"># obj = LFUCache(capacity)</span>
+<span style="color: #888888"># param_1 = obj.get(key)</span>
+<span style="color: #888888"># obj.set(key,value)</span>
+</pre></div>

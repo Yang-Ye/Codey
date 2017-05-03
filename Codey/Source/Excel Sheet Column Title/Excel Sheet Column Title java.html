@@ -1,0 +1,18 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">convertToTitle</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>n <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">throw</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">IllegalArgumentException</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Input is not valid!&quot;</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    StringBuilder sb <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> StringBuilder<span style="color: #333333">();</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>n <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        n<span style="color: #333333">--;</span>
+        <span style="color: #333399; font-weight: bold">char</span> ch <span style="color: #333333">=</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">)</span> <span style="color: #333333">(</span>n <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">26</span> <span style="color: #333333">+</span> <span style="color: #0044DD">&#39;A&#39;</span><span style="color: #333333">);</span>
+        n <span style="color: #333333">/=</span> <span style="color: #0000DD; font-weight: bold">26</span><span style="color: #333333">;</span>
+        sb<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span>ch<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    sb<span style="color: #333333">.</span><span style="color: #0000CC">reverse</span><span style="color: #333333">();</span>
+    <span style="color: #008800; font-weight: bold">return</span> sb<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+<span style="color: #333333">}</span>
+</pre></div>

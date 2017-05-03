@@ -1,0 +1,119 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #0066BB; font-weight: bold">Solution</span>(object)<span style="color: #333333">:</span>
+    def findMinStep(self, board, hand)<span style="color: #333333">:</span>
+        <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+        <span style="color: #333333">:</span>type board<span style="color: #333333">:</span> str
+        <span style="color: #333333">:</span>type hand<span style="color: #333333">:</span> str
+        <span style="color: #333333">:</span>rtype<span style="color: #333333">:</span> <span style="color: #333399; font-weight: bold">int</span>
+        <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+        def getBalls(balls)<span style="color: #333333">:</span>
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            Convert the init given board string into a ball list.
+            Each element of the list is in the form of [color, ballCnt]
+            This function can automatically clear the <span style="color: #0000DD; font-weight: bold">3</span> consective balls with
+            the same color in the given string.
+
+            <span style="color: #333333">&gt;&gt;&gt;</span> getBalls(<span style="background-color: #fff0f0">&quot;RRBBBGYYWWWYB&quot;</span>)
+            [[<span style="background-color: #fff0f0">&quot;R&quot;</span>, <span style="color: #0000DD; font-weight: bold">2</span>], [<span style="background-color: #fff0f0">&quot;B&quot;</span>, <span style="color: #0000DD; font-weight: bold">3</span>], [<span style="background-color: #fff0f0">&quot;G&quot;</span>, <span style="color: #0000DD; font-weight: bold">1</span>], [<span style="background-color: #fff0f0">&quot;B&quot;</span>, <span style="color: #0000DD; font-weight: bold">1</span>]]
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            ballList <span style="color: #333333">=</span> []
+            <span style="color: #008800; font-weight: bold">for</span> ball in balls<span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">if</span> not ballList or ballList[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">!=</span> ball<span style="color: #333333">:</span>
+                    <span style="color: #008800; font-weight: bold">if</span> ballList and ballList[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">:</span>
+                        ballList.pop(<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>)
+                    ballList.append([ball, <span style="color: #0000DD; font-weight: bold">1</span>])
+                elif ball <span style="color: #333333">==</span> ballList[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>][<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">:</span>
+                    ballList[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">return</span> ballList
+        
+        def combineBalls(balls1, balls2)<span style="color: #333333">:</span>
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            Combine <span style="color: #0000DD; font-weight: bold">2</span> sets of balls together.
+
+            <span style="color: #333333">&gt;&gt;&gt;</span> combineBalls({<span style="background-color: #fff0f0">&quot;R&quot;</span><span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">1</span>}, {<span style="background-color: #fff0f0">&quot;R&quot;</span><span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">1</span>, <span style="background-color: #fff0f0">&quot;G&quot;</span><span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">1</span>})
+            {<span style="background-color: #fff0f0">&quot;R&quot;</span><span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">2</span>, <span style="background-color: #fff0f0">&quot;G&quot;</span><span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">1</span>}
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            ans <span style="color: #333333">=</span> dict(balls1)
+            <span style="color: #008800; font-weight: bold">for</span> key, value in balls2.items()<span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">if</span> key in ans<span style="color: #333333">:</span>
+                    ans[key] <span style="color: #333333">+=</span> value
+                <span style="color: #997700; font-weight: bold">else:</span>
+                    ans[key] <span style="color: #333333">=</span> value
+            <span style="color: #008800; font-weight: bold">return</span> ans
+        
+        def cntBalls(balls)<span style="color: #333333">:</span>
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            Count the number of balls we have chosen.
+            Since there is only <span style="color: #0000DD; font-weight: bold">5</span> colors in the game, <span style="color: #008800; font-weight: bold">this</span> function can be done in O(<span style="color: #0000DD; font-weight: bold">1</span>) time.
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            <span style="color: #008800; font-weight: bold">return</span> sum(balls.values())
+
+        def updateAns(ans1, ans2)<span style="color: #333333">:</span>
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            Compare two different solution to the sub<span style="color: #333333">-</span>problem,
+            and <span style="color: #008800; font-weight: bold">return</span> the better one.
+            If <span style="color: #FF0000; background-color: #FFAAAA">`</span>ans1<span style="color: #FF0000; background-color: #FFAAAA">`</span> has fewer balls and <span style="color: #FF0000; background-color: #FFAAAA">`</span>ans1<span style="color: #FF0000; background-color: #FFAAAA">`</span> can be formed by the balls given,
+            then just <span style="color: #008800; font-weight: bold">return</span> <span style="color: #FF0000; background-color: #FFAAAA">`</span>ans1<span style="color: #FF0000; background-color: #FFAAAA">`</span>, <span style="color: #008800; font-weight: bold">else</span> we <span style="color: #008800; font-weight: bold">return</span> <span style="color: #FF0000; background-color: #FFAAAA">`</span>ans2<span style="color: #FF0000; background-color: #FFAAAA">`</span>
+            Therefore, <span style="color: #FF0000; background-color: #FFAAAA">`</span>ans1<span style="color: #FF0000; background-color: #FFAAAA">`</span> should always be the <span style="color: #008800; font-weight: bold">new</span> soluton, <span style="color: #008800; font-weight: bold">while</span> <span style="color: #FF0000; background-color: #FFAAAA">`</span>ans2<span style="color: #FF0000; background-color: #FFAAAA">`</span> the old.
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            <span style="color: #008800; font-weight: bold">if</span> cntBalls(ans1) <span style="color: #333333">&lt;</span> cntBalls(ans2) and checkAvailable(ans1, ballsInHand) <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">return</span> ans1
+            <span style="color: #008800; font-weight: bold">return</span> ans2
+        
+        def checkAvailable(balls, ballsInHand)<span style="color: #333333">:</span>
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            Check whether current balls is available according to the given balls.
+            Since there is only <span style="color: #0000DD; font-weight: bold">5</span> colors in the game, <span style="color: #008800; font-weight: bold">this</span> function can be done in O(<span style="color: #0000DD; font-weight: bold">1</span>) time.
+            <span style="background-color: #fff0f0">&quot;&quot;&quot;</span>
+            <span style="color: #008800; font-weight: bold">for</span> key, value in balls.items()<span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">if</span> balls[key] <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+                    <span style="color: #008800; font-weight: bold">if</span> key not in ballsInHand<span style="color: #333333">:</span>
+                        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
+                    <span style="color: #008800; font-weight: bold">if</span> ballsInHand[key] <span style="color: #333333">&lt;</span> value<span style="color: #333333">:</span>
+                        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">return</span> sum(balls.values())
+
+        def memorySearch(start, end)<span style="color: #333333">:</span>
+            <span style="color: #008800; font-weight: bold">if</span> end <span style="color: #333333">&lt;</span> start<span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">return</span> {}
+            elif (start, end) in history<span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">return</span> history[(start, end)]
+            elif start <span style="color: #333333">==</span> end<span style="color: #333333">:</span>
+                <span style="color: #FF0000; background-color: #FFAAAA">#</span> There is only one color in the sub<span style="color: #333333">-</span>problem
+                <span style="color: #008800; font-weight: bold">return</span> {ballsTable[start][<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">3</span> <span style="color: #333333">-</span> ballsTable[start][<span style="color: #0000DD; font-weight: bold">1</span>]}
+            elif start <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">==</span> end<span style="color: #333333">:</span>
+                <span style="color: #FF0000; background-color: #FFAAAA">#</span> There is only two color in the sub<span style="color: #333333">-</span>problem
+                <span style="color: #008800; font-weight: bold">return</span> combineBalls(memorySearch(start, start), memorySearch(end, end))
+            <span style="color: #FF0000; background-color: #FFAAAA">#</span> When there are more than <span style="color: #0000DD; font-weight: bold">3</span> color in the sub<span style="color: #333333">-</span>problem
+            thisAns <span style="color: #333333">=</span> {<span style="background-color: #fff0f0">&quot;R&quot;</span><span style="color: #333333">:</span><span style="color: #333399; font-weight: bold">float</span>(<span style="background-color: #fff0f0">&quot;inf&quot;</span>)}
+            firstColor, lastColor <span style="color: #333333">=</span> ballsTable[start][<span style="color: #0000DD; font-weight: bold">0</span>], ballsTable[end][<span style="color: #0000DD; font-weight: bold">0</span>]
+            <span style="color: #FF0000; background-color: #FFAAAA">#</span> The first possible Solution is to split the balls into <span style="color: #0000DD; font-weight: bold">2</span> parts and finish both of them seperately
+            <span style="color: #008800; font-weight: bold">for</span> k in xrange(start, end)<span style="color: #333333">:</span>
+                thisBalls <span style="color: #333333">=</span> combineBalls(memorySearch(start, k), memorySearch(k<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>, end))
+                thisAns <span style="color: #333333">=</span> updateAns(thisBalls, thisAns)
+            <span style="color: #FF0000; background-color: #FFAAAA">#</span> The second possible Solution is to clear the first and the last balls in the end
+            <span style="color: #008800; font-weight: bold">if</span> firstColor <span style="color: #333333">==</span> lastColor<span style="color: #333333">:</span>
+                toAdd <span style="color: #333333">=</span> max(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">3</span> <span style="color: #333333">-</span> ballsTable[start][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">-</span> ballsTable[end][<span style="color: #0000DD; font-weight: bold">1</span>])
+                thisBalls <span style="color: #333333">=</span> combineBalls(memorySearch(start<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>, end<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>), {firstColor<span style="color: #333333">:</span> toAdd})
+                thisAns <span style="color: #333333">=</span> updateAns(thisBalls, thisAns)
+            <span style="color: #FF0000; background-color: #FFAAAA">#</span> The third possible Solution is to clear the first and the last balls in the end with
+            <span style="color: #FF0000; background-color: #FFAAAA">#</span> one ball in the middle
+            <span style="color: #008800; font-weight: bold">if</span> firstColor <span style="color: #333333">==</span> lastColor and <span style="color: #0000DD; font-weight: bold">1</span> in (ballsTable[start][<span style="color: #0000DD; font-weight: bold">1</span>], ballsTable[end][<span style="color: #0000DD; font-weight: bold">1</span>])<span style="color: #333333">:</span>
+                idx <span style="color: #333333">=</span> start <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+                <span style="color: #008800; font-weight: bold">while</span> idx <span style="color: #333333">&lt;</span> end<span style="color: #333333">:</span>
+                    <span style="color: #008800; font-weight: bold">if</span> ballsTable[idx][<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">==</span> firstColor and ballsTable[idx][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:</span>
+                        thisBalls <span style="color: #333333">=</span> combineBalls(memorySearch(start <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, idx <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>), memorySearch(idx <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, end <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>))
+                        thisAns <span style="color: #333333">=</span> updateAns(thisBalls, thisAns)
+                    idx <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            history[(start, end)] <span style="color: #333333">=</span> thisAns
+            <span style="color: #008800; font-weight: bold">return</span> thisAns
+            
+        <span style="color: #FF0000; background-color: #FFAAAA">#</span> Initialization
+        ballsTable <span style="color: #333333">=</span> getBalls(board)
+        ballsInHand <span style="color: #333333">=</span> {}
+        <span style="color: #008800; font-weight: bold">for</span> ball in hand<span style="color: #333333">:</span>
+            ballsInHand[ball] <span style="color: #333333">=</span> ballsInHand.get(ball, <span style="color: #0000DD; font-weight: bold">0</span>) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        history <span style="color: #333333">=</span> {}
+        <span style="color: #FF0000; background-color: #FFAAAA">#</span> print ballsTable
+        length <span style="color: #333333">=</span> len(ballsTable)
+        <span style="color: #008800; font-weight: bold">return</span> checkAvailable(memorySearch(<span style="color: #0000DD; font-weight: bold">0</span>, length <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>), ballsInHand)
+</pre></div>

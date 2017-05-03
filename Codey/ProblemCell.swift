@@ -12,19 +12,21 @@ import UIKit
 class ProblemCell: UITableViewCell {
 
     @IBOutlet var problemName: UILabel!
-    @IBOutlet var problemHardness: UILabel!
     @IBOutlet var isStared: UIImageView!
     @IBOutlet var isHot: UIImageView!
     @IBOutlet var order: UILabel!
+    @IBOutlet var hardnessIcon: UIImageView!
+    @IBOutlet var customBackgroundView: UIView!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.white
     }
 
     override func awakeFromNib() {
         self.isStared.isHidden = true
         self.isHot.isHidden = true
+        self.customBackgroundView.layer.cornerRadius = problemDetailViewCornerRadius
+        self.contentView.backgroundColor = CodeyManger.tableViewBackgroundColor()
     }
 }
 

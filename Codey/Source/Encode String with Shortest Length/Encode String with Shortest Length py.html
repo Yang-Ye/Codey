@@ -1,0 +1,29 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>):
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>dp <span style="color: #333333">=</span> <span style="color: #007020">dict</span>()
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">encode</span>(<span style="color: #007020">self</span>, s):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type s: str</span>
+<span style="color: #DD4422">        :rtype: str</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        size <span style="color: #333333">=</span> <span style="color: #007020">len</span>(s)
+        <span style="color: #008800; font-weight: bold">if</span> size <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">1</span>: <span style="color: #008800; font-weight: bold">return</span> s
+        <span style="color: #008800; font-weight: bold">if</span> s <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>dp: <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>dp[s]
+        ans <span style="color: #333333">=</span> s
+        <span style="color: #008800; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">1</span>, size <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>):
+            left, right <span style="color: #333333">=</span> s[:p], s[p:]
+            t <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>solve(left) <span style="color: #333333">+</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>encode(right)
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(t) <span style="color: #333333">&lt;</span> <span style="color: #007020">len</span>(ans): ans <span style="color: #333333">=</span> t
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>dp[s] <span style="color: #333333">=</span> ans
+        <span style="color: #008800; font-weight: bold">return</span> ans
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">solve</span>(<span style="color: #007020">self</span>, s):
+        ans <span style="color: #333333">=</span> s
+        size <span style="color: #333333">=</span> <span style="color: #007020">len</span>(s)
+        <span style="color: #008800; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">1</span>, size <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>):
+            <span style="color: #008800; font-weight: bold">if</span> size <span style="color: #333333">%</span> x <span style="color: #000000; font-weight: bold">or</span> s[:x] <span style="color: #333333">*</span> (size <span style="color: #333333">/</span> x) <span style="color: #333333">!=</span> s: <span style="color: #008800; font-weight: bold">continue</span>
+            y <span style="color: #333333">=</span> <span style="color: #007020">str</span>(size <span style="color: #333333">/</span> x) <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&#39;[&#39;</span> <span style="color: #333333">+</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>encode(s[:x]) <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&#39;]&#39;</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(y) <span style="color: #333333">&lt;</span> <span style="color: #007020">len</span>(ans): ans <span style="color: #333333">=</span> y
+        <span style="color: #008800; font-weight: bold">return</span> ans
+</pre></div>

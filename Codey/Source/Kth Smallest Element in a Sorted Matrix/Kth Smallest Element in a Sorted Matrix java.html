@@ -1,0 +1,37 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">kthSmallest</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[][]</span> matrix<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> k<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span> m<span style="color: #333333">=</span>matrix<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> lower <span style="color: #333333">=</span> matrix<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">];</span>
+    <span style="color: #333399; font-weight: bold">int</span> upper <span style="color: #333333">=</span> matrix<span style="color: #333333">[</span>m<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">][</span>m<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">];</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>lower<span style="color: #333333">&lt;</span>upper<span style="color: #333333">){</span>
+        <span style="color: #333399; font-weight: bold">int</span> mid <span style="color: #333333">=</span> lower <span style="color: #333333">+</span> <span style="color: #333333">((</span>upper<span style="color: #333333">-</span>lower<span style="color: #333333">)&gt;&gt;</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> count<span style="color: #333333">(</span>matrix<span style="color: #333333">,</span> mid<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>count<span style="color: #333333">&lt;</span>k<span style="color: #333333">){</span>
+            lower<span style="color: #333333">=</span>mid<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            upper<span style="color: #333333">=</span>mid<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> upper<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">count</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[][]</span> matrix<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> target<span style="color: #333333">){</span>
+    <span style="color: #333399; font-weight: bold">int</span> m<span style="color: #333333">=</span>matrix<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span>m<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> j<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>i<span style="color: #333333">&gt;=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">&amp;&amp;</span>j<span style="color: #333333">&lt;</span>m<span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>matrix<span style="color: #333333">[</span>i<span style="color: #333333">][</span>j<span style="color: #333333">]&lt;=</span>target<span style="color: #333333">){</span>
+            count <span style="color: #333333">+=</span> i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+            j<span style="color: #333333">++;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            i<span style="color: #333333">--;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> count<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

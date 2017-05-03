@@ -1,0 +1,77 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TrieNode</span> <span style="color: #333333">{</span>
+    TrieNode<span style="color: #333333">[]</span> arr<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">boolean</span> isEnd<span style="color: #333333">;</span>
+    <span style="color: #888888">// Initialize your data structure here.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">TrieNode</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">arr</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">26</span><span style="color: #333333">];</span>
+    <span style="color: #333333">}</span>
+ 
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Trie</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">private</span> TrieNode root<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Trie</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        root <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// Inserts a word into the trie.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">insert</span><span style="color: #333333">(</span>String word<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        TrieNode p <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>word<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+            <span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> word<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+            <span style="color: #333399; font-weight: bold">int</span> index <span style="color: #333333">=</span> c<span style="color: #333333">-</span><span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">arr</span><span style="color: #333333">[</span>index<span style="color: #333333">]==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+                TrieNode temp <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> TrieNode<span style="color: #333333">();</span>
+                p<span style="color: #333333">.</span><span style="color: #0000CC">arr</span><span style="color: #333333">[</span>index<span style="color: #333333">]=</span>temp<span style="color: #333333">;</span>
+                p <span style="color: #333333">=</span> temp<span style="color: #333333">;</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                p<span style="color: #333333">=</span>p<span style="color: #333333">.</span><span style="color: #0000CC">arr</span><span style="color: #333333">[</span>index<span style="color: #333333">];</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        p<span style="color: #333333">.</span><span style="color: #0000CC">isEnd</span><span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// Returns if the word is in the trie.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">search</span><span style="color: #333333">(</span>String word<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        TrieNode p <span style="color: #333333">=</span> searchNode<span style="color: #333333">(</span>word<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">isEnd</span><span style="color: #333333">)</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// Returns if there is any word in the trie</span>
+    <span style="color: #888888">// that starts with the given prefix.</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">startsWith</span><span style="color: #333333">(</span>String prefix<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        TrieNode p <span style="color: #333333">=</span> searchNode<span style="color: #333333">(</span>prefix<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> TrieNode <span style="color: #0066BB; font-weight: bold">searchNode</span><span style="color: #333333">(</span>String s<span style="color: #333333">){</span>
+        TrieNode p <span style="color: #333333">=</span> root<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+            <span style="color: #333399; font-weight: bold">char</span> c<span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+            <span style="color: #333399; font-weight: bold">int</span> index <span style="color: #333333">=</span> c<span style="color: #333333">-</span><span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">arr</span><span style="color: #333333">[</span>index<span style="color: #333333">]!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+                p <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">arr</span><span style="color: #333333">[</span>index<span style="color: #333333">];</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">==</span>root<span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> p<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

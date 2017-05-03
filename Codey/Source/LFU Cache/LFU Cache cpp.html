@@ -1,0 +1,71 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// Time:  O(1), per operation.</span>
+<span style="color: #888888">// Space: O(k), k is the capacity of cache.</span>
+
+<span style="color: #557799">#include &lt;list&gt;</span>
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">LFUCache</span>{
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #888888">// @param capacity, an integer</span>
+    LFUCache(<span style="color: #333399; font-weight: bold">int</span> capacity) <span style="color: #333333">:</span> capa_(capacity) {
+    }
+
+    <span style="color: #333399; font-weight: bold">int</span> get(<span style="color: #333399; font-weight: bold">int</span> key) {
+        <span style="color: #008800; font-weight: bold">if</span> (map_.find(key) <span style="color: #333333">!=</span> map_.end() <span style="color: #333333">&amp;&amp;</span> capa_) {
+            <span style="color: #888888">// It key exists, update it.</span>
+            <span style="color: #008800; font-weight: bold">const</span> <span style="color: #008800; font-weight: bold">auto</span> value <span style="color: #333333">=</span> map_[key]<span style="color: #333333">-&gt;</span>value;
+            update(key, value);
+            <span style="color: #008800; font-weight: bold">return</span> value;
+        } <span style="color: #008800; font-weight: bold">else</span> {
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>;
+        }
+    }
+
+    <span style="color: #333399; font-weight: bold">void</span> set(<span style="color: #333399; font-weight: bold">int</span> key, <span style="color: #333399; font-weight: bold">int</span> value) 
+        <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>capa_) {
+            <span style="color: #008800; font-weight: bold">return</span>;
+        }
+        <span style="color: #888888">// If cache is full while inserting, remove the last one.</span>
+        <span style="color: #008800; font-weight: bold">if</span> (map_.find(key) <span style="color: #333333">==</span> map_.end() <span style="color: #333333">&amp;&amp;</span> list_.size() <span style="color: #333333">==</span> capa_) {
+            <span style="color: #008800; font-weight: bold">auto</span> del <span style="color: #333333">=</span> list_.front(); list_.pop_front();
+            map_.erase(del.key);
+        }
+        update(key, value);
+    }
+
+<span style="color: #997700; font-weight: bold">private:</span>
+    <span style="color: #008800; font-weight: bold">struct</span> node {
+        node(<span style="color: #333399; font-weight: bold">int</span> k, <span style="color: #333399; font-weight: bold">int</span> v, <span style="color: #333399; font-weight: bold">int</span> f) <span style="color: #333333">:</span> key(k), value(v), freq(f) {}
+        <span style="color: #333399; font-weight: bold">int</span> key;
+        <span style="color: #333399; font-weight: bold">int</span> value;
+        <span style="color: #333399; font-weight: bold">int</span> freq;
+    };
+    <span style="color: #008800; font-weight: bold">using</span> List <span style="color: #333333">=</span> list<span style="color: #333333">&lt;</span>node<span style="color: #333333">&gt;</span>;
+    List list_; <span style="color: #888888">// key, value</span>
+    unordered_map<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, List<span style="color: #333333">::</span>iterator<span style="color: #333333">&gt;</span> map_; <span style="color: #888888">// key, list iterator</span>
+    <span style="color: #333399; font-weight: bold">int</span> capa_;
+
+    <span style="color: #888888">// Update (key, iterator of (key, value)) pair</span>
+    <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">update</span>(<span style="color: #333399; font-weight: bold">int</span> key, <span style="color: #333399; font-weight: bold">int</span> value) {
+        <span style="color: #333399; font-weight: bold">int</span> freq <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">auto</span> l_it <span style="color: #333333">=</span> list_.begin();
+        <span style="color: #008800; font-weight: bold">auto</span> it <span style="color: #333333">=</span> map_.find(key);
+        <span style="color: #008800; font-weight: bold">if</span> (it <span style="color: #333333">!=</span> map_.end()) {
+            freq <span style="color: #333333">=</span> it<span style="color: #333333">-&gt;</span>second<span style="color: #333333">-&gt;</span>freq;
+            l_it <span style="color: #333333">=</span> next(it<span style="color: #333333">-&gt;</span>second);
+            list_.erase(it<span style="color: #333333">-&gt;</span>second);
+        }
+        <span style="color: #333333">++</span>freq;
+        <span style="color: #008800; font-weight: bold">while</span> (l_it <span style="color: #333333">!=</span> list_.end() <span style="color: #333333">&amp;&amp;</span> freq <span style="color: #333333">&gt;=</span> l_it<span style="color: #333333">-&gt;</span>freq) {
+            <span style="color: #333333">++</span>l_it;
+        }
+        map_[key] <span style="color: #333333">=</span> list_.emplace(l_it, node(key, value, freq));
+    }
+};
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Your LFUCache object will be instantiated and called as such:</span>
+<span style="color: #888888"> * LFUCache obj = new LFUCache(capacity);</span>
+<span style="color: #888888"> * int param_1 = obj.get(key);</span>
+<span style="color: #888888"> * obj.set(key,value);</span>
+<span style="color: #888888"> */</span>
+</pre></div>

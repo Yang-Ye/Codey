@@ -1,0 +1,27 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333333">//</span> Time:  O(n)
+<span style="color: #333333">//</span> Space: O(<span style="color: #0000DD; font-weight: bold">1</span>)
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+public:
+    <span style="color: #007020">int</span> lengthOfLongestSubstringTwoDistinct(string s) {
+        const <span style="color: #007020">int</span> k <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span>;
+        <span style="color: #007020">int</span> longest <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, start <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, distinct_count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        array<span style="color: #333333">&lt;</span><span style="color: #007020">int</span>, <span style="color: #0000DD; font-weight: bold">256</span><span style="color: #333333">&gt;</span> visited <span style="color: #333333">=</span> {<span style="color: #0000DD; font-weight: bold">0</span>};
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #007020">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> s<span style="color: #333333">.</span>length(); <span style="color: #333333">++</span>i) {
+            <span style="color: #008800; font-weight: bold">if</span> (visited[s[i]] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>) {
+                <span style="color: #333333">++</span>distinct_count;
+            }
+            <span style="color: #333333">++</span>visited[s[i]];
+            <span style="color: #008800; font-weight: bold">while</span> (distinct_count <span style="color: #333333">&gt;</span> k) {
+                <span style="color: #333333">--</span>visited[s[start]];
+                <span style="color: #008800; font-weight: bold">if</span> (visited[s[start]] <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>) {
+                    <span style="color: #333333">--</span>distinct_count;
+                }
+                <span style="color: #333333">++</span>start;
+            }
+            longest <span style="color: #333333">=</span> <span style="color: #007020">max</span>(longest, i <span style="color: #333333">-</span> start <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+        }
+        <span style="color: #008800; font-weight: bold">return</span> longest;
+    }
+};
+</pre></div>

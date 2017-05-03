@@ -1,0 +1,33 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+    unordered_map<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">int</span>,<span style="color: #333399; font-weight: bold">bool</span><span style="color: #333333">&gt;</span> cache;
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">bool</span> <span style="color: #0066BB; font-weight: bold">canIWin</span>(<span style="color: #333399; font-weight: bold">int</span> maxChoosableInteger, <span style="color: #333399; font-weight: bold">int</span> desiredTotal) {
+        <span style="color: #008800; font-weight: bold">if</span>(maxChoosableInteger<span style="color: #333333">&gt;=</span>desiredTotal) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+        <span style="color: #888888">//the sum of all available numbers are less than desireTotal, which means it cannot reach the desireTotal</span>
+        <span style="color: #008800; font-weight: bold">if</span>((<span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">+</span> maxChoosableInteger) <span style="color: #333333">*</span> maxChoosableInteger <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">&lt;</span> desiredTotal) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+        <span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">int</span> used <span style="color: #333333">=</span> (<span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&lt;&lt;</span>maxChoosableInteger)<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>; <span style="color: #888888">// use bit to record which number has been used (bit &#39;1&#39; means available, bit &#39;0&#39; means used)</span>
+        <span style="color: #008800; font-weight: bold">return</span> play(desiredTotal,used,maxChoosableInteger);
+    }
+    <span style="color: #333399; font-weight: bold">bool</span> <span style="color: #0066BB; font-weight: bold">play</span>(<span style="color: #333399; font-weight: bold">int</span> target, <span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">int</span> used, <span style="color: #333399; font-weight: bold">int</span> size){
+        <span style="color: #008800; font-weight: bold">if</span>(cache.find(used) <span style="color: #333333">!=</span> cache.end()) <span style="color: #008800; font-weight: bold">return</span> cache[used];
+        <span style="color: #888888">//exist available integer &gt;= target, return true</span>
+        <span style="color: #008800; font-weight: bold">if</span>(target<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&lt;</span>size <span style="color: #333333">&amp;&amp;</span> (used <span style="color: #333333">&gt;</span> (<span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">&lt;&lt;</span>target<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>))){
+            cache[used] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+        }
+        <span style="color: #333399; font-weight: bold">int</span> bit <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">&lt;</span>size; i<span style="color: #333333">++</span>,bit <span style="color: #333333">&lt;&lt;=</span><span style="color: #0000DD; font-weight: bold">1</span>){
+            <span style="color: #008800; font-weight: bold">if</span>((used <span style="color: #333333">&amp;</span> bit)<span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>) <span style="color: #008800; font-weight: bold">continue</span>; <span style="color: #888888">// the (i+1)th bit is &#39;0&#39;, means (i+1) is used</span>
+            used <span style="color: #333333">^=</span> bit;
+            <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>play(target<span style="color: #333333">-</span>i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,used,size)){
+                used <span style="color: #333333">|=</span> bit;
+                cache[used] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+            }
+            used <span style="color: #333333">|=</span> bit;
+        }
+        cache[used] <span style="color: #333333">=</span>  <span style="color: #007020">false</span>;
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    }
+};
+</pre></div>

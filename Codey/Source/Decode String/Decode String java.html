@@ -1,0 +1,82 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Node</span><span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span> num<span style="color: #333333">;</span>
+    ArrayList<span style="color: #333333">&lt;</span>Node<span style="color: #333333">&gt;</span> list<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">char</span> symbol<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">boolean</span> isList<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Node</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span> s<span style="color: #333333">){</span>
+        symbol<span style="color: #333333">=</span>s<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Node</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">){</span>
+        list <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Node<span style="color: #333333">&gt;();</span>
+        isList<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>    
+        num<span style="color: #333333">=</span>n<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">toString</span><span style="color: #333333">(){</span>
+        String s <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>isList<span style="color: #333333">){</span>
+            s <span style="color: #333333">+=</span> num <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot;:&quot;</span> <span style="color: #333333">+</span> list<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            s <span style="color: #333333">+=</span> symbol<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> s<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">decodeString</span><span style="color: #333333">(</span>String s<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+		Stack<span style="color: #333333">&lt;</span>Node<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>Node<span style="color: #333333">&gt;();</span>
+ 
+		stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Node<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">));</span>
+ 
+		String t <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+		<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>i <span style="color: #333333">&lt;</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+			<span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+ 
+			<span style="color: #888888">// new Node</span>
+			<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>c <span style="color: #333333">&gt;=</span> <span style="color: #0044DD">&#39;0&#39;</span> <span style="color: #333333">&amp;&amp;</span> c <span style="color: #333333">&lt;=</span> <span style="color: #0044DD">&#39;9&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+				t <span style="color: #333333">+=</span> c<span style="color: #333333">;</span>
+ 
+			<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>c <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;[&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+				<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>t<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+					<span style="color: #333399; font-weight: bold">int</span> num <span style="color: #333333">=</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">parseInt</span><span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+					stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Node<span style="color: #333333">(</span>num<span style="color: #333333">));</span>
+					t <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+				<span style="color: #333333">}</span>
+			<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>c <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;]&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+				Node top <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+ 
+				<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+ 
+				<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+					stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">().</span><span style="color: #0000CC">list</span><span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>top<span style="color: #333333">);</span>
+				<span style="color: #333333">}</span>
+ 
+			<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+				stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">().</span><span style="color: #0000CC">list</span><span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Node<span style="color: #333333">(</span>c<span style="color: #333333">));</span>
+			<span style="color: #333333">}</span>
+ 
+			i<span style="color: #333333">++;</span>
+		<span style="color: #333333">}</span>
+ 
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">getString</span><span style="color: #333333">(</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">());</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getString</span><span style="color: #333333">(</span>Node node<span style="color: #333333">){</span>
+		String s<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+		<span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">isList</span><span style="color: #333333">){</span>
+			<span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>node<span style="color: #333333">.</span><span style="color: #0000CC">num</span><span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+				<span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>Node <span style="color: #997700; font-weight: bold">t:</span> node<span style="color: #333333">.</span><span style="color: #0000CC">list</span><span style="color: #333333">)</span>
+					s<span style="color: #333333">+=</span> getString<span style="color: #333333">(</span>t<span style="color: #333333">);</span>
+			<span style="color: #333333">}</span>
+		<span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+			s<span style="color: #333333">+=</span>node<span style="color: #333333">.</span><span style="color: #0000CC">symbol</span><span style="color: #333333">;</span>
+		<span style="color: #333333">}</span>
+ 
+		<span style="color: #008800; font-weight: bold">return</span> s<span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

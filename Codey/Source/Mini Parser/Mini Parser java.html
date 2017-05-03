@@ -1,0 +1,46 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> NestedInteger <span style="color: #0066BB; font-weight: bold">deserialize</span><span style="color: #333333">(</span>String s<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+    Stack<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;();</span>
+    String temp <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span> <span style="color: #997700; font-weight: bold">c:</span> s<span style="color: #333333">.</span><span style="color: #0000CC">toCharArray</span><span style="color: #333333">()){</span>
+        <span style="color: #008800; font-weight: bold">switch</span><span style="color: #333333">(</span>c<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0044DD">&#39;[&#39;</span><span style="color: #333333">:</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> NestedInteger<span style="color: #333333">());</span> <span style="color: #888888">//start a new NI</span>
+                <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+ 
+            <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0044DD">&#39;]&#39;</span><span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>temp<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">)){</span>
+                    stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">().</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> NestedInteger<span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">parseInt</span><span style="color: #333333">(</span>temp<span style="color: #333333">)));</span> <span style="color: #888888">//add NI to parent</span>
+                    temp<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+ 
+                NestedInteger top <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">()){</span>
+                    stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">().</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>top<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                    <span style="color: #008800; font-weight: bold">return</span> top<span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+ 
+                <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+ 
+            <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0044DD">&#39;,&#39;</span><span style="color: #333333">:</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>temp<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">)){</span>
+                    stack<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">().</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> NestedInteger<span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">parseInt</span><span style="color: #333333">(</span>temp<span style="color: #333333">)));</span><span style="color: #888888">//add NI to parent</span>
+                    temp<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+ 
+                <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+ 
+            <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span>
+                temp <span style="color: #333333">+=</span> c<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>temp<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">)){</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #0066BB; font-weight: bold">NestedInteger</span><span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">parseInt</span><span style="color: #333333">(</span>temp<span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

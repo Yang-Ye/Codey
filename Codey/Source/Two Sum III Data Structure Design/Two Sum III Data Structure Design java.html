@@ -1,0 +1,25 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TwoSum</span> <span style="color: #333333">{</span>
+	<span style="color: #008800; font-weight: bold">private</span> HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;</span> elements <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> Integer<span style="color: #333333">&gt;();</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">add</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> number<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>elements<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>number<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+			elements<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>number<span style="color: #333333">,</span> elements<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>number<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+		<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+			elements<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>number<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+		<span style="color: #333333">}</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> value<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>Integer i <span style="color: #333333">:</span> elements<span style="color: #333333">.</span><span style="color: #0000CC">keySet</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+			<span style="color: #333399; font-weight: bold">int</span> target <span style="color: #333333">=</span> value <span style="color: #333333">-</span> i<span style="color: #333333">;</span>
+			<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>elements<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>target<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+				<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>i <span style="color: #333333">==</span> target <span style="color: #333333">&amp;&amp;</span> elements<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>target<span style="color: #333333">)</span> <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+					<span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+				<span style="color: #333333">}</span>
+				<span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+			<span style="color: #333333">}</span>
+		<span style="color: #333333">}</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

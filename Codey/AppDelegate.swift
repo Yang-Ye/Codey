@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var manager: CodeyManger!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //UIApplication.shared.statusBarStyle = .lightContent
         manager = CodeyManger.sharedInstance
+        Fabric.with([Crashlytics.self])
         return true
     }
 

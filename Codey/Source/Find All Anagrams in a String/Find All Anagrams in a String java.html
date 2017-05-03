@@ -1,0 +1,48 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">findAnagrams</span><span style="color: #333333">(</span>String s<span style="color: #333333">,</span> String p<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        List<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> list <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;&gt;();</span>
+    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>s <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">||</span> p <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> p<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> list<span style="color: #333333">;</span>
+    
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> hash <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">256</span><span style="color: #333333">];</span> <span style="color: #888888">//character hash</span>
+    
+    <span style="color: #888888">//record each character in p to hash</span>
+    <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">:</span> p<span style="color: #333333">.</span><span style="color: #0000CC">toCharArray</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+        hash<span style="color: #333333">[</span>c<span style="color: #333333">]++;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #888888">//two points, initialize count to p&#39;s length</span>
+    <span style="color: #333399; font-weight: bold">int</span> left <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> right <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> count <span style="color: #333333">=</span> p<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span>
+    
+    <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>right <span style="color: #333333">&lt;</span> s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">//move right everytime, if the character exists in p&#39;s hash, decrease the count</span>
+        <span style="color: #888888">//current hash value &gt;= 1 means the character is existing in p</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>hash<span style="color: #333333">[</span>s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>right<span style="color: #333333">)]</span> <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            count<span style="color: #333333">--;</span>
+        <span style="color: #333333">}</span>
+        hash<span style="color: #333333">[</span>s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>right<span style="color: #333333">)]--;</span>
+        right<span style="color: #333333">++;</span>
+        
+        <span style="color: #888888">//when the count is down to 0, means we found the right anagram</span>
+        <span style="color: #888888">//then add window&#39;s left to result list</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            list<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>left<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #888888">//if we find the window&#39;s size equals to p, then we have to move left (narrow the window) to find the new match window</span>
+        <span style="color: #888888">//++ to reset the hash because we kicked out the left</span>
+        <span style="color: #888888">//only increase the count if the character is in p</span>
+        <span style="color: #888888">//the count &gt;= 0 indicate it was original in the hash, cuz it won&#39;t go below 0</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>right <span style="color: #333333">-</span> left <span style="color: #333333">==</span> p<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">)</span> <span style="color: #333333">{</span>
+           
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>hash<span style="color: #333333">[</span>s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>left<span style="color: #333333">)]</span> <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                count<span style="color: #333333">++;</span>
+            <span style="color: #333333">}</span>
+            hash<span style="color: #333333">[</span>s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>left<span style="color: #333333">)]++;</span>
+            left<span style="color: #333333">++;</span>
+        
+        <span style="color: #333333">}</span>
+
+        
+    <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> list<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

@@ -1,0 +1,6 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">public <span style="color: #007020">int</span> hammingDistance(<span style="color: #007020">int</span> x, <span style="color: #007020">int</span> y) {
+    <span style="color: #007020">int</span> xor <span style="color: #333333">=</span> x <span style="color: #333333">^</span> y, count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #007020">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">32</span>;i<span style="color: #333333">++</span>) count <span style="color: #333333">+=</span> (xor <span style="color: #333333">&gt;&gt;</span> i) <span style="color: #333333">&amp;</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+    <span style="color: #008800; font-weight: bold">return</span> count;
+}
+</pre></div>

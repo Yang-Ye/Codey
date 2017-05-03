@@ -1,0 +1,26 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">maxSumSubmatrix</span>(vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;&amp;</span> matrix, <span style="color: #333399; font-weight: bold">int</span> k) {
+    <span style="color: #008800; font-weight: bold">if</span> (matrix.empty()) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+    <span style="color: #333399; font-weight: bold">int</span> row <span style="color: #333333">=</span> matrix.size(), col <span style="color: #333333">=</span> matrix[<span style="color: #0000DD; font-weight: bold">0</span>].size(), res <span style="color: #333333">=</span> INT_MIN;
+    <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> l <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; l <span style="color: #333333">&lt;</span> col; <span style="color: #333333">++</span>l) {
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> sums(row, <span style="color: #0000DD; font-weight: bold">0</span>);
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> r <span style="color: #333333">=</span> l; r <span style="color: #333333">&lt;</span> col; <span style="color: #333333">++</span>r) {
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> row; <span style="color: #333333">++</span>i) {
+                sums[i] <span style="color: #333333">+=</span> matrix[i][r];
+            }
+            
+            <span style="color: #888888">// Find the max subarray no more than K </span>
+            set<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> accuSet;
+            accuSet.insert(<span style="color: #0000DD; font-weight: bold">0</span>);
+            <span style="color: #333399; font-weight: bold">int</span> curSum <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, curMax <span style="color: #333333">=</span> INT_MIN;
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> sum <span style="color: #333333">:</span> sums) {
+                curSum <span style="color: #333333">+=</span> sum;
+                set<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;::</span>iterator it <span style="color: #333333">=</span> accuSet.lower_bound(curSum <span style="color: #333333">-</span> k);
+                <span style="color: #008800; font-weight: bold">if</span> (it <span style="color: #333333">!=</span> accuSet.end()) curMax <span style="color: #333333">=</span> std<span style="color: #333333">::</span>max(curMax, curSum <span style="color: #333333">-</span> <span style="color: #333333">*</span>it);
+                accuSet.insert(curSum);
+            }
+            res <span style="color: #333333">=</span> std<span style="color: #333333">::</span>max(res, curMax);
+        }
+    }
+    <span style="color: #008800; font-weight: bold">return</span> res;
+}
+</pre></div>

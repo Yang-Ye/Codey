@@ -49,6 +49,18 @@ class CodeyCoreDataStack {
         }
     }
 
+    func fetchProblem(order: Int) -> Problem? {
+        let fetchRequest = NSFetchRequest<Problem>(entityName: "Problem")
+        let predicate = NSPredicate(format: "order = %i", order)
+        fetchRequest.predicate = predicate
+        do {
+            let fetchedProblem = try mainContext.fetch(fetchRequest)
+            return fetchedProblem[0]
+        } catch {
+            return nil
+        }
+    }
+
     func fetchAllProblems() -> [Problem]?{
         do {
             let fetchedProblems = try mainContext.fetch(NSFetchRequest<Problem>(entityName: "Problem"))
@@ -58,10 +70,19 @@ class CodeyCoreDataStack {
         }
     }
 
+    func fetchAllLists() -> [ProblemList]? {
+        do {
+            let fetchedLists = try mainContext.fetch(NSFetchRequest<ProblemList>(entityName: "ProblemList"))
+            return fetchedLists
+        } catch {
+            return nil
+        }
+    }
+
     func makeNewProblem(name: String, value: Dictionary<String, NSObject>) -> Problem {
         let newProblem = NSEntityDescription.insertNewObject(forEntityName: "Problem", into: mainContext) as! Problem
         newProblem.name = name
-        newProblem.hardness = value["hardness"] as! Int
+        newProblem.hardness = Hardness(rawValue: value["hardness"] as! Int)!
         newProblem.tags = value["tags"] as! [String]
         newProblem.company = value["company"] as! [String]
         newProblem.isSolved = false
@@ -70,6 +91,22 @@ class CodeyCoreDataStack {
         newProblem.searchName = name.lowercased()
         newProblem.order = value["order"] as! Int
         return newProblem
+    }
+
+    func makeNewList(name: String) -> ProblemList {
+        let newList = NSEntityDescription.insertNewObject(forEntityName: "ProblemList", into: mainContext) as! ProblemList
+        newList.name = name
+        newList.createdDate = Date()
+        newList.problems = []
+        return newList
+    }
+
+    func deleteList(list: ProblemList) {
+        self.mainContext.delete(list)
+    }
+
+    func deleteAllLists() {
+        
     }
 
     func save() {

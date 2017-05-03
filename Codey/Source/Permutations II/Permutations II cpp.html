@@ -1,0 +1,30 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> permuteUnique(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>num) {
+        vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;</span> allPer;
+        <span style="color: #008800; font-weight: bold">if</span>(num.empty()) <span style="color: #008800; font-weight: bold">return</span> allPer;
+        sort(num.begin(),num.end());
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> per;
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">bool</span><span style="color: #333333">&gt;</span> used(num.size(),<span style="color: #007020">false</span>);
+        findPerUniq(num, used, per, allPer);
+        <span style="color: #008800; font-weight: bold">return</span> allPer;
+    }
+    
+    <span style="color: #333399; font-weight: bold">void</span> findPerUniq(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>num, vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">bool</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>used, vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>per, vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;</span> <span style="color: #333333">&amp;</span>allPer) {
+        <span style="color: #008800; font-weight: bold">if</span>(per.size()<span style="color: #333333">==</span>num.size()) {
+            allPer.push_back(per);
+            <span style="color: #008800; font-weight: bold">return</span>;
+        }
+        
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">&lt;</span>num.size(); i<span style="color: #333333">++</span>) {
+            <span style="color: #008800; font-weight: bold">if</span>(used[i]) <span style="color: #008800; font-weight: bold">continue</span>;
+            <span style="color: #008800; font-weight: bold">if</span>(i<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> num[i]<span style="color: #333333">==</span>num[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>used[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]) <span style="color: #008800; font-weight: bold">continue</span>;
+            used[i] <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+            per.push_back(num[i]);
+            findPerUniq(num, used, per, allPer);
+            per.pop_back();
+            used[i] <span style="color: #333333">=</span> <span style="color: #007020">false</span>;
+        }
+    }
+};
+</pre></div>

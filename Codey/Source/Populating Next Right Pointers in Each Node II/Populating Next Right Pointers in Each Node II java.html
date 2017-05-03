@@ -1,0 +1,44 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">connect</span><span style="color: #333333">(</span>TreeLinkNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> 
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+ 
+    TreeLinkNode lastHead <span style="color: #333333">=</span> root<span style="color: #333333">;</span><span style="color: #888888">//prevous level&#39;s head </span>
+    TreeLinkNode lastCurrent <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span><span style="color: #888888">//previous level&#39;s pointer</span>
+    TreeLinkNode currentHead <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span><span style="color: #888888">//currnet level&#39;s head </span>
+    TreeLinkNode current <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span><span style="color: #888888">//current level&#39;s pointer</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>lastHead<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        lastCurrent <span style="color: #333333">=</span> lastHead<span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>lastCurrent<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #888888">//left child is not null</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>    <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>currentHead <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+                    currentHead <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+                    current <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                    current<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">;</span>
+                    current <span style="color: #333333">=</span> current<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+ 
+            <span style="color: #888888">//right child is not null</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>currentHead <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+                    currentHead <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+                    current <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                    current<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">;</span>
+                    current <span style="color: #333333">=</span> current<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+ 
+            lastCurrent <span style="color: #333333">=</span> lastCurrent<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #888888">//update last head</span>
+        lastHead <span style="color: #333333">=</span> currentHead<span style="color: #333333">;</span>
+        currentHead <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

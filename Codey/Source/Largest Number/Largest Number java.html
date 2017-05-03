@@ -1,0 +1,23 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">largestNumber</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> nums<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    String<span style="color: #333333">[]</span> arr <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">[</span>nums<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">];</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>nums<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+        arr<span style="color: #333333">[</span>i<span style="color: #333333">]=</span>String<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>nums<span style="color: #333333">[</span>i<span style="color: #333333">]);</span>
+    <span style="color: #333333">}</span>
+ 
+    Arrays<span style="color: #333333">.</span><span style="color: #0000CC">sort</span><span style="color: #333333">(</span>arr<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">new</span> Comparator<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;(){</span>
+        <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">compare</span><span style="color: #333333">(</span>String a<span style="color: #333333">,</span> String b<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">(</span>b<span style="color: #333333">+</span>a<span style="color: #333333">).</span><span style="color: #0000CC">compareTo</span><span style="color: #333333">(</span>a<span style="color: #333333">+</span>b<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">});</span>
+ 
+    StringBuilder sb <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> StringBuilder<span style="color: #333333">();</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>String <span style="color: #997700; font-weight: bold">s:</span> arr<span style="color: #333333">){</span>
+        sb<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span>s<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>sb<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)==</span><span style="color: #0044DD">&#39;0&#39;</span><span style="color: #333333">&amp;&amp;</span>sb<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()&gt;</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span>
+        sb<span style="color: #333333">.</span><span style="color: #0000CC">deleteCharAt</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> sb<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+<span style="color: #333333">}</span>
+</pre></div>

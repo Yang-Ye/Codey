@@ -1,0 +1,39 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">atoi</span><span style="color: #333333">(</span>String str<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>str <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> str<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+	<span style="color: #888888">// trim white spaces</span>
+	str <span style="color: #333333">=</span> str<span style="color: #333333">.</span><span style="color: #0000CC">trim</span><span style="color: #333333">();</span>
+ 
+	<span style="color: #333399; font-weight: bold">char</span> flag <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;+&#39;</span><span style="color: #333333">;</span>
+ 
+	<span style="color: #888888">// check negative or positive</span>
+	<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>str<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;-&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		flag <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;-&#39;</span><span style="color: #333333">;</span>
+		i<span style="color: #333333">++;</span>
+	<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>str<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;+&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		i<span style="color: #333333">++;</span>
+	<span style="color: #333333">}</span>
+	<span style="color: #888888">// use double to store result</span>
+	<span style="color: #333399; font-weight: bold">double</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+	<span style="color: #888888">// calculate value</span>
+	<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>str<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">&gt;</span> i <span style="color: #333333">&amp;&amp;</span> str<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">)</span> <span style="color: #333333">&gt;=</span> <span style="color: #0044DD">&#39;0&#39;</span> <span style="color: #333333">&amp;&amp;</span> str<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">)</span> <span style="color: #333333">&lt;=</span> <span style="color: #0044DD">&#39;9&#39;</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		result <span style="color: #333333">=</span> result <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> <span style="color: #333333">(</span>str<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">)</span> <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;0&#39;</span><span style="color: #333333">);</span>
+		i<span style="color: #333333">++;</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>flag <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;-&#39;</span><span style="color: #333333">)</span>
+		result <span style="color: #333333">=</span> <span style="color: #333333">-</span>result<span style="color: #333333">;</span>
+ 
+	<span style="color: #888888">// handle max and min</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>result <span style="color: #333333">&gt;</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">;</span>
+ 
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>result <span style="color: #333333">&lt;</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">;</span>
+ 
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">)</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

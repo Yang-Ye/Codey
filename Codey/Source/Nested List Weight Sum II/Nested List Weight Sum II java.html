@@ -1,0 +1,53 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">depthSumInverse</span><span style="color: #333333">(</span>List<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;</span> nestedList<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>nestedList<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">||</span>nestedList<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> map <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;();</span>
+ 
+    <span style="color: #888888">//two stacks: one is for processing nested integer, the other is for tracking layers. </span>
+    Stack<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;</span> stack <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>NestedInteger<span style="color: #333333">&gt;();</span>
+    Stack<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> layers <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stack<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+ 
+    <span style="color: #888888">//put all NestedIntegers to Stack and record its layer to be 1</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>NestedInteger <span style="color: #997700; font-weight: bold">ni:</span> nestedList<span style="color: #333333">){</span>
+        stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>ni<span style="color: #333333">);</span>
+        layers<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> maxLayer<span style="color: #333333">=</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">MIN_VALUE</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>stack<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()){</span>
+        NestedInteger top <span style="color: #333333">=</span> stack<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+        <span style="color: #333399; font-weight: bold">int</span> topLayer <span style="color: #333333">=</span> layers<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+ 
+        maxLayer<span style="color: #333333">=</span>Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>maxLayer<span style="color: #333333">,</span> topLayer<span style="color: #333333">);</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>top<span style="color: #333333">.</span><span style="color: #0000CC">isInteger</span><span style="color: #333333">()){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>topLayer<span style="color: #333333">)){</span>
+                map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>topLayer<span style="color: #333333">).</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>top<span style="color: #333333">.</span><span style="color: #0000CC">getInteger</span><span style="color: #333333">());</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> list <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+                list<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>top<span style="color: #333333">.</span><span style="color: #0000CC">getInteger</span><span style="color: #333333">());</span>
+                map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>topLayer<span style="color: #333333">,</span> list<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>        
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>NestedInteger <span style="color: #997700; font-weight: bold">ni:</span> top<span style="color: #333333">.</span><span style="color: #0000CC">getList</span><span style="color: #333333">()){</span>
+                stack<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>ni<span style="color: #333333">);</span>
+                layers<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>topLayer<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// calcualte sum</span>
+    <span style="color: #333399; font-weight: bold">int</span> result<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span>maxLayer<span style="color: #333333">;</span> i<span style="color: #333333">&gt;=</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> i<span style="color: #333333">--){</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>i<span style="color: #333333">)!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> <span style="color: #997700; font-weight: bold">v:</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>i<span style="color: #333333">)){</span>
+                result <span style="color: #333333">+=</span> v<span style="color: #333333">*(</span>maxLayer<span style="color: #333333">-</span>i<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

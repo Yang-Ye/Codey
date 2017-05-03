@@ -1,0 +1,28 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span><span style="color: #333333">{</span>
+	HashMap<span style="color: #333333">&lt;</span>String<span style="color: #333333">,</span> PriorityQueue<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> map <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>String<span style="color: #333333">,</span> PriorityQueue<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;();</span>
+	LinkedList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">findItinerary</span><span style="color: #333333">(</span>String<span style="color: #333333">[][]</span> tickets<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>String<span style="color: #333333">[]</span> ticket <span style="color: #333333">:</span> tickets<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(!</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>ticket<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]))</span> <span style="color: #333333">{</span>
+				PriorityQueue<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> q <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> PriorityQueue<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+				map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>ticket<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">],</span> q<span style="color: #333333">);</span>
+			<span style="color: #333333">}</span>
+			map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>ticket<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]).</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>ticket<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]);</span>
+		<span style="color: #333333">}</span>
+ 
+		dfs<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;JFK&quot;</span><span style="color: #333333">);</span>
+		<span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dfs</span><span style="color: #333333">(</span>String s<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		PriorityQueue<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> q <span style="color: #333333">=</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>s<span style="color: #333333">);</span>
+ 
+		<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>q <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>q<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+			dfs<span style="color: #333333">(</span>q<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">());</span>
+		<span style="color: #333333">}</span>
+ 
+		result<span style="color: #333333">.</span><span style="color: #0000CC">addFirst</span><span style="color: #333333">(</span>s<span style="color: #333333">);</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

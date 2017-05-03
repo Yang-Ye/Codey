@@ -1,0 +1,16 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">licenseKeyFormatting</span>(<span style="color: #007020">self</span>, S, K):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type S: str</span>
+<span style="color: #DD4422">        :type K: int</span>
+<span style="color: #DD4422">        :rtype: str</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        S <span style="color: #333333">=</span> S<span style="color: #333333">.</span>upper()<span style="color: #333333">.</span>replace(<span style="background-color: #fff0f0">&#39;-&#39;</span>,<span style="background-color: #fff0f0">&#39;&#39;</span>)
+        size <span style="color: #333333">=</span> <span style="color: #007020">len</span>(S)
+        s1 <span style="color: #333333">=</span> K <span style="color: #008800; font-weight: bold">if</span> size<span style="color: #333333">%</span>K<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #008800; font-weight: bold">else</span> size<span style="color: #333333">%</span>K
+        res <span style="color: #333333">=</span> S[:s1]
+        <span style="color: #008800; font-weight: bold">while</span> s1<span style="color: #333333">&lt;</span>size:
+            res <span style="color: #333333">+=</span> <span style="background-color: #fff0f0">&#39;-&#39;</span><span style="color: #333333">+</span>S[s1:s1<span style="color: #333333">+</span>K]
+            s1 <span style="color: #333333">+=</span> K
+        <span style="color: #008800; font-weight: bold">return</span> res
+</pre></div>

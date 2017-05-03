@@ -1,0 +1,41 @@
+Given a string representing arbitrarily nested ternary expressions, calculate the result of the expression. You can always assume that the given expression is valid and only consists of digits&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">0-9</code>,&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">?</code>,&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">:</code>,&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">T</code>&nbsp;and&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">F</code>&nbsp;(<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">T</code>&nbsp;and&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">F</code>&nbsp;represent True and False respectively).</div>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Note:</b></div>
+<ol style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; margin-bottom: 10px; margin-top: 0px;">
+<li style="box-sizing: border-box;">The length of the given string is &#8804; 10000.</li>
+<li style="box-sizing: border-box;">Each number will contain only one digit.</li>
+<li style="box-sizing: border-box;">The conditional expressions group right-to-left (as usual in most languages).</li>
+<li style="box-sizing: border-box;">The condition will always be either&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">T</code>&nbsp;or&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">F</code>. That is, the condition will never be a digit.</li>
+<li style="box-sizing: border-box;">The result of the expression will always evaluate to either a digit&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">0-9</code>,&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">T</code>&nbsp;or&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 14.4px; padding: 2px 4px;">F</code>.</li>
+</ol>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Example 1:</b></div>
+<pre style="background: rgb(245, 245, 245); border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; line-height: 1.42857; margin-bottom: 10px; overflow: hidden; padding: 9.5px; position: relative; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;"><b style="box-sizing: border-box;">Input:</b> "T?2:3"
+
+<b style="box-sizing: border-box;">Output:</b> "2"
+
+<b style="box-sizing: border-box;">Explanation:</b> If true, then result is 2; otherwise result is 3.
+</pre>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Example 2:</b></div>
+<pre style="background: rgb(245, 245, 245); border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; line-height: 1.42857; margin-bottom: 10px; overflow: hidden; padding: 9.5px; position: relative; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;"><b style="box-sizing: border-box;">Input:</b> "F?1:T?4:5"
+
+<b style="box-sizing: border-box;">Output:</b> "4"
+
+<b style="box-sizing: border-box;">Explanation:</b> The conditional expressions group right-to-left. Using parenthesis, it is read/evaluated as:
+
+             "(F ? 1 : (T ? 4 : 5))"                   "(F ? 1 : (T ? 4 : 5))"
+          -&gt; "(F ? 1 : 4)"                 or       -&gt; "(T ? 4 : 5)"
+          -&gt; "4"                                    -&gt; "4"
+</pre>
+<div style="background-color: white; box-sizing: border-box; color: #303338; font-family: &quot;Open Sans&quot;, Arial, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, 微软雅黑, STHeiti, &quot;WenQuanYi Micro Hei&quot;, SimSun, sans-serif; font-size: 16px; line-height: 1.896; margin-bottom: 10px;">
+<b style="box-sizing: border-box;">Example 3:</b></div>
+<pre style="background: rgb(245, 245, 245); border-radius: 4px; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13px; line-height: 1.42857; margin-bottom: 10px; overflow: hidden; padding: 9.5px; position: relative; white-space: pre-wrap; word-break: break-all; word-wrap: break-word;"><b style="box-sizing: border-box;">Input:</b> "T?T?F:5:3"
+
+<b style="box-sizing: border-box;">Output:</b> "F"
+
+<b style="box-sizing: border-box;">Explanation:</b> The conditional expressions group right-to-left. Using parenthesis, it is read/evaluated as:
+
+             "(T ? (T ? F : 5) : 3)"                   "(T ? (T ? F : 5) : 3)"
+          -&gt; "(T ? F : 3)"                 or       -&gt; "(T ? F : 5)"
+          -&gt; "F"                                    -&gt; "F"</pre>

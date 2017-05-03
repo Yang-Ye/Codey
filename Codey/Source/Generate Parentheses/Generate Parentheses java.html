@@ -1,0 +1,27 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">generateParenthesis</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+    dfs<span style="color: #333333">(</span>result<span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">,</span> n<span style="color: #333333">,</span> n<span style="color: #333333">);</span>
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+<span style="color: #888888">/*</span>
+<span style="color: #888888">left and right represents the remaining number of ( and ) that need to be added. </span>
+<span style="color: #888888">When left &gt; right, there are more &quot;)&quot; placed than &quot;(&quot;. Such cases are wrong and the method stops. </span>
+<span style="color: #888888">*/</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dfs</span><span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> result<span style="color: #333333">,</span> String s<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> left<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> right<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>left <span style="color: #333333">&gt;</span> right<span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>left<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">&amp;&amp;</span>right<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>s<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>left<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        dfs<span style="color: #333333">(</span>result<span style="color: #333333">,</span> s<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;(&quot;</span><span style="color: #333333">,</span> left<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> right<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>right<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        dfs<span style="color: #333333">(</span>result<span style="color: #333333">,</span> s<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;)&quot;</span><span style="color: #333333">,</span> left<span style="color: #333333">,</span> right<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

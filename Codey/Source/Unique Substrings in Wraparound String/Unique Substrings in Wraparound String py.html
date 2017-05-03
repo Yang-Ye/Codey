@@ -1,0 +1,19 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findSubstringInWraproundString</span>(<span style="color: #007020">self</span>, p):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type p: str</span>
+<span style="color: #DD4422">        :rtype: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        pattern <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;zabcdefghijklmnopqrstuvwxyz&#39;</span>
+        cmap <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>defaultdict(<span style="color: #007020">int</span>)
+        start <span style="color: #333333">=</span> end <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        <span style="color: #008800; font-weight: bold">for</span> c <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(p)):
+            <span style="color: #008800; font-weight: bold">if</span> c <span style="color: #000000; font-weight: bold">and</span> p[c<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>:c<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> pattern:
+                <span style="color: #008800; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(start, end):
+                    cmap[p[x]] <span style="color: #333333">=</span> <span style="color: #007020">max</span>(end <span style="color: #333333">-</span> x, cmap[p[x]])
+                start <span style="color: #333333">=</span> c
+            end <span style="color: #333333">=</span> c <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(start, end):
+            cmap[p[x]] <span style="color: #333333">=</span> <span style="color: #007020">max</span>(end <span style="color: #333333">-</span> x, cmap[p[x]])
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">sum</span>(cmap<span style="color: #333333">.</span>values())
+</pre></div>

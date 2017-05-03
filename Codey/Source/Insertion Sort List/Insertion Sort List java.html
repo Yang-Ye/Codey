@@ -1,0 +1,26 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> ListNode <span style="color: #0066BB; font-weight: bold">insertionSortList</span><span style="color: #333333">(</span>ListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span> head <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">){</span>
+			<span style="color: #008800; font-weight: bold">return</span> head<span style="color: #333333">;</span>
+		<span style="color: #333333">}</span>
+		
+		ListNode helper <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ListNode<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span> <span style="color: #888888">//new starter of the sorted list</span>
+		ListNode cur <span style="color: #333333">=</span> head<span style="color: #333333">;</span> <span style="color: #888888">//the node will be inserted</span>
+		ListNode pre <span style="color: #333333">=</span> helper<span style="color: #333333">;</span> <span style="color: #888888">//insert node between pre and pre.next</span>
+		ListNode next <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span> <span style="color: #888888">//the next node will be inserted</span>
+		<span style="color: #888888">//not the end of input list</span>
+		<span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span> cur <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">){</span>
+			next <span style="color: #333333">=</span> cur<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+			<span style="color: #888888">//find the right place to insert</span>
+			<span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span> pre<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> pre<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">&lt;</span> cur<span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">){</span>
+				pre <span style="color: #333333">=</span> pre<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+			<span style="color: #333333">}</span>
+			<span style="color: #888888">//insert between pre and pre.next</span>
+			cur<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> pre<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+			pre<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> cur<span style="color: #333333">;</span>
+			pre <span style="color: #333333">=</span> helper<span style="color: #333333">;</span>
+			cur <span style="color: #333333">=</span> next<span style="color: #333333">;</span>
+		<span style="color: #333333">}</span>
+		
+		<span style="color: #008800; font-weight: bold">return</span> helper<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+</pre></div>

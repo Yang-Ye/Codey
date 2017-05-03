@@ -1,0 +1,57 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+    <span style="color: #008800; font-weight: bold">public</span> String minAbbreviation(String target, String[] dictionary) {
+        StringBuilder bestAbbr <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> StringBuilder(target);
+        generateAbbr(target, bestAbbr, <span style="color: #008800; font-weight: bold">new</span> StringBuilder(), <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">0</span>, dictionary);
+        <span style="color: #008800; font-weight: bold">if</span> (bestAbbr.length() <span style="color: #333333">&lt;</span> target.length()) <span style="color: #008800; font-weight: bold">return</span> bestAbbr.toString();
+        <span style="color: #008800; font-weight: bold">return</span> target;
+    }
+    
+    <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> generateAbbr(String target, StringBuilder bestAbbr, StringBuilder sb, <span style="color: #333399; font-weight: bold">int</span> count, <span style="color: #333399; font-weight: bold">int</span> i, String[] dictionary) {
+        <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> sb.length();
+        <span style="color: #008800; font-weight: bold">if</span> (i <span style="color: #333333">==</span> target.length()) {
+            <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #008800; font-weight: bold">return</span>; <span style="color: #888888">// no need to abbr one letter</span>
+            <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>) sb.append(count);
+            String abbr <span style="color: #333333">=</span> sb.toString();
+            boolean isValid <span style="color: #333333">=</span> <span style="color: #333333">!</span>hasConflict(target.length(), abbr, dictionary);
+            <span style="color: #008800; font-weight: bold">if</span> (isValid <span style="color: #333333">&amp;&amp;</span> abbr.length() <span style="color: #333333">&lt;</span> bestAbbr.length()) {
+                bestAbbr.setLength(<span style="color: #0000DD; font-weight: bold">0</span>);
+                bestAbbr.append(sb); <span style="color: #888888">// cannot directly set bestAbbr equal to sb.</span>
+            }
+        } <span style="color: #008800; font-weight: bold">else</span> {
+            <span style="color: #888888">// abbr target[i]</span>
+            generateAbbr(target, bestAbbr, sb, count <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, dictionary);
+            <span style="color: #888888">// not abbr target[i]</span>
+            <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span>) sb.append(count);
+            generateAbbr(target, bestAbbr, sb.append(target.charAt(i)), <span style="color: #0000DD; font-weight: bold">0</span>, i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, dictionary);
+        }
+        sb.setLength(len);
+    }
+    
+    <span style="color: #008800; font-weight: bold">private</span> boolean hasConflict(<span style="color: #333399; font-weight: bold">int</span> targetLen, String abbr, String[] dict) {
+        <span style="color: #008800; font-weight: bold">for</span> (String dic<span style="color: #333333">:</span>dict) {
+            <span style="color: #008800; font-weight: bold">if</span> (targetLen <span style="color: #333333">!=</span> dic.length()) <span style="color: #008800; font-weight: bold">continue</span>; <span style="color: #888888">// skip the words in dictionary with unequal length</span>
+            boolean canBeAbbrTo <span style="color: #333333">=</span> canBeAbbrTo(dic.toCharArray(), abbr.toCharArray());
+            <span style="color: #008800; font-weight: bold">if</span>(canBeAbbrTo) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+        }
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+    }
+    
+    <span style="color: #008800; font-weight: bold">private</span> boolean canBeAbbrTo(<span style="color: #333399; font-weight: bold">char</span>[] word, <span style="color: #333399; font-weight: bold">char</span>[] abbr) {
+        <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">while</span> (i <span style="color: #333333">&lt;</span> word.length <span style="color: #333333">&amp;&amp;</span> j <span style="color: #333333">&lt;</span> abbr.length) {
+            <span style="color: #008800; font-weight: bold">if</span> (word[i] <span style="color: #333333">==</span> abbr[j]) {
+                i<span style="color: #333333">++</span>; j<span style="color: #333333">++</span>;
+                <span style="color: #008800; font-weight: bold">continue</span>;
+            }
+            <span style="color: #008800; font-weight: bold">if</span> (abbr[j] <span style="color: #333333">&lt;=</span> <span style="color: #0044DD">&#39;0&#39;</span> <span style="color: #333333">||</span> abbr[j] <span style="color: #333333">&gt;</span> <span style="color: #0044DD">&#39;9&#39;</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+            <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+            <span style="color: #008800; font-weight: bold">while</span>(j <span style="color: #333333">&lt;</span> abbr.length <span style="color: #333333">&amp;&amp;</span> (abbr[j] <span style="color: #333333">&gt;=</span> <span style="color: #0044DD">&#39;0&#39;</span> <span style="color: #333333">&amp;&amp;</span> abbr[j] <span style="color: #333333">&lt;=</span> <span style="color: #0044DD">&#39;9&#39;</span>)) {
+                count <span style="color: #333333">=</span> count <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> abbr[j] <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;0&#39;</span>;
+                j<span style="color: #333333">++</span>;
+            }
+            i <span style="color: #333333">+=</span> count;
+        }
+        <span style="color: #008800; font-weight: bold">return</span> i <span style="color: #333333">==</span> word.length <span style="color: #333333">&amp;&amp;</span> j <span style="color: #333333">==</span> abbr.length;
+    }
+}
+</pre></div>

@@ -1,0 +1,26 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> ListNode <span style="color: #0066BB; font-weight: bold">oddEvenList</span><span style="color: #333333">(</span>ListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>head <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> 
+        <span style="color: #008800; font-weight: bold">return</span> head<span style="color: #333333">;</span>
+ 
+    ListNode result <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+    ListNode p1 <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+    ListNode p2 <span style="color: #333333">=</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+    ListNode connectNode <span style="color: #333333">=</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>p1 <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> p2 <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            ListNode t <span style="color: #333333">=</span> p2<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>t <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+                <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+ 
+            p1<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> p2<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+            p1 <span style="color: #333333">=</span> p1<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+ 
+            p2<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> p1<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+            p2 <span style="color: #333333">=</span> p2<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    p1<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> connectNode<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

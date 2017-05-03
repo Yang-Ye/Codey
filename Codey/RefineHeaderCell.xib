@@ -15,8 +15,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ma-ov-cDD">
-                    <rect key="frame" x="166" y="15" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="164.5" y="15.5" width="45.5" height="20"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -28,7 +28,7 @@
             <connections>
                 <outlet property="text" destination="3Ma-ov-cDD" id="5gB-WD-hKU"/>
             </connections>
-            <point key="canvasLocation" x="107" y="-37"/>
+            <point key="canvasLocation" x="182" y="-18"/>
         </collectionReusableView>
     </objects>
 </document>

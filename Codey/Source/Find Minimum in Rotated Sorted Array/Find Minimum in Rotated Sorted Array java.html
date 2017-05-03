@@ -1,0 +1,26 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">findMin</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> num<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">findMin</span><span style="color: #333333">(</span>num<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> num<span style="color: #333333">.</span><span style="color: #0000CC">length</span> <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">findMin</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> num<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> left<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> right<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>left <span style="color: #333333">==</span> right<span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> num<span style="color: #333333">[</span>left<span style="color: #333333">];</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">((</span>right <span style="color: #333333">-</span> left<span style="color: #333333">)</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">(</span>num<span style="color: #333333">[</span>left<span style="color: #333333">],</span> num<span style="color: #333333">[</span>right<span style="color: #333333">]);</span>
+ 
+	<span style="color: #333399; font-weight: bold">int</span> middle <span style="color: #333333">=</span> left <span style="color: #333333">+</span> <span style="color: #333333">(</span>right <span style="color: #333333">-</span> left<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">;</span>
+ 
+	<span style="color: #888888">// not rotated</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>num<span style="color: #333333">[</span>left<span style="color: #333333">]</span> <span style="color: #333333">&lt;</span> num<span style="color: #333333">[</span>right<span style="color: #333333">])</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">return</span> num<span style="color: #333333">[</span>left<span style="color: #333333">];</span>
+ 
+	<span style="color: #888888">// go right side</span>
+	<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>num<span style="color: #333333">[</span>middle<span style="color: #333333">]</span> <span style="color: #333333">&gt;</span> num<span style="color: #333333">[</span>left<span style="color: #333333">])</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">findMin</span><span style="color: #333333">(</span>num<span style="color: #333333">,</span> middle<span style="color: #333333">,</span> right<span style="color: #333333">);</span>
+ 
+	<span style="color: #888888">// go left side</span>
+	<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">findMin</span><span style="color: #333333">(</span>num<span style="color: #333333">,</span> left<span style="color: #333333">,</span> middle<span style="color: #333333">);</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

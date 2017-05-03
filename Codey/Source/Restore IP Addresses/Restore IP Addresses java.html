@@ -1,0 +1,56 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> List<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">restoreIpAddresses</span><span style="color: #333333">(</span>String s<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;();</span>
+    ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> t <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+    dfs<span style="color: #333333">(</span>result<span style="color: #333333">,</span> s<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> t<span style="color: #333333">);</span>
+ 
+    ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> finalResult <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;();</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> <span style="color: #997700; font-weight: bold">l:</span> result<span style="color: #333333">){</span>
+        StringBuilder sb <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> StringBuilder<span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>String <span style="color: #997700; font-weight: bold">str:</span> l<span style="color: #333333">){</span>
+            sb<span style="color: #333333">.</span><span style="color: #0000CC">append</span><span style="color: #333333">(</span>str<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;.&quot;</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        sb<span style="color: #333333">.</span><span style="color: #0000CC">setLength</span><span style="color: #333333">(</span>sb<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        finalResult<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>sb<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">());</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> finalResult<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">dfs</span><span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;&gt;</span> result<span style="color: #333333">,</span> String s<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> start<span style="color: #333333">,</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> t<span style="color: #333333">){</span>
+    <span style="color: #888888">//if already get 4 numbers, but s is not consumed, return</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>t<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()&gt;=</span><span style="color: #0000DD; font-weight: bold">4</span> <span style="color: #333333">&amp;&amp;</span> start<span style="color: #333333">!=</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> 
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">//make sure t&#39;s size + remaining string&#39;s length &gt;=4</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">((</span>t<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()+</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()-</span>start<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)&lt;</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">)</span> 
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">//t&#39;s size is 4 and no remaining part that is not consumed.</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>t<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()==</span><span style="color: #0000DD; font-weight: bold">4</span> <span style="color: #333333">&amp;&amp;</span> start<span style="color: #333333">==</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()){</span>
+        ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> temp <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;(</span>t<span style="color: #333333">);</span>
+        result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>temp<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;=</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+        <span style="color: #888888">//make sure the index is within the boundary</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>start<span style="color: #333333">+</span>i<span style="color: #333333">&gt;</span>s<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> 
+            <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+ 
+        String sub <span style="color: #333333">=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span>start<span style="color: #333333">,</span> start<span style="color: #333333">+</span>i<span style="color: #333333">);</span>
+        <span style="color: #888888">//handle case like 001. i.e., if length &gt; 1 and first char is 0, ignore the case.</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>i<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&amp;&amp;</span> s<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>start<span style="color: #333333">)==</span><span style="color: #0044DD">&#39;0&#39;</span><span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>    
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #888888">//make sure each number &lt;= 255</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>Integer<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>sub<span style="color: #333333">)&gt;</span><span style="color: #0000DD; font-weight: bold">255</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+ 
+        t<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>sub<span style="color: #333333">);</span>
+        dfs<span style="color: #333333">(</span>result<span style="color: #333333">,</span> s<span style="color: #333333">,</span> start<span style="color: #333333">+</span>i<span style="color: #333333">,</span> t<span style="color: #333333">);</span>
+        t<span style="color: #333333">.</span><span style="color: #0000CC">remove</span><span style="color: #333333">(</span>t<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

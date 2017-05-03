@@ -1,0 +1,24 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">wordPattern</span><span style="color: #333333">(</span>String pattern<span style="color: #333333">,</span> String str<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    String<span style="color: #333333">[]</span> arr <span style="color: #333333">=</span> str<span style="color: #333333">.</span><span style="color: #0000CC">split</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot; &quot;</span><span style="color: #333333">);</span>  
+ 
+    <span style="color: #888888">//prevent out of boundary problem</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>arr<span style="color: #333333">.</span><span style="color: #0000CC">length</span> <span style="color: #333333">!=</span> pattern<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+ 
+    HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> String<span style="color: #333333">&gt;</span> map <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashMap<span style="color: #333333">&lt;</span>Character<span style="color: #333333">,</span> String<span style="color: #333333">&gt;();</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>pattern<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+        <span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> pattern<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsKey</span><span style="color: #333333">(</span>c<span style="color: #333333">)){</span>
+            String value <span style="color: #333333">=</span> map<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span>c<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(!</span>value<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span>arr<span style="color: #333333">[</span>i<span style="color: #333333">])){</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">containsValue</span><span style="color: #333333">(</span>arr<span style="color: #333333">[</span>i<span style="color: #333333">])){</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        map<span style="color: #333333">.</span><span style="color: #0000CC">put</span><span style="color: #333333">(</span>c<span style="color: #333333">,</span> arr<span style="color: #333333">[</span>i<span style="color: #333333">]);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

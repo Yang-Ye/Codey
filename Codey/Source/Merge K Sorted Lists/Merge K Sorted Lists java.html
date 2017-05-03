@@ -1,0 +1,31 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> ListNode <span style="color: #0066BB; font-weight: bold">mergeKLists</span><span style="color: #333333">(</span>ListNode<span style="color: #333333">[]</span> lists<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>lists<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">||</span>lists<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+ 
+    PriorityQueue<span style="color: #333333">&lt;</span>ListNode<span style="color: #333333">&gt;</span> queue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> PriorityQueue<span style="color: #333333">&lt;</span>ListNode<span style="color: #333333">&gt;(</span><span style="color: #008800; font-weight: bold">new</span> Comparator<span style="color: #333333">&lt;</span>ListNode<span style="color: #333333">&gt;(){</span>
+        <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">compare</span><span style="color: #333333">(</span>ListNode l1<span style="color: #333333">,</span> ListNode l2<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">return</span> l1<span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">-</span> l2<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">});</span>
+ 
+    ListNode head <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ListNode<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+    ListNode p <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>ListNode <span style="color: #997700; font-weight: bold">list:</span> lists<span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>list<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>list<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>    
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>queue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()){</span>
+        ListNode n <span style="color: #333333">=</span> queue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+        p<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> n<span style="color: #333333">;</span>
+        p<span style="color: #333333">=</span>p<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>n<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+            queue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>n<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>    
+ 
+    <span style="color: #008800; font-weight: bold">return</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+ 
+<span style="color: #333333">}</span>
+</pre></div>

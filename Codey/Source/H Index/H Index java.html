@@ -1,0 +1,12 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">hIndex</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> citations<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    Arrays<span style="color: #333333">.</span><span style="color: #0000CC">sort</span><span style="color: #333333">(</span>citations<span style="color: #333333">);</span>
+ 
+    <span style="color: #333399; font-weight: bold">int</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>    
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>citations<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+        <span style="color: #333399; font-weight: bold">int</span> smaller <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">(</span>citations<span style="color: #333333">[</span>i<span style="color: #333333">],</span> citations<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">-</span>i<span style="color: #333333">);</span>
+        result <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>result<span style="color: #333333">,</span> smaller<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

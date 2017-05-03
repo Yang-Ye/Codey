@@ -1,0 +1,34 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition for binary tree</span>
+<span style="color: #888888"> * struct TreeNode {</span>
+<span style="color: #888888"> *     int val;</span>
+<span style="color: #888888"> *     TreeNode *left;</span>
+<span style="color: #888888"> *     TreeNode *right;</span>
+<span style="color: #888888"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}</span>
+<span style="color: #888888"> * };</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">int</span> minDepth(TreeNode <span style="color: #333333">*</span>root) {
+        <span style="color: #888888">// Start typing your C/C++ solution below</span>
+        <span style="color: #888888">// DO NOT write int main() function</span>
+        queue<span style="color: #333333">&lt;</span> pair<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">*</span>,<span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> q;
+        <span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>root){<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;}
+        q.push(make_pair(root,<span style="color: #0000DD; font-weight: bold">1</span>));
+        <span style="color: #008800; font-weight: bold">while</span>(<span style="color: #333333">!</span>q.empty()){
+            pair<span style="color: #333333">&lt;</span>TreeNode<span style="color: #333333">*</span>,<span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> cur <span style="color: #333333">=</span> q.front();
+            q.pop();
+            <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>cur.first<span style="color: #333333">-&gt;</span>left <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>cur.first<span style="color: #333333">-&gt;</span>right){
+                <span style="color: #008800; font-weight: bold">return</span> cur.second;
+            }
+            <span style="color: #008800; font-weight: bold">if</span>(cur.first<span style="color: #333333">-&gt;</span>left){
+                q.push(make_pair(cur.first<span style="color: #333333">-&gt;</span>left,cur.second<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>));
+            }
+            <span style="color: #008800; font-weight: bold">if</span>(cur.first<span style="color: #333333">-&gt;</span>right){
+                q.push(make_pair(cur.first<span style="color: #333333">-&gt;</span>right,cur.second<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>));
+            }
+        }
+    }
+};
+</pre></div>

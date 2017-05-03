@@ -1,0 +1,33 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.math.*</span><span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+
+    <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">smallestGoodBase</span><span style="color: #333333">(</span>String n<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        BigInteger N <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> BigInteger<span style="color: #333333">(</span>n<span style="color: #333333">);</span>
+        <span style="color: #333399; font-weight: bold">long</span> base <span style="color: #333333">=</span> Long<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span><span style="color: #333333">;</span>
+
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> k <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">;</span> k <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">66</span><span style="color: #333333">;</span> k<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+
+            <span style="color: #333399; font-weight: bold">long</span> l <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">,</span> r <span style="color: #333333">=</span> Long<span style="color: #333333">.</span><span style="color: #0000CC">MAX_VALUE</span> <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>l <span style="color: #333333">&lt;=</span> r<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                <span style="color: #333399; font-weight: bold">long</span> mid <span style="color: #333333">=</span> l <span style="color: #333333">+</span> <span style="color: #333333">(</span>r <span style="color: #333333">-</span> l<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">;</span>
+
+                BigInteger cb <span style="color: #333333">=</span> BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>mid<span style="color: #333333">).</span><span style="color: #0000CC">pow</span><span style="color: #333333">(</span>k<span style="color: #333333">).</span><span style="color: #0000CC">subtract</span><span style="color: #333333">(</span>BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ONE</span><span style="color: #333333">);</span>
+                BigInteger wb <span style="color: #333333">=</span> N<span style="color: #333333">.</span><span style="color: #0000CC">multiply</span><span style="color: #333333">(</span>BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span>mid<span style="color: #333333">).</span><span style="color: #0000CC">subtract</span><span style="color: #333333">(</span>BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ONE</span><span style="color: #333333">));</span>
+
+                <span style="color: #333399; font-weight: bold">int</span> cmp <span style="color: #333333">=</span> cb<span style="color: #333333">.</span><span style="color: #0000CC">compareTo</span><span style="color: #333333">(</span>wb<span style="color: #333333">);</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>cmp <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    base <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">(</span>base<span style="color: #333333">,</span> mid<span style="color: #333333">);</span>
+                    <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>cmp <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    l <span style="color: #333333">=</span> mid <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+                    r <span style="color: #333333">=</span> mid <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;&quot;</span> <span style="color: #333333">+</span> base<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

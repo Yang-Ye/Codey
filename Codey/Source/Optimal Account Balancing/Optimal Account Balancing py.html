@@ -1,0 +1,38 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">minTransfers</span>(<span style="color: #007020">self</span>, transactions):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type transactions: List[List[int]]</span>
+<span style="color: #DD4422">        :rtype: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        vdict <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>defaultdict(<span style="color: #007020">dict</span>)
+
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">solve</span>(rich, poor):
+            rlen, plen <span style="color: #333333">=</span> <span style="color: #007020">len</span>(rich), <span style="color: #007020">len</span>(poor)
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">min</span>(rlen, plen) <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">1</span>:
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">max</span>(rlen, plen)
+            rich<span style="color: #333333">.</span>sort()
+            poor<span style="color: #333333">.</span>sort()
+            trich, tpoor <span style="color: #333333">=</span> <span style="color: #007020">tuple</span>(rich), <span style="color: #007020">tuple</span>(poor)
+            ans <span style="color: #333333">=</span> vdict[trich]<span style="color: #333333">.</span>get(tpoor)
+            <span style="color: #008800; font-weight: bold">if</span> ans <span style="color: #000000; font-weight: bold">is</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #007020">None</span>:
+                <span style="color: #008800; font-weight: bold">return</span> ans
+            ans <span style="color: #333333">=</span> <span style="color: #005588; font-weight: bold">0x7FFFFFFF</span>
+            <span style="color: #008800; font-weight: bold">for</span> ri <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(rlen):
+                nrich <span style="color: #333333">=</span> rich[:ri] <span style="color: #333333">+</span> rich[ri<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>:]
+                npoor <span style="color: #333333">=</span> poor[<span style="color: #0000DD; font-weight: bold">1</span>:]
+                <span style="color: #008800; font-weight: bold">if</span> rich[ri] <span style="color: #333333">&lt;</span> poor[<span style="color: #0000DD; font-weight: bold">0</span>]:
+                    npoor<span style="color: #333333">.</span>append(poor[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">-</span> rich[ri])
+                <span style="color: #008800; font-weight: bold">elif</span> rich[ri] <span style="color: #333333">&gt;</span> poor[<span style="color: #0000DD; font-weight: bold">0</span>]:
+                    nrich<span style="color: #333333">.</span>append(rich[ri] <span style="color: #333333">-</span> poor[<span style="color: #0000DD; font-weight: bold">0</span>])
+                ans <span style="color: #333333">=</span> <span style="color: #007020">min</span>(solve(nrich, npoor) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, ans)
+            vdict[trich][tpoor] <span style="color: #333333">=</span> ans
+            <span style="color: #008800; font-weight: bold">return</span> ans
+
+        loan <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>defaultdict(<span style="color: #007020">int</span>)
+        <span style="color: #008800; font-weight: bold">for</span> s, t, v <span style="color: #000000; font-weight: bold">in</span> transactions:
+            loan[s] <span style="color: #333333">+=</span> v
+            loan[t] <span style="color: #333333">-=</span> v
+        rich <span style="color: #333333">=</span> [v <span style="color: #008800; font-weight: bold">for</span> k, v <span style="color: #000000; font-weight: bold">in</span> loan<span style="color: #333333">.</span>iteritems() <span style="color: #008800; font-weight: bold">if</span> v <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>]
+        poor <span style="color: #333333">=</span> [<span style="color: #333333">-</span>v <span style="color: #008800; font-weight: bold">for</span> k, v <span style="color: #000000; font-weight: bold">in</span> loan<span style="color: #333333">.</span>iteritems() <span style="color: #008800; font-weight: bold">if</span> v <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">0</span>]
+        <span style="color: #008800; font-weight: bold">return</span> solve(rich, poor)
+</pre></div>

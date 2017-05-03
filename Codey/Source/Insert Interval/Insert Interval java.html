@@ -1,0 +1,31 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">/**</span>
+<span style="color: #888888"> * Definition for an interval.</span>
+<span style="color: #888888"> * public class Interval {</span>
+<span style="color: #888888"> *     int start;</span>
+<span style="color: #888888"> *     int end;</span>
+<span style="color: #888888"> *     Interval() { start = 0; end = 0; }</span>
+<span style="color: #888888"> *     Interval(int s, int e) { start = s; end = e; }</span>
+<span style="color: #888888"> * }</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">insert</span><span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;</span> intervals<span style="color: #333333">,</span> Interval newInterval<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+        ArrayList<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Interval<span style="color: #333333">&gt;();</span>
+ 
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>Interval <span style="color: #997700; font-weight: bold">interval:</span> intervals<span style="color: #333333">){</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>interval<span style="color: #333333">.</span><span style="color: #0000CC">end</span> <span style="color: #333333">&lt;</span> newInterval<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">){</span>
+                result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>interval<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>interval<span style="color: #333333">.</span><span style="color: #0000CC">start</span> <span style="color: #333333">&gt;</span> newInterval<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">){</span>
+                result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>newInterval<span style="color: #333333">);</span>
+                newInterval <span style="color: #333333">=</span> interval<span style="color: #333333">;</span>        
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>interval<span style="color: #333333">.</span><span style="color: #0000CC">end</span> <span style="color: #333333">&gt;=</span> newInterval<span style="color: #333333">.</span><span style="color: #0000CC">start</span> <span style="color: #333333">||</span> interval<span style="color: #333333">.</span><span style="color: #0000CC">start</span> <span style="color: #333333">&lt;=</span> newInterval<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">){</span>
+                newInterval <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Interval<span style="color: #333333">(</span>Math<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">(</span>interval<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">,</span> newInterval<span style="color: #333333">.</span><span style="color: #0000CC">start</span><span style="color: #333333">),</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">max</span><span style="color: #333333">(</span>newInterval<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">,</span> interval<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">));</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+ 
+        result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>newInterval<span style="color: #333333">);</span> 
+ 
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

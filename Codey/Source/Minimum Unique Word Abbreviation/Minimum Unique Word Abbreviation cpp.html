@@ -1,0 +1,49 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">bool</span> validWordAbbreviation(string word, string abbr) {
+        <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>, j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">while</span> (i <span style="color: #333333">&lt;</span> word.size() <span style="color: #333333">&amp;&amp;</span> j <span style="color: #333333">&lt;</span> abbr.size()) {
+            <span style="color: #008800; font-weight: bold">if</span> (isdigit(abbr[j])) {
+                <span style="color: #008800; font-weight: bold">if</span> (abbr[j] <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;0&#39;</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+                <span style="color: #333399; font-weight: bold">int</span> val <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+                <span style="color: #008800; font-weight: bold">while</span> (j <span style="color: #333333">&lt;</span> abbr.size() <span style="color: #333333">&amp;&amp;</span> isdigit(abbr[j])) 
+                    val <span style="color: #333333">=</span> val <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> abbr[j<span style="color: #333333">++</span>] <span style="color: #333333">-</span> <span style="color: #0044DD">&#39;0&#39;</span>;
+                i <span style="color: #333333">+=</span> val;
+            }
+            <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (word[i<span style="color: #333333">++</span>] <span style="color: #333333">!=</span> abbr[j<span style="color: #333333">++</span>]) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+        }
+        <span style="color: #008800; font-weight: bold">return</span> i <span style="color: #333333">==</span> word.size() <span style="color: #333333">&amp;&amp;</span> j <span style="color: #333333">==</span> abbr.size();
+    }
+    
+    
+    <span style="color: #333399; font-weight: bold">void</span> backtrack2(string<span style="color: #333333">&amp;</span> word, <span style="color: #333399; font-weight: bold">int</span> begin, string str, vector<span style="color: #333333">&lt;</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, string<span style="color: #333333">&gt;&gt;&amp;</span> res, <span style="color: #333399; font-weight: bold">int</span> counts, <span style="color: #333399; font-weight: bold">int</span> times) {
+        <span style="color: #008800; font-weight: bold">if</span> (begin <span style="color: #333333">==</span> word.size()) {
+            res.push_back({times <span style="color: #333333">+</span> max(counts <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">0</span>), str <span style="color: #333333">+</span> (counts <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">?</span> to_string(counts) <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;&quot;</span>)});
+            <span style="color: #008800; font-weight: bold">return</span>;
+        }
+        backtrack2(word, begin <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, str, res, counts <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, times);
+        backtrack2(word, begin <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, str <span style="color: #333333">+</span> (counts <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">?</span> to_string(counts) <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;&quot;</span>) <span style="color: #333333">+</span> 
+                    word[begin], res, <span style="color: #0000DD; font-weight: bold">0</span>, times <span style="color: #333333">+</span> max(counts <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">0</span>));
+    }
+
+    vector<span style="color: #333333">&lt;</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, string<span style="color: #333333">&gt;&gt;</span> generateAbbreviations(string<span style="color: #333333">&amp;</span> word) {
+        vector<span style="color: #333333">&lt;</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, string<span style="color: #333333">&gt;&gt;</span> res;    
+        backtrack2(word, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="background-color: #fff0f0">&quot;&quot;</span>, res, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">0</span>);
+        <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+
+    string minAbbreviation(string target, vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;&amp;</span> dictionary) {
+        <span style="color: #008800; font-weight: bold">if</span> (dictionary.empty()) <span style="color: #008800; font-weight: bold">return</span> to_string((<span style="color: #333399; font-weight: bold">int</span>)target.size());
+        vector<span style="color: #333333">&lt;</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, string<span style="color: #333333">&gt;&gt;</span> abbrs <span style="color: #333333">=</span> generateAbbreviations(target);
+        <span style="color: #008800; font-weight: bold">auto</span> comp <span style="color: #333333">=</span> [](<span style="color: #008800; font-weight: bold">const</span> pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, string<span style="color: #333333">&gt;&amp;</span> p1, <span style="color: #008800; font-weight: bold">const</span> pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>, string<span style="color: #333333">&gt;&amp;</span> p2){ <span style="color: #008800; font-weight: bold">return</span> p1.first <span style="color: #333333">&gt;</span> p2.first; };
+        sort(abbrs.begin(), abbrs.end(), comp);
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">auto</span><span style="color: #333333">&amp;</span> abbr <span style="color: #333333">:</span> abbrs) {
+            <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+            <span style="color: #008800; font-weight: bold">for</span> (; i <span style="color: #333333">&lt;</span> dictionary.size(); i<span style="color: #333333">++</span>) 
+                <span style="color: #008800; font-weight: bold">if</span> (validWordAbbreviation(dictionary[i], abbr.second)) <span style="color: #008800; font-weight: bold">break</span>;
+            <span style="color: #008800; font-weight: bold">if</span> (i <span style="color: #333333">==</span> dictionary.size()) <span style="color: #008800; font-weight: bold">return</span> abbr.second;
+        }
+        <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;&quot;</span>;
+    }
+};
+</pre></div>

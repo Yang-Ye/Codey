@@ -13,18 +13,22 @@ class StarredViewController: UITableViewController {
 
     var dataSource: [Problem] = []
     let codey = CodeyManger.sharedInstance
+    var emptyLabel: UILabel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = CodeyManger.sharedInstance.themeColor
-        self.tableView.separatorColor = UIColor.gray
-        self.tableView.separatorInset = .zero
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.tableView.separatorStyle = .none
         self.tableView.register(UINib.init(nibName: "ProblemCell", bundle: nil), forCellReuseIdentifier: "ProblemCell")
-        self.tableView.backgroundColor = UIColor.white
+        self.tableView.backgroundColor = CodeyManger.tableViewBackgroundColor()
+    }
+
+    override func viewWillLayoutSubviews() {
+        emptyLabel?.frame = CGRect(x: 0, y: tableView.height/3, width: tableView.width, height: 100)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.dataSource = Array(codey.starredProblems)
+        self.dataSource = codey.sortedStarredProblems
         self.tableView.reloadData()
     }
 
@@ -44,8 +48,7 @@ class StarredViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProblemCell", for: indexPath) as! ProblemCell
         let problem = dataSource[indexPath.row]
         cell.problemName.text = problem.name
-        cell.problemHardness.text = codey.hardnessString(hardness: problem.hardness)
-        cell.problemHardness.textColor = problem.themeColor
+        cell.hardnessIcon.image = UIImage.hardnessIconFromHardness(hardness: problem.hardness.rawValue)
         cell.isStared.isHidden = false
         cell.selectionStyle = .none
         cell.order.text = "\(problem.order)"
@@ -57,10 +60,37 @@ class StarredViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if dataSource.count > 0{
+            emptyLabel?.removeFromSuperview()
+            emptyLabel = nil
+        } else if emptyLabel == nil {
+            emptyLabel = UILabel(frame: CGRect(x: 0, y: tableView.height/3, width: tableView.width, height: 100 ))
+            emptyLabel!.textAlignment = .center
+            emptyLabel!.font = UIFont(name: codeyFont, size: CodeyManger.emptyPageInfoSize())
+            emptyLabel!.textColor = UIColor.darkGray
+            emptyLabel!.text = "You don't have any starred problems."
+            tableView.addSubview(emptyLabel!)
+        }
         return dataSource.count
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(problemCellHeight)
+        return problemCellHeight
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let problem = self.codey.sortedStarredProblems[indexPath.row]
+        let problemDetailVC = ProblemDetailViewController(problem: problem)
+        self.navigationController?.pushViewController(problemDetailVC, animated: true)
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let problem = dataSource[indexPath.row]
+            problem.isStared = false
+            self.codey.starredProblems.remove(problem)
+            self.dataSource.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

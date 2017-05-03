@@ -1,0 +1,33 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">void</span> connect(TreeLinkNode <span style="color: #333333">*</span>root) {
+        <span style="color: #008800; font-weight: bold">while</span>(root <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>right) 
+            root <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>next;
+        <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>root) <span style="color: #008800; font-weight: bold">return</span>;
+        TreeLinkNode <span style="color: #333333">*</span>leftMost <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">?</span> root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">:</span> root<span style="color: #333333">-&gt;</span>right;
+        TreeLinkNode <span style="color: #333333">*</span>cur <span style="color: #333333">=</span> leftMost;
+        
+        <span style="color: #008800; font-weight: bold">while</span>(root) {
+            <span style="color: #008800; font-weight: bold">if</span>(cur<span style="color: #333333">==</span>root<span style="color: #333333">-&gt;</span>left) {  
+                <span style="color: #008800; font-weight: bold">if</span>(root<span style="color: #333333">-&gt;</span>right) {
+                    cur<span style="color: #333333">-&gt;</span>next <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>right;
+                    cur <span style="color: #333333">=</span> cur<span style="color: #333333">-&gt;</span>next;
+                }
+                root <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>next;
+            }
+            <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(cur<span style="color: #333333">==</span>root<span style="color: #333333">-&gt;</span>right) { 
+                root <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>next;
+            }
+            <span style="color: #008800; font-weight: bold">else</span> {  <span style="color: #888888">// cur is the child of the previous node of root</span>
+                <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>right) {
+                    root <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>next;
+                    <span style="color: #008800; font-weight: bold">continue</span>;
+                } 
+                cur<span style="color: #333333">-&gt;</span>next <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">?</span> root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">:</span> root<span style="color: #333333">-&gt;</span>right;    
+                cur <span style="color: #333333">=</span> cur<span style="color: #333333">-&gt;</span>next;
+            }
+        }
+        connect(leftMost);
+    }
+};
+</pre></div>

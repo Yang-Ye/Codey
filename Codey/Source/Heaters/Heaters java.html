@@ -1,0 +1,20 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> findRadius(<span style="color: #333399; font-weight: bold">int</span>[] houses, <span style="color: #333399; font-weight: bold">int</span>[] heaters) {
+        Arrays.sort(heaters);
+        <span style="color: #333399; font-weight: bold">int</span> result <span style="color: #333333">=</span> Integer.MIN_VALUE;
+        
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> house <span style="color: #333333">:</span> houses) {
+            <span style="color: #333399; font-weight: bold">int</span> index <span style="color: #333333">=</span> Arrays.binarySearch(heaters, house);
+            <span style="color: #008800; font-weight: bold">if</span> (index <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">0</span>) {
+        	index <span style="color: #333333">=</span> <span style="color: #333333">-</span>(index <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+            }
+            <span style="color: #333399; font-weight: bold">int</span> dist1 <span style="color: #333333">=</span> index <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">?</span> house <span style="color: #333333">-</span> heaters[index <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">:</span> Integer.MAX_VALUE;
+            <span style="color: #333399; font-weight: bold">int</span> dist2 <span style="color: #333333">=</span> index <span style="color: #333333">&lt;</span> heaters.length <span style="color: #333333">?</span> heaters[index] <span style="color: #333333">-</span> house <span style="color: #333333">:</span> Integer.MAX_VALUE;
+        
+            result <span style="color: #333333">=</span> Math.max(result, Math.min(dist1, dist2));
+        }
+        
+        <span style="color: #008800; font-weight: bold">return</span> result;
+    }
+}
+</pre></div>

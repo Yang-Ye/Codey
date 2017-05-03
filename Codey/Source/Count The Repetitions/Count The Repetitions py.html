@@ -1,0 +1,32 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">getMaxRepetitions</span>(<span style="color: #007020">self</span>, s1, n1, s2, n2):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type s1: str</span>
+<span style="color: #DD4422">        :type n1: int</span>
+<span style="color: #DD4422">        :type s2: str</span>
+<span style="color: #DD4422">        :type n2: int</span>
+<span style="color: #DD4422">        :rtype: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> <span style="color: #007020">set</span>(s2) <span style="color: #333333">&lt;=</span> <span style="color: #007020">set</span>(s1):
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        l1, l2 <span style="color: #333333">=</span> <span style="color: #007020">len</span>(s1), <span style="color: #007020">len</span>(s2)
+        dp <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>defaultdict(<span style="color: #007020">dict</span>)
+        x1 <span style="color: #333333">=</span> x2 <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        <span style="color: #008800; font-weight: bold">while</span> x1 <span style="color: #333333">&lt;</span> l1 <span style="color: #333333">*</span> n1:
+            <span style="color: #008800; font-weight: bold">while</span> s1[x1 <span style="color: #333333">%</span> l1] <span style="color: #333333">!=</span> s2[x2 <span style="color: #333333">%</span> l2]:
+                x1 <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">if</span> x1 <span style="color: #333333">&gt;=</span> l1 <span style="color: #333333">*</span> n1:
+                <span style="color: #008800; font-weight: bold">break</span>
+            y1, y2 <span style="color: #333333">=</span> x1 <span style="color: #333333">%</span> l1, x2 <span style="color: #333333">%</span> l2
+            <span style="color: #008800; font-weight: bold">if</span> y2 <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> dp[y1]:
+                dp[y1][y2] <span style="color: #333333">=</span> x1, x2
+            <span style="color: #008800; font-weight: bold">else</span>:
+                dx1, dx2 <span style="color: #333333">=</span> dp[y1][y2]
+                <span style="color: #007020">round</span> <span style="color: #333333">=</span> (l1 <span style="color: #333333">*</span> n1 <span style="color: #333333">-</span> dx1) <span style="color: #333333">/</span> (x1 <span style="color: #333333">-</span> dx1)
+                x1 <span style="color: #333333">=</span> dx1 <span style="color: #333333">+</span> <span style="color: #007020">round</span> <span style="color: #333333">*</span> (x1 <span style="color: #333333">-</span> dx1)
+                x2 <span style="color: #333333">=</span> dx2 <span style="color: #333333">+</span> <span style="color: #007020">round</span> <span style="color: #333333">*</span> (x2 <span style="color: #333333">-</span> dx2)
+            <span style="color: #008800; font-weight: bold">if</span> x1 <span style="color: #333333">&lt;</span> l1 <span style="color: #333333">*</span> n1:
+                x1 <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+                x2 <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">return</span> x2 <span style="color: #333333">/</span> (n2 <span style="color: #333333">*</span> l2)
+</pre></div>

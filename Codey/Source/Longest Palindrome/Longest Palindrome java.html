@@ -1,0 +1,16 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">longestPalindrome</span>(String s) {
+        <span style="color: #008800; font-weight: bold">if</span>(s<span style="color: #333333">==</span>null <span style="color: #333333">||</span> s.length()<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        HashSet<span style="color: #333333">&lt;</span>Character<span style="color: #333333">&gt;</span> hs <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;</span>Character<span style="color: #333333">&gt;</span>();
+        <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">&lt;</span>s.length(); i<span style="color: #333333">++</span>){
+            <span style="color: #008800; font-weight: bold">if</span>(hs.contains(s.charAt(i))){
+                hs.remove(s.charAt(i));
+                count<span style="color: #333333">++</span>;
+            }<span style="color: #008800; font-weight: bold">else</span>{
+                hs.add(s.charAt(i));
+            }
+        }
+        <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>hs.isEmpty()) <span style="color: #008800; font-weight: bold">return</span> count<span style="color: #333333">*</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>;
+        <span style="color: #008800; font-weight: bold">return</span> count<span style="color: #333333">*</span><span style="color: #0000DD; font-weight: bold">2</span>;
+}
+</pre></div>

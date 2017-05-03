@@ -1,0 +1,17 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">myPow</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>n<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>n<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">/</span>helper<span style="color: #333333">(</span>x<span style="color: #333333">,</span> <span style="color: #333333">-</span>n<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #333399; font-weight: bold">double</span> v <span style="color: #333333">=</span> helper<span style="color: #333333">(</span>x<span style="color: #333333">,</span> n<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">);</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>n<span style="color: #333333">%</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+       <span style="color: #008800; font-weight: bold">return</span> v<span style="color: #333333">*</span>v<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+       <span style="color: #008800; font-weight: bold">return</span> v<span style="color: #333333">*</span>v<span style="color: #333333">*</span>x<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>    
+<span style="color: #333333">}</span>
+</pre></div>

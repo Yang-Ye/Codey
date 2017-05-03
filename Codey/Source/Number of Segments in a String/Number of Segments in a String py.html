@@ -1,0 +1,35 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888"># Time:  O(n)</span>
+<span style="color: #888888"># Space: O(1)</span>
+
+<span style="color: #888888"># Count the number of segments in a string,</span>
+<span style="color: #888888"># where a segment is defined to be a contiguous</span>
+<span style="color: #888888"># sequence of non-space characters.</span>
+<span style="color: #888888">#</span>
+<span style="color: #888888"># Please note that the string does not</span>
+<span style="color: #888888"># contain any non-printable characters.</span>
+<span style="color: #888888">#</span>
+<span style="color: #888888"># Example:</span>
+<span style="color: #888888">#</span>
+<span style="color: #888888"># Input: &quot;Hello, my name is John&quot;</span>
+<span style="color: #888888"># Output: 5</span>
+
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">countSegments</span>(<span style="color: #007020">self</span>, s):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type s: str</span>
+<span style="color: #DD4422">        :rtype: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        result <span style="color: #333333">=</span> <span style="color: #007020">int</span>(<span style="color: #007020">len</span>(s) <span style="color: #000000; font-weight: bold">and</span> s[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">!=</span> <span style="background-color: #fff0f0">&#39; &#39;</span>)
+        <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(<span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #007020">len</span>(s)):
+            <span style="color: #008800; font-weight: bold">if</span> s[i] <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&#39; &#39;</span> <span style="color: #000000; font-weight: bold">and</span> s[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">!=</span> <span style="background-color: #fff0f0">&#39; &#39;</span>:
+                result <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">return</span> result
+
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">countSegments2</span>(<span style="color: #007020">self</span>, s):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type s: str</span>
+<span style="color: #DD4422">        :rtype: int</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">len</span>([i <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> s<span style="color: #333333">.</span>strip()<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&#39; &#39;</span>) <span style="color: #008800; font-weight: bold">if</span> i])
+</pre></div>

@@ -1,0 +1,19 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">canMeasureWater</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> y<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> z<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">//limit brought by the statement that water is finallly in one or both buckets</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>x <span style="color: #333333">+</span> y <span style="color: #333333">&lt;</span> z<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+    <span style="color: #888888">//case x or y is zero</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span> x <span style="color: #333333">==</span> z <span style="color: #333333">||</span> y <span style="color: #333333">==</span> z <span style="color: #333333">||</span> x <span style="color: #333333">+</span> y <span style="color: #333333">==</span> z <span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    
+    <span style="color: #888888">//get GCD, then we can use the property of Bézout&#39;s identity</span>
+    <span style="color: #008800; font-weight: bold">return</span> z<span style="color: #333333">%</span>GCD<span style="color: #333333">(</span>x<span style="color: #333333">,</span> y<span style="color: #333333">)</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">GCD</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> a<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> b<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>b <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">){</span>
+        <span style="color: #333399; font-weight: bold">int</span> temp <span style="color: #333333">=</span> b<span style="color: #333333">;</span>
+        b <span style="color: #333333">=</span> a<span style="color: #333333">%</span>b<span style="color: #333333">;</span>
+        a <span style="color: #333333">=</span> temp<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">return</span> a<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

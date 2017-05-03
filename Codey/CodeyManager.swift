@@ -10,10 +10,28 @@ import Foundation
 import UIKit
 import CoreData
 
+@objc enum Hardness: Int {
+    case easy = 0
+    case medium = 1
+    case hard = 2
+
+    var stringValue: String {
+        switch self {
+        case .easy:
+            return "Easy"
+        case .medium:
+            return "Medium"
+        default:
+            return "Hard"
+        }
+    }
+}
+
 class CodeyManger {
     static let sharedInstance = CodeyManger()
+    static var soluionFontSize:SolutionTextSize = .small
     var problems: [Problem] = []
-    var problemPool: [Problem]!
+    var problemsConstant: [Problem]!
     var coreData: CodeyCoreDataStack?
     var tagKeys:[String] = []
     let hardnessKeys = ["Easy", "Medium", "Hard"]
@@ -30,11 +48,20 @@ class CodeyManger {
         return true
     }
 
+    var lists:[ProblemList]!
+
+    var sortedStarredProblems: [Problem] {
+        return starredProblems.sorted(by: { (p1, p2) -> Bool in
+            return p1.timeStarred! > p2.timeStarred!
+        })
+    }
+
     private init() {
         let time = Date()
         self.coreData = CodeyCoreDataStack()
         self.loadProblem()
         self.loadStarredProblems()
+        self.loadAllList()
         self.createKeys()
         let time2 = Date().timeIntervalSince(time)
         print(time2)
@@ -57,19 +84,25 @@ class CodeyManger {
             }
         }
         self.problems.sort{ return $0.order < $1.order }
-        self.problemPool = self.problems
+        self.problemsConstant = self.problems
     }
 
     func loadStarredProblems() {
-        self.starredProblems = Set(self.problems.filter({ (problem) -> Bool in
+        self.starredProblems = Set(self.problemsConstant.filter({ (problem) -> Bool in
             return problem.isStared
         }))
+    }
+
+    func loadAllList() {
+        self.lists = self.coreData?.fetchAllLists() ?? []
+        self.lists.sort(by: { (list1, list2) -> Bool in
+            return list1.createdDate.compare(list2.createdDate as Date) == .orderedAscending})
     }
 
     func createKeys() {
         var retTagKeys: [String] = []
         var retCompanyKeys: [String] = []
-        for problem in self.problems {
+        for problem in self.problemsConstant {
             for tag in problem.tags {
                 if !retTagKeys.contains(tag) {
                     retTagKeys.append(tag)
@@ -88,44 +121,135 @@ class CodeyManger {
         self.companyKeys = retCompanyKeys
     }
 
-    func loadFilteredProblems(key: Set<String>) {
-        self.problemPool = self.problemPool.filter({ (problem) -> Bool in
-            for aKey in key {
-                if problem.tags.contains(aKey) {
-                    return true
-                }
-            }
-            return false
-        })
+    func hardnessString(hardness: Hardness) -> String {
+        switch hardness {
+        case .easy:
+            return "Easy"
+        case .medium:
+            return "Medium"
+        case .hard:
+            return "Hard"
+        }
     }
+}
 
-    func resetProblemPool() {
-        self.problemPool = self.problems
-    }
+//Fonts
+let codeyFont = "ArialRoundedMTBold"
 
-    func sortProblems(key: String) {
-        if key == "Alphabetic" {
-            self.problemPool.sort(by: { (p1, p2) -> Bool in
-                return p1.name < p2.name
-            })
-        } else if key == "Easy → Hard" {
-            self.problemPool.sort(by: { (p1, p2) -> Bool in
-                return p1.hardness < p2.hardness
-            })
-        } else if key == "Hard → Easy" {
-            self.problemPool.sort(by: { (p1, p2) -> Bool in
-                return p1.hardness > p2.hardness
-            })
+enum SolutionTextSize {
+    case small
+    case medium
+    case large
+    case xLarge
+
+    var next: SolutionTextSize {
+        switch self {
+        case .xLarge:
+            return .xLarge
+        case .large:
+            return .xLarge
+        case .medium:
+            return .large
+        case .small:
+            return .medium
         }
     }
 
-    func hardnessString(hardness: Int) -> String {
-        if hardness == 0 {
-            return "Easy"
-        } else if hardness == 1 {
-            return "Medium"
-        } else {
-            return "Hard"
+    var previous: SolutionTextSize {
+        switch self {
+        case .xLarge:
+            return .large
+        case .large:
+            return .medium
+        case .medium:
+            return .small
+        case .small:
+            return .small
+        }
+    }
+}
+
+
+
+extension CodeyManger {
+    static func titleCellFont() -> UIFont {
+        var size: CGFloat = 0
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            size = 18
+        default:
+            size = 13
+        }
+        return UIFont(name: codeyFont, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+
+    static func textViewCellFontSize() -> CGFloat {
+        var size: CGFloat = 0
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            size = 18
+        default:
+            size = 13
+        }
+        return size
+    }
+
+    static func solutionTextViewFontSize() -> CGFloat {
+        var size: CGFloat = 0
+        switch self.soluionFontSize {
+        case .small:
+            switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                size = 15
+            default:
+                size = 11
+            }
+        case .medium:
+            switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                size = 17
+            default:
+                size = 13
+            }
+        case .large:
+            switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                size = 19
+            default:
+                size = 15
+            }
+        case .xLarge:
+            switch UIDevice.current.userInterfaceIdiom {
+            case .pad:
+                size = 21
+            default:
+                size = 17
+            }
+        }
+        return size
+    }
+
+    static func solutionCellFont() -> UIFont {
+        var size: CGFloat = 0
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            size = 18
+        default:
+            size = 13
+        }
+        return UIFont(name: codeyFont, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+
+    static func tableViewBackgroundColor() -> UIColor {
+        return UIColor.hexStringToUIColor(hex: "e2e2e2")
+    }
+
+    static func emptyPageInfoSize() -> CGFloat{
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            return 21
+        default:
+            return 17
         }
     }
 }

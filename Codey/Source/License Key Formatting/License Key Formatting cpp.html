@@ -1,0 +1,12 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  string <span style="color: #0066BB; font-weight: bold">licenseKeyFormatting</span>(string S, <span style="color: #333399; font-weight: bold">int</span> K) {
+      string res;
+      <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">auto</span> i <span style="color: #333333">=</span> S.rbegin(); i <span style="color: #333333">&lt;</span> S.rend(); i<span style="color: #333333">++</span>)
+        <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">*</span>i <span style="color: #333333">!=</span> <span style="color: #0044DD">&#39;-&#39;</span>) { <span style="color: #888888">// ignore &#39;-&#39; in original string</span>
+          <span style="color: #008800; font-weight: bold">if</span> (res.size()<span style="color: #333333">%</span>(K<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">==</span> K) res <span style="color: #333333">+=</span> <span style="color: #0044DD">&#39;-&#39;</span>; <span style="color: #888888">// every (K+1)th char is &#39;-&#39; from tail</span>
+          res <span style="color: #333333">+=</span> toupper(<span style="color: #333333">*</span>i);
+        }
+        
+      reverse(res.begin(), res.end());
+      <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+</pre></div>

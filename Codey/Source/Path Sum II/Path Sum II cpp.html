@@ -1,0 +1,28 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> pathSum(TreeNode <span style="color: #333333">*</span>root, <span style="color: #333399; font-weight: bold">int</span> sum) {
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> path;
+        vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> allPaths;
+        finaPathSum(root, sum, path, allPaths);
+        <span style="color: #008800; font-weight: bold">return</span> allPaths;
+    }
+    
+    <span style="color: #333399; font-weight: bold">void</span> finaPathSum(TreeNode <span style="color: #333333">*</span>root, <span style="color: #333399; font-weight: bold">int</span> sum, vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>path, vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>allPaths) {
+        <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>root) <span style="color: #008800; font-weight: bold">return</span>;
+        sum <span style="color: #333333">-=</span> root<span style="color: #333333">-&gt;</span>val;
+        path.push_back(root<span style="color: #333333">-&gt;</span>val);
+        
+        <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>left <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span>root<span style="color: #333333">-&gt;</span>right) {
+            <span style="color: #008800; font-weight: bold">if</span>(sum<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>) {
+                allPaths.push_back(path);
+            }
+        }
+        <span style="color: #008800; font-weight: bold">else</span> {
+            <span style="color: #008800; font-weight: bold">if</span>(root<span style="color: #333333">-&gt;</span>left) finaPathSum(root<span style="color: #333333">-&gt;</span>left, sum, path, allPaths);
+            <span style="color: #008800; font-weight: bold">if</span>(root<span style="color: #333333">-&gt;</span>right) finaPathSum(root<span style="color: #333333">-&gt;</span>right, sum, path, allPaths);
+        }
+        
+        path.pop_back();
+    }
+};
+</pre></div>

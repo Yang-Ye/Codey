@@ -1,0 +1,48 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">minAbbreviation</span>(<span style="color: #007020">self</span>, target, dictionary):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type target: str</span>
+<span style="color: #DD4422">        :type dictionary: List[str]</span>
+<span style="color: #DD4422">        :rtype: str</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>target <span style="color: #333333">=</span> target
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>size <span style="color: #333333">=</span> <span style="color: #007020">len</span>(target)
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>dlist <span style="color: #333333">=</span> [d <span style="color: #008800; font-weight: bold">for</span> d <span style="color: #000000; font-weight: bold">in</span> dictionary <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(d) <span style="color: #333333">==</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>size]
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>ans <span style="color: #333333">=</span> target
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>length <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>size
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>dfs(<span style="background-color: #fff0f0">&#39;&#39;</span>, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">0</span>)
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>ans
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">dfs</span>(<span style="color: #007020">self</span>, abbr, length, depth):
+        <span style="color: #008800; font-weight: bold">if</span> length <span style="color: #333333">&gt;=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>length: <span style="color: #008800; font-weight: bold">return</span>
+        <span style="color: #008800; font-weight: bold">if</span> depth <span style="color: #333333">==</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>size:
+            <span style="color: #008800; font-weight: bold">for</span> word <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>dlist:
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>validWordAbbreviation(word, abbr):
+                    <span style="color: #008800; font-weight: bold">return</span>
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>ans <span style="color: #333333">=</span> abbr
+            <span style="color: #007020">self</span><span style="color: #333333">.</span>length <span style="color: #333333">=</span> length
+            <span style="color: #008800; font-weight: bold">return</span>
+        <span style="color: #007020">self</span><span style="color: #333333">.</span>dfs(abbr <span style="color: #333333">+</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>target[depth], length <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, depth <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>)
+        <span style="color: #008800; font-weight: bold">if</span> depth <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">or</span> <span style="color: #000000; font-weight: bold">not</span> abbr[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]<span style="color: #333333">.</span>isdigit():
+            <span style="color: #008800; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">2</span>, <span style="color: #007020">self</span><span style="color: #333333">.</span>size <span style="color: #333333">-</span> depth <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>):
+                <span style="color: #007020">self</span><span style="color: #333333">.</span>dfs(abbr <span style="color: #333333">+</span> <span style="color: #007020">str</span>(x), length <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, depth <span style="color: #333333">+</span> x)
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">validWordAbbreviation</span>(<span style="color: #007020">self</span>, word, abbr):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type word: str</span>
+<span style="color: #DD4422">        :type abbr: str</span>
+<span style="color: #DD4422">        :rtype: bool</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        size <span style="color: #333333">=</span> <span style="color: #007020">len</span>(word)
+        cnt <span style="color: #333333">=</span> loc <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        <span style="color: #008800; font-weight: bold">for</span> w <span style="color: #000000; font-weight: bold">in</span> abbr:
+            <span style="color: #008800; font-weight: bold">if</span> w<span style="color: #333333">.</span>isdigit():
+                <span style="color: #008800; font-weight: bold">if</span> w <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&#39;0&#39;</span> <span style="color: #000000; font-weight: bold">and</span> cnt <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>:
+                    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+                cnt <span style="color: #333333">=</span> cnt <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> <span style="color: #007020">int</span>(w)
+            <span style="color: #008800; font-weight: bold">else</span>:
+                loc <span style="color: #333333">+=</span> cnt
+                cnt <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+                <span style="color: #008800; font-weight: bold">if</span> loc <span style="color: #333333">&gt;=</span> size <span style="color: #000000; font-weight: bold">or</span> word[loc] <span style="color: #333333">!=</span> w:
+                    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+                loc <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">return</span> loc <span style="color: #333333">+</span> cnt <span style="color: #333333">==</span> size
+</pre></div>

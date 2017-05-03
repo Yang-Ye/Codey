@@ -1,0 +1,30 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> father<span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">countComponents</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[][]</span> edges<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+    Set<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> set <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+    father <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span>n<span style="color: #333333">];</span>
+    <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> n<span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+        father<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> i<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> edges<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+         union<span style="color: #333333">(</span>edges<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">],</span> edges<span style="color: #333333">[</span>i<span style="color: #333333">][</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> n<span style="color: #333333">;</span> i<span style="color: #333333">++){</span> 
+        set<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>find<span style="color: #333333">(</span>i<span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">return</span> set<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> node<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>father<span style="color: #333333">[</span>node<span style="color: #333333">]</span> <span style="color: #333333">==</span> node<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> node<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    father<span style="color: #333333">[</span>node<span style="color: #333333">]</span> <span style="color: #333333">=</span> find<span style="color: #333333">(</span>father<span style="color: #333333">[</span>node<span style="color: #333333">]);</span>
+    <span style="color: #008800; font-weight: bold">return</span> father<span style="color: #333333">[</span>node<span style="color: #333333">];</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">union</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> node1<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> node2<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    father<span style="color: #333333">[</span>find<span style="color: #333333">(</span>node1<span style="color: #333333">)]</span> <span style="color: #333333">=</span> find<span style="color: #333333">(</span>node2<span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+</pre></div>

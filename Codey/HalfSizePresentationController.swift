@@ -10,33 +10,40 @@ import Foundation
 import UIKit
 class HalfSizePresentationController : UIPresentationController {
 
-    var dimmingView: UIView? = nil
+    var dimmingView: DimmingView = DimmingView()
 
     override var shouldPresentInFullscreen: Bool {
         return false
     }
 
     override var frameOfPresentedViewInContainerView: CGRect {
-        return CGRect(x: 0, y: containerView!.bounds.height/2, width: containerView!.bounds.width, height: containerView!.bounds.height/2)
+        return containerView!.bounds.insetBy(dx: 0, dy: containerView!.height / 4).offsetBy(dx: 0, dy: containerView!.height / 4)
+    }
+
+    override func containerViewWillLayoutSubviews() {
+        presentedView?.frame = frameOfPresentedViewInContainerView
+        self.dimmingView.frame = containerView!.bounds
     }
 
     override func presentationTransitionWillBegin() {
         let containerView = self.containerView
         let presentedVC = self.presentedViewController
-        dimmingView = UIView(frame: (containerView?.bounds)!)
-        dimmingView?.backgroundColor = UIColor.black
-        dimmingView?.alpha = 0.0
+        dimmingView.frame = containerView!.bounds
+        dimmingView.backgroundColor = UIColor.black
+        dimmingView.alpha = 0.0
 
-        containerView?.insertSubview(dimmingView!, at: 0)
+        containerView?.insertSubview(dimmingView, at: 0)
 
         presentedVC.transitionCoordinator?.animate(alongsideTransition: { (context) in
-            self.dimmingView?.alpha = 0.5
+            self.dimmingView.alpha = 0.5
         }, completion: nil)
     }
 
     override func dismissalTransitionWillBegin() {
         self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (context) in
-            self.dimmingView?.alpha = 0.0
-        }, completion: nil)
+            self.dimmingView.alpha = 0.0
+        }, completion: { _ in
+            self.dimmingView.removeFromSuperview()
+        })
     }
 }

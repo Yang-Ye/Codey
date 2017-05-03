@@ -1,0 +1,23 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">sumNumbers</span><span style="color: #333333">(</span>TreeNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> 
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">dfs</span><span style="color: #333333">(</span>root<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">dfs</span><span style="color: #333333">(</span>TreeNode node<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> num<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> sum<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>node <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">return</span> sum<span style="color: #333333">;</span>
+ 
+    num <span style="color: #333333">=</span> num<span style="color: #333333">*</span><span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> node<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">// leaf</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> node<span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        sum <span style="color: #333333">+=</span> num<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">return</span> sum<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">// left subtree + right subtree</span>
+    sum <span style="color: #333333">=</span> dfs<span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">,</span> num<span style="color: #333333">,</span> sum<span style="color: #333333">)</span> <span style="color: #333333">+</span> dfs<span style="color: #333333">(</span>node<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">,</span> num<span style="color: #333333">,</span> sum<span style="color: #333333">);</span>
+    <span style="color: #008800; font-weight: bold">return</span> sum<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

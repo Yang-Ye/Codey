@@ -1,0 +1,22 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">isConvex</span>(<span style="color: #007020">self</span>, points):
+        <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">        :type points: List[List[int]]</span>
+<span style="color: #DD4422">        :rtype: bool</span>
+<span style="color: #DD4422">        &quot;&quot;&quot;</span>
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">crossProduct</span>(p0, p1, p2):
+            x0, y0 <span style="color: #333333">=</span> p0
+            x1, y1 <span style="color: #333333">=</span> p1
+            x2, y2 <span style="color: #333333">=</span> p2
+            <span style="color: #008800; font-weight: bold">return</span> (x2 <span style="color: #333333">-</span> x0) <span style="color: #333333">*</span> (y1 <span style="color: #333333">-</span> y0) <span style="color: #333333">-</span> (x1 <span style="color: #333333">-</span> x0) <span style="color: #333333">*</span> (y2 <span style="color: #333333">-</span> y0)
+
+        size <span style="color: #333333">=</span> <span style="color: #007020">len</span>(points)
+        last <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        <span style="color: #008800; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(size):
+            p0, p1, p2 <span style="color: #333333">=</span> points[x], points[(x <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">%</span> size], points[(x <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">2</span>) <span style="color: #333333">%</span> size]
+            p <span style="color: #333333">=</span> crossProduct(p0, p1, p2)
+            <span style="color: #008800; font-weight: bold">if</span> p <span style="color: #333333">*</span> last <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">0</span>:
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+            last <span style="color: #333333">=</span> p
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+</pre></div>

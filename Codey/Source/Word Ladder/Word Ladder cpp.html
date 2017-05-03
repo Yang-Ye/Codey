@@ -1,0 +1,48 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">      * @param start, a string</span>
+<span style="color: #888888">      * @param end, a string</span>
+<span style="color: #888888">      * @param dict, a set of string</span>
+<span style="color: #888888">      * @return an integer</span>
+<span style="color: #888888">      */</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">ladderLength</span><span style="color: #333333">(</span>string start<span style="color: #333333">,</span> string end<span style="color: #333333">,</span> unordered_set<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>dict<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>start <span style="color: #333333">==</span> end<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #333399; font-weight: bold">int</span> n <span style="color: #333333">=</span> start<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>n <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">||</span> n <span style="color: #333333">!=</span> end<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        queue<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> Q<span style="color: #333333">;</span>
+        Q<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>start<span style="color: #333333">);</span>
+        dict<span style="color: #333333">.</span><span style="color: #0000CC">erase</span><span style="color: #333333">(</span>start<span style="color: #333333">);</span>
+        <span style="color: #333399; font-weight: bold">int</span> length <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(!</span>Q<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            <span style="color: #333399; font-weight: bold">int</span> size <span style="color: #333333">=</span> Q<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> size<span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                string word <span style="color: #333333">=</span> Q<span style="color: #333333">.</span><span style="color: #0000CC">front</span><span style="color: #333333">();</span> Q<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+                <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> n<span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                    <span style="color: #333399; font-weight: bold">char</span> oldChar <span style="color: #333333">=</span> word<span style="color: #333333">[</span>i<span style="color: #333333">];</span>
+                    <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">char</span> c <span style="color: #333333">=</span> <span style="color: #0044DD">&#39;a&#39;</span><span style="color: #333333">;</span> c <span style="color: #333333">&lt;=</span> <span style="color: #0044DD">&#39;z&#39;</span><span style="color: #333333">;</span> c<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+                        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>c <span style="color: #333333">==</span> oldChar<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+                        word<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> c<span style="color: #333333">;</span>
+                        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>word <span style="color: #333333">==</span> end<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                            <span style="color: #008800; font-weight: bold">return</span> length<span style="color: #333333">;</span>
+                        <span style="color: #333333">}</span>
+                        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>dict<span style="color: #333333">.</span><span style="color: #0000CC">find</span><span style="color: #333333">(</span>word<span style="color: #333333">)</span> <span style="color: #333333">!=</span> dict<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+                            Q<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>word<span style="color: #333333">);</span>
+                            dict<span style="color: #333333">.</span><span style="color: #0000CC">erase</span><span style="color: #333333">(</span>word<span style="color: #333333">);</span>
+                        <span style="color: #333333">}</span>
+                    <span style="color: #333333">}</span>
+                    word<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> oldChar<span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span> <span style="color: #888888">// for size</span>
+            length<span style="color: #333333">++;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

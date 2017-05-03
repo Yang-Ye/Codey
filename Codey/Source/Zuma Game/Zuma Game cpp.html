@@ -1,0 +1,61 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#define MAX_STEP 6 </span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">int</span> findMinStep(string board, string hand) {
+        sort(hand.begin(), hand.end()); 
+        <span style="color: #333399; font-weight: bold">int</span> res <span style="color: #333333">=</span> helper(board, hand); 
+        <span style="color: #008800; font-weight: bold">return</span> res <span style="color: #333333">&gt;</span> hand.size() <span style="color: #333333">?</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">:</span> res;
+    }
+    
+    <span style="color: #333399; font-weight: bold">int</span> helper(string b, string h) {
+        <span style="color: #008800; font-weight: bold">if</span> (b.empty()) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">if</span> (h.empty()) <span style="color: #008800; font-weight: bold">return</span> MAX_STEP;
+        <span style="color: #333399; font-weight: bold">int</span> res <span style="color: #333333">=</span> MAX_STEP;
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> h.size(); i<span style="color: #333333">++</span>) {
+            <span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+            <span style="color: #333399; font-weight: bold">int</span> n <span style="color: #333333">=</span> b.size();
+            <span style="color: #008800; font-weight: bold">while</span> (j <span style="color: #333333">&lt;</span> n) {
+                <span style="color: #333399; font-weight: bold">int</span> k <span style="color: #333333">=</span> b.find(h[i], j);
+                <span style="color: #008800; font-weight: bold">if</span> (k <span style="color: #333333">==</span> string<span style="color: #333333">::</span>npos) <span style="color: #008800; font-weight: bold">break</span>;
+                <span style="color: #008800; font-weight: bold">if</span> (k <span style="color: #333333">&lt;</span> n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&amp;&amp;</span> b[k] <span style="color: #333333">==</span> b[k<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>]) { <span style="color: #888888">// 2 consecutive balls with same color on board</span>
+                    string nextb <span style="color: #333333">=</span> shrink(b.substr(<span style="color: #0000DD; font-weight: bold">0</span>, k) <span style="color: #333333">+</span> b.substr(k<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">2</span>)); <span style="color: #888888">// shrink the string until no 3 or more consecutive balls in same color</span>
+                    <span style="color: #008800; font-weight: bold">if</span> (nextb.empty()) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>; <span style="color: #888888">// this is the best result for current board, no need to continue</span>
+                    string nexth <span style="color: #333333">=</span> h;
+                    nexth.erase(i, <span style="color: #0000DD; font-weight: bold">1</span>); <span style="color: #888888">// remove the used ball from hand</span>
+                    res <span style="color: #333333">=</span> min(res, helper(nextb, nexth) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+                    k<span style="color: #333333">++</span>;
+                }
+                <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (i <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> h[i] <span style="color: #333333">==</span> h[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]) { <span style="color: #888888">// 2 balls with same color in hand</span>
+                    string nextb <span style="color: #333333">=</span> shrink(b.substr(<span style="color: #0000DD; font-weight: bold">0</span>, k) <span style="color: #333333">+</span> b.substr(k<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>)); <span style="color: #888888">// shrink the string until no 3 or more consecutive balls in same color</span>
+                    <span style="color: #008800; font-weight: bold">if</span> (nextb.empty()) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">2</span>;  <span style="color: #888888">// this is the best result for current board, no need to continue</span>
+                    string nexth <span style="color: #333333">=</span> h;
+                    nexth.erase(i, <span style="color: #0000DD; font-weight: bold">1</span>); <span style="color: #888888">// remove the used balls from hand</span>
+                    nexth.erase(i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">1</span>);
+                    res <span style="color: #333333">=</span> min(res, helper(nextb, nexth) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">2</span>);
+                }
+                j <span style="color: #333333">=</span> k <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+            }
+        }
+        <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+    
+    string shrink(string s) {
+        <span style="color: #008800; font-weight: bold">while</span>(s.size() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>) {
+            <span style="color: #333399; font-weight: bold">int</span> start <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+            <span style="color: #333399; font-weight: bold">bool</span> done <span style="color: #333333">=</span> <span style="color: #007020">true</span>;
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;=</span> s.size(); i<span style="color: #333333">++</span>) {
+                <span style="color: #008800; font-weight: bold">if</span> (i <span style="color: #333333">==</span> s.size() <span style="color: #333333">||</span> s[i] <span style="color: #333333">!=</span> s[start]) {
+                    <span style="color: #008800; font-weight: bold">if</span> (i <span style="color: #333333">-</span> start <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">3</span>) {
+                        s <span style="color: #333333">=</span> s.substr(<span style="color: #0000DD; font-weight: bold">0</span>, start) <span style="color: #333333">+</span> s.substr(i);
+                        done <span style="color: #333333">=</span> <span style="color: #007020">false</span>;
+                        <span style="color: #008800; font-weight: bold">break</span>;
+                    }
+                    start <span style="color: #333333">=</span> i;
+                }
+            }
+            <span style="color: #008800; font-weight: bold">if</span> (done) <span style="color: #008800; font-weight: bold">break</span>;
+        }
+        <span style="color: #008800; font-weight: bold">return</span> s;
+    }
+};
+</pre></div>

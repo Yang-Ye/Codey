@@ -1,0 +1,36 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">connect</span><span style="color: #333333">(</span>TreeLinkNode root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root<span style="color: #333333">==</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+ 
+    LinkedList<span style="color: #333333">&lt;</span>TreeLinkNode<span style="color: #333333">&gt;</span> nodeQueue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>TreeLinkNode<span style="color: #333333">&gt;();</span>
+    LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> depthQueue <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> LinkedList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+ 
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root<span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        nodeQueue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>root<span style="color: #333333">);</span>
+        depthQueue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(!</span>nodeQueue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()){</span>
+        TreeLinkNode topNode <span style="color: #333333">=</span> nodeQueue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+        <span style="color: #333399; font-weight: bold">int</span> depth <span style="color: #333333">=</span> depthQueue<span style="color: #333333">.</span><span style="color: #0000CC">poll</span><span style="color: #333333">();</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>depthQueue<span style="color: #333333">.</span><span style="color: #0000CC">isEmpty</span><span style="color: #333333">()){</span>
+            topNode<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>depthQueue<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">()&gt;</span>depth<span style="color: #333333">){</span>
+            topNode<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            topNode<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> nodeQueue<span style="color: #333333">.</span><span style="color: #0000CC">peek</span><span style="color: #333333">();</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>topNode<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            nodeQueue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>topNode<span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">);</span>
+            depthQueue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>depth<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>topNode<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">!=</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            nodeQueue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>topNode<span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">);</span>
+            depthQueue<span style="color: #333333">.</span><span style="color: #0000CC">offer</span><span style="color: #333333">(</span>depth<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>        
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

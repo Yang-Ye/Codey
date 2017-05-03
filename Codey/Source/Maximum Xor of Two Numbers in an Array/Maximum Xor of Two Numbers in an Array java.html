@@ -1,0 +1,21 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">findMaximumXOR</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> nums<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> max <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> mask <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">31</span><span style="color: #333333">;</span> i <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">--){</span>
+            mask <span style="color: #333333">=</span> mask <span style="color: #333333">|</span> <span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&lt;&lt;</span> i<span style="color: #333333">);</span>
+            Set<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> set <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> HashSet<span style="color: #333333">&lt;&gt;();</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> num <span style="color: #333333">:</span> nums<span style="color: #333333">){</span>
+                set<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>num <span style="color: #333333">&amp;</span> mask<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+            <span style="color: #333399; font-weight: bold">int</span> tmp <span style="color: #333333">=</span> max <span style="color: #333333">|</span> <span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">&lt;&lt;</span> i<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> prefix <span style="color: #333333">:</span> set<span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>set<span style="color: #333333">.</span><span style="color: #0000CC">contains</span><span style="color: #333333">(</span>tmp <span style="color: #333333">^</span> prefix<span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                    max <span style="color: #333333">=</span> tmp<span style="color: #333333">;</span>
+                    <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> max<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

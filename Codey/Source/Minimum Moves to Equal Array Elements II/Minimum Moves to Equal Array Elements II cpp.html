@@ -1,0 +1,14 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">int</span> minMoves2(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> nums) {
+        <span style="color: #333399; font-weight: bold">int</span> n <span style="color: #333333">=</span> nums.size();
+        <span style="color: #008800; font-weight: bold">auto</span> it <span style="color: #333333">=</span> nums.begin() <span style="color: #333333">+</span> n<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span>;
+        nth_element(nums.begin(), it, nums.end());
+        <span style="color: #333399; font-weight: bold">int</span> median <span style="color: #333333">=</span> <span style="color: #333333">*</span>it;
+        <span style="color: #333399; font-weight: bold">int</span> total <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #008800; font-weight: bold">auto</span> <span style="color: #333333">&amp;</span>i <span style="color: #333333">:</span> nums)
+            total <span style="color: #333333">+=</span> abs(i<span style="color: #333333">-</span>median);
+        <span style="color: #008800; font-weight: bold">return</span> total;
+    }
+};
+</pre></div>

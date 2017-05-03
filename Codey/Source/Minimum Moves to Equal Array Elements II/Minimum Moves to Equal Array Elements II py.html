@@ -1,0 +1,4 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">minMoves2</span>(<span style="color: #007020">self</span>, nums):
+    median <span style="color: #333333">=</span> <span style="color: #007020">sorted</span>(nums)[<span style="color: #007020">len</span>(nums) <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span>]
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">sum</span>(<span style="color: #007020">abs</span>(num <span style="color: #333333">-</span> median) <span style="color: #008800; font-weight: bold">for</span> num <span style="color: #000000; font-weight: bold">in</span> nums)
+</pre></div>

@@ -1,0 +1,35 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> <span style="color: #0066BB; font-weight: bold">subsets</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> S<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+	<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>S <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+ 
+	Arrays<span style="color: #333333">.</span><span style="color: #0000CC">sort</span><span style="color: #333333">(</span>S<span style="color: #333333">);</span>
+ 
+	ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> result <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;();</span>
+ 
+	<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> S<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+		ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;</span> temp <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;&gt;();</span>
+ 
+		<span style="color: #888888">//get sets that are already in result</span>
+		<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> a <span style="color: #333333">:</span> result<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			temp<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;(</span>a<span style="color: #333333">));</span>
+		<span style="color: #333333">}</span>
+ 
+		<span style="color: #888888">//add S[i] to existing sets</span>
+		<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> a <span style="color: #333333">:</span> temp<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			a<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>S<span style="color: #333333">[</span>i<span style="color: #333333">]);</span>
+		<span style="color: #333333">}</span>
+ 
+		<span style="color: #888888">//add S[i] only as a set</span>
+		ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> single <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+		single<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>S<span style="color: #333333">[</span>i<span style="color: #333333">]);</span>
+		temp<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>single<span style="color: #333333">);</span>
+ 
+		result<span style="color: #333333">.</span><span style="color: #0000CC">addAll</span><span style="color: #333333">(</span>temp<span style="color: #333333">);</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #888888">//add empty set</span>
+	result<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;());</span>
+ 
+	<span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+<span style="color: #333333">}</span>
+</pre></div>

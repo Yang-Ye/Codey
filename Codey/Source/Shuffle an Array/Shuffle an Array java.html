@@ -1,0 +1,32 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> original<span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> shuffled<span style="color: #333333">;</span>  
+    Random r<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Solution</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> nums<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        original <span style="color: #333333">=</span> nums<span style="color: #333333">;</span>
+        shuffled <span style="color: #333333">=</span> Arrays<span style="color: #333333">.</span><span style="color: #0000CC">copyOf</span><span style="color: #333333">(</span>nums<span style="color: #333333">,</span>nums<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">);</span>
+        r <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Random<span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Resets the array to its original configuration and return it. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> <span style="color: #0066BB; font-weight: bold">reset</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        shuffled<span style="color: #333333">=</span>Arrays<span style="color: #333333">.</span><span style="color: #0000CC">copyOf</span><span style="color: #333333">(</span>original<span style="color: #333333">,</span> original<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> shuffled<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #888888">/** Returns a random shuffling of the array. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> <span style="color: #0066BB; font-weight: bold">shuffle</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> shuffled<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span>
+ 
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>len<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+            <span style="color: #333399; font-weight: bold">int</span> si <span style="color: #333333">=</span> r<span style="color: #333333">.</span><span style="color: #0000CC">nextInt</span><span style="color: #333333">(</span>len<span style="color: #333333">-</span>i<span style="color: #333333">);</span>
+            <span style="color: #333399; font-weight: bold">int</span> temp <span style="color: #333333">=</span> shuffled<span style="color: #333333">[</span>i<span style="color: #333333">];</span>
+            shuffled<span style="color: #333333">[</span>i<span style="color: #333333">]=</span>shuffled<span style="color: #333333">[</span>si<span style="color: #333333">+</span>i<span style="color: #333333">];</span>
+            shuffled<span style="color: #333333">[</span>si<span style="color: #333333">+</span>i<span style="color: #333333">]=</span>temp<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+        <span style="color: #008800; font-weight: bold">return</span> shuffled<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

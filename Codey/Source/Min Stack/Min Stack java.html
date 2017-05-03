@@ -1,0 +1,52 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Elem</span><span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> value<span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> min<span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">public</span> Elem next<span style="color: #333333">;</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">Elem</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> value<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> min<span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">value</span> <span style="color: #333333">=</span> value<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">min</span> <span style="color: #333333">=</span> min<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MinStack</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">public</span> Elem top<span style="color: #333333">;</span>
+ 
+    <span style="color: #888888">/** initialize your data structure here. */</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">MinStack</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+ 
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">push</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> x<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>top <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+            top <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Elem<span style="color: #333333">(</span>x<span style="color: #333333">,</span> x<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            Elem e <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Elem<span style="color: #333333">(</span>x<span style="color: #333333">,</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">(</span>x<span style="color: #333333">,</span>top<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">));</span>
+            e<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> top<span style="color: #333333">;</span>
+            top <span style="color: #333333">=</span> e<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+ 
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">pop</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>top <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        Elem temp <span style="color: #333333">=</span> top<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+        top<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+        top <span style="color: #333333">=</span> temp<span style="color: #333333">;</span>
+ 
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">top</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>top <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">return</span> top<span style="color: #333333">.</span><span style="color: #0000CC">value</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+ 
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">getMin</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>top <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">return</span> top<span style="color: #333333">.</span><span style="color: #0000CC">min</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>

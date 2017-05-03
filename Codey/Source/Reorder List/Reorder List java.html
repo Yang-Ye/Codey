@@ -1,0 +1,102 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">//Class definition of ListNode</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">ListNode</span> <span style="color: #333333">{</span>
+	<span style="color: #333399; font-weight: bold">int</span> val<span style="color: #333333">;</span>
+	ListNode next<span style="color: #333333">;</span>
+ 
+	ListNode<span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> x<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		val <span style="color: #333333">=</span> x<span style="color: #333333">;</span>
+		next <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+ 
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">ReorderList</span> <span style="color: #333333">{</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		ListNode n1 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ListNode<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+		ListNode n2 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ListNode<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">);</span>
+		ListNode n3 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ListNode<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">);</span>
+		ListNode n4 <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ListNode<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">);</span>
+		n1<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> n2<span style="color: #333333">;</span>
+		n2<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> n3<span style="color: #333333">;</span>
+		n3<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> n4<span style="color: #333333">;</span>
+ 
+		printList<span style="color: #333333">(</span>n1<span style="color: #333333">);</span>
+ 
+		reorderList<span style="color: #333333">(</span>n1<span style="color: #333333">);</span>
+ 
+		printList<span style="color: #333333">(</span>n1<span style="color: #333333">);</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">reorderList</span><span style="color: #333333">(</span>ListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>head <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+			ListNode slow <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+			ListNode fast <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+ 
+			<span style="color: #888888">//use a fast and slow pointer to break the link to two parts.</span>
+			<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>fast <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> fast<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> fast<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+				<span style="color: #888888">//why need third/second condition?</span>
+				System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;pre &quot;</span><span style="color: #333333">+</span>slow<span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">+</span> fast<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+				slow <span style="color: #333333">=</span> slow<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+				fast <span style="color: #333333">=</span> fast<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+				System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;after &quot;</span> <span style="color: #333333">+</span> slow<span style="color: #333333">.</span><span style="color: #0000CC">val</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">+</span> fast<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+			<span style="color: #333333">}</span>
+ 
+			ListNode second <span style="color: #333333">=</span> slow<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+			slow<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span><span style="color: #888888">// need to close first part</span>
+ 
+			<span style="color: #888888">// now should have two lists: head and fast</span>
+ 
+			<span style="color: #888888">// reverse order for second part</span>
+			second <span style="color: #333333">=</span> reverseOrder<span style="color: #333333">(</span>second<span style="color: #333333">);</span>
+ 
+			ListNode p1 <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+			ListNode p2 <span style="color: #333333">=</span> second<span style="color: #333333">;</span>
+ 
+			<span style="color: #888888">//merge two lists here</span>
+			<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>p2 <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+				ListNode temp1 <span style="color: #333333">=</span> p1<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+				ListNode temp2 <span style="color: #333333">=</span> p2<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+ 
+				p1<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> p2<span style="color: #333333">;</span>
+				p2<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> temp1<span style="color: #333333">;</span>		
+ 
+				p1 <span style="color: #333333">=</span> temp1<span style="color: #333333">;</span>
+				p2 <span style="color: #333333">=</span> temp2<span style="color: #333333">;</span>
+			<span style="color: #333333">}</span>
+		<span style="color: #333333">}</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> ListNode <span style="color: #0066BB; font-weight: bold">reverseOrder</span><span style="color: #333333">(</span>ListNode head<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+ 
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>head <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">||</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			<span style="color: #008800; font-weight: bold">return</span> head<span style="color: #333333">;</span>
+		<span style="color: #333333">}</span>
+ 
+		ListNode pre <span style="color: #333333">=</span> head<span style="color: #333333">;</span>
+		ListNode curr <span style="color: #333333">=</span> head<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+ 
+		<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>curr <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			ListNode temp <span style="color: #333333">=</span> curr<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+			curr<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> pre<span style="color: #333333">;</span>
+			pre <span style="color: #333333">=</span> curr<span style="color: #333333">;</span>
+			curr <span style="color: #333333">=</span> temp<span style="color: #333333">;</span>
+		<span style="color: #333333">}</span>
+ 
+		<span style="color: #888888">// set head node&#39;s next</span>
+		head<span style="color: #333333">.</span><span style="color: #0000CC">next</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+ 
+		<span style="color: #008800; font-weight: bold">return</span> pre<span style="color: #333333">;</span>
+	<span style="color: #333333">}</span>
+ 
+	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">printList</span><span style="color: #333333">(</span>ListNode n<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+		System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;------&quot;</span><span style="color: #333333">);</span>
+		<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>n <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+			System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span>n<span style="color: #333333">.</span><span style="color: #0000CC">val</span><span style="color: #333333">);</span>
+			n <span style="color: #333333">=</span> n<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">;</span>
+		<span style="color: #333333">}</span>
+		System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">();</span>
+	<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
