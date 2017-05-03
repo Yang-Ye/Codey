@@ -1,0 +1,6 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findDiagonalOrder</span>(<span style="color: #007020">self</span>, matrix):
+    entries <span style="color: #333333">=</span> [(i<span style="color: #333333">+</span>j, (j, i)[(i<span style="color: #333333">^</span>j)<span style="color: #333333">&amp;</span><span style="color: #0000DD; font-weight: bold">1</span>], val)
+               <span style="color: #008800; font-weight: bold">for</span> i, row <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">enumerate</span>(matrix)
+               <span style="color: #008800; font-weight: bold">for</span> j, val <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">enumerate</span>(row)]
+    <span style="color: #008800; font-weight: bold">return</span> [e[<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #008800; font-weight: bold">for</span> e <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">sorted</span>(entries)]
+</pre></div>

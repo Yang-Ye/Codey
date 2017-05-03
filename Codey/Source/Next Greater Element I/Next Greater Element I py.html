@@ -1,0 +1,9 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">nextGreaterElement</span>(<span style="color: #007020">self</span>, findNums, nums):
+        greater,stack <span style="color: #333333">=</span> {},[]
+        <span style="color: #008800; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> nums:
+            <span style="color: #008800; font-weight: bold">while</span> stack <span style="color: #000000; font-weight: bold">and</span> n <span style="color: #333333">&gt;</span> stack[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]:
+                greater[stack<span style="color: #333333">.</span>pop()] <span style="color: #333333">=</span> n
+            stack<span style="color: #333333">.</span>append(n)
+        <span style="color: #008800; font-weight: bold">return</span> [greater[n] <span style="color: #008800; font-weight: bold">if</span> n <span style="color: #000000; font-weight: bold">in</span> greater <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #008800; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> findNums]
+</pre></div>

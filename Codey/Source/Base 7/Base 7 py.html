@@ -1,0 +1,8 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">convertTo7</span>(<span style="color: #007020">self</span>, num):
+    <span style="color: #008800; font-weight: bold">if</span> num <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>: <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&#39;0&#39;</span>
+    n, res <span style="color: #333333">=</span> <span style="color: #007020">abs</span>(num), <span style="background-color: #fff0f0">&#39;&#39;</span>
+    <span style="color: #008800; font-weight: bold">while</span> n:
+      res <span style="color: #333333">=</span> <span style="color: #007020">str</span>(n <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">7</span>) <span style="color: #333333">+</span> res
+      n <span style="color: #333333">//=</span> <span style="color: #0000DD; font-weight: bold">7</span>
+    <span style="color: #008800; font-weight: bold">return</span> res <span style="color: #008800; font-weight: bold">if</span> num <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #008800; font-weight: bold">else</span> <span style="background-color: #fff0f0">&#39;-&#39;</span> <span style="color: #333333">+</span> res
+</pre></div>

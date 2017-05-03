@@ -1,0 +1,30 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findShortestWay</span>(<span style="color: #007020">self</span>, A, ball, hole):
+    ball, hole <span style="color: #333333">=</span> <span style="color: #007020">tuple</span>(ball), <span style="color: #007020">tuple</span>(hole)
+    R, C <span style="color: #333333">=</span> <span style="color: #007020">len</span>(A), <span style="color: #007020">len</span>(A[<span style="color: #0000DD; font-weight: bold">0</span>])
+    
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">neighbors</span>(r, c):
+        <span style="color: #008800; font-weight: bold">for</span> dr, dc, di <span style="color: #000000; font-weight: bold">in</span> [(<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="background-color: #fff0f0">&#39;u&#39;</span>), (<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">1</span>, <span style="background-color: #fff0f0">&#39;r&#39;</span>), 
+                           (<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, <span style="background-color: #fff0f0">&#39;l&#39;</span>), (<span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="background-color: #fff0f0">&#39;d&#39;</span>)]:
+            cr, cc, dist <span style="color: #333333">=</span> r, c, <span style="color: #0000DD; font-weight: bold">0</span>
+            <span style="color: #008800; font-weight: bold">while</span> (<span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&lt;=</span> cr <span style="color: #333333">+</span> dr <span style="color: #333333">&lt;</span> R <span style="color: #000000; font-weight: bold">and</span> 
+                    <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&lt;=</span> cc <span style="color: #333333">+</span> dc <span style="color: #333333">&lt;</span> C <span style="color: #000000; font-weight: bold">and</span>
+                    <span style="color: #000000; font-weight: bold">not</span> A[cr<span style="color: #333333">+</span>dr][cc<span style="color: #333333">+</span>dc]):
+                cr <span style="color: #333333">+=</span> dr
+                cc <span style="color: #333333">+=</span> dc
+                dist <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+                <span style="color: #008800; font-weight: bold">if</span> (cr, cc) <span style="color: #333333">==</span> hole:
+                    <span style="color: #008800; font-weight: bold">break</span>
+            <span style="color: #008800; font-weight: bold">yield</span> (cr, cc), di, dist
+    
+    pq <span style="color: #333333">=</span> [(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="background-color: #fff0f0">&#39;&#39;</span>, ball)]
+    seen <span style="color: #333333">=</span> <span style="color: #007020">set</span>()
+    <span style="color: #008800; font-weight: bold">while</span> pq:
+        dist, path, node <span style="color: #333333">=</span> heapq<span style="color: #333333">.</span>heappop(pq)
+        <span style="color: #008800; font-weight: bold">if</span> node <span style="color: #000000; font-weight: bold">in</span> seen: <span style="color: #008800; font-weight: bold">continue</span>
+        <span style="color: #008800; font-weight: bold">if</span> node <span style="color: #333333">==</span> hole: <span style="color: #008800; font-weight: bold">return</span> path
+        seen<span style="color: #333333">.</span>add(node)
+        <span style="color: #008800; font-weight: bold">for</span> nei, di, nei_dist <span style="color: #000000; font-weight: bold">in</span> neighbors(<span style="color: #333333">*</span>node):
+            heapq<span style="color: #333333">.</span>heappush(pq, (dist<span style="color: #333333">+</span>nei_dist, path<span style="color: #333333">+</span>di, nei) )
+        
+    <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;impossible&quot;</span>
+</pre></div>

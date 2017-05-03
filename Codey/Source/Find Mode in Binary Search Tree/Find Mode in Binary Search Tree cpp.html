@@ -1,0 +1,36 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">findMode</span><span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        unordered_map<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> map<span style="color: #333333">;</span>
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> result<span style="color: #333333">;</span>
+        <span style="color: #333399; font-weight: bold">int</span> modeCount <span style="color: #333333">=</span> getModeCount<span style="color: #333333">(</span>root<span style="color: #333333">,</span> map<span style="color: #333333">);</span>
+        
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">,</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> p <span style="color: #333333">:</span> map<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">second</span> <span style="color: #333333">==</span> modeCount<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                result<span style="color: #333333">.</span><span style="color: #0000CC">push_back</span><span style="color: #333333">(</span>p<span style="color: #333333">.</span><span style="color: #0000CC">first</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">return</span> result<span style="color: #333333">;</span>
+        
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">/**</span>
+<span style="color: #888888">     * Traverse the tree using depth first search.</span>
+<span style="color: #888888">     * Return the mode count (i.e. The count of a repeated number that occurs the most.) of the tree.</span>
+<span style="color: #888888">     */</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">getModeCount</span><span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">,</span> unordered_map<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&amp;</span>map<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> NULL<span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>map<span style="color: #333333">.</span><span style="color: #0000CC">find</span><span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">)</span> <span style="color: #333333">==</span> map<span style="color: #333333">.</span><span style="color: #0000CC">end</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+            map<span style="color: #333333">.</span><span style="color: #0000CC">insert</span><span style="color: #333333">(</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;(</span>root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">));</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+            map<span style="color: #333333">[</span>root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">]++;</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">max</span><span style="color: #333333">(</span>map<span style="color: #333333">[</span>root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">],</span> max<span style="color: #333333">(</span>getModeCount<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">,</span> map<span style="color: #333333">),</span> getModeCount<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">,</span> map<span style="color: #333333">)));</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

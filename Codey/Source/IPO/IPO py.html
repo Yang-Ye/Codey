@@ -1,0 +1,18 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findMaximizedCapital</span>(<span style="color: #007020">self</span>, k, W, Profits, Capital):
+    <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">Queue</span>
+    q <span style="color: #333333">=</span> Queue<span style="color: #333333">.</span>PriorityQueue()
+    projects <span style="color: #333333">=</span> <span style="color: #007020">sorted</span>(<span style="color: #007020">zip</span>(Profits, Capital), key<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">lambda</span> l: l[<span style="color: #0000DD; font-weight: bold">1</span>])
+    j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(k):
+      <span style="color: #008800; font-weight: bold">while</span> j <span style="color: #333333">&lt;</span> <span style="color: #007020">len</span>(projects):
+        <span style="color: #008800; font-weight: bold">if</span> projects[j][<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">&gt;</span> W:
+          <span style="color: #008800; font-weight: bold">break</span>
+        <span style="color: #008800; font-weight: bold">else</span>:
+          q<span style="color: #333333">.</span>put((<span style="color: #333333">-</span>projects[j][<span style="color: #0000DD; font-weight: bold">0</span>], projects[j][<span style="color: #0000DD; font-weight: bold">0</span>]))
+        j <span style="color: #333333">=</span> j <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+      <span style="color: #008800; font-weight: bold">if</span> q<span style="color: #333333">.</span>empty():
+        <span style="color: #008800; font-weight: bold">break</span>
+      <span style="color: #008800; font-weight: bold">else</span>:
+        W <span style="color: #333333">+=</span> q<span style="color: #333333">.</span>get()[<span style="color: #0000DD; font-weight: bold">1</span>]
+    <span style="color: #008800; font-weight: bold">return</span> W
+</pre></div>

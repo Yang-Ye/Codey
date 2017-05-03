@@ -1,0 +1,12 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">count <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>Counter()
+
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">dfs</span>(node):
+    <span style="color: #008800; font-weight: bold">if</span> node:
+        count[node<span style="color: #333333">.</span>val] <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        dfs(node<span style="color: #333333">.</span>left)
+        dfs(node<span style="color: #333333">.</span>right)
+        
+dfs(root)
+max_ct <span style="color: #333333">=</span> <span style="color: #007020">max</span>(count<span style="color: #333333">.</span>itervalues())
+<span style="color: #008800; font-weight: bold">return</span> [k <span style="color: #008800; font-weight: bold">for</span> k, v <span style="color: #000000; font-weight: bold">in</span> count<span style="color: #333333">.</span>iteritems() <span style="color: #008800; font-weight: bold">if</span> v <span style="color: #333333">==</span> max_ct]
+</pre></div>

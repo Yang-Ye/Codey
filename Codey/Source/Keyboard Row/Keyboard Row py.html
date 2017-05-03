@@ -1,0 +1,9 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findWords</span>(<span style="color: #007020">self</span>, words):
+    line1, line2, line3 <span style="color: #333333">=</span> <span style="color: #007020">set</span>(<span style="background-color: #fff0f0">&#39;qwertyuiop&#39;</span>), <span style="color: #007020">set</span>(<span style="background-color: #fff0f0">&#39;asdfghjkl&#39;</span>), <span style="color: #007020">set</span>(<span style="background-color: #fff0f0">&#39;zxcvbnm&#39;</span>)
+    ret <span style="color: #333333">=</span> []
+    <span style="color: #008800; font-weight: bold">for</span> word <span style="color: #000000; font-weight: bold">in</span> words:
+      w <span style="color: #333333">=</span> <span style="color: #007020">set</span>(word<span style="color: #333333">.</span>lower())
+      <span style="color: #008800; font-weight: bold">if</span> w<span style="color: #333333">.</span>issubset(line1) <span style="color: #000000; font-weight: bold">or</span> w<span style="color: #333333">.</span>issubset(line2) <span style="color: #000000; font-weight: bold">or</span> w<span style="color: #333333">.</span>issubset(line3):
+        ret<span style="color: #333333">.</span>append(word)
+    <span style="color: #008800; font-weight: bold">return</span> ret
+</pre></div>

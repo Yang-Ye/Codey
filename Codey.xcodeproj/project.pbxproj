@@ -43,6 +43,46 @@
 		A66008FD1DDA34B700FA7764 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008FC1DDA34B700FA7764 /* Problem.swift */; };
 		A66008FF1DDA4A0200FA7764 /* CodeyCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66008FE1DDA4A0200FA7764 /* CodeyCoreDataStack.swift */; };
 		A66009021DDA56E500FA7764 /* CodeyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A66009001DDA56E500FA7764 /* CodeyModel.xcdatamodeld */; };
+		A66573861EB977DB002A19E5 /* Base 7 cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573551EB977DB002A19E5 /* Base 7 cpp.html */; };
+		A66573871EB977DB002A19E5 /* Base 7 java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573561EB977DB002A19E5 /* Base 7 java.html */; };
+		A66573881EB977DB002A19E5 /* Base 7 py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573571EB977DB002A19E5 /* Base 7 py.html */; };
+		A66573891EB977DB002A19E5 /* Base 7 source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573581EB977DB002A19E5 /* Base 7 source.html */; };
+		A665738A1EB977DB002A19E5 /* Diagonal Traverse cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A665735A1EB977DB002A19E5 /* Diagonal Traverse cpp.html */; };
+		A665738B1EB977DB002A19E5 /* Diagonal Traverse java.html in Resources */ = {isa = PBXBuildFile; fileRef = A665735B1EB977DB002A19E5 /* Diagonal Traverse java.html */; };
+		A665738C1EB977DB002A19E5 /* Diagonal Traverse py.html in Resources */ = {isa = PBXBuildFile; fileRef = A665735C1EB977DB002A19E5 /* Diagonal Traverse py.html */; };
+		A665738D1EB977DB002A19E5 /* Diagonal Traverse source.html in Resources */ = {isa = PBXBuildFile; fileRef = A665735D1EB977DB002A19E5 /* Diagonal Traverse source.html */; };
+		A665738E1EB977DB002A19E5 /* Find Mode in Binary Search Tree cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A665735F1EB977DB002A19E5 /* Find Mode in Binary Search Tree cpp.html */; };
+		A665738F1EB977DB002A19E5 /* Find Mode in Binary Search Tree java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573601EB977DB002A19E5 /* Find Mode in Binary Search Tree java.html */; };
+		A66573901EB977DB002A19E5 /* Find Mode in Binary Search Tree py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573611EB977DB002A19E5 /* Find Mode in Binary Search Tree py.html */; };
+		A66573911EB977DB002A19E5 /* Find Mode in Binary Search Tree source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573621EB977DB002A19E5 /* Find Mode in Binary Search Tree source.html */; };
+		A66573921EB977DB002A19E5 /* IPO cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573641EB977DB002A19E5 /* IPO cpp.html */; };
+		A66573931EB977DB002A19E5 /* IPO java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573651EB977DB002A19E5 /* IPO java.html */; };
+		A66573941EB977DB002A19E5 /* IPO py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573661EB977DB002A19E5 /* IPO py.html */; };
+		A66573951EB977DB002A19E5 /* IPO source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573671EB977DB002A19E5 /* IPO source.html */; };
+		A66573961EB977DB002A19E5 /* Keyboard Row cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573691EB977DB002A19E5 /* Keyboard Row cpp.html */; };
+		A66573971EB977DB002A19E5 /* Keyboard Row java.html in Resources */ = {isa = PBXBuildFile; fileRef = A665736A1EB977DB002A19E5 /* Keyboard Row java.html */; };
+		A66573981EB977DB002A19E5 /* Keyboard Row py.html in Resources */ = {isa = PBXBuildFile; fileRef = A665736B1EB977DB002A19E5 /* Keyboard Row py.html */; };
+		A66573991EB977DB002A19E5 /* Keyboard Row source.html in Resources */ = {isa = PBXBuildFile; fileRef = A665736C1EB977DB002A19E5 /* Keyboard Row source.html */; };
+		A665739A1EB977DB002A19E5 /* Next Greater Element I cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A665736E1EB977DB002A19E5 /* Next Greater Element I cpp.html */; };
+		A665739B1EB977DB002A19E5 /* Next Greater Element I java.html in Resources */ = {isa = PBXBuildFile; fileRef = A665736F1EB977DB002A19E5 /* Next Greater Element I java.html */; };
+		A665739C1EB977DB002A19E5 /* Next Greater Element I py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573701EB977DB002A19E5 /* Next Greater Element I py.html */; };
+		A665739D1EB977DB002A19E5 /* Next Greater Element I source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573711EB977DB002A19E5 /* Next Greater Element I source.html */; };
+		A665739E1EB977DB002A19E5 /* Next Greater Element II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573731EB977DB002A19E5 /* Next Greater Element II cpp.html */; };
+		A665739F1EB977DB002A19E5 /* Next Greater Element II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573741EB977DB002A19E5 /* Next Greater Element II java.html */; };
+		A66573A01EB977DB002A19E5 /* Next Greater Element II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573751EB977DB002A19E5 /* Next Greater Element II py.html */; };
+		A66573A11EB977DB002A19E5 /* Next Greater Element II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573761EB977DB002A19E5 /* Next Greater Element II source.html */; };
+		A66573A21EB977DB002A19E5 /* Reverse Pairs cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573781EB977DB002A19E5 /* Reverse Pairs cpp.html */; };
+		A66573A31EB977DB002A19E5 /* Reverse Pairs java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573791EB977DB002A19E5 /* Reverse Pairs java.html */; };
+		A66573A41EB977DB002A19E5 /* Reverse Pairs py.html in Resources */ = {isa = PBXBuildFile; fileRef = A665737A1EB977DB002A19E5 /* Reverse Pairs py.html */; };
+		A66573A51EB977DB002A19E5 /* Reverse Pairs source.html in Resources */ = {isa = PBXBuildFile; fileRef = A665737B1EB977DB002A19E5 /* Reverse Pairs source.html */; };
+		A66573A61EB977DB002A19E5 /* Teemo Attacking cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A665737D1EB977DB002A19E5 /* Teemo Attacking cpp.html */; };
+		A66573A71EB977DB002A19E5 /* Teemo Attacking java.html in Resources */ = {isa = PBXBuildFile; fileRef = A665737E1EB977DB002A19E5 /* Teemo Attacking java.html */; };
+		A66573A81EB977DB002A19E5 /* Teemo Attacking py.html in Resources */ = {isa = PBXBuildFile; fileRef = A665737F1EB977DB002A19E5 /* Teemo Attacking py.html */; };
+		A66573A91EB977DB002A19E5 /* Teemo Attacking source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573801EB977DB002A19E5 /* Teemo Attacking source.html */; };
+		A66573AA1EB977DB002A19E5 /* The Maze III cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573821EB977DB002A19E5 /* The Maze III cpp.html */; };
+		A66573AB1EB977DB002A19E5 /* The Maze III java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573831EB977DB002A19E5 /* The Maze III java.html */; };
+		A66573AC1EB977DB002A19E5 /* The Maze III py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573841EB977DB002A19E5 /* The Maze III py.html */; };
+		A66573AD1EB977DB002A19E5 /* The Maze III source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573851EB977DB002A19E5 /* The Maze III source.html */; };
 		A68AEFF31E634FC9002F296A /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AEFF21E634FC9002F296A /* InfoCell.xib */; };
 		A68AEFF51E63C05D002F296A /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AEFF41E63C05D002F296A /* InfoCell.swift */; };
 		A68EBF441E73BACA00621231 /* CodeyUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68EBF431E73BACA00621231 /* CodeyUITabBarController.swift */; };
@@ -1959,6 +1999,46 @@
 		A66008FC1DDA34B700FA7764 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		A66008FE1DDA4A0200FA7764 /* CodeyCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeyCoreDataStack.swift; sourceTree = "<group>"; };
 		A66009011DDA56E500FA7764 /* CodeyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeyModel.xcdatamodel; sourceTree = "<group>"; };
+		A66573551EB977DB002A19E5 /* Base 7 cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Base 7 cpp.html"; sourceTree = "<group>"; };
+		A66573561EB977DB002A19E5 /* Base 7 java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Base 7 java.html"; sourceTree = "<group>"; };
+		A66573571EB977DB002A19E5 /* Base 7 py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Base 7 py.html"; sourceTree = "<group>"; };
+		A66573581EB977DB002A19E5 /* Base 7 source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Base 7 source.html"; sourceTree = "<group>"; };
+		A665735A1EB977DB002A19E5 /* Diagonal Traverse cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Diagonal Traverse cpp.html"; sourceTree = "<group>"; };
+		A665735B1EB977DB002A19E5 /* Diagonal Traverse java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Diagonal Traverse java.html"; sourceTree = "<group>"; };
+		A665735C1EB977DB002A19E5 /* Diagonal Traverse py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Diagonal Traverse py.html"; sourceTree = "<group>"; };
+		A665735D1EB977DB002A19E5 /* Diagonal Traverse source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Diagonal Traverse source.html"; sourceTree = "<group>"; };
+		A665735F1EB977DB002A19E5 /* Find Mode in Binary Search Tree cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Mode in Binary Search Tree cpp.html"; sourceTree = "<group>"; };
+		A66573601EB977DB002A19E5 /* Find Mode in Binary Search Tree java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Mode in Binary Search Tree java.html"; sourceTree = "<group>"; };
+		A66573611EB977DB002A19E5 /* Find Mode in Binary Search Tree py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Mode in Binary Search Tree py.html"; sourceTree = "<group>"; };
+		A66573621EB977DB002A19E5 /* Find Mode in Binary Search Tree source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Mode in Binary Search Tree source.html"; sourceTree = "<group>"; };
+		A66573641EB977DB002A19E5 /* IPO cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "IPO cpp.html"; sourceTree = "<group>"; };
+		A66573651EB977DB002A19E5 /* IPO java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "IPO java.html"; sourceTree = "<group>"; };
+		A66573661EB977DB002A19E5 /* IPO py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "IPO py.html"; sourceTree = "<group>"; };
+		A66573671EB977DB002A19E5 /* IPO source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "IPO source.html"; sourceTree = "<group>"; };
+		A66573691EB977DB002A19E5 /* Keyboard Row cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Keyboard Row cpp.html"; sourceTree = "<group>"; };
+		A665736A1EB977DB002A19E5 /* Keyboard Row java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Keyboard Row java.html"; sourceTree = "<group>"; };
+		A665736B1EB977DB002A19E5 /* Keyboard Row py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Keyboard Row py.html"; sourceTree = "<group>"; };
+		A665736C1EB977DB002A19E5 /* Keyboard Row source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Keyboard Row source.html"; sourceTree = "<group>"; };
+		A665736E1EB977DB002A19E5 /* Next Greater Element I cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element I cpp.html"; sourceTree = "<group>"; };
+		A665736F1EB977DB002A19E5 /* Next Greater Element I java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element I java.html"; sourceTree = "<group>"; };
+		A66573701EB977DB002A19E5 /* Next Greater Element I py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element I py.html"; sourceTree = "<group>"; };
+		A66573711EB977DB002A19E5 /* Next Greater Element I source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element I source.html"; sourceTree = "<group>"; };
+		A66573731EB977DB002A19E5 /* Next Greater Element II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element II cpp.html"; sourceTree = "<group>"; };
+		A66573741EB977DB002A19E5 /* Next Greater Element II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element II java.html"; sourceTree = "<group>"; };
+		A66573751EB977DB002A19E5 /* Next Greater Element II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element II py.html"; sourceTree = "<group>"; };
+		A66573761EB977DB002A19E5 /* Next Greater Element II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Next Greater Element II source.html"; sourceTree = "<group>"; };
+		A66573781EB977DB002A19E5 /* Reverse Pairs cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Reverse Pairs cpp.html"; sourceTree = "<group>"; };
+		A66573791EB977DB002A19E5 /* Reverse Pairs java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Reverse Pairs java.html"; sourceTree = "<group>"; };
+		A665737A1EB977DB002A19E5 /* Reverse Pairs py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Reverse Pairs py.html"; sourceTree = "<group>"; };
+		A665737B1EB977DB002A19E5 /* Reverse Pairs source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Reverse Pairs source.html"; sourceTree = "<group>"; };
+		A665737D1EB977DB002A19E5 /* Teemo Attacking cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Teemo Attacking cpp.html"; sourceTree = "<group>"; };
+		A665737E1EB977DB002A19E5 /* Teemo Attacking java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Teemo Attacking java.html"; sourceTree = "<group>"; };
+		A665737F1EB977DB002A19E5 /* Teemo Attacking py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Teemo Attacking py.html"; sourceTree = "<group>"; };
+		A66573801EB977DB002A19E5 /* Teemo Attacking source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Teemo Attacking source.html"; sourceTree = "<group>"; };
+		A66573821EB977DB002A19E5 /* The Maze III cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze III cpp.html"; sourceTree = "<group>"; };
+		A66573831EB977DB002A19E5 /* The Maze III java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze III java.html"; sourceTree = "<group>"; };
+		A66573841EB977DB002A19E5 /* The Maze III py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze III py.html"; sourceTree = "<group>"; };
+		A66573851EB977DB002A19E5 /* The Maze III source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze III source.html"; sourceTree = "<group>"; };
 		A67A3A231E80A46200EE98E9 /* CodeyModel v8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v8.xcdatamodel"; sourceTree = "<group>"; };
 		A68AEFF21E634FC9002F296A /* InfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		A68AEFF41E63C05D002F296A /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
@@ -3966,6 +4046,116 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A66573541EB977DB002A19E5 /* Base 7 */ = {
+			isa = PBXGroup;
+			children = (
+				A66573551EB977DB002A19E5 /* Base 7 cpp.html */,
+				A66573561EB977DB002A19E5 /* Base 7 java.html */,
+				A66573571EB977DB002A19E5 /* Base 7 py.html */,
+				A66573581EB977DB002A19E5 /* Base 7 source.html */,
+			);
+			path = "Base 7";
+			sourceTree = "<group>";
+		};
+		A66573591EB977DB002A19E5 /* Diagonal Traverse */ = {
+			isa = PBXGroup;
+			children = (
+				A665735A1EB977DB002A19E5 /* Diagonal Traverse cpp.html */,
+				A665735B1EB977DB002A19E5 /* Diagonal Traverse java.html */,
+				A665735C1EB977DB002A19E5 /* Diagonal Traverse py.html */,
+				A665735D1EB977DB002A19E5 /* Diagonal Traverse source.html */,
+			);
+			path = "Diagonal Traverse";
+			sourceTree = "<group>";
+		};
+		A665735E1EB977DB002A19E5 /* Find Mode in Binary Search Tree */ = {
+			isa = PBXGroup;
+			children = (
+				A665735F1EB977DB002A19E5 /* Find Mode in Binary Search Tree cpp.html */,
+				A66573601EB977DB002A19E5 /* Find Mode in Binary Search Tree java.html */,
+				A66573611EB977DB002A19E5 /* Find Mode in Binary Search Tree py.html */,
+				A66573621EB977DB002A19E5 /* Find Mode in Binary Search Tree source.html */,
+			);
+			path = "Find Mode in Binary Search Tree";
+			sourceTree = "<group>";
+		};
+		A66573631EB977DB002A19E5 /* IPO */ = {
+			isa = PBXGroup;
+			children = (
+				A66573641EB977DB002A19E5 /* IPO cpp.html */,
+				A66573651EB977DB002A19E5 /* IPO java.html */,
+				A66573661EB977DB002A19E5 /* IPO py.html */,
+				A66573671EB977DB002A19E5 /* IPO source.html */,
+			);
+			path = IPO;
+			sourceTree = "<group>";
+		};
+		A66573681EB977DB002A19E5 /* Keyboard Row */ = {
+			isa = PBXGroup;
+			children = (
+				A66573691EB977DB002A19E5 /* Keyboard Row cpp.html */,
+				A665736A1EB977DB002A19E5 /* Keyboard Row java.html */,
+				A665736B1EB977DB002A19E5 /* Keyboard Row py.html */,
+				A665736C1EB977DB002A19E5 /* Keyboard Row source.html */,
+			);
+			path = "Keyboard Row";
+			sourceTree = "<group>";
+		};
+		A665736D1EB977DB002A19E5 /* Next Greater Element I */ = {
+			isa = PBXGroup;
+			children = (
+				A665736E1EB977DB002A19E5 /* Next Greater Element I cpp.html */,
+				A665736F1EB977DB002A19E5 /* Next Greater Element I java.html */,
+				A66573701EB977DB002A19E5 /* Next Greater Element I py.html */,
+				A66573711EB977DB002A19E5 /* Next Greater Element I source.html */,
+			);
+			path = "Next Greater Element I";
+			sourceTree = "<group>";
+		};
+		A66573721EB977DB002A19E5 /* Next Greater Element II */ = {
+			isa = PBXGroup;
+			children = (
+				A66573731EB977DB002A19E5 /* Next Greater Element II cpp.html */,
+				A66573741EB977DB002A19E5 /* Next Greater Element II java.html */,
+				A66573751EB977DB002A19E5 /* Next Greater Element II py.html */,
+				A66573761EB977DB002A19E5 /* Next Greater Element II source.html */,
+			);
+			path = "Next Greater Element II";
+			sourceTree = "<group>";
+		};
+		A66573771EB977DB002A19E5 /* Reverse Pairs */ = {
+			isa = PBXGroup;
+			children = (
+				A66573781EB977DB002A19E5 /* Reverse Pairs cpp.html */,
+				A66573791EB977DB002A19E5 /* Reverse Pairs java.html */,
+				A665737A1EB977DB002A19E5 /* Reverse Pairs py.html */,
+				A665737B1EB977DB002A19E5 /* Reverse Pairs source.html */,
+			);
+			path = "Reverse Pairs";
+			sourceTree = "<group>";
+		};
+		A665737C1EB977DB002A19E5 /* Teemo Attacking */ = {
+			isa = PBXGroup;
+			children = (
+				A665737D1EB977DB002A19E5 /* Teemo Attacking cpp.html */,
+				A665737E1EB977DB002A19E5 /* Teemo Attacking java.html */,
+				A665737F1EB977DB002A19E5 /* Teemo Attacking py.html */,
+				A66573801EB977DB002A19E5 /* Teemo Attacking source.html */,
+			);
+			path = "Teemo Attacking";
+			sourceTree = "<group>";
+		};
+		A66573811EB977DB002A19E5 /* The Maze III */ = {
+			isa = PBXGroup;
+			children = (
+				A66573821EB977DB002A19E5 /* The Maze III cpp.html */,
+				A66573831EB977DB002A19E5 /* The Maze III java.html */,
+				A66573841EB977DB002A19E5 /* The Maze III py.html */,
+				A66573851EB977DB002A19E5 /* The Maze III source.html */,
+			);
+			path = "The Maze III";
+			sourceTree = "<group>";
+		};
 		A6C684401E9ADEE500BC53EB /* MoreView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3981,12 +4171,12 @@
 		A6F71B2D1EA99D6800559CA0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A6F71B2E1EA99D6800559CA0 /* 132 Pattern */,
 				A6F71B331EA99D6800559CA0 /* 3 Sum */,
 				A6F71B381EA99D6800559CA0 /* 3 Sum Closest */,
 				A6F71B3D1EA99D6800559CA0 /* 3 Sum Smaller */,
 				A6F71B421EA99D6800559CA0 /* 4 Sum */,
 				A6F71B471EA99D6800559CA0 /* 4 Sum II */,
+				A6F71B2E1EA99D6800559CA0 /* 132 Pattern */,
 				A6F71B4C1EA99D6900559CA0 /* Add and Search Word - Data Structure Design */,
 				A6F71B511EA99D6900559CA0 /* Add Binary */,
 				A6F71B561EA99D6900559CA0 /* Add Digits */,
@@ -4002,6 +4192,7 @@
 				A6F71B881EA99D6900559CA0 /* Arranging Coins */,
 				A6F71B8D1EA99D6900559CA0 /* Assign Cookies */,
 				A6F71B921EA99D6900559CA0 /* Balanced Binary Tree */,
+				A66573541EB977DB002A19E5 /* Base 7 */,
 				A6F71B971EA99D6900559CA0 /* Basic Calculator */,
 				A6F71B9C1EA99D6900559CA0 /* Basic Calculator II */,
 				A6F71BA11EA99D6900559CA0 /* Battleships in a Board */,
@@ -4077,6 +4268,7 @@
 				A6F71D021EA99D6900559CA0 /* Design Snake Game */,
 				A6F71D071EA99D6900559CA0 /* Design Tic Tac Toe */,
 				A6F71D0C1EA99D6900559CA0 /* Design Twitter */,
+				A66573591EB977DB002A19E5 /* Diagonal Traverse */,
 				A6F71D111EA99D6900559CA0 /* Different Ways to Add Parentheses */,
 				A6F71D161EA99D6900559CA0 /* Distinct Subsequences */,
 				A6F71D1B1EA99D6900559CA0 /* Divide Two Integers */,
@@ -4100,6 +4292,7 @@
 				A6F71D751EA99D6900559CA0 /* Find Median From Data Stream */,
 				A6F71D7A1EA99D6900559CA0 /* Find Minimum in Rotated Sorted Array */,
 				A6F71D7F1EA99D6900559CA0 /* Find Minimum in Rotated Sorted Array II */,
+				A665735E1EB977DB002A19E5 /* Find Mode in Binary Search Tree */,
 				A6F71D841EA99D6900559CA0 /* Find Peak Element */,
 				A6F71D891EA99D6900559CA0 /* Find Permutation */,
 				A6F71D8E1EA99D6900559CA0 /* Find Right Interval */,
@@ -4155,11 +4348,13 @@
 				A6F71E881EA99D6900559CA0 /* Intersection of Two Arrays II */,
 				A6F71E8D1EA99D6900559CA0 /* Intersection of Two Linked Lists */,
 				A6F71E921EA99D6900559CA0 /* Invert Binary Tree */,
+				A66573631EB977DB002A19E5 /* IPO */,
 				A6F71E971EA99D6900559CA0 /* Is Subsequence */,
 				A6F71E9C1EA99D6900559CA0 /* Island Perimeter */,
 				A6F71EA11EA99D6A00559CA0 /* Isomorphic Strings */,
 				A6F71EA61EA99D6A00559CA0 /* Jump Game */,
 				A6F71EAB1EA99D6A00559CA0 /* Jump Game II */,
+				A66573681EB977DB002A19E5 /* Keyboard Row */,
 				A6F71EB01EA99D6A00559CA0 /* Kth Largest Element in an Array */,
 				A6F71EB51EA99D6A00559CA0 /* Kth Smallest Element in a BST */,
 				A6F71EBA1EA99D6A00559CA0 /* Kth Smallest Element in a Sorted Matrix */,
@@ -4238,6 +4433,8 @@
 				A6F720271EA99D6A00559CA0 /* N Queens II */,
 				A6F7202C1EA99D6A00559CA0 /* Nested List Weight Sum */,
 				A6F720311EA99D6A00559CA0 /* Nested List Weight Sum II */,
+				A665736D1EB977DB002A19E5 /* Next Greater Element I */,
+				A66573721EB977DB002A19E5 /* Next Greater Element II */,
 				A6F720361EA99D6A00559CA0 /* Next Permutation */,
 				A6F7203B1EA99D6A00559CA0 /* Nim Game */,
 				A6F720401EA99D6A00559CA0 /* Non Overlapping Intervals */,
@@ -4325,6 +4522,7 @@
 				A6F721DC1EA99D6C00559CA0 /* Reverse Linked List */,
 				A6F721E11EA99D6C00559CA0 /* Reverse Linked List II */,
 				A6F721E61EA99D6C00559CA0 /* Reverse Nodes in K Group */,
+				A66573771EB977DB002A19E5 /* Reverse Pairs */,
 				A6F721EB1EA99D6C00559CA0 /* Reverse String */,
 				A6F721F01EA99D6C00559CA0 /* Reverse Vowels of a String */,
 				A6F721F51EA99D6C00559CA0 /* Reverse Words in a String */,
@@ -4391,8 +4589,10 @@
 				A6F723261EA99D6D00559CA0 /* Swap Nodes in Pairs */,
 				A6F7232B1EA99D6D00559CA0 /* Symmetric Tree */,
 				A6F723301EA99D6D00559CA0 /* Target Sum */,
+				A665737C1EB977DB002A19E5 /* Teemo Attacking */,
 				A6F723351EA99D6D00559CA0 /* Ternary Expression Parser */,
 				A6F7233A1EA99D6D00559CA0 /* Text Justification */,
+				A66573811EB977DB002A19E5 /* The Maze III */,
 				A6F7233F1EA99D6D00559CA0 /* The Skyline Problem */,
 				A6F723461EA99D6D00559CA0 /* Third Maximum Number */,
 				A6F7234B1EA99D6D00559CA0 /* Top K Frequent Elements */,
@@ -9699,6 +9899,7 @@
 				A6F72A741EA99D7000559CA0 /* Substring With Concatenation of All Words py.html in Resources */,
 				A6F729431EA99D6F00559CA0 /* Recover Binary Search Tree py.html in Resources */,
 				A6F7255B1EA99D6E00559CA0 /* Convex Polygon source.html in Resources */,
+				A66573871EB977DB002A19E5 /* Base 7 java.html in Resources */,
 				A6F726141EA99D6F00559CA0 /* Find Peak Element cpp.html in Resources */,
 				A6F729961EA99D7000559CA0 /* Reverse Nodes in K Group cpp.html in Resources */,
 				A6F724E21EA99D6E00559CA0 /* Binary Watch cpp.html in Resources */,
@@ -9720,6 +9921,7 @@
 				A6F724F71EA99D6E00559CA0 /* Burst Balloons java.html in Resources */,
 				A6F729931EA99D7000559CA0 /* Reverse Linked List II java.html in Resources */,
 				A6F725F91EA99D6F00559CA0 /* Find All Duplicates in an Array java.html in Resources */,
+				A66573911EB977DB002A19E5 /* Find Mode in Binary Search Tree source.html in Resources */,
 				A6F72A791EA99D7000559CA0 /* Sudoku Solver source.html in Resources */,
 				A6F727A71EA99D6F00559CA0 /* Max Sum of Rectangle No Larger Than K source.html in Resources */,
 				A6F724AE1EA99D6E00559CA0 /* Binary Search Tree Iterator cpp.html in Resources */,
@@ -9757,6 +9959,7 @@
 				A6F7257F1EA99D6E00559CA0 /* Count Univalue Subtrees source.html in Resources */,
 				A6F724B61EA99D6E00559CA0 /* Binary Tree Level Order Traversal cpp.html in Resources */,
 				A6F724581EA99D6E00559CA0 /* Add Digits py.html in Resources */,
+				A665738D1EB977DB002A19E5 /* Diagonal Traverse source.html in Resources */,
 				A6F725EE1EA99D6F00559CA0 /* Factor Combinations py.html in Resources */,
 				A6F7271E1EA99D6F00559CA0 /* Largest Number py.html in Resources */,
 				A6F726491EA99D6F00559CA0 /* Flip Game java.html in Resources */,
@@ -9777,6 +9980,7 @@
 				A6F726591EA99D6F00559CA0 /* Game of Life java.html in Resources */,
 				A6F724801EA99D6E00559CA0 /* Arranging Coins py.html in Resources */,
 				A6F726571EA99D6F00559CA0 /* Frog Jump source.html in Resources */,
+				A66573AB1EB977DB002A19E5 /* The Maze III java.html in Resources */,
 				A6F727EE1EA99D6F00559CA0 /* Mini Parser py.html in Resources */,
 				A6F7272E1EA99D6F00559CA0 /* Lexicographical Numbers py.html in Resources */,
 				A6F72A531EA99D7000559CA0 /* Sqrt(x) java.html in Resources */,
@@ -9819,7 +10023,9 @@
 				A6F727851EA99D6F00559CA0 /* LRU Cache java.html in Resources */,
 				A6F726E21EA99D6F00559CA0 /* Intersection of Two Arrays py.html in Resources */,
 				A6F727CC1EA99D6F00559CA0 /* Median of Two Sorted Arrays cpp.html in Resources */,
+				A66573981EB977DB002A19E5 /* Keyboard Row py.html in Resources */,
 				A6F724501EA99D6E00559CA0 /* Add and Search Word - Data Structure Design py.html in Resources */,
+				A665738C1EB977DB002A19E5 /* Diagonal Traverse py.html in Resources */,
 				A6F727991EA99D6F00559CA0 /* Max Consecutive Ones java.html in Resources */,
 				A6F72A6B1EA99D7000559CA0 /* Subsets java.html in Resources */,
 				A6F725B31EA99D6F00559CA0 /* Design Tic Tac Toe source.html in Resources */,
@@ -9862,6 +10068,7 @@
 				A6F728901EA99D6F00559CA0 /* Palindrome Linked List cpp.html in Resources */,
 				A6F724B01EA99D6E00559CA0 /* Binary Search Tree Iterator py.html in Resources */,
 				A6F725B71EA99D6F00559CA0 /* Design Twitter source.html in Resources */,
+				A66573A11EB977DB002A19E5 /* Next Greater Element II source.html in Resources */,
 				A6F7271C1EA99D6F00559CA0 /* Largest Number cpp.html in Resources */,
 				A6F7283E1EA99D6F00559CA0 /* Next Permutation py.html in Resources */,
 				A6F729401EA99D6F00559CA0 /* Reconstruct Original Digits From English source.html in Resources */,
@@ -9890,6 +10097,7 @@
 				A6F72A691EA99D7000559CA0 /* Strong Password Checker source.html in Resources */,
 				A6F725881EA99D6E00559CA0 /* Course Schedule II cpp.html in Resources */,
 				A6F725851EA99D6E00559CA0 /* Course Schedule java.html in Resources */,
+				A665739C1EB977DB002A19E5 /* Next Greater Element I py.html in Resources */,
 				A6F72AF21EA99D7000559CA0 /* Unique Word Abbreviation py.html in Resources */,
 				A6F7297A1EA99D6F00559CA0 /* Repeated DNA Sequences cpp.html in Resources */,
 				A6F729F91EA99D7000559CA0 /* Set Matrix Zeroes source.html in Resources */,
@@ -9914,6 +10122,7 @@
 				A6F724541EA99D6E00559CA0 /* Add Binary py.html in Resources */,
 				A6F727E21EA99D6F00559CA0 /* Merge Sorted Array py.html in Resources */,
 				A6F72A701EA99D7000559CA0 /* Subsets II py.html in Resources */,
+				A66573881EB977DB002A19E5 /* Base 7 py.html in Resources */,
 				A6F7281C1EA99D6F00559CA0 /* Missing Ranges cpp.html in Resources */,
 				A6F72B181EA99D7000559CA0 /* Validate Binary Search Tree cpp.html in Resources */,
 				A6F729AD1EA99D7000559CA0 /* Roman to Integer source.html in Resources */,
@@ -9931,6 +10140,7 @@
 				A6F72A461EA99D7000559CA0 /* Spiral Matrix cpp.html in Resources */,
 				A6F726F51EA99D6F00559CA0 /* Island Perimeter java.html in Resources */,
 				A6F7287B1EA99D6F00559CA0 /* Ones and Zeroes source.html in Resources */,
+				A66573A51EB977DB002A19E5 /* Reverse Pairs source.html in Resources */,
 				A6F7291D1EA99D6F00559CA0 /* Range Sum Query 2D - Immutable java.html in Resources */,
 				A6F728851EA99D6F00559CA0 /* Paint Fence java.html in Resources */,
 				A6F729DA1EA99D7000559CA0 /* Search in Rotated Sorted Array II cpp.html in Resources */,
@@ -9992,6 +10202,7 @@
 				A6F729CB1EA99D7000559CA0 /* Search a 2d Matrix java.html in Resources */,
 				A6F726921EA99D6F00559CA0 /* Heaters py.html in Resources */,
 				A6F725DA1EA99D6F00559CA0 /* Evaluate Division py.html in Resources */,
+				A66573961EB977DB002A19E5 /* Keyboard Row cpp.html in Resources */,
 				A6F728541EA99D6F00559CA0 /* Number of 1 Bits cpp.html in Resources */,
 				A6F724CE1EA99D6E00559CA0 /* Binary Tree Preorder Traversal cpp.html in Resources */,
 				A6F725771EA99D6E00559CA0 /* Count Primes source.html in Resources */,
@@ -10021,6 +10232,7 @@
 				A6F7295F1EA99D6F00559CA0 /* Remove Duplicates From Sorted List II java.html in Resources */,
 				A6F728011EA99D6F00559CA0 /* Minimum Moves to Equal Array Elements II java.html in Resources */,
 				A6F728081EA99D6F00559CA0 /* Minimum Path Sum cpp.html in Resources */,
+				A66573A61EB977DB002A19E5 /* Teemo Attacking cpp.html in Resources */,
 				A6F7270E1EA99D6F00559CA0 /* Kth Smallest Element in a Sorted Matrix py.html in Resources */,
 				A6F72A611EA99D7000559CA0 /* Strobogrammatic Number II source.html in Resources */,
 				A6F7283F1EA99D6F00559CA0 /* Next Permutation source.html in Resources */,
@@ -10060,6 +10272,7 @@
 				A6F727701EA99D6F00559CA0 /* Longest Substring With At Most K Distinct Characters cpp.html in Resources */,
 				A6F72AAF1EA99D7000559CA0 /* The Skyline Problem source.html in Resources */,
 				A6F72B021EA99D7000559CA0 /* Valid Palindrome py.html in Resources */,
+				A66573AC1EB977DB002A19E5 /* The Maze III py.html in Resources */,
 				A6F72AFC1EA99D7000559CA0 /* Valid Number cpp.html in Resources */,
 				A6F72ADC1EA99D7000559CA0 /* Unique Binary Search Trees cpp.html in Resources */,
 				A6F7245B1EA99D6E00559CA0 /* Add Strings java.html in Resources */,
@@ -10223,6 +10436,7 @@
 				A6F7268E1EA99D6F00559CA0 /* Happy Number py.html in Resources */,
 				A6F729E51EA99D7000559CA0 /* Self Crossing source.html in Resources */,
 				A6F727421EA99D6F00559CA0 /* Linked List Cycle II py.html in Resources */,
+				A66573A01EB977DB002A19E5 /* Next Greater Element II py.html in Resources */,
 				A6F725EA1EA99D6F00559CA0 /* Expression Add Operators py.html in Resources */,
 				A6F725AB1EA99D6F00559CA0 /* Design Phone Directory source.html in Resources */,
 				A6F727731EA99D6F00559CA0 /* Longest Substring With At Most K Distinct Characters source.html in Resources */,
@@ -10307,6 +10521,7 @@
 				A6F725641EA99D6E00559CA0 /* Count Complete Tree Nodes cpp.html in Resources */,
 				A6F72B4C1EA99D7000559CA0 /* Word Ladder II cpp.html in Resources */,
 				A6F729FB1EA99D7000559CA0 /* Shortest Distance From All Buildings java.html in Resources */,
+				A665739E1EB977DB002A19E5 /* Next Greater Element II cpp.html in Resources */,
 				A6F7292F1EA99D6F00559CA0 /* Read N Characters Given Read4 py.html in Resources */,
 				A6F727151EA99D6F00559CA0 /* Largest BST Subtree java.html in Resources */,
 				A6F728921EA99D6F00559CA0 /* Palindrome Linked List py.html in Resources */,
@@ -10321,6 +10536,7 @@
 				A6F72A1C1EA99D7000559CA0 /* Single Number II py.html in Resources */,
 				A6F72B391EA99D7000559CA0 /* Wiggle Subsequence java.html in Resources */,
 				A6F7253C1EA99D6E00559CA0 /* Container With Most Water cpp.html in Resources */,
+				A66573A21EB977DB002A19E5 /* Reverse Pairs cpp.html in Resources */,
 				A6F724E01EA99D6E00559CA0 /* Binary Tree Zigzag Level Order Traversal py.html in Resources */,
 				A6F72A8A1EA99D7000559CA0 /* Super Pow cpp.html in Resources */,
 				A6F72B421EA99D7000559CA0 /* Word Break py.html in Resources */,
@@ -10367,6 +10583,7 @@
 				A6F7282B1EA99D6F00559CA0 /* Multiply Strings source.html in Resources */,
 				A6F72A4B1EA99D7000559CA0 /* Spiral Matrix II java.html in Resources */,
 				A6F7252C1EA99D6E00559CA0 /* Compare Version Numbers py.html in Resources */,
+				A665739A1EB977DB002A19E5 /* Next Greater Element I cpp.html in Resources */,
 				A6F7258A1EA99D6E00559CA0 /* Course Schedule II py.html in Resources */,
 				A6F729BE1EA99D7000559CA0 /* Russian Doll Envelopes cpp.html in Resources */,
 				A6F729B41EA99D7000559CA0 /* Rotate Function py.html in Resources */,
@@ -10503,6 +10720,8 @@
 				A6F725D81EA99D6F00559CA0 /* Evaluate Division cpp.html in Resources */,
 				A6F727BE1EA99D6F00559CA0 /* Maximum Product Subarray py.html in Resources */,
 				A6F729721EA99D6F00559CA0 /* Remove Nth Node From End of List cpp.html in Resources */,
+				A66573A91EB977DB002A19E5 /* Teemo Attacking source.html in Resources */,
+				A665739F1EB977DB002A19E5 /* Next Greater Element II java.html in Resources */,
 				A6F727D71EA99D6F00559CA0 /* Meeting Rooms II source.html in Resources */,
 				A6F726151EA99D6F00559CA0 /* Find Peak Element java.html in Resources */,
 				A6F72B0F1EA99D7000559CA0 /* Valid Sudoku source.html in Resources */,
@@ -10631,6 +10850,7 @@
 				A6F726201EA99D6F00559CA0 /* Find The Celebrity cpp.html in Resources */,
 				A6F7289E1EA99D6F00559CA0 /* Palindrome Partitioning py.html in Resources */,
 				A6F724D61EA99D6E00559CA0 /* Binary Tree Upside Down cpp.html in Resources */,
+				A665739B1EB977DB002A19E5 /* Next Greater Element I java.html in Resources */,
 				A6F727811EA99D6F00559CA0 /* Lowest Common Ancestor of a Binary Search Tree java.html in Resources */,
 				A6F725921EA99D6E00559CA0 /* Data Stream As Disjoint Intervals py.html in Resources */,
 				A6F728C91EA99D6F00559CA0 /* Path Sum III java.html in Resources */,
@@ -10738,6 +10958,7 @@
 				A6F727631EA99D6F00559CA0 /* Longest Palindrome source.html in Resources */,
 				A6F727D91EA99D6F00559CA0 /* Merge Intervals java.html in Resources */,
 				A6F725A51EA99D6F00559CA0 /* Design Hit Counter java.html in Resources */,
+				A66573901EB977DB002A19E5 /* Find Mode in Binary Search Tree py.html in Resources */,
 				A6F72A7C1EA99D7000559CA0 /* Sum of Left Leaves py.html in Resources */,
 				A6F72AB41EA99D7000559CA0 /* Top K Frequent Elements cpp.html in Resources */,
 				A6F7254C1EA99D6E00559CA0 /* Convert a Number to Hexadecimal cpp.html in Resources */,
@@ -10754,6 +10975,7 @@
 				A6F729541EA99D6F00559CA0 /* Remove Duplicates From Sorted Array py.html in Resources */,
 				A6F7268A1EA99D6F00559CA0 /* Hamming Distance py.html in Resources */,
 				A6F7248A1EA99D6E00559CA0 /* Basic Calculator cpp.html in Resources */,
+				A66573951EB977DB002A19E5 /* IPO source.html in Resources */,
 				A6F727D41EA99D6F00559CA0 /* Meeting Rooms II cpp.html in Resources */,
 				A6F726621EA99D6F00559CA0 /* Generalized Abbreviation py.html in Resources */,
 				A6F725D61EA99D6F00559CA0 /* Encode String with Shortest Length py.html in Resources */,
@@ -10777,11 +10999,13 @@
 				A6F727781EA99D6F00559CA0 /* Longest Substring Without Repeating Characters cpp.html in Resources */,
 				A6F726661EA99D6F00559CA0 /* Generate Parentheses py.html in Resources */,
 				A6F725D71EA99D6F00559CA0 /* Encode String with Shortest Length source.html in Resources */,
+				A66573921EB977DB002A19E5 /* IPO cpp.html in Resources */,
 				A6F724871EA99D6E00559CA0 /* Balanced Binary Tree java.html in Resources */,
 				A6F729081EA99D6F00559CA0 /* Product of Array Except Self cpp.html in Resources */,
 				A6F72ACD1EA99D7000559CA0 /* Two Sum II Input Array Is Sorted java.html in Resources */,
 				A6F726691EA99D6F00559CA0 /* Graph Valid Tree java.html in Resources */,
 				A6F727261EA99D6F00559CA0 /* Length of Last Word py.html in Resources */,
+				A665738A1EB977DB002A19E5 /* Diagonal Traverse cpp.html in Resources */,
 				A6F7281F1EA99D6F00559CA0 /* Missing Ranges source.html in Resources */,
 				A6F7294A1EA99D6F00559CA0 /* Regular Expression Matching cpp.html in Resources */,
 				A6F726681EA99D6F00559CA0 /* Graph Valid Tree cpp.html in Resources */,
@@ -10832,6 +11056,8 @@
 				A6F725501EA99D6E00559CA0 /* Convert Sorted Array to Binary Search Tree cpp.html in Resources */,
 				A6F72A9D1EA99D7000559CA0 /* Symmetric Tree source.html in Resources */,
 				A6F7250B1EA99D6E00559CA0 /* Closest Binary Search Tree Value java.html in Resources */,
+				A66573931EB977DB002A19E5 /* IPO java.html in Resources */,
+				A66573891EB977DB002A19E5 /* Base 7 source.html in Resources */,
 				A6F72B211EA99D7000559CA0 /* Verify Preorder Sequence in Binary Search Tree java.html in Resources */,
 				A6F72AF51EA99D7000559CA0 /* Utf 8 Validation java.html in Resources */,
 				A6F72A1A1EA99D7000559CA0 /* Single Number II cpp.html in Resources */,
@@ -10885,6 +11111,8 @@
 				A6F724361EA99D6E00559CA0 /* 132 Pattern cpp.html in Resources */,
 				A6F729971EA99D7000559CA0 /* Reverse Nodes in K Group java.html in Resources */,
 				A6F7275C1EA99D6F00559CA0 /* Longest Increasing Subsequence cpp.html in Resources */,
+				A665738B1EB977DB002A19E5 /* Diagonal Traverse java.html in Resources */,
+				A665738F1EB977DB002A19E5 /* Find Mode in Binary Search Tree java.html in Resources */,
 				A6F72A3C1EA99D7000559CA0 /* Sort List py.html in Resources */,
 				A6F7299B1EA99D7000559CA0 /* Reverse String java.html in Resources */,
 				A6F728F31EA99D6F00559CA0 /* Populating Next Right Pointers in Each Node II source.html in Resources */,
@@ -10991,6 +11219,7 @@
 				A6F728B41EA99D6F00559CA0 /* Pascals Triangle cpp.html in Resources */,
 				A6F72B551EA99D7000559CA0 /* Word Pattern II java.html in Resources */,
 				A6F728191EA99D6F00559CA0 /* Missing Number java.html in Resources */,
+				A665739D1EB977DB002A19E5 /* Next Greater Element I source.html in Resources */,
 				A6F7281D1EA99D6F00559CA0 /* Missing Ranges java.html in Resources */,
 				A6F727591EA99D6F00559CA0 /* Longest Increasing Path in a Matrix java.html in Resources */,
 				A6F728121EA99D6F00559CA0 /* Minimum Unique Word Abbreviation py.html in Resources */,
@@ -11100,8 +11329,11 @@
 				A6F72A6D1EA99D7000559CA0 /* Subsets source.html in Resources */,
 				A6F729641EA99D6F00559CA0 /* Remove Element py.html in Resources */,
 				A6F729671EA99D6F00559CA0 /* Remove Invalid Parentheses java.html in Resources */,
+				A66573941EB977DB002A19E5 /* IPO py.html in Resources */,
+				A66573991EB977DB002A19E5 /* Keyboard Row source.html in Resources */,
 				A6F7254F1EA99D6E00559CA0 /* Convert a Number to Hexadecimal source.html in Resources */,
 				A6F72AA21EA99D7000559CA0 /* Ternary Expression Parser cpp.html in Resources */,
+				A66573A31EB977DB002A19E5 /* Reverse Pairs java.html in Resources */,
 				A6F729041EA99D6F00559CA0 /* Predict the Winner cpp.html in Resources */,
 				A6F72B1E1EA99D7000559CA0 /* Validate IP Address py.html in Resources */,
 				A6F72A071EA99D7000559CA0 /* Shortest Word Distance II java.html in Resources */,
@@ -11283,6 +11515,7 @@
 				A6F729C61EA99D7000559CA0 /* Scramble String cpp.html in Resources */,
 				A6F7254D1EA99D6E00559CA0 /* Convert a Number to Hexadecimal java.html in Resources */,
 				A6F729EA1EA99D7000559CA0 /* Sequence Reconstruction cpp.html in Resources */,
+				A66573A81EB977DB002A19E5 /* Teemo Attacking py.html in Resources */,
 				A6F725A91EA99D6F00559CA0 /* Design Phone Directory java.html in Resources */,
 				A6F729A11EA99D7000559CA0 /* Reverse Vowels of a String source.html in Resources */,
 				A6F726B01EA99D6F00559CA0 /* Increasing Subsequences cpp.html in Resources */,
@@ -11367,6 +11600,7 @@
 				A6F7264C1EA99D6F00559CA0 /* Flip Game II cpp.html in Resources */,
 				A6F727B21EA99D6F00559CA0 /* Maximum Depth of Binary Tree py.html in Resources */,
 				A6F724DC1EA99D6E00559CA0 /* Binary Tree Vertical Order Traversal py.html in Resources */,
+				A66573AD1EB977DB002A19E5 /* The Maze III source.html in Resources */,
 				A6F728AD1EA99D6F00559CA0 /* Partition Equal Subset Sum java.html in Resources */,
 				A6F727901EA99D6F00559CA0 /* Majority Element II cpp.html in Resources */,
 				A6F72B131EA99D7000559CA0 /* Valid Word Abbreviation source.html in Resources */,
@@ -11376,6 +11610,7 @@
 				A6F72B451EA99D7000559CA0 /* Word Break II java.html in Resources */,
 				A6F72A8F1EA99D7000559CA0 /* Super Ugly Number java.html in Resources */,
 				A6F724951EA99D6E00559CA0 /* Battleships in a Board source.html in Resources */,
+				A66573A41EB977DB002A19E5 /* Reverse Pairs py.html in Resources */,
 				A6F72ABD1EA99D7000559CA0 /* Trapping Rain Water java.html in Resources */,
 				A6F724371EA99D6E00559CA0 /* 132 Pattern java.html in Resources */,
 				A6F729F31EA99D7000559CA0 /* Serialize and Deserialize BST java.html in Resources */,
@@ -11387,6 +11622,7 @@
 				A6F7275B1EA99D6F00559CA0 /* Longest Increasing Path in a Matrix source.html in Resources */,
 				A6F726081EA99D6F00559CA0 /* Find Median From Data Stream cpp.html in Resources */,
 				A6F7279E1EA99D6F00559CA0 /* Max Consecutive Ones II py.html in Resources */,
+				A66573971EB977DB002A19E5 /* Keyboard Row java.html in Resources */,
 				A6F7272D1EA99D6F00559CA0 /* Lexicographical Numbers java.html in Resources */,
 				A6F727161EA99D6F00559CA0 /* Largest BST Subtree py.html in Resources */,
 				A6F72AB11EA99D7000559CA0 /* Third Maximum Number java.html in Resources */,
@@ -11436,11 +11672,13 @@
 				A6F7299F1EA99D7000559CA0 /* Reverse Vowels of a String java.html in Resources */,
 				A6F727B61EA99D6F00559CA0 /* Maximum Gap py.html in Resources */,
 				A6F728111EA99D6F00559CA0 /* Minimum Unique Word Abbreviation java.html in Resources */,
+				A66573861EB977DB002A19E5 /* Base 7 cpp.html in Resources */,
 				A6F726441EA99D6F00559CA0 /* Flatten Nested List Iterator cpp.html in Resources */,
 				A6F7279B1EA99D6F00559CA0 /* Max Consecutive Ones source.html in Resources */,
 				A6F72B581EA99D7000559CA0 /* Word Search cpp.html in Resources */,
 				A6F72A721EA99D7000559CA0 /* Substring With Concatenation of All Words cpp.html in Resources */,
 				A6F729631EA99D6F00559CA0 /* Remove Element java.html in Resources */,
+				A66573A71EB977DB002A19E5 /* Teemo Attacking java.html in Resources */,
 				A6F72AF91EA99D7000559CA0 /* Valid Anagram java.html in Resources */,
 				A6F72B121EA99D7000559CA0 /* Valid Word Abbreviation py.html in Resources */,
 				A6F72AAA1EA99D7000559CA0 /* skyline1.png in Resources */,
@@ -11471,6 +11709,7 @@
 				A6F725861EA99D6E00559CA0 /* Course Schedule py.html in Resources */,
 				A6F72AB21EA99D7000559CA0 /* Third Maximum Number py.html in Resources */,
 				A6F7285F1EA99D6F00559CA0 /* Number of Connected Components in an Undirected Graph source.html in Resources */,
+				A665738E1EB977DB002A19E5 /* Find Mode in Binary Search Tree cpp.html in Resources */,
 				A6F72ADB1EA99D7000559CA0 /* Ugly Number II source.html in Resources */,
 				A6F72ABA1EA99D7000559CA0 /* Total Hamming Distance py.html in Resources */,
 				A6F7273A1EA99D6F00559CA0 /* Line Reflection py.html in Resources */,
@@ -11493,6 +11732,7 @@
 				A6F724E91EA99D6E00559CA0 /* Bitwise AND of Numbers Range source.html in Resources */,
 				A6F728241EA99D6F00559CA0 /* Moving Average From Data Stream cpp.html in Resources */,
 				A6F724D31EA99D6E00559CA0 /* Binary Tree Right Side View java.html in Resources */,
+				A66573AA1EB977DB002A19E5 /* The Maze III cpp.html in Resources */,
 				A6F727041EA99D6F00559CA0 /* Kth Largest Element in an Array cpp.html in Resources */,
 				A6F725AC1EA99D6F00559CA0 /* Design Snake Game cpp.html in Resources */,
 				A6F724821EA99D6E00559CA0 /* Assign Cookies cpp.html in Resources */,

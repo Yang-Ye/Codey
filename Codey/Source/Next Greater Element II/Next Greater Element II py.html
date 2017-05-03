@@ -1,0 +1,8 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">nextGreaterElements</span>(<span style="color: #007020">self</span>, nums):
+        stack, res <span style="color: #333333">=</span> [], [<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">*</span> <span style="color: #007020">len</span>(nums)
+        <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(nums)) <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">2</span>:
+            <span style="color: #008800; font-weight: bold">while</span> stack <span style="color: #000000; font-weight: bold">and</span> (nums[stack[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]] <span style="color: #333333">&lt;</span> nums[i]):
+                res[stack<span style="color: #333333">.</span>pop()] <span style="color: #333333">=</span> nums[i]
+            stack<span style="color: #333333">.</span>append(i)
+        <span style="color: #008800; font-weight: bold">return</span> res
+</pre></div>
