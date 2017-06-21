@@ -1,0 +1,22 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> findRelativeRanks(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> nums) {
+        priority_queue<span style="color: #333333">&lt;</span>pair<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span>,<span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #333333">&gt;</span> pq;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>nums.size();i<span style="color: #333333">++</span>)
+        {
+            pq.push(make_pair(nums[i],i));
+        }
+        vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> res(nums.size(),<span style="background-color: #fff0f0">&quot;&quot;</span>);
+        <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">&lt;</span>nums.size();i<span style="color: #333333">++</span>)
+        {
+            <span style="color: #008800; font-weight: bold">if</span>(count<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>) {res[pq.top().second] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Gold Medal&quot;</span>; count<span style="color: #333333">++</span>;}
+            <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(count<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">2</span>) {res[pq.top().second] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Silver Medal&quot;</span>; count<span style="color: #333333">++</span>;}
+            <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(count<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">3</span>) {res[pq.top().second] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Bronze Medal&quot;</span>; count<span style="color: #333333">++</span>;}
+            <span style="color: #008800; font-weight: bold">else</span> {res[pq.top().second] <span style="color: #333333">=</span> to_string(count); count<span style="color: #333333">++</span>;}
+            pq.pop();
+        }
+        <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+};
+</pre></div>

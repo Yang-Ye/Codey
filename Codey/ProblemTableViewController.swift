@@ -127,7 +127,7 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
                 })
             }
         }, onMainQ: {
-            //self.navigationItem.title = "\(self.codey.problemPool.count)"
+            self.headerFloatingView.title.text = "\(self.codey.problems.count)"
             self.dismiss(animated: true, completion: nil)
             self.tableView.reloadData()
         })

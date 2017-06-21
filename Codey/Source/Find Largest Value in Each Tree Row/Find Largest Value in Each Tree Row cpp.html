@@ -1,0 +1,28 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+    vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> solution<span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">helper</span><span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> node<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> cl<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>node <span style="color: #333333">==</span> NULL<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>solution<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">&lt;</span> cl <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            solution<span style="color: #333333">.</span><span style="color: #0000CC">push_back</span><span style="color: #333333">(</span>node<span style="color: #333333">-&gt;</span>val<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>solution<span style="color: #333333">[</span>cl<span style="color: #333333">]</span> <span style="color: #333333">&lt;</span> node<span style="color: #333333">-&gt;</span>val<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                solution<span style="color: #333333">[</span>cl<span style="color: #333333">]</span> <span style="color: #333333">=</span> node<span style="color: #333333">-&gt;</span>val<span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        helper<span style="color: #333333">(</span>node<span style="color: #333333">-&gt;</span>left<span style="color: #333333">,</span> cl<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        helper<span style="color: #333333">(</span>node<span style="color: #333333">-&gt;</span>right<span style="color: #333333">,</span> cl<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #888888">//vector&lt;int&gt; largestValues(TreeNode* root) {</span>
+    vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">findValueMostElement</span><span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>root <span style="color: #333333">==</span> NULL<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> solution<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        helper<span style="color: #333333">(</span>root<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> solution<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

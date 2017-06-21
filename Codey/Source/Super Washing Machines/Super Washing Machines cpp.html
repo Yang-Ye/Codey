@@ -1,0 +1,26 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #333399; font-weight: bold">int</span> findMinMoves(vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&amp;</span> machines) {
+        <span style="color: #333399; font-weight: bold">int</span> len <span style="color: #333333">=</span> machines.size();
+        vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span> sum(len <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">0</span>);
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> len; <span style="color: #333333">++</span>i)
+            sum[i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> sum[i] <span style="color: #333333">+</span> machines[i];
+
+        <span style="color: #008800; font-weight: bold">if</span> (sum[len] <span style="color: #333333">%</span> len) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>;
+
+        <span style="color: #333399; font-weight: bold">int</span> avg <span style="color: #333333">=</span> sum[len] <span style="color: #333333">/</span> len;
+        <span style="color: #333399; font-weight: bold">int</span> res <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> len; <span style="color: #333333">++</span>i)
+        {
+            <span style="color: #333399; font-weight: bold">int</span> l <span style="color: #333333">=</span> i <span style="color: #333333">*</span> avg <span style="color: #333333">-</span> sum[i];
+            <span style="color: #333399; font-weight: bold">int</span> r <span style="color: #333333">=</span> (len <span style="color: #333333">-</span> i <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">*</span> avg <span style="color: #333333">-</span> (sum[len] <span style="color: #333333">-</span> sum[i] <span style="color: #333333">-</span> machines[i]);
+
+            <span style="color: #008800; font-weight: bold">if</span> (l <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&amp;&amp;</span> r <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>)
+                res <span style="color: #333333">=</span> std<span style="color: #333333">::</span>max(res, std<span style="color: #333333">::</span>abs(l) <span style="color: #333333">+</span> std<span style="color: #333333">::</span>abs(r));
+            <span style="color: #008800; font-weight: bold">else</span>
+                res <span style="color: #333333">=</span> std<span style="color: #333333">::</span>max(res, std<span style="color: #333333">::</span>max(std<span style="color: #333333">::</span>abs(l), std<span style="color: #333333">::</span>abs(r)));
+        }
+        <span style="color: #008800; font-weight: bold">return</span> res;
+    }
+};
+</pre></div>

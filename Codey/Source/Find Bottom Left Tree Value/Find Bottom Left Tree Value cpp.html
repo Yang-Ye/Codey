@@ -1,0 +1,27 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">findBottomLeftValue</span><span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&amp;</span> maxDepth<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&amp;</span> leftVal<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> depth<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>root <span style="color: #333333">==</span> NULL<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #888888">//Go to the left and right of each node </span>
+        findBottomLeftValue<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>left<span style="color: #333333">,</span> maxDepth<span style="color: #333333">,</span> leftVal<span style="color: #333333">,</span> depth<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        findBottomLeftValue<span style="color: #333333">(</span>root<span style="color: #333333">-&gt;</span>right<span style="color: #333333">,</span> maxDepth<span style="color: #333333">,</span> leftVal<span style="color: #333333">,</span> depth<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+        
+        <span style="color: #888888">//Update leftVal and maxDepth</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>depth <span style="color: #333333">&gt;</span> maxDepth<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            maxDepth <span style="color: #333333">=</span> depth<span style="color: #333333">;</span>
+            leftVal <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    
+    <span style="color: #888888">//Entry function</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">findBottomLeftValue</span><span style="color: #333333">(</span>TreeNode<span style="color: #333333">*</span> root<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> maxDepth <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+        <span style="color: #888888">//Initialize leftVal with root&#39;s value to cover the edge case with single node</span>
+        <span style="color: #333399; font-weight: bold">int</span> leftVal <span style="color: #333333">=</span> root<span style="color: #333333">-&gt;</span>val<span style="color: #333333">;</span>
+        findBottomLeftValue<span style="color: #333333">(</span>root<span style="color: #333333">,</span> maxDepth<span style="color: #333333">,</span> leftVal<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+        <span style="color: #008800; font-weight: bold">return</span> leftVal<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

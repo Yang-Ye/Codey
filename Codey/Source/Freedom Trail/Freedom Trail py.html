@@ -1,0 +1,34 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findRotateSteps</span>(<span style="color: #007020">self</span>, ring, key):
+        n <span style="color: #333333">=</span> <span style="color: #007020">len</span>(ring)
+        <span style="color: #888888">#the distance between two points (i, j) on the ring</span>
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">dist</span>(i, j):
+            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">min</span>(<span style="color: #007020">abs</span>(i <span style="color: #333333">-</span> j), n <span style="color: #333333">-</span> <span style="color: #007020">abs</span>(i <span style="color: #333333">-</span> j))
+        <span style="color: #888888">#build the position list for each character in ring    </span>
+        h <span style="color: #333333">=</span> {}
+        <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(n):
+            a <span style="color: #333333">=</span> ring[i]
+            <span style="color: #008800; font-weight: bold">if</span> a <span style="color: #000000; font-weight: bold">in</span> h: h[a]<span style="color: #333333">.</span>append(i)
+            <span style="color: #008800; font-weight: bold">else</span>: h[a] <span style="color: #333333">=</span> [i]
+        
+        pcl_pre <span style="color: #333333">=</span> [[<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>]] <span style="color: #888888">#list of possible previous position of the ring and the cost</span>
+        <span style="color: #008800; font-weight: bold">for</span> k <span style="color: #000000; font-weight: bold">in</span> key:
+            pl_k <span style="color: #333333">=</span> h[k] <span style="color: #888888">#obtain the location list of character k</span>
+            pcl_next <span style="color: #333333">=</span> [[p, <span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #008800; font-weight: bold">for</span> p <span style="color: #000000; font-weight: bold">in</span> pl_k] <span style="color: #888888">#list of possible next position of the ring and the cost</span>
+            
+            <span style="color: #008800; font-weight: bold">for</span> pc_next <span style="color: #000000; font-weight: bold">in</span> pcl_next:
+                p_next <span style="color: #333333">=</span> pc_next[<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #888888">#next possible position</span>
+                <span style="color: #888888">#Find minimum cost to p_next</span>
+                cmin <span style="color: #333333">=</span> dist(p_next, pcl_pre[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">0</span>]) <span style="color: #333333">+</span> pcl_pre[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">1</span>]
+                <span style="color: #008800; font-weight: bold">for</span> pc_pre <span style="color: #000000; font-weight: bold">in</span> pcl_pre:
+                    cmin <span style="color: #333333">=</span> <span style="color: #007020">min</span>(cmin, dist(p_next, pc_pre[<span style="color: #0000DD; font-weight: bold">0</span>]) <span style="color: #333333">+</span> pc_pre[<span style="color: #0000DD; font-weight: bold">1</span>])
+                pc_next[<span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> cmin
+            
+            pcl_pre <span style="color: #333333">=</span> pcl_next
+        
+        <span style="color: #888888">#Find the min cost for all possible end positions</span>
+        cmin <span style="color: #333333">=</span> pcl_pre[<span style="color: #0000DD; font-weight: bold">0</span>][<span style="color: #0000DD; font-weight: bold">1</span>]
+        <span style="color: #008800; font-weight: bold">for</span> pc <span style="color: #000000; font-weight: bold">in</span> pcl_pre:
+            cmin <span style="color: #333333">=</span> <span style="color: #007020">min</span>(cmin, pc[<span style="color: #0000DD; font-weight: bold">1</span>])
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">len</span>(key) <span style="color: #333333">+</span> cmin
+</pre></div>

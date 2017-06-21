@@ -4872,6 +4872,77 @@
             "order": 504,
             "hardness": 0,
             "tags": []
+        },
+        -----------------------------
+        "The Maze II": {
+            "company": ["Google"],
+            "order": 505,
+            "hardness": 1,
+            "tags": ["DFS",
+                     "BFS"]
+        },
+        "Relative Ranks": {
+            "company": ["Google"],
+            "order": 506,
+            "hardness": 0,
+            "tags": []
+        },
+        "Perfect Number": {
+            "company": ["Fallible"],
+            "order": 507,
+            "hardness": 0,
+            "tags": ["Math"]
+        },
+        "Most Frequent Subtree Sum": {
+            "company": ["Amazon"],
+            "order": 508,
+            "hardness": 1,
+            "tags": ["Tree",
+                     "Hash Table"]
+        },
+        "Find Bottom Left Tree Value": {
+            "company": ["Microsoft"],
+            "order": 513,
+            "hardness": 1,
+            "tags": ["Tree",
+                     "DFS",
+                     "BFS"]
+        },
+        "Freedom Trail": {
+            "company": ["Google"],
+            "order": 514,
+            "hardness": 2,
+            "tags": ["Dynamic Programming",
+                     "DFS",
+                     "Divide and Conquer"]
+        },
+        "Find Largest Value in Each Tree Row": {
+            "company": ["LinkedIn"],
+            "order": 515,
+            "hardness": 1,
+            "tags": ["Tree",
+                     "DFS",
+                     "BFS"]
+        },
+        "Longest Palindromic Subsequence": {
+            "company": ["Amazon",
+                        "Uber"],
+            "order": 516,
+            "hardness": 1,
+            "tags": ["Dynamic Programming"]
+        },
+        "Super Washing Machines": {
+            "company": ["Amazon"],
+            "order": 517,
+            "hardness": 2,
+            "tags": ["Dynamic Programming",
+                     "Math"]
+        },
+        "Detect Capital": {
+            "company": ["Google"],
+            "order": 520,
+            "hardness": 0,
+            "tags": ["String"]
         }
     }
 }

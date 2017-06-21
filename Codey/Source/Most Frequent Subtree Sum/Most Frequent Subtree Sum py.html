@@ -1,0 +1,12 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findFrequentTreeSum</span>(<span style="color: #007020">self</span>, root):
+        <span style="color: #008800; font-weight: bold">if</span> root <span style="color: #333333">==</span> <span style="color: #007020">None</span>: <span style="color: #008800; font-weight: bold">return</span> []
+        <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">getSum</span>(node):
+            <span style="color: #008800; font-weight: bold">if</span> node <span style="color: #333333">==</span> <span style="color: #007020">None</span>: <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+            s <span style="color: #333333">=</span> node<span style="color: #333333">.</span>val <span style="color: #333333">+</span> getSum(node<span style="color: #333333">.</span>left) <span style="color: #333333">+</span> getSum(node<span style="color: #333333">.</span>right)
+            c[s] <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+            <span style="color: #008800; font-weight: bold">return</span> s
+        c <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>Counter()
+        getSum(root)
+        frequent <span style="color: #333333">=</span> <span style="color: #007020">max</span>(c<span style="color: #333333">.</span>values())
+        <span style="color: #008800; font-weight: bold">return</span> [s <span style="color: #008800; font-weight: bold">for</span> s <span style="color: #000000; font-weight: bold">in</span> c<span style="color: #333333">.</span>keys() <span style="color: #008800; font-weight: bold">if</span> c[s] <span style="color: #333333">==</span> frequent]
+</pre></div>

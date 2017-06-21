@@ -1,0 +1,6 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findLeftMostNode</span>(<span style="color: #007020">self</span>, root):
+    queue <span style="color: #333333">=</span> [root]
+    <span style="color: #008800; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> queue:
+        queue <span style="color: #333333">+=</span> <span style="color: #007020">filter</span>(<span style="color: #007020">None</span>, (node<span style="color: #333333">.</span>right, node<span style="color: #333333">.</span>left))
+    <span style="color: #008800; font-weight: bold">return</span> node<span style="color: #333333">.</span>val
+</pre></div>

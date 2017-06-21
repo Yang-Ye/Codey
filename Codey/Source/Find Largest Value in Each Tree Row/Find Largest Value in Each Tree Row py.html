@@ -1,0 +1,8 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findValueMostElement</span>(<span style="color: #007020">self</span>, root):
+    maxes <span style="color: #333333">=</span> []
+    row <span style="color: #333333">=</span> [root]
+    <span style="color: #008800; font-weight: bold">while</span> <span style="color: #007020">any</span>(row):
+        maxes<span style="color: #333333">.</span>append(<span style="color: #007020">max</span>(node<span style="color: #333333">.</span>val <span style="color: #008800; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> row))
+        row <span style="color: #333333">=</span> [kid <span style="color: #008800; font-weight: bold">for</span> node <span style="color: #000000; font-weight: bold">in</span> row <span style="color: #008800; font-weight: bold">for</span> kid <span style="color: #000000; font-weight: bold">in</span> (node<span style="color: #333333">.</span>left, node<span style="color: #333333">.</span>right) <span style="color: #008800; font-weight: bold">if</span> kid]
+    <span style="color: #008800; font-weight: bold">return</span> maxes
+</pre></div>

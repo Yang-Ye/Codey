@@ -1,0 +1,25 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> {
+<span style="color: #997700; font-weight: bold">public:</span>
+    <span style="color: #888888">//lhs means left hand side, rhs means right hand side</span>
+    <span style="color: #333399; font-weight: bold">int</span> longestPalindromeSubseq(string s) {
+        <span style="color: #008800; font-weight: bold">if</span> (s.empty()) <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+        
+        vector<span style="color: #333333">&lt;</span>vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;&gt;</span> longest(s.size(), vector<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">&gt;</span>(s.size()));
+        <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> len<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>; len<span style="color: #333333">&lt;=</span>s.size(); len<span style="color: #333333">++</span>) {
+            <span style="color: #008800; font-weight: bold">for</span> (<span style="color: #333399; font-weight: bold">int</span> lhs<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>; lhs<span style="color: #333333">+</span>len<span style="color: #333333">&lt;=</span>s.size(); lhs<span style="color: #333333">++</span>) {
+                <span style="color: #333399; font-weight: bold">int</span> rhs <span style="color: #333333">=</span> lhs<span style="color: #333333">+</span>len<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>;
+                <span style="color: #008800; font-weight: bold">if</span> (lhs <span style="color: #333333">==</span> rhs) {
+                    longest[lhs][rhs] <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+                } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (lhs<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">==</span> rhs) {
+                    longest[lhs][rhs] <span style="color: #333333">=</span> (s[lhs] <span style="color: #333333">==</span> s[rhs]) <span style="color: #333333">?</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+                } <span style="color: #008800; font-weight: bold">else</span> {
+                    <span style="color: #333399; font-weight: bold">int</span> add <span style="color: #333333">=</span> s[lhs] <span style="color: #333333">==</span> s[rhs] <span style="color: #333333">?</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">:</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+                    longest[lhs][rhs] <span style="color: #333333">=</span> max(max(longest[lhs][rhs<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], longest[lhs<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>][rhs]), longest[lhs<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>][rhs<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">+</span> add);
+                }
+            }
+        }
+        
+        <span style="color: #008800; font-weight: bold">return</span> longest[<span style="color: #0000DD; font-weight: bold">0</span>].back();
+    }
+};
+</pre></div>

@@ -101,6 +101,46 @@
 		A6E8E8381EAD8A7500AB563C /* SmallSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8E8371EAD8A7500AB563C /* SmallSizePresentationController.swift */; };
 		A6E8E8461EAD9A4400AB563C /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8E8441EAD9A4400AB563C /* NoteViewController.swift */; };
 		A6E8E8471EAD9A4400AB563C /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E8E8451EAD9A4400AB563C /* NoteViewController.xib */; };
+		A6F06CA31EFA0BE9009209EC /* Detect Capital cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C721EFA0BE9009209EC /* Detect Capital cpp.html */; };
+		A6F06CA41EFA0BE9009209EC /* Detect Capital java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C731EFA0BE9009209EC /* Detect Capital java.html */; };
+		A6F06CA51EFA0BE9009209EC /* Detect Capital py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C741EFA0BE9009209EC /* Detect Capital py.html */; };
+		A6F06CA61EFA0BE9009209EC /* Detect Capital source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C751EFA0BE9009209EC /* Detect Capital source.html */; };
+		A6F06CA71EFA0BE9009209EC /* Find Bottom Left Tree Value cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C771EFA0BE9009209EC /* Find Bottom Left Tree Value cpp.html */; };
+		A6F06CA81EFA0BE9009209EC /* Find Bottom Left Tree Value java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C781EFA0BE9009209EC /* Find Bottom Left Tree Value java.html */; };
+		A6F06CA91EFA0BE9009209EC /* Find Bottom Left Tree Value py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C791EFA0BE9009209EC /* Find Bottom Left Tree Value py.html */; };
+		A6F06CAA1EFA0BE9009209EC /* Find Bottom Left Tree Value source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C7A1EFA0BE9009209EC /* Find Bottom Left Tree Value source.html */; };
+		A6F06CAB1EFA0BE9009209EC /* Find Largest Value in Each Tree Row cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C7C1EFA0BE9009209EC /* Find Largest Value in Each Tree Row cpp.html */; };
+		A6F06CAC1EFA0BE9009209EC /* Find Largest Value in Each Tree Row java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C7D1EFA0BE9009209EC /* Find Largest Value in Each Tree Row java.html */; };
+		A6F06CAD1EFA0BE9009209EC /* Find Largest Value in Each Tree Row py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C7E1EFA0BE9009209EC /* Find Largest Value in Each Tree Row py.html */; };
+		A6F06CAE1EFA0BE9009209EC /* Find Largest Value in Each Tree Row source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C7F1EFA0BE9009209EC /* Find Largest Value in Each Tree Row source.html */; };
+		A6F06CAF1EFA0BE9009209EC /* Freedom Trail cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C811EFA0BE9009209EC /* Freedom Trail cpp.html */; };
+		A6F06CB01EFA0BE9009209EC /* Freedom Trail java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C821EFA0BE9009209EC /* Freedom Trail java.html */; };
+		A6F06CB11EFA0BE9009209EC /* Freedom Trail py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C831EFA0BE9009209EC /* Freedom Trail py.html */; };
+		A6F06CB21EFA0BE9009209EC /* Freedom Trail source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C841EFA0BE9009209EC /* Freedom Trail source.html */; };
+		A6F06CB31EFA0BE9009209EC /* Longest Palindromic Subsequence cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C861EFA0BE9009209EC /* Longest Palindromic Subsequence cpp.html */; };
+		A6F06CB41EFA0BE9009209EC /* Longest Palindromic Subsequence java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C871EFA0BE9009209EC /* Longest Palindromic Subsequence java.html */; };
+		A6F06CB51EFA0BE9009209EC /* Longest Palindromic Subsequence py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C881EFA0BE9009209EC /* Longest Palindromic Subsequence py.html */; };
+		A6F06CB61EFA0BE9009209EC /* Longest Palindromic Subsequence source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C891EFA0BE9009209EC /* Longest Palindromic Subsequence source.html */; };
+		A6F06CB71EFA0BE9009209EC /* Most Frequent Subtree Sum cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C8B1EFA0BE9009209EC /* Most Frequent Subtree Sum cpp.html */; };
+		A6F06CB81EFA0BE9009209EC /* Most Frequent Subtree Sum java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C8C1EFA0BE9009209EC /* Most Frequent Subtree Sum java.html */; };
+		A6F06CB91EFA0BE9009209EC /* Most Frequent Subtree Sum py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C8D1EFA0BE9009209EC /* Most Frequent Subtree Sum py.html */; };
+		A6F06CBA1EFA0BE9009209EC /* Most Frequent Subtree Sum source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C8E1EFA0BE9009209EC /* Most Frequent Subtree Sum source.html */; };
+		A6F06CBB1EFA0BE9009209EC /* Perfect Number cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C901EFA0BE9009209EC /* Perfect Number cpp.html */; };
+		A6F06CBC1EFA0BE9009209EC /* Perfect Number java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C911EFA0BE9009209EC /* Perfect Number java.html */; };
+		A6F06CBD1EFA0BE9009209EC /* Perfect Number py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C921EFA0BE9009209EC /* Perfect Number py.html */; };
+		A6F06CBE1EFA0BE9009209EC /* Perfect Number source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C931EFA0BE9009209EC /* Perfect Number source.html */; };
+		A6F06CBF1EFA0BE9009209EC /* Relative Ranks cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C951EFA0BE9009209EC /* Relative Ranks cpp.html */; };
+		A6F06CC01EFA0BE9009209EC /* Relative Ranks java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C961EFA0BE9009209EC /* Relative Ranks java.html */; };
+		A6F06CC11EFA0BE9009209EC /* Relative Ranks py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C971EFA0BE9009209EC /* Relative Ranks py.html */; };
+		A6F06CC21EFA0BE9009209EC /* Relative Ranks source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C981EFA0BE9009209EC /* Relative Ranks source.html */; };
+		A6F06CC31EFA0BE9009209EC /* Super Washing Machines cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C9A1EFA0BE9009209EC /* Super Washing Machines cpp.html */; };
+		A6F06CC41EFA0BE9009209EC /* Super Washing Machines java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C9B1EFA0BE9009209EC /* Super Washing Machines java.html */; };
+		A6F06CC51EFA0BE9009209EC /* Super Washing Machines py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C9C1EFA0BE9009209EC /* Super Washing Machines py.html */; };
+		A6F06CC61EFA0BE9009209EC /* Super Washing Machines source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C9D1EFA0BE9009209EC /* Super Washing Machines source.html */; };
+		A6F06CC71EFA0BE9009209EC /* The Maze II cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06C9F1EFA0BE9009209EC /* The Maze II cpp.html */; };
+		A6F06CC81EFA0BE9009209EC /* The Maze II java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06CA01EFA0BE9009209EC /* The Maze II java.html */; };
+		A6F06CC91EFA0BE9009209EC /* The Maze II py.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06CA11EFA0BE9009209EC /* The Maze II py.html */; };
+		A6F06CCA1EFA0BE9009209EC /* The Maze II source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F06CA21EFA0BE9009209EC /* The Maze II source.html */; };
 		A6F71B2C1EA99D6300559CA0 /* AllProblems.json in Resources */ = {isa = PBXBuildFile; fileRef = A6F71B2B1EA99D6300559CA0 /* AllProblems.json */; };
 		A6F724361EA99D6E00559CA0 /* 132 Pattern cpp.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F71B2F1EA99D6800559CA0 /* 132 Pattern cpp.html */; };
 		A6F724371EA99D6E00559CA0 /* 132 Pattern java.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F71B301EA99D6800559CA0 /* 132 Pattern java.html */; };
@@ -2060,6 +2100,46 @@
 		A6E8E83F1EAD935000AB563C /* CodeyModel v9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v9.xcdatamodel"; sourceTree = "<group>"; };
 		A6E8E8441EAD9A4400AB563C /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A6E8E8451EAD9A4400AB563C /* NoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		A6F06C721EFA0BE9009209EC /* Detect Capital cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Detect Capital cpp.html"; sourceTree = "<group>"; };
+		A6F06C731EFA0BE9009209EC /* Detect Capital java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Detect Capital java.html"; sourceTree = "<group>"; };
+		A6F06C741EFA0BE9009209EC /* Detect Capital py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Detect Capital py.html"; sourceTree = "<group>"; };
+		A6F06C751EFA0BE9009209EC /* Detect Capital source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Detect Capital source.html"; sourceTree = "<group>"; };
+		A6F06C771EFA0BE9009209EC /* Find Bottom Left Tree Value cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Bottom Left Tree Value cpp.html"; sourceTree = "<group>"; };
+		A6F06C781EFA0BE9009209EC /* Find Bottom Left Tree Value java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Bottom Left Tree Value java.html"; sourceTree = "<group>"; };
+		A6F06C791EFA0BE9009209EC /* Find Bottom Left Tree Value py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Bottom Left Tree Value py.html"; sourceTree = "<group>"; };
+		A6F06C7A1EFA0BE9009209EC /* Find Bottom Left Tree Value source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Bottom Left Tree Value source.html"; sourceTree = "<group>"; };
+		A6F06C7C1EFA0BE9009209EC /* Find Largest Value in Each Tree Row cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Largest Value in Each Tree Row cpp.html"; sourceTree = "<group>"; };
+		A6F06C7D1EFA0BE9009209EC /* Find Largest Value in Each Tree Row java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Largest Value in Each Tree Row java.html"; sourceTree = "<group>"; };
+		A6F06C7E1EFA0BE9009209EC /* Find Largest Value in Each Tree Row py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Largest Value in Each Tree Row py.html"; sourceTree = "<group>"; };
+		A6F06C7F1EFA0BE9009209EC /* Find Largest Value in Each Tree Row source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Find Largest Value in Each Tree Row source.html"; sourceTree = "<group>"; };
+		A6F06C811EFA0BE9009209EC /* Freedom Trail cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Freedom Trail cpp.html"; sourceTree = "<group>"; };
+		A6F06C821EFA0BE9009209EC /* Freedom Trail java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Freedom Trail java.html"; sourceTree = "<group>"; };
+		A6F06C831EFA0BE9009209EC /* Freedom Trail py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Freedom Trail py.html"; sourceTree = "<group>"; };
+		A6F06C841EFA0BE9009209EC /* Freedom Trail source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Freedom Trail source.html"; sourceTree = "<group>"; };
+		A6F06C861EFA0BE9009209EC /* Longest Palindromic Subsequence cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Palindromic Subsequence cpp.html"; sourceTree = "<group>"; };
+		A6F06C871EFA0BE9009209EC /* Longest Palindromic Subsequence java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Palindromic Subsequence java.html"; sourceTree = "<group>"; };
+		A6F06C881EFA0BE9009209EC /* Longest Palindromic Subsequence py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Palindromic Subsequence py.html"; sourceTree = "<group>"; };
+		A6F06C891EFA0BE9009209EC /* Longest Palindromic Subsequence source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Longest Palindromic Subsequence source.html"; sourceTree = "<group>"; };
+		A6F06C8B1EFA0BE9009209EC /* Most Frequent Subtree Sum cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Most Frequent Subtree Sum cpp.html"; sourceTree = "<group>"; };
+		A6F06C8C1EFA0BE9009209EC /* Most Frequent Subtree Sum java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Most Frequent Subtree Sum java.html"; sourceTree = "<group>"; };
+		A6F06C8D1EFA0BE9009209EC /* Most Frequent Subtree Sum py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Most Frequent Subtree Sum py.html"; sourceTree = "<group>"; };
+		A6F06C8E1EFA0BE9009209EC /* Most Frequent Subtree Sum source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Most Frequent Subtree Sum source.html"; sourceTree = "<group>"; };
+		A6F06C901EFA0BE9009209EC /* Perfect Number cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Perfect Number cpp.html"; sourceTree = "<group>"; };
+		A6F06C911EFA0BE9009209EC /* Perfect Number java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Perfect Number java.html"; sourceTree = "<group>"; };
+		A6F06C921EFA0BE9009209EC /* Perfect Number py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Perfect Number py.html"; sourceTree = "<group>"; };
+		A6F06C931EFA0BE9009209EC /* Perfect Number source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Perfect Number source.html"; sourceTree = "<group>"; };
+		A6F06C951EFA0BE9009209EC /* Relative Ranks cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Relative Ranks cpp.html"; sourceTree = "<group>"; };
+		A6F06C961EFA0BE9009209EC /* Relative Ranks java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Relative Ranks java.html"; sourceTree = "<group>"; };
+		A6F06C971EFA0BE9009209EC /* Relative Ranks py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Relative Ranks py.html"; sourceTree = "<group>"; };
+		A6F06C981EFA0BE9009209EC /* Relative Ranks source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Relative Ranks source.html"; sourceTree = "<group>"; };
+		A6F06C9A1EFA0BE9009209EC /* Super Washing Machines cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Super Washing Machines cpp.html"; sourceTree = "<group>"; };
+		A6F06C9B1EFA0BE9009209EC /* Super Washing Machines java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Super Washing Machines java.html"; sourceTree = "<group>"; };
+		A6F06C9C1EFA0BE9009209EC /* Super Washing Machines py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Super Washing Machines py.html"; sourceTree = "<group>"; };
+		A6F06C9D1EFA0BE9009209EC /* Super Washing Machines source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "Super Washing Machines source.html"; sourceTree = "<group>"; };
+		A6F06C9F1EFA0BE9009209EC /* The Maze II cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze II cpp.html"; sourceTree = "<group>"; };
+		A6F06CA01EFA0BE9009209EC /* The Maze II java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze II java.html"; sourceTree = "<group>"; };
+		A6F06CA11EFA0BE9009209EC /* The Maze II py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze II py.html"; sourceTree = "<group>"; };
+		A6F06CA21EFA0BE9009209EC /* The Maze II source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze II source.html"; sourceTree = "<group>"; };
 		A6F71B2B1EA99D6300559CA0 /* AllProblems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllProblems.json; sourceTree = "<group>"; };
 		A6F71B2F1EA99D6800559CA0 /* 132 Pattern cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "132 Pattern cpp.html"; sourceTree = "<group>"; };
 		A6F71B301EA99D6800559CA0 /* 132 Pattern java.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "132 Pattern java.html"; sourceTree = "<group>"; };
@@ -4168,6 +4248,116 @@
 			name = MoreView;
 			sourceTree = "<group>";
 		};
+		A6F06C711EFA0BE9009209EC /* Detect Capital */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C721EFA0BE9009209EC /* Detect Capital cpp.html */,
+				A6F06C731EFA0BE9009209EC /* Detect Capital java.html */,
+				A6F06C741EFA0BE9009209EC /* Detect Capital py.html */,
+				A6F06C751EFA0BE9009209EC /* Detect Capital source.html */,
+			);
+			path = "Detect Capital";
+			sourceTree = "<group>";
+		};
+		A6F06C761EFA0BE9009209EC /* Find Bottom Left Tree Value */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C771EFA0BE9009209EC /* Find Bottom Left Tree Value cpp.html */,
+				A6F06C781EFA0BE9009209EC /* Find Bottom Left Tree Value java.html */,
+				A6F06C791EFA0BE9009209EC /* Find Bottom Left Tree Value py.html */,
+				A6F06C7A1EFA0BE9009209EC /* Find Bottom Left Tree Value source.html */,
+			);
+			path = "Find Bottom Left Tree Value";
+			sourceTree = "<group>";
+		};
+		A6F06C7B1EFA0BE9009209EC /* Find Largest Value in Each Tree Row */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C7C1EFA0BE9009209EC /* Find Largest Value in Each Tree Row cpp.html */,
+				A6F06C7D1EFA0BE9009209EC /* Find Largest Value in Each Tree Row java.html */,
+				A6F06C7E1EFA0BE9009209EC /* Find Largest Value in Each Tree Row py.html */,
+				A6F06C7F1EFA0BE9009209EC /* Find Largest Value in Each Tree Row source.html */,
+			);
+			path = "Find Largest Value in Each Tree Row";
+			sourceTree = "<group>";
+		};
+		A6F06C801EFA0BE9009209EC /* Freedom Trail */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C811EFA0BE9009209EC /* Freedom Trail cpp.html */,
+				A6F06C821EFA0BE9009209EC /* Freedom Trail java.html */,
+				A6F06C831EFA0BE9009209EC /* Freedom Trail py.html */,
+				A6F06C841EFA0BE9009209EC /* Freedom Trail source.html */,
+			);
+			path = "Freedom Trail";
+			sourceTree = "<group>";
+		};
+		A6F06C851EFA0BE9009209EC /* Longest Palindromic Subsequence */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C861EFA0BE9009209EC /* Longest Palindromic Subsequence cpp.html */,
+				A6F06C871EFA0BE9009209EC /* Longest Palindromic Subsequence java.html */,
+				A6F06C881EFA0BE9009209EC /* Longest Palindromic Subsequence py.html */,
+				A6F06C891EFA0BE9009209EC /* Longest Palindromic Subsequence source.html */,
+			);
+			path = "Longest Palindromic Subsequence";
+			sourceTree = "<group>";
+		};
+		A6F06C8A1EFA0BE9009209EC /* Most Frequent Subtree Sum */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C8B1EFA0BE9009209EC /* Most Frequent Subtree Sum cpp.html */,
+				A6F06C8C1EFA0BE9009209EC /* Most Frequent Subtree Sum java.html */,
+				A6F06C8D1EFA0BE9009209EC /* Most Frequent Subtree Sum py.html */,
+				A6F06C8E1EFA0BE9009209EC /* Most Frequent Subtree Sum source.html */,
+			);
+			path = "Most Frequent Subtree Sum";
+			sourceTree = "<group>";
+		};
+		A6F06C8F1EFA0BE9009209EC /* Perfect Number */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C901EFA0BE9009209EC /* Perfect Number cpp.html */,
+				A6F06C911EFA0BE9009209EC /* Perfect Number java.html */,
+				A6F06C921EFA0BE9009209EC /* Perfect Number py.html */,
+				A6F06C931EFA0BE9009209EC /* Perfect Number source.html */,
+			);
+			path = "Perfect Number";
+			sourceTree = "<group>";
+		};
+		A6F06C941EFA0BE9009209EC /* Relative Ranks */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C951EFA0BE9009209EC /* Relative Ranks cpp.html */,
+				A6F06C961EFA0BE9009209EC /* Relative Ranks java.html */,
+				A6F06C971EFA0BE9009209EC /* Relative Ranks py.html */,
+				A6F06C981EFA0BE9009209EC /* Relative Ranks source.html */,
+			);
+			path = "Relative Ranks";
+			sourceTree = "<group>";
+		};
+		A6F06C991EFA0BE9009209EC /* Super Washing Machines */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C9A1EFA0BE9009209EC /* Super Washing Machines cpp.html */,
+				A6F06C9B1EFA0BE9009209EC /* Super Washing Machines java.html */,
+				A6F06C9C1EFA0BE9009209EC /* Super Washing Machines py.html */,
+				A6F06C9D1EFA0BE9009209EC /* Super Washing Machines source.html */,
+			);
+			path = "Super Washing Machines";
+			sourceTree = "<group>";
+		};
+		A6F06C9E1EFA0BE9009209EC /* The Maze II */ = {
+			isa = PBXGroup;
+			children = (
+				A6F06C9F1EFA0BE9009209EC /* The Maze II cpp.html */,
+				A6F06CA01EFA0BE9009209EC /* The Maze II java.html */,
+				A6F06CA11EFA0BE9009209EC /* The Maze II py.html */,
+				A6F06CA21EFA0BE9009209EC /* The Maze II source.html */,
+			);
+			path = "The Maze II";
+			sourceTree = "<group>";
+		};
 		A6F71B2D1EA99D6800559CA0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -4268,6 +4458,7 @@
 				A6F71D021EA99D6900559CA0 /* Design Snake Game */,
 				A6F71D071EA99D6900559CA0 /* Design Tic Tac Toe */,
 				A6F71D0C1EA99D6900559CA0 /* Design Twitter */,
+				A6F06C711EFA0BE9009209EC /* Detect Capital */,
 				A66573591EB977DB002A19E5 /* Diagonal Traverse */,
 				A6F71D111EA99D6900559CA0 /* Different Ways to Add Parentheses */,
 				A6F71D161EA99D6900559CA0 /* Distinct Subsequences */,
@@ -4287,7 +4478,9 @@
 				A6F71D5C1EA99D6900559CA0 /* Find All Anagrams in a String */,
 				A6F71D611EA99D6900559CA0 /* Find All Duplicates in an Array */,
 				A6F71D661EA99D6900559CA0 /* Find All Numbers Disappeared in an Array */,
+				A6F06C761EFA0BE9009209EC /* Find Bottom Left Tree Value */,
 				A6F71D6B1EA99D6900559CA0 /* Find K Pairs With Smallest Sums */,
+				A6F06C7B1EFA0BE9009209EC /* Find Largest Value in Each Tree Row */,
 				A6F71D701EA99D6900559CA0 /* Find Leaves of Binary Tree */,
 				A6F71D751EA99D6900559CA0 /* Find Median From Data Stream */,
 				A6F71D7A1EA99D6900559CA0 /* Find Minimum in Rotated Sorted Array */,
@@ -4309,6 +4502,7 @@
 				A6F71DC51EA99D6900559CA0 /* Flip Game */,
 				A6F71DCA1EA99D6900559CA0 /* Flip Game II */,
 				A6F71DCF1EA99D6900559CA0 /* Fraction to Recurring Decimal */,
+				A6F06C801EFA0BE9009209EC /* Freedom Trail */,
 				A6F71DD41EA99D6900559CA0 /* Frog Jump */,
 				A6F71DD91EA99D6900559CA0 /* Game of Life */,
 				A6F71DDE1EA99D6900559CA0 /* Gas Station */,
@@ -4379,6 +4573,7 @@
 				A6F71F191EA99D6A00559CA0 /* Longest Increasing Path in a Matrix */,
 				A6F71F1E1EA99D6A00559CA0 /* Longest Increasing Subsequence */,
 				A6F71F231EA99D6A00559CA0 /* Longest Palindrome */,
+				A6F06C851EFA0BE9009209EC /* Longest Palindromic Subsequence */,
 				A6F71F281EA99D6A00559CA0 /* Longest Palindromic Substring */,
 				A6F71F2D1EA99D6A00559CA0 /* Longest Repeating Character Replacement */,
 				A6F71F321EA99D6A00559CA0 /* Longest Substring With at Least K Repeating Characters */,
@@ -4426,6 +4621,7 @@
 				A6F720041EA99D6A00559CA0 /* Minimum Window Substring */,
 				A6F720091EA99D6A00559CA0 /* Missing Number */,
 				A6F7200E1EA99D6A00559CA0 /* Missing Ranges */,
+				A6F06C8A1EFA0BE9009209EC /* Most Frequent Subtree Sum */,
 				A6F720131EA99D6A00559CA0 /* Move Zeroes */,
 				A6F720181EA99D6A00559CA0 /* Moving Average From Data Stream */,
 				A6F7201D1EA99D6A00559CA0 /* Multiply Strings */,
@@ -4472,6 +4668,7 @@
 				A6F720E01EA99D6B00559CA0 /* Path Sum II */,
 				A6F720E51EA99D6B00559CA0 /* Path Sum III */,
 				A6F720EA1EA99D6B00559CA0 /* Peeking Iterator */,
+				A6F06C8F1EFA0BE9009209EC /* Perfect Number */,
 				A6F720EF1EA99D6B00559CA0 /* Perfect Rectangle */,
 				A6F720F41EA99D6B00559CA0 /* Perfect Squares */,
 				A6F720F91EA99D6B00559CA0 /* Permutation Sequence */,
@@ -4503,6 +4700,7 @@
 				A6F7217C1EA99D6B00559CA0 /* Recover Binary Search Tree */,
 				A6F721811EA99D6B00559CA0 /* Rectangle Area */,
 				A6F721871EA99D6B00559CA0 /* Regular Expression Matching */,
+				A6F06C941EFA0BE9009209EC /* Relative Ranks */,
 				A6F7218C1EA99D6B00559CA0 /* Remove Duplicate Letters */,
 				A6F721911EA99D6B00559CA0 /* Remove Duplicates From Sorted Array */,
 				A6F721961EA99D6C00559CA0 /* Remove Duplicates From Sorted Array II */,
@@ -4585,6 +4783,7 @@
 				A6F723121EA99D6D00559CA0 /* Summary Ranges */,
 				A6F723171EA99D6D00559CA0 /* Super Pow */,
 				A6F7231C1EA99D6D00559CA0 /* Super Ugly Number */,
+				A6F06C991EFA0BE9009209EC /* Super Washing Machines */,
 				A6F723211EA99D6D00559CA0 /* Surrounded Regions */,
 				A6F723261EA99D6D00559CA0 /* Swap Nodes in Pairs */,
 				A6F7232B1EA99D6D00559CA0 /* Symmetric Tree */,
@@ -4592,6 +4791,7 @@
 				A665737C1EB977DB002A19E5 /* Teemo Attacking */,
 				A6F723351EA99D6D00559CA0 /* Ternary Expression Parser */,
 				A6F7233A1EA99D6D00559CA0 /* Text Justification */,
+				A6F06C9E1EFA0BE9009209EC /* The Maze II */,
 				A66573811EB977DB002A19E5 /* The Maze III */,
 				A6F7233F1EA99D6D00559CA0 /* The Skyline Problem */,
 				A6F723461EA99D6D00559CA0 /* Third Maximum Number */,
@@ -9930,6 +10130,7 @@
 				A6F724A01EA99D6E00559CA0 /* Best Time to Buy and Sell Stock II py.html in Resources */,
 				A6F726FA1EA99D6F00559CA0 /* Isomorphic Strings py.html in Resources */,
 				A6F72B071EA99D7000559CA0 /* Valid Parentheses source.html in Resources */,
+				A6F06CA41EFA0BE9009209EC /* Detect Capital java.html in Resources */,
 				A6F7265D1EA99D6F00559CA0 /* Gas Station java.html in Resources */,
 				A6F726B71EA99D6F00559CA0 /* Increasing Triplet Subsequence source.html in Resources */,
 				A6F726FE1EA99D6F00559CA0 /* Jump Game py.html in Resources */,
@@ -10036,6 +10237,7 @@
 				A6F725441EA99D6E00559CA0 /* Contains Duplicate II cpp.html in Resources */,
 				A6F729291EA99D6F00559CA0 /* Ransom Note cpp.html in Resources */,
 				A6F726261EA99D6F00559CA0 /* Find The Difference py.html in Resources */,
+				A6F06CBE1EFA0BE9009209EC /* Perfect Number source.html in Resources */,
 				A6F729D71EA99D7000559CA0 /* Search in Rotated Sorted Array java.html in Resources */,
 				A6F7288B1EA99D6F00559CA0 /* Paint House source.html in Resources */,
 				A6F726DE1EA99D6F00559CA0 /* Interleaving String py.html in Resources */,
@@ -10057,6 +10259,7 @@
 				A6F726541EA99D6F00559CA0 /* Frog Jump cpp.html in Resources */,
 				A6F7282F1EA99D6F00559CA0 /* N Queens source.html in Resources */,
 				A6F726101EA99D6F00559CA0 /* Find Minimum in Rotated Sorted Array II cpp.html in Resources */,
+				A6F06CAC1EFA0BE9009209EC /* Find Largest Value in Each Tree Row java.html in Resources */,
 				A6F729F01EA99D7000559CA0 /* Serialize and Deserialize Binary Tree py.html in Resources */,
 				A6F729371EA99D6F00559CA0 /* Rearrange String K Distance Apart py.html in Resources */,
 				A6F727A91EA99D6F00559CA0 /* Maximal Rectangle java.html in Resources */,
@@ -10212,7 +10415,10 @@
 				A6F724671EA99D6E00559CA0 /* Additive Number java.html in Resources */,
 				A6F7246B1EA99D6E00559CA0 /* Alien Dictionary java.html in Resources */,
 				A6F729ED1EA99D7000559CA0 /* Sequence Reconstruction source.html in Resources */,
+				A6F06CA61EFA0BE9009209EC /* Detect Capital source.html in Resources */,
 				A6F728E51EA99D6F00559CA0 /* Plus One java.html in Resources */,
+				A6F06CC01EFA0BE9009209EC /* Relative Ranks java.html in Resources */,
+				A6F06CA31EFA0BE9009209EC /* Detect Capital cpp.html in Resources */,
 				A6F7295D1EA99D6F00559CA0 /* Remove Duplicates From Sorted List source.html in Resources */,
 				A6F7277E1EA99D6F00559CA0 /* Longest Valid Parentheses py.html in Resources */,
 				A6F728D01EA99D6F00559CA0 /* Perfect Rectangle cpp.html in Resources */,
@@ -10307,6 +10513,7 @@
 				A6F728E81EA99D6F00559CA0 /* Plus One Linked List cpp.html in Resources */,
 				A6F72AB31EA99D7000559CA0 /* Third Maximum Number source.html in Resources */,
 				A6F72B4D1EA99D7000559CA0 /* Word Ladder II java.html in Resources */,
+				A6F06CAA1EFA0BE9009209EC /* Find Bottom Left Tree Value source.html in Resources */,
 				A6F7276E1EA99D6F00559CA0 /* Longest Substring With at Least K Repeating Characters py.html in Resources */,
 				A6F7280C1EA99D6F00559CA0 /* Minimum Size Subarray Sum cpp.html in Resources */,
 				A6F72A161EA99D7000559CA0 /* Single Number cpp.html in Resources */,
@@ -10332,6 +10539,7 @@
 				A6F72B651EA99D7000559CA0 /* ZigZag Conversion java.html in Resources */,
 				A6F724AB1EA99D6E00559CA0 /* Best Time to Buy and Sell Stock With Cooldown java.html in Resources */,
 				A6F725681EA99D6E00559CA0 /* Count Numbers With Unique Digits cpp.html in Resources */,
+				A6F06CB71EFA0BE9009209EC /* Most Frequent Subtree Sum cpp.html in Resources */,
 				A6F726BD1EA99D6F00559CA0 /* Insert Delete GetRandom O(1) java.html in Resources */,
 				A6F724941EA99D6E00559CA0 /* Battleships in a Board py.html in Resources */,
 				A6F725911EA99D6E00559CA0 /* Data Stream As Disjoint Intervals java.html in Resources */,
@@ -10575,6 +10783,7 @@
 				A6F7275E1EA99D6F00559CA0 /* Longest Increasing Subsequence py.html in Resources */,
 				A6F72A4E1EA99D7000559CA0 /* Split Array Largest Sum cpp.html in Resources */,
 				A6F724711EA99D6E00559CA0 /* All O One Data Structure source.html in Resources */,
+				A6F06CBC1EFA0BE9009209EC /* Perfect Number java.html in Resources */,
 				A6F72A591EA99D7000559CA0 /* String to Integer Atoi source.html in Resources */,
 				A6F7296B1EA99D6F00559CA0 /* Remove K Digits java.html in Resources */,
 				A6F726CD1EA99D6F00559CA0 /* Integer Break java.html in Resources */,
@@ -10671,6 +10880,7 @@
 				A6F72AA31EA99D7000559CA0 /* Ternary Expression Parser java.html in Resources */,
 				A6F7283D1EA99D6F00559CA0 /* Next Permutation java.html in Resources */,
 				A6F726FB1EA99D6F00559CA0 /* Isomorphic Strings source.html in Resources */,
+				A6F06CC11EFA0BE9009209EC /* Relative Ranks py.html in Resources */,
 				A6F725AE1EA99D6F00559CA0 /* Design Snake Game py.html in Resources */,
 				A6F72AF11EA99D7000559CA0 /* Unique Word Abbreviation java.html in Resources */,
 				A6F724A21EA99D6E00559CA0 /* Best Time to Buy and Sell Stock III cpp.html in Resources */,
@@ -10749,6 +10959,7 @@
 				A6F7286C1EA99D6F00559CA0 /* Number of Segments in a String cpp.html in Resources */,
 				A6F725701EA99D6E00559CA0 /* Count of Smaller Numbers After Self cpp.html in Resources */,
 				A6F725E31EA99D6F00559CA0 /* Excel Sheet Column Number source.html in Resources */,
+				A6F06CC41EFA0BE9009209EC /* Super Washing Machines java.html in Resources */,
 				A6F72A081EA99D7000559CA0 /* Shortest Word Distance II py.html in Resources */,
 				A6F727111EA99D6F00559CA0 /* Kth Smallest in Lexicographical Order java.html in Resources */,
 				A6F7293D1EA99D6F00559CA0 /* Reconstruct Original Digits From English cpp.html in Resources */,
@@ -10775,6 +10986,7 @@
 				A6F7251C1EA99D6E00559CA0 /* Combination Sum II py.html in Resources */,
 				A6F729A21EA99D7000559CA0 /* Reverse Words in a String cpp.html in Resources */,
 				A6F7269D1EA99D6F00559CA0 /* House Robber III java.html in Resources */,
+				A6F06CB31EFA0BE9009209EC /* Longest Palindromic Subsequence cpp.html in Resources */,
 				A6F7259C1EA99D6F00559CA0 /* Delete Node in a BST cpp.html in Resources */,
 				A6F724B91EA99D6E00559CA0 /* Binary Tree Level Order Traversal source.html in Resources */,
 				A6F7256F1EA99D6E00559CA0 /* Count of Range Sum source.html in Resources */,
@@ -10799,6 +11011,7 @@
 				A6F724F91EA99D6E00559CA0 /* Burst Balloons source.html in Resources */,
 				A6F724791EA99D6E00559CA0 /* Arithmetic Slices source.html in Resources */,
 				A6F728301EA99D6F00559CA0 /* N Queens II cpp.html in Resources */,
+				A6F06CC51EFA0BE9009209EC /* Super Washing Machines py.html in Resources */,
 				A6F728001EA99D6F00559CA0 /* Minimum Moves to Equal Array Elements II cpp.html in Resources */,
 				A6F727FA1EA99D6F00559CA0 /* Minimum Height Trees py.html in Resources */,
 				A6F724B51EA99D6E00559CA0 /* Binary Tree Inorder Traversal source.html in Resources */,
@@ -10833,6 +11046,7 @@
 				A6F725511EA99D6E00559CA0 /* Convert Sorted Array to Binary Search Tree java.html in Resources */,
 				A6F7290E1EA99D6F00559CA0 /* Queue Reconstruction By Height py.html in Resources */,
 				A6F728821EA99D6F00559CA0 /* Pacific Atlantic Water Flow py.html in Resources */,
+				A6F06CB91EFA0BE9009209EC /* Most Frequent Subtree Sum py.html in Resources */,
 				A6F729781EA99D6F00559CA0 /* Reorder List py.html in Resources */,
 				A6F727091EA99D6F00559CA0 /* Kth Smallest Element in a BST java.html in Resources */,
 				A6F7296D1EA99D6F00559CA0 /* Remove K Digits source.html in Resources */,
@@ -10866,6 +11080,7 @@
 				A6F72ADD1EA99D7000559CA0 /* Unique Binary Search Trees java.html in Resources */,
 				A6F72B0D1EA99D7000559CA0 /* Valid Sudoku java.html in Resources */,
 				A6F72B2D1EA99D7000559CA0 /* Water and Jug Problem java.html in Resources */,
+				A6F06CA71EFA0BE9009209EC /* Find Bottom Left Tree Value cpp.html in Resources */,
 				A6F728521EA99D6F00559CA0 /* Number Complement py.html in Resources */,
 				A6F725731EA99D6E00559CA0 /* Count of Smaller Numbers After Self source.html in Resources */,
 				A6F7264E1EA99D6F00559CA0 /* Flip Game II py.html in Resources */,
@@ -10917,6 +11132,7 @@
 				A6F727361EA99D6F00559CA0 /* License Key Formatting py.html in Resources */,
 				A6F729C41EA99D7000559CA0 /* Same Tree py.html in Resources */,
 				A6F7289A1EA99D6F00559CA0 /* Palindrome Pairs py.html in Resources */,
+				A6F06CB01EFA0BE9009209EC /* Freedom Trail java.html in Resources */,
 				A6F726AC1EA99D6F00559CA0 /* Implement Trie Prefix Tree cpp.html in Resources */,
 				A6F725E21EA99D6F00559CA0 /* Excel Sheet Column Number py.html in Resources */,
 				A6F7266E1EA99D6F00559CA0 /* Gray Code py.html in Resources */,
@@ -10967,6 +11183,7 @@
 				A6F725551EA99D6E00559CA0 /* Convert Sorted List to Binary Search Tree java.html in Resources */,
 				A6F727B41EA99D6F00559CA0 /* Maximum Gap cpp.html in Resources */,
 				A6F72A001EA99D7000559CA0 /* Shortest Palindrome py.html in Resources */,
+				A6F06CC71EFA0BE9009209EC /* The Maze II cpp.html in Resources */,
 				A6F729261EA99D6F00559CA0 /* Range Sum Query Mutable java.html in Resources */,
 				A6F7292D1EA99D6F00559CA0 /* Read N Characters Given Read4 cpp.html in Resources */,
 				A6F72B2F1EA99D7000559CA0 /* Water and Jug Problem source.html in Resources */,
@@ -10998,6 +11215,7 @@
 				A6F72A351EA99D7000559CA0 /* Sort Characters By Frequency source.html in Resources */,
 				A6F727781EA99D6F00559CA0 /* Longest Substring Without Repeating Characters cpp.html in Resources */,
 				A6F726661EA99D6F00559CA0 /* Generate Parentheses py.html in Resources */,
+				A6F06CBB1EFA0BE9009209EC /* Perfect Number cpp.html in Resources */,
 				A6F725D71EA99D6F00559CA0 /* Encode String with Shortest Length source.html in Resources */,
 				A66573921EB977DB002A19E5 /* IPO cpp.html in Resources */,
 				A6F724871EA99D6E00559CA0 /* Balanced Binary Tree java.html in Resources */,
@@ -11031,6 +11249,7 @@
 				A6F7288C1EA99D6F00559CA0 /* Paint House II cpp.html in Resources */,
 				A6F72B2A1EA99D7000559CA0 /* Walls and Gates py.html in Resources */,
 				A6F724CD1EA99D6E00559CA0 /* Binary Tree Postorder Traversal source.html in Resources */,
+				A6F06CB61EFA0BE9009209EC /* Longest Palindromic Subsequence source.html in Resources */,
 				A6F7243B1EA99D6E00559CA0 /* 3 Sum java.html in Resources */,
 				A6F729B81EA99D7000559CA0 /* Rotate Image py.html in Resources */,
 				A6F728161EA99D6F00559CA0 /* Minimum Window Substring py.html in Resources */,
@@ -11041,6 +11260,7 @@
 				A6F7284A1EA99D6F00559CA0 /* Non-overlapping Intervals py.html in Resources */,
 				A6F728AB1EA99D6F00559CA0 /* Palindrome Permutation II source.html in Resources */,
 				A6F72A381EA99D7000559CA0 /* Sort Colors py.html in Resources */,
+				A6F06CAF1EFA0BE9009209EC /* Freedom Trail cpp.html in Resources */,
 				A6F7256B1EA99D6E00559CA0 /* Count Numbers With Unique Digits source.html in Resources */,
 				A6F729471EA99D6F00559CA0 /* Rectangle Area py.html in Resources */,
 				A6F7288A1EA99D6F00559CA0 /* Paint House py.html in Resources */,
@@ -11066,6 +11286,7 @@
 				A6F727221EA99D6F00559CA0 /* Largest Rectangle in Histogram py.html in Resources */,
 				A6F72B491EA99D7000559CA0 /* Word Ladder java.html in Resources */,
 				A6F729EF1EA99D7000559CA0 /* Serialize and Deserialize Binary Tree java.html in Resources */,
+				A6F06CC91EFA0BE9009209EC /* The Maze II py.html in Resources */,
 				A6F725FB1EA99D6F00559CA0 /* Find All Duplicates in an Array source.html in Resources */,
 				A6F72AE01EA99D7000559CA0 /* Unique Binary Search Trees II cpp.html in Resources */,
 				A6F728101EA99D6F00559CA0 /* Minimum Unique Word Abbreviation cpp.html in Resources */,
@@ -11160,6 +11381,7 @@
 				A6F727771EA99D6F00559CA0 /* Longest Substring with At Most Two Distinct Characters source.html in Resources */,
 				A6F729FC1EA99D7000559CA0 /* Shortest Distance From All Buildings py.html in Resources */,
 				A6F726B31EA99D6F00559CA0 /* Increasing Subsequences source.html in Resources */,
+				A6F06CB51EFA0BE9009209EC /* Longest Palindromic Subsequence py.html in Resources */,
 				A6F729D51EA99D7000559CA0 /* Search for a Range source.html in Resources */,
 				A6F724431EA99D6E00559CA0 /* 3 Sum Smaller java.html in Resources */,
 				A6F725F11EA99D6F00559CA0 /* Factorial Trailing Zeroes java.html in Resources */,
@@ -11202,6 +11424,7 @@
 				A6F725D41EA99D6F00559CA0 /* Encode String with Shortest Length cpp.html in Resources */,
 				A6F72AE11EA99D7000559CA0 /* Unique Binary Search Trees II java.html in Resources */,
 				A6F726311EA99D6F00559CA0 /* First Missing Positive java.html in Resources */,
+				A6F06CB11EFA0BE9009209EC /* Freedom Trail py.html in Resources */,
 				A6F728BC1EA99D6F00559CA0 /* Patching Array cpp.html in Resources */,
 				A6F72A981EA99D7000559CA0 /* Swap Nodes in Pairs py.html in Resources */,
 				A6F726C31EA99D6F00559CA0 /* Insert Delete GetRandom O(1) - Duplicates allowed source.html in Resources */,
@@ -11285,18 +11508,22 @@
 				A6F72A021EA99D7000559CA0 /* Shortest Word Distance cpp.html in Resources */,
 				A6F729161EA99D6F00559CA0 /* Range Addition py.html in Resources */,
 				A6F724B71EA99D6E00559CA0 /* Binary Tree Level Order Traversal java.html in Resources */,
+				A6F06CB41EFA0BE9009209EC /* Longest Palindromic Subsequence java.html in Resources */,
 				A6F728E21EA99D6F00559CA0 /* Permutations II py.html in Resources */,
 				A6F727441EA99D6F00559CA0 /* Linked List Random Node cpp.html in Resources */,
 				A6F729171EA99D6F00559CA0 /* Range Addition source.html in Resources */,
 				A6F72A501EA99D7000559CA0 /* Split Array Largest Sum py.html in Resources */,
 				A6F724FA1EA99D6E00559CA0 /* Can I Win cpp.html in Resources */,
 				A6F72B201EA99D7000559CA0 /* Verify Preorder Sequence in Binary Search Tree cpp.html in Resources */,
+				A6F06CCA1EFA0BE9009209EC /* The Maze II source.html in Resources */,
 				A6F728E31EA99D6F00559CA0 /* Permutations II source.html in Resources */,
 				A6F72AAB1EA99D7000559CA0 /* skyline2.png in Resources */,
 				A6F729B21EA99D7000559CA0 /* Rotate Function cpp.html in Resources */,
 				A6F72B501EA99D7000559CA0 /* Word Pattern cpp.html in Resources */,
 				A6F726D41EA99D6F00559CA0 /* Integer to English Words cpp.html in Resources */,
+				A6F06CA91EFA0BE9009209EC /* Find Bottom Left Tree Value py.html in Resources */,
 				A6F725301EA99D6E00559CA0 /* Concatenated Words py.html in Resources */,
+				A6F06CBD1EFA0BE9009209EC /* Perfect Number py.html in Resources */,
 				A6F72B191EA99D7000559CA0 /* Validate Binary Search Tree java.html in Resources */,
 				A6F72A941EA99D7000559CA0 /* Surrounded Regions py.html in Resources */,
 				A6F726501EA99D6F00559CA0 /* Fraction to Recurring Decimal cpp.html in Resources */,
@@ -11321,6 +11548,7 @@
 				A6F724AC1EA99D6E00559CA0 /* Best Time to Buy and Sell Stock With Cooldown py.html in Resources */,
 				A6F727EB1EA99D6F00559CA0 /* Min Stack source.html in Resources */,
 				A6F729BD1EA99D7000559CA0 /* Rotate List source.html in Resources */,
+				A6F06CAB1EFA0BE9009209EC /* Find Largest Value in Each Tree Row cpp.html in Resources */,
 				A6F72B1A1EA99D7000559CA0 /* Validate Binary Search Tree py.html in Resources */,
 				A6F7272B1EA99D6F00559CA0 /* Letter Combinations of a Phone Number source.html in Resources */,
 				A6F729CF1EA99D7000559CA0 /* Search a 2d Matrix II java.html in Resources */,
@@ -11373,9 +11601,11 @@
 				A6F727431EA99D6F00559CA0 /* Linked List Cycle II source.html in Resources */,
 				A6F72A291EA99D7000559CA0 /* Sliding Window Median source.html in Resources */,
 				A6F728BB1EA99D6F00559CA0 /* Pascals Triangle II source.html in Resources */,
+				A6F06CC81EFA0BE9009209EC /* The Maze II java.html in Resources */,
 				A6F725431EA99D6E00559CA0 /* Contains Duplicate source.html in Resources */,
 				A6F729C31EA99D7000559CA0 /* Same Tree java.html in Resources */,
 				A6F7290B1EA99D6F00559CA0 /* Product of Array Except Self source.html in Resources */,
+				A6F06CBF1EFA0BE9009209EC /* Relative Ranks cpp.html in Resources */,
 				A6F725411EA99D6E00559CA0 /* Contains Duplicate java.html in Resources */,
 				A6F728C21EA99D6F00559CA0 /* Path Sum py.html in Resources */,
 				A6F725C41EA99D6F00559CA0 /* Dungeon Game cpp.html in Resources */,
@@ -11397,6 +11627,7 @@
 				A6F72AEB1EA99D7000559CA0 /* Unique Paths II source.html in Resources */,
 				A6F72A011EA99D7000559CA0 /* Shortest Palindrome source.html in Resources */,
 				A6F725781EA99D6E00559CA0 /* Count The Repetitions cpp.html in Resources */,
+				A6F06CA81EFA0BE9009209EC /* Find Bottom Left Tree Value java.html in Resources */,
 				A6F72A911EA99D7000559CA0 /* Super Ugly Number source.html in Resources */,
 				A6F7296C1EA99D6F00559CA0 /* Remove K Digits py.html in Resources */,
 				A6F72A851EA99D7000559CA0 /* Sum Root to Leaf Numbers source.html in Resources */,
@@ -11523,6 +11754,7 @@
 				A6F72AFB1EA99D7000559CA0 /* Valid Anagram source.html in Resources */,
 				A6F72AA11EA99D7000559CA0 /* Target Sum source.html in Resources */,
 				A6F72A801EA99D7000559CA0 /* Sum of Two Integers py.html in Resources */,
+				A6F06CBA1EFA0BE9009209EC /* Most Frequent Subtree Sum source.html in Resources */,
 				A6F727201EA99D6F00559CA0 /* Largest Rectangle in Histogram cpp.html in Resources */,
 				A6F7278E1EA99D6F00559CA0 /* Majority Element py.html in Resources */,
 				A6F727941EA99D6F00559CA0 /* Matchsticks to Square cpp.html in Resources */,
@@ -11532,6 +11764,7 @@
 				A6F72A0A1EA99D7000559CA0 /* Shortest Word Distance III cpp.html in Resources */,
 				A6F728A81EA99D6F00559CA0 /* Palindrome Permutation II cpp.html in Resources */,
 				A6F7249A1EA99D6E00559CA0 /* Best Time to Buy and Sell Stock cpp.html in Resources */,
+				A6F06CC31EFA0BE9009209EC /* Super Washing Machines cpp.html in Resources */,
 				A6F7259F1EA99D6F00559CA0 /* Delete Node in a BST source.html in Resources */,
 				A6F725CD1EA99D6F00559CA0 /* Elimination Game java.html in Resources */,
 				A6F724761EA99D6E00559CA0 /* Arithmetic Slices cpp.html in Resources */,
@@ -11552,6 +11785,7 @@
 				A6F728411EA99D6F00559CA0 /* Nim Game java.html in Resources */,
 				A6F72B5D1EA99D7000559CA0 /* Word Search II java.html in Resources */,
 				A6F72A5C1EA99D7000559CA0 /* Strobogrammatic Number py.html in Resources */,
+				A6F06CAE1EFA0BE9009209EC /* Find Largest Value in Each Tree Row source.html in Resources */,
 				A6F729871EA99D6F00559CA0 /* Reverse Bits java.html in Resources */,
 				A6F725181EA99D6E00559CA0 /* Combination Sum py.html in Resources */,
 				A6F725381EA99D6E00559CA0 /* Construct the Rectangle cpp.html in Resources */,
@@ -11566,6 +11800,7 @@
 				A6F72A511EA99D7000559CA0 /* Split Array Largest Sum source.html in Resources */,
 				A6F724851EA99D6E00559CA0 /* Assign Cookies source.html in Resources */,
 				A6F72A671EA99D7000559CA0 /* Strong Password Checker java.html in Resources */,
+				A6F06CA51EFA0BE9009209EC /* Detect Capital py.html in Resources */,
 				A6F7250F1EA99D6E00559CA0 /* Closest Binary Search Tree Value II java.html in Resources */,
 				A6F726CB1EA99D6F00559CA0 /* Insertion Sort List source.html in Resources */,
 				A6F7250C1EA99D6E00559CA0 /* Closest Binary Search Tree Value py.html in Resources */,
@@ -11577,6 +11812,7 @@
 				A6F725041EA99D6E00559CA0 /* Climbing Stairs py.html in Resources */,
 				A6F72A971EA99D7000559CA0 /* Swap Nodes in Pairs java.html in Resources */,
 				A6F726B61EA99D6F00559CA0 /* Increasing Triplet Subsequence py.html in Resources */,
+				A6F06CC61EFA0BE9009209EC /* Super Washing Machines source.html in Resources */,
 				A6F72B221EA99D7000559CA0 /* Verify Preorder Sequence in Binary Search Tree py.html in Resources */,
 				A6F7264D1EA99D6F00559CA0 /* Flip Game II java.html in Resources */,
 				A6F7266C1EA99D6F00559CA0 /* Gray Code cpp.html in Resources */,
@@ -11597,7 +11833,9 @@
 				A6F7263B1EA99D6F00559CA0 /* Fizz Buzz source.html in Resources */,
 				A6F7259D1EA99D6F00559CA0 /* Delete Node in a BST java.html in Resources */,
 				A6F7295E1EA99D6F00559CA0 /* Remove Duplicates From Sorted List II cpp.html in Resources */,
+				A6F06CB81EFA0BE9009209EC /* Most Frequent Subtree Sum java.html in Resources */,
 				A6F7264C1EA99D6F00559CA0 /* Flip Game II cpp.html in Resources */,
+				A6F06CC21EFA0BE9009209EC /* Relative Ranks source.html in Resources */,
 				A6F727B21EA99D6F00559CA0 /* Maximum Depth of Binary Tree py.html in Resources */,
 				A6F724DC1EA99D6E00559CA0 /* Binary Tree Vertical Order Traversal py.html in Resources */,
 				A66573AD1EB977DB002A19E5 /* The Maze III source.html in Resources */,
@@ -11618,6 +11856,7 @@
 				A6F7282D1EA99D6F00559CA0 /* N Queens java.html in Resources */,
 				A6F72A7D1EA99D7000559CA0 /* Sum of Left Leaves source.html in Resources */,
 				A6F72B281EA99D7000559CA0 /* Walls and Gates cpp.html in Resources */,
+				A6F06CAD1EFA0BE9009209EC /* Find Largest Value in Each Tree Row py.html in Resources */,
 				A6F72A901EA99D7000559CA0 /* Super Ugly Number py.html in Resources */,
 				A6F7275B1EA99D6F00559CA0 /* Longest Increasing Path in a Matrix source.html in Resources */,
 				A6F726081EA99D6F00559CA0 /* Find Median From Data Stream cpp.html in Resources */,
@@ -11636,6 +11875,7 @@
 				A6F7255F1EA99D6E00559CA0 /* Copy List With Random Pointer source.html in Resources */,
 				A6F729201EA99D6F00559CA0 /* range_sum_query_2d.png in Resources */,
 				A6F729BA1EA99D7000559CA0 /* Rotate List cpp.html in Resources */,
+				A6F06CB21EFA0BE9009209EC /* Freedom Trail source.html in Resources */,
 				A6F726481EA99D6F00559CA0 /* Flip Game cpp.html in Resources */,
 				A6F724741EA99D6E00559CA0 /* Android Unlock Patterns py.html in Resources */,
 				A6F729551EA99D6F00559CA0 /* Remove Duplicates From Sorted Array source.html in Resources */,
