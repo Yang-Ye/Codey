@@ -1,0 +1,32 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">wordsAbbreviation</span>(<span style="color: #007020">self</span>, A):
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">longest_common_prefix</span>(a, b):
+        i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+        <span style="color: #008800; font-weight: bold">while</span> i <span style="color: #333333">&lt;</span> <span style="color: #007020">len</span>(a) <span style="color: #000000; font-weight: bold">and</span> i <span style="color: #333333">&lt;</span> <span style="color: #007020">len</span>(b) <span style="color: #000000; font-weight: bold">and</span> a[i] <span style="color: #333333">==</span> b[i]:
+            i <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+        <span style="color: #008800; font-weight: bold">return</span> i
+    
+    ans <span style="color: #333333">=</span> [<span style="color: #007020">None</span> <span style="color: #008800; font-weight: bold">for</span> _ <span style="color: #000000; font-weight: bold">in</span> A]
+    
+    groups <span style="color: #333333">=</span> collections<span style="color: #333333">.</span>defaultdict(<span style="color: #007020">list</span>)
+    <span style="color: #008800; font-weight: bold">for</span> index, word <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">enumerate</span>(A):
+        groups[<span style="color: #007020">len</span>(word), word[<span style="color: #0000DD; font-weight: bold">0</span>], word[<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]]<span style="color: #333333">.</span>append((word, index))
+    
+    <span style="color: #008800; font-weight: bold">for</span> (size, first, last), enum_words <span style="color: #000000; font-weight: bold">in</span> groups<span style="color: #333333">.</span>iteritems():
+        enum_words<span style="color: #333333">.</span>sort()
+        lcp <span style="color: #333333">=</span> [<span style="color: #0000DD; font-weight: bold">0</span>] <span style="color: #333333">*</span> <span style="color: #007020">len</span>(enum_words)
+        <span style="color: #008800; font-weight: bold">for</span> i, (word, _) <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">enumerate</span>(enum_words):
+            <span style="color: #008800; font-weight: bold">if</span> i:
+                word2, _ <span style="color: #333333">=</span> enum_words[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
+                p <span style="color: #333333">=</span> longest_common_prefix(word, word2)
+                lcp[i] <span style="color: #333333">=</span> <span style="color: #007020">max</span>(lcp[i], p)
+                lcp[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">=</span> <span style="color: #007020">max</span>(lcp[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], p)
+                
+        <span style="color: #008800; font-weight: bold">for</span> (word, index), p <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">zip</span>(enum_words, lcp):
+            delta <span style="color: #333333">=</span> size <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">-</span> p
+            <span style="color: #008800; font-weight: bold">if</span> delta <span style="color: #333333">&lt;=</span> <span style="color: #007020">max</span>(<span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #007020">len</span>(<span style="color: #007020">str</span>(delta)) <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>):
+                ans[index] <span style="color: #333333">=</span> word
+            <span style="color: #008800; font-weight: bold">else</span>:
+                ans[index] <span style="color: #333333">=</span> word[:p<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">+</span> <span style="color: #007020">str</span>(delta) <span style="color: #333333">+</span> last
+    
+    <span style="color: #008800; font-weight: bold">return</span> ans
+</pre></div>

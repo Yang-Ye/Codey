@@ -4873,7 +4873,6 @@
             "hardness": 0,
             "tags": []
         },
-        -----------------------------
         "The Maze II": {
             "company": ["Google"],
             "order": 505,
@@ -4943,6 +4942,67 @@
             "order": 520,
             "hardness": 0,
             "tags": ["String"]
+        },
+        "Longest Uncommon Subsequence I": {
+            "company": ["Google"],
+            "order": 521,
+            "hardness": 0,
+            "tags": ["String"]
+        },
+        "Longest Uncommon Subsequence II": {
+            "company": ["Google"],
+            "order": 522,
+            "hardness": 1,
+            "tags": ["String"]
+        },
+        "Continuous Subarray Sum": {
+            "company": ["Facebook"],
+            "order": 523,
+            "hardness": 1,
+            "tags": ["Math", "Dynamic Programming"]
+        },
+        "Longest Word in Dictionary through Deleting": {
+            "company": ["Google"],
+            "order": 524,
+            "hardness": 1,
+            "tags": ["Two Pointers", "Sort"]
+        },
+        "Contiguous Array": {
+            "company": ["Facebook"],
+            "order": 525,
+            "hardness": 1,
+            "tags": ["Hash Table"]
+        },
+        "Beautiful Arrangement": {
+            "company": ["Google"],
+            "order": 526,
+            "hardness": 1,
+            "tags": ["Backtracking"]
+        },
+        "Word Abbreviation": {
+            "company": ["Google", "Snapchat"],
+            "order": 527,
+            "hardness": 2,
+            "tags": ["String", "Sort"]
+        },
+        "Minesweeper": {
+            "company": ["Amazon"],
+            "order": 529,
+            "hardness": 1,
+            "tags": ["DFS", "BFS"]
+        },
+        "Minimum Absolute Difference in BST": {
+            "company": ["Google"],
+            "order": 530,
+            "hardness": 0,
+            "tags": ["Binary Search Tree"]
+        },
+        "Lonely Pixel I": {
+            "company": ["Google"],
+            "order": 531,
+            "hardness": 1,
+            "tags": ["Array", "DFS"]
         }
     }
 }
+

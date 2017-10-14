@@ -33,7 +33,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     }
 
     func setupNavigationBarItems() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = .white
 
         let saveButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(dismissSelf))
         saveButtonItem.tintColor = UIColor.black

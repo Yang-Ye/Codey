@@ -1,0 +1,44 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> <span style="color: #0066BB; font-weight: bold">wordsAbbreviation</span><span style="color: #333333">(</span>vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;&amp;</span> dict<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> res<span style="color: #333333">;</span>
+        map<span style="color: #333333">&lt;</span>string<span style="color: #333333">,</span> string<span style="color: #333333">&gt;</span> abbrs<span style="color: #333333">;</span>
+        map<span style="color: #333333">&lt;</span>string<span style="color: #333333">,</span> set<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;&gt;</span> origins<span style="color: #333333">;</span>
+        queue<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> q<span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>string w <span style="color: #333333">:</span> dict<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            q<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>w<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> <span style="color: #333333">!</span>q<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">();</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+            set<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;</span> ambiguous<span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(!</span>q<span style="color: #333333">.</span><span style="color: #0000CC">empty</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+                string w <span style="color: #333333">=</span> q<span style="color: #333333">.</span><span style="color: #0000CC">front</span><span style="color: #333333">();</span>
+                q<span style="color: #333333">.</span><span style="color: #0000CC">pop</span><span style="color: #333333">();</span>
+                string ab <span style="color: #333333">=</span> abbr<span style="color: #333333">(</span>w<span style="color: #333333">,</span> i<span style="color: #333333">);</span>
+                origins<span style="color: #333333">[</span>ab<span style="color: #333333">].</span><span style="color: #0000CC">insert</span><span style="color: #333333">(</span>w<span style="color: #333333">);</span>
+                abbrs<span style="color: #333333">[</span>w<span style="color: #333333">]</span> <span style="color: #333333">=</span> ab<span style="color: #333333">;</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>origins<span style="color: #333333">[</span>ab<span style="color: #333333">].</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                    ambiguous<span style="color: #333333">.</span><span style="color: #0000CC">insert</span><span style="color: #333333">(</span>ab<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>string ab <span style="color: #333333">:</span> ambiguous<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>string word <span style="color: #333333">:</span> origins<span style="color: #333333">[</span>ab<span style="color: #333333">])</span> <span style="color: #333333">{</span>
+                    q<span style="color: #333333">.</span><span style="color: #0000CC">push</span><span style="color: #333333">(</span>word<span style="color: #333333">);</span>
+                <span style="color: #333333">}</span>
+                origins<span style="color: #333333">.</span><span style="color: #0000CC">erase</span><span style="color: #333333">(</span>ab<span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>string word <span style="color: #333333">:</span> dict<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            res<span style="color: #333333">.</span><span style="color: #0000CC">push_back</span><span style="color: #333333">(</span>abbrs<span style="color: #333333">[</span>word<span style="color: #333333">]);</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> res<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+
+<span style="color: #008800; font-weight: bold">private</span><span style="color: #333333">:</span>
+    string <span style="color: #0066BB; font-weight: bold">abbr</span><span style="color: #333333">(</span>string s<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">return</span> i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">&gt;=</span> s<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">?</span> s <span style="color: #333333">:</span> s<span style="color: #333333">.</span><span style="color: #0000CC">substr</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> i<span style="color: #333333">)</span> <span style="color: #333333">+</span> to_string<span style="color: #333333">(</span>s<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">-</span> i <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> s<span style="color: #333333">[</span>s<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()</span> <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">];</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

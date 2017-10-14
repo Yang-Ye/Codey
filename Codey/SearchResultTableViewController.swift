@@ -60,15 +60,19 @@ class SearchResultTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(problemCellHeight)
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProblemCell", for: indexPath) as! ProblemCell
+        cell.height = 50
         let problem = self.problems[indexPath.row]
 
         cell.problemName.text = problem.name
         
         cell.isStared.isHidden = !problem.isStared
-        cell.isHot.isHidden = !problem.isHot
         cell.selectionStyle = .none
         cell.order.text = "\(problem.order)"
         cell.hardnessIcon.image = UIImage.hardnessIconFromHardness(hardness: problem.hardness.rawValue)
@@ -79,7 +83,8 @@ class SearchResultTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.searchBar.endEditing(true)
         let problemDetailVC = ProblemDetailViewController(problem: self.problems[indexPath.row])
-        self.navigationController?.pushViewController(problemDetailVC, animated: true)
+        let naviVC = UINavigationController(rootViewController: problemDetailVC)
+        self.navigationController?.present(naviVC, animated: true, completion: nil)
     }
 
     func keyboardWasShown(_ notification: Notification) {
@@ -114,11 +119,17 @@ extension SearchResultTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             self.problems = []
+            self.tableView.reloadData()
         } else {
-            self.problems = codey.problems.filter({ (problem) -> Bool in
-                return problem.searchName.contains(searchText.lowercased())
-            })
+            DispatchQueue.global().async { [weak self] in
+                self?.problems = self?.codey.problems.filter({ (problem) -> Bool in
+                    return problem.searchName.contains(searchText.lowercased())
+                }) ?? []
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                }
+            }
         }
-        self.tableView.reloadData()
     }
 }

@@ -59,6 +59,7 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
     }
 
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.barTintColor = .white
         tableView.register(UINib.init(nibName: "TextViewCell", bundle: nil), forCellReuseIdentifier: "TextViewCell")
         tableView.register(UINib.init(nibName: "InfoCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
         tableView.register(UINib.init(nibName: "TitleCell", bundle: nil), forCellReuseIdentifier: "TitleCell")
@@ -70,19 +71,10 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
         tableView.isScrollEnabled = false
         setupNavigationBarItems()
 
-        viewHeight = self.tableView.bounds.height - (self.tabBarController?.tabBar.frame.size.height ?? 0) - (self.navigationController?.navigationBar.frame.size.height ?? 0)
+        viewHeight = self.tableView.bounds.height - (self.navigationController?.navigationBar.frame.size.height ?? 0)
 
         NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(_:)), name: NSNotification.Name(rawValue: "OrientationChageNotification"), object: nil)
-
         super.viewDidLoad()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,7 +89,7 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
             let cell: InfoCell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! InfoCell
             cell.hardness.text = problem.hardness.stringValue
             cell.hardness.textColor = problem.themeColor
-            cell.isHot.isHidden = !problem.isHot
+            cell.isHot.isHidden = true
             cell.selectionStyle = .none
             return cell
         case 2:
@@ -123,13 +115,10 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
                 switch indexPath.row {
                 case 3:
                     cell.solutionTitle.text = "Java Solution"
-                    cell.solutionImage.image = #imageLiteral(resourceName: "Java")
                 case 4:
                     cell.solutionTitle.text = "C++ Solution"
-                    cell.solutionImage.image = #imageLiteral(resourceName: "C_Plus_Plus")
                 default:
                     cell.solutionTitle.text = "Python Solution"
-                    cell.solutionImage.image = #imageLiteral(resourceName: "Python")
                 }
                 cell.solutionTitle.font = CodeyManger.solutionCellFont()
                 cell.selectionStyle = .none
@@ -189,7 +178,7 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
     }
 
     func setupNavigationBarItems() {
-        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.tintColor = .black
 
         let starButton: UIButton!
         if !problem.isStared {
@@ -201,29 +190,35 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
         starButton.tintColor = UIColor.black
         let starButtonItem = UIBarButtonItem(customView: starButton)
 
-        let tagButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Tags"))
+        let tagButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "tag"))
         tagButton.addTarget(self, action: #selector(tags), for: UIControlEvents.touchUpInside)
         tagButton.tintColor = UIColor.black
         let tagButtonItem = UIBarButtonItem(customView: tagButton)
 
-        let listButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Bulleted_List"))
+        let listButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "add"))
         listButton.addTarget(self, action: #selector(lists), for: UIControlEvents.touchUpInside)
         listButton.tintColor = UIColor.black
         let listButtonItem = UIBarButtonItem(customView: listButton)
 
-        let noteButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "note"))
+        let noteButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "pencil"))
         noteButton.addTarget(self, action: #selector(takeNote), for: UIControlEvents.touchUpInside)
         noteButton.tintColor = UIColor.black
         let noteButtonItem = UIBarButtonItem(customView: noteButton)
-
+        
         let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spaceItem.width = 25
-
-        navigationItem.rightBarButtonItems = [starButtonItem, spaceItem, tagButtonItem, spaceItem, listButtonItem, spaceItem,noteButtonItem]
+        
+        let dismissButton: UIButton = UIButton.buttonWithImage(image: #imageLiteral(resourceName: "Delete"))
+        dismissButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
+        dismissButton.tintColor = .black
+        let dismissButtonItem = UIBarButtonItem(customView: dismissButton)
+        
+        navigationItem.rightBarButtonItems = [starButtonItem, spaceItem, noteButtonItem, spaceItem, listButtonItem, spaceItem, tagButtonItem]
+        navigationItem.leftBarButtonItem = dismissButtonItem
     }
-
-    func popSelf() {
-        _ = self.navigationController?.popViewController(animated: true)
+    
+    func dismissSelf() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -316,7 +311,13 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: nil, completion: { coordinator in
-            self.viewHeight = self.tableView.bounds.height
+            if let naviHeight = self.navigationController?.navigationBar.frame.height {
+                self.viewHeight = self.tableView.bounds.height - naviHeight
+            }
+            
+            if UIApplication.shared.statusBarOrientation == .portrait {
+                self.viewHeight = self.viewHeight - UIApplication.shared.statusBarFrame.height
+            }
             self.tableView.reloadData()
         })
     }
@@ -324,7 +325,13 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
     func orientationDidChange(_ notification:Notification) {
         if let userInfo = notification.userInfo {
             if let height = userInfo["height"] as? CGFloat {
-                self.viewHeight = height
+                if let naviHeight = self.navigationController?.navigationBar.frame.height {
+                    self.viewHeight = height - naviHeight
+                }
+                
+                if UIApplication.shared.statusBarOrientation == .portrait {
+                    self.viewHeight = self.viewHeight - UIApplication.shared.statusBarFrame.height
+                }
             }
         }
     }

@@ -12,12 +12,12 @@ class CodeyUITabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedIndex = 1
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.selectedIndex = 1
         self.tabBar.isTranslucent = false
-        self.tabBar.tintColor = UIColor.blueFlat
+        self.tabBar.tintColor = UIColor.black
     }
 
     override func viewDidAppear(_ animated: Bool) {

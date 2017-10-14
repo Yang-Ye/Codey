@@ -19,13 +19,18 @@ enum ScrollDirection {
     case down
 }
 
+enum SortingState {
+    case number
+    case reverseNumber
+    case Alphabet
+}
+
 class ProblemTableViewController: UIViewController, RefineViewControllerDelegate {
 
     let codey = CodeyManger.sharedInstance
     var previousScrollViewOffset: CGFloat = 0.0
-
+    var sortingState: SortingState = .number
     @IBOutlet var headerFloatingView: HeaderFloatingView!
-    @IBOutlet var headerViewHeightConstraint: NSLayoutConstraint!
 
     var headerHeight = headerFloatingViewHeight
     var headerFloatingViewWasHiding = false
@@ -34,34 +39,27 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
-        self.edgesForExtendedLayout = []
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        let whiteView = UIView(frame: .init(x: 0, y: -50, width: self.view.width, height: 50))
+        whiteView.backgroundColor = .white
+        self.navigationController?.navigationBar.addSubview(whiteView)
         self.navigationController?.navigationBar.isTranslucent = false
         self.tabBarController?.tabBar.barTintColor = codey.themeColor
         self.setupTableView()
         self.setupSearchBar()
 
-        self.view.addSubview(self.headerFloatingView)
         self.headerFloatingView.leftButton.addTarget(self, action: #selector(filterAction), for: .touchUpInside)
         self.headerFloatingView.rightButton.addTarget(self, action: #selector(pickOneAction), for: .touchUpInside)
-        self.headerFloatingView.title.text = "\(self.codey.problems.count)"
+        self.headerFloatingView.middleButton.addTarget(self, action: #selector(sortAction), for: .touchUpInside)
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.headerViewHeightConstraint.constant = headerFloatingViewHeight
         tableView.reloadData()
         super.viewWillAppear(animated)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         self.headerFloatingView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: headerFloatingViewHeight)
-
-        if headerFloatingViewWasHiding {
-            self.hideHeadFloatingView(animation: false)
-        } else {
-            self.displayHeaderFloatingView(animation: false)
-        }
         super.viewDidAppear(animated)
     }
 
@@ -76,6 +74,10 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
         textField?.backgroundColor = UIColor.hexStringToUIColor(hex: "e8e8e8")
         searchBar.placeholder = "Search"
         self.navigationItem.titleView = searchBar
+        
+        if #available(iOS 11.0, *) {
+            searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        }
     }
 
     func setupTableView() {
@@ -84,14 +86,15 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib.init(nibName: "ProblemCell", bundle: nil), forCellReuseIdentifier: "ProblemCell")
         self.tableView.backgroundColor = CodeyManger.tableViewBackgroundColor()
-
-        let view = ProblemTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.tableView.width, height: headerFloatingViewHeight))
-        self.tableView.tableHeaderView = view
+        self.tableView.contentInset = UIEdgeInsetsMake(headerFloatingViewHeight, 0, 0, 0)
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .never
+        }
     }
 
     func pickOneAction() {
         let randomNum = Int(arc4random_uniform(UInt32(self.codey.problems.count)))
-        self.navigationController?.pushViewController(ProblemDetailViewController(problem: self.codey.problems[randomNum]), animated: true)
+        self.presentProblemDetailViewController(problem: self.codey.problems[randomNum])
     }
 
     func filterAction() {
@@ -100,10 +103,31 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
         let naviPvc = UINavigationController(rootViewController: refineVC)
         self.present(naviPvc, animated: true, completion: nil)
     }
+    
+    func sortAction() {
+        if self.sortingState == .number {
+            self.codey.problems.sort { (p1, p2) -> Bool in
+                return p1.order > p2.order
+            }
+            self.sortingState = .reverseNumber
+        } else if self.sortingState == .reverseNumber {
+            self.codey.problems.sort { (p1, p2) -> Bool in
+                return p1.name < p2.name
+
+            }
+            self.sortingState = .Alphabet
+        } else if self.sortingState == .Alphabet {
+            self.codey.problems.sort { (p1, p2) -> Bool in
+                return p1.order < p2.order
+            }
+            self.sortingState = .number
+        }
+        self.tableView.reloadData()
+    }
 
     func applyButtonTapped() {
         DispatchQueue.doThis(onBackGroundQ: {
-            if self.codey.hasSelectedKeys {
+            if !self.codey.hasSelectedKeys {
                 self.codey.problems = self.codey.problemsConstant
             } else {
                 self.codey.problems = self.codey.problemsConstant.filter({ problem -> Bool in
@@ -127,15 +151,14 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
                 })
             }
         }, onMainQ: {
-            self.headerFloatingView.title.text = "\(self.codey.problems.count)"
+            if self.codey.hasSelectedKeys {
+                self.headerFloatingView.leftButton.setTitleColor(UIColor.redFlat, for: .normal)
+            } else {
+                self.headerFloatingView.leftButton.setTitleColor(UIColor.darkGray, for: .normal)
+            }
             self.dismiss(animated: true, completion: nil)
             self.tableView.reloadData()
         })
-    }
-
-    func getViewControllerWithId(id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: id)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -165,7 +188,6 @@ extension ProblemTableViewController: UITableViewDelegate, UITableViewDataSource
         cell.problemName.text = problem.name
         cell.isStared.isHidden = !problem.isStared
         cell.hardnessIcon.image = UIImage.hardnessIconFromHardness(hardness: problem.hardness.rawValue)
-        cell.isHot.isHidden = !problem.isHot
         cell.selectionStyle = .none
         cell.order.text = "\(problem.order)"
 
@@ -208,78 +230,13 @@ extension ProblemTableViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var problem: Problem!
-        problem = self.codey.problems[indexPath.row]
-        let problemDetailVC = ProblemDetailViewController(problem: problem)
-        self.navigationController?.pushViewController(problemDetailVC, animated: true)
+        self.presentProblemDetailViewController(problem: self.codey.problems[indexPath.row])
     }
-
-    func hideHeadFloatingView(animation: Bool = true) {
-        if animation {
-            UIView.animate(withDuration: 0.2) {
-                self.headerFloatingView.y = -headerFloatingViewHeight
-            }
-        } else {
-            self.headerFloatingView.y = -headerFloatingViewHeight
-        }
-    }
-
-    func displayHeaderFloatingView(animation: Bool = true) {
-        if self.headerFloatingView.y != 0 {
-            if animation {
-                UIView.animate(withDuration: 0.2) {
-                    self.headerFloatingView.y = 0
-                }
-            } else {
-                self.headerFloatingView.y = 0
-            }
-        }
-    }
-
     
-
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            if codey.lists.count == 0 {
-//                self.present(UIAlertController.simpleAlert(title: nil, message: "You don't have any lists."), animated: true, completion:nil)
-//                return
-//            }
-//
-//            let pvc = AddToListTableViewController(style: .plain)
-//            pvc.problem = codey.problems[indexPath.row]
-//
-//            let pvcNavigationVC = UINavigationController(rootViewController: pvc)
-//            pvcNavigationVC.modalPresentationStyle = UIModalPresentationStyle.custom
-//            pvcNavigationVC.transitioningDelegate = self
-//
-//            self.present(pvcNavigationVC, animated: true, completion:nil)
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-//        return "Add to List"
-//    }
-
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollSpeed = scrollView.contentOffset.y - previousScrollViewOffset
-        previousScrollViewOffset = scrollView.contentOffset.y
-
-        if scrollView.contentOffset.y > 0 {
-            if scrollSpeed > 0 {
-                var newY = headerFloatingView.y - scrollSpeed/goldPoint
-                newY = max(newY, -headerFloatingView.height)
-                headerFloatingView.y = newY
-            }
-        }
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        self.displayHeaderFloatingView()
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.displayHeaderFloatingView()
+    func presentProblemDetailViewController(problem: Problem) {
+        let problemDetailVC = ProblemDetailViewController(problem: problem)
+        let navigationController = UINavigationController(rootViewController: problemDetailVC)
+        self.navigationController?.present(navigationController, animated: true, completion: nil)
     }
 
     func presentationController(forPresented presented: UIViewController, presenting:

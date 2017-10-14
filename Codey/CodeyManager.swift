@@ -42,10 +42,10 @@ class CodeyManger {
     var hasSelectedKeys: Bool {
         for keyBox in selectedKeys {
             if keyBox.count > 0 {
-                return false
+                return true
             }
         }
-        return true
+        return false
     }
 
     var lists:[ProblemList]!
@@ -69,7 +69,7 @@ class CodeyManger {
 
     func loadProblem() {
         guard let path = Bundle.main.path(forResource: "AllProblems", ofType: "json") else { return }
-        guard let jsonData: Data = NSData(contentsOfFile: path) as? Data  else { return }
+        guard let jsonData: Data = NSData(contentsOfFile: path) as Data?  else { return }
         guard let jsonResult = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? Dictionary<String, AnyObject> else{ return }
         guard let jsonProblems = jsonResult?["problems"] as? Dictionary<String, AnyObject> else { return }
         for problem in jsonProblems {

@@ -17,7 +17,7 @@ class StarredViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = .white
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib.init(nibName: "ProblemCell", bundle: nil), forCellReuseIdentifier: "ProblemCell")
         self.tableView.backgroundColor = CodeyManger.tableViewBackgroundColor()
@@ -81,7 +81,8 @@ class StarredViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let problem = self.codey.sortedStarredProblems[indexPath.row]
         let problemDetailVC = ProblemDetailViewController(problem: problem)
-        self.navigationController?.pushViewController(problemDetailVC, animated: true)
+        let naviVC = UINavigationController(rootViewController: problemDetailVC)
+        self.navigationController?.present(naviVC, animated: true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

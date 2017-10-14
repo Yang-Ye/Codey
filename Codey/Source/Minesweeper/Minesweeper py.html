@@ -1,0 +1,28 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">updateBoard</span>(<span style="color: #007020">self</span>, A, click):
+    click <span style="color: #333333">=</span> <span style="color: #007020">tuple</span>(click)
+    R, C <span style="color: #333333">=</span> <span style="color: #007020">len</span>(A), <span style="color: #007020">len</span>(A[<span style="color: #0000DD; font-weight: bold">0</span>])
+    
+    <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">neighbors</span>(r, c):
+        <span style="color: #008800; font-weight: bold">for</span> dr <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">2</span>):
+            <span style="color: #008800; font-weight: bold">for</span> dc <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">xrange</span>(<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">2</span>):
+                <span style="color: #008800; font-weight: bold">if</span> (dr <span style="color: #000000; font-weight: bold">or</span> dc) <span style="color: #000000; font-weight: bold">and</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&lt;=</span> r <span style="color: #333333">+</span> dr <span style="color: #333333">&lt;</span> R <span style="color: #000000; font-weight: bold">and</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">&lt;=</span> c <span style="color: #333333">+</span> dc <span style="color: #333333">&lt;</span> C:
+                    <span style="color: #008800; font-weight: bold">yield</span> r <span style="color: #333333">+</span> dr, c <span style="color: #333333">+</span> dc
+    
+    stack <span style="color: #333333">=</span> [click]
+    seen <span style="color: #333333">=</span> {click}
+    <span style="color: #008800; font-weight: bold">while</span> stack:
+        r, c <span style="color: #333333">=</span> stack<span style="color: #333333">.</span>pop()
+        <span style="color: #008800; font-weight: bold">if</span> A[r][c] <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&#39;M&#39;</span>:
+            A[r][c] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;X&#39;</span>
+        <span style="color: #008800; font-weight: bold">else</span>:
+            mines_adj <span style="color: #333333">=</span> <span style="color: #007020">sum</span>( A[nr][nc] <span style="color: #000000; font-weight: bold">in</span> <span style="background-color: #fff0f0">&#39;MX&#39;</span> <span style="color: #008800; font-weight: bold">for</span> nr, nc <span style="color: #000000; font-weight: bold">in</span> neighbors(r, c) )
+            <span style="color: #008800; font-weight: bold">if</span> mines_adj:
+                A[r][c] <span style="color: #333333">=</span> <span style="color: #007020">str</span>(mines_adj)
+            <span style="color: #008800; font-weight: bold">else</span>:
+                A[r][c] <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;B&#39;</span>
+                <span style="color: #008800; font-weight: bold">for</span> nei <span style="color: #000000; font-weight: bold">in</span> neighbors(r, c):
+                    <span style="color: #008800; font-weight: bold">if</span> A[nei[<span style="color: #0000DD; font-weight: bold">0</span>]][nei[<span style="color: #0000DD; font-weight: bold">1</span>]] <span style="color: #000000; font-weight: bold">in</span> <span style="background-color: #fff0f0">&#39;ME&#39;</span> <span style="color: #000000; font-weight: bold">and</span> nei <span style="color: #000000; font-weight: bold">not</span> <span style="color: #000000; font-weight: bold">in</span> seen:
+                        stack<span style="color: #333333">.</span>append(nei)
+                        seen<span style="color: #333333">.</span>add(nei)
+    <span style="color: #008800; font-weight: bold">return</span> A
+</pre></div>

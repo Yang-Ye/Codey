@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="472" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="472" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="472" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-22-ndI">
@@ -23,32 +24,32 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ey-vT-CM6">
-                        <rect key="frame" x="65.5" y="7" width="25" height="25"/>
+                        <rect key="frame" x="40.5" y="7" width="75" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Xzv-DT-E2t"/>
-                            <constraint firstAttribute="width" constant="25" id="znv-xm-0Im"/>
+                            <constraint firstAttribute="width" constant="75" id="znv-xm-0Im"/>
                         </constraints>
-                        <state key="normal" image="Java">
+                        <state key="normal" title="Java">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-9c-Tea">
-                        <rect key="frame" x="223.5" y="7" width="25" height="25"/>
+                        <rect key="frame" x="198.5" y="7" width="75" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="BIY-Ku-QFy"/>
-                            <constraint firstAttribute="width" constant="25" id="nXw-e1-mH1"/>
+                            <constraint firstAttribute="width" constant="75" id="nXw-e1-mH1"/>
                         </constraints>
-                        <state key="normal" image="C_Plus_Plus">
+                        <state key="normal" title="C++">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-Qo-hyO">
-                        <rect key="frame" x="381" y="7" width="25" height="25"/>
+                        <rect key="frame" x="356" y="7" width="75" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="ccf-2y-AmS"/>
+                            <constraint firstAttribute="width" constant="75" id="ccf-2y-AmS"/>
                             <constraint firstAttribute="height" constant="25" id="kc2-mp-Ed6"/>
                         </constraints>
-                        <state key="normal" image="Python">
+                        <state key="normal" title="Python">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -95,9 +96,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="C_Plus_Plus" width="50" height="50"/>
-        <image name="Java" width="50" height="50"/>
-        <image name="Python" width="50" height="50"/>
         <image name="seperator" width="5" height="40"/>
     </resources>
 </document>

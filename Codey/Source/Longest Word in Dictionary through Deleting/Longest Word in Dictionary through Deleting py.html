@@ -1,0 +1,10 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">findLongestWord</span>(<span style="color: #007020">self</span>, s, d):
+    heap <span style="color: #333333">=</span> [(<span style="color: #333333">-</span><span style="color: #007020">len</span>(word), word) <span style="color: #008800; font-weight: bold">for</span> word <span style="color: #000000; font-weight: bold">in</span> d]
+    heapq<span style="color: #333333">.</span>heapify(heap)
+    <span style="color: #008800; font-weight: bold">while</span> heap:
+        word <span style="color: #333333">=</span> heapq<span style="color: #333333">.</span>heappop(heap)[<span style="color: #0000DD; font-weight: bold">1</span>]
+        it <span style="color: #333333">=</span> <span style="color: #007020">iter</span>(s)
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">all</span>(c <span style="color: #000000; font-weight: bold">in</span> it <span style="color: #008800; font-weight: bold">for</span> c <span style="color: #000000; font-weight: bold">in</span> word):
+            <span style="color: #008800; font-weight: bold">return</span> word
+    <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
+</pre></div>

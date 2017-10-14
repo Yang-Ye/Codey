@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialRoundedMTBold.ttf">
+            <string>ArialRoundedMTBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -14,33 +20,32 @@
             <rect key="frame" x="0.0" y="0.0" width="264" height="46"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A0J-UU-H47" id="2eG-pA-ece">
-                <rect key="frame" x="0.0" y="0.0" width="264" height="45"/>
+                <rect key="frame" x="0.0" y="0.0" width="264" height="45.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAE-to-svL">
                         <rect key="frame" x="5" y="4" width="254" height="40"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Christmas_Star_Filled" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-ya-D10">
+                                <rect key="frame" x="234" y="14" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="Mow-xO-hMb"/>
+                                    <constraint firstAttribute="height" constant="12" id="mKp-gU-WS7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fire" translatesAutoresizingMaskIntoConstraints="NO" id="rvy-mN-ODA">
-                        <rect key="frame" x="239" y="8" width="12" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="12" id="iRB-at-NfQ"/>
-                            <constraint firstAttribute="width" constant="12" id="z8X-pB-rGV"/>
+                            <constraint firstItem="ARa-ya-D10" firstAttribute="centerY" secondItem="JAE-to-svL" secondAttribute="centerY" id="YXU-yf-rcJ"/>
+                            <constraint firstAttribute="trailing" secondItem="ARa-ya-D10" secondAttribute="trailing" constant="8" id="ib7-1o-mSi"/>
                         </constraints>
-                    </imageView>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqL-Ax-qBw">
                         <rect key="frame" x="52" y="15" width="33" height="14"/>
                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Christmas_Star_Gold" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-ya-D10">
-                        <rect key="frame" x="239" y="26" width="12" height="12"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="12" id="Mow-xO-hMb"/>
-                            <constraint firstAttribute="height" constant="12" id="mKp-gU-WS7"/>
-                        </constraints>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="easyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-1Q-pZz">
                         <rect key="frame" x="13" y="10" width="26" height="26"/>
                         <constraints>
@@ -56,27 +61,21 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="rvy-mN-ODA" secondAttribute="trailing" constant="13" id="JN5-YY-ztW"/>
-                    <constraint firstAttribute="trailing" secondItem="ARa-ya-D10" secondAttribute="trailing" constant="13" id="Lsc-zX-JV9"/>
                     <constraint firstItem="APF-5y-XKP" firstAttribute="centerX" secondItem="UmI-1Q-pZz" secondAttribute="centerX" id="OKL-WQ-q79"/>
                     <constraint firstAttribute="bottom" secondItem="JAE-to-svL" secondAttribute="bottom" constant="1" id="RQg-hX-Ni8"/>
                     <constraint firstItem="UmI-1Q-pZz" firstAttribute="left" secondItem="2eG-pA-ece" secondAttribute="left" constant="13" id="Uz5-5t-PnM"/>
-                    <constraint firstAttribute="bottom" secondItem="ARa-ya-D10" secondAttribute="bottom" constant="8" id="b5H-3S-ULX"/>
                     <constraint firstItem="JAE-to-svL" firstAttribute="top" secondItem="2eG-pA-ece" secondAttribute="top" constant="4" id="bBO-LC-FGe"/>
-                    <constraint firstItem="rvy-mN-ODA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IqL-Ax-qBw" secondAttribute="trailing" constant="5" id="czF-gS-5tL"/>
                     <constraint firstItem="UmI-1Q-pZz" firstAttribute="centerY" secondItem="2eG-pA-ece" secondAttribute="centerY" id="glS-f8-WpF"/>
                     <constraint firstItem="IqL-Ax-qBw" firstAttribute="leading" secondItem="UmI-1Q-pZz" secondAttribute="trailing" constant="13" id="i7u-0u-XF1"/>
                     <constraint firstItem="JAE-to-svL" firstAttribute="leading" secondItem="2eG-pA-ece" secondAttribute="leading" constant="5" id="m0e-Wd-Awo"/>
                     <constraint firstAttribute="trailing" secondItem="JAE-to-svL" secondAttribute="trailing" constant="5" id="q4Y-S9-sy8"/>
                     <constraint firstItem="IqL-Ax-qBw" firstAttribute="centerY" secondItem="2eG-pA-ece" secondAttribute="centerY" id="tps-9h-9Sf"/>
                     <constraint firstItem="APF-5y-XKP" firstAttribute="centerY" secondItem="UmI-1Q-pZz" secondAttribute="centerY" id="w1X-PR-fT2"/>
-                    <constraint firstItem="rvy-mN-ODA" firstAttribute="top" secondItem="2eG-pA-ece" secondAttribute="top" constant="8" id="xX6-UX-9LQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="customBackgroundView" destination="JAE-to-svL" id="WDT-Rm-OWR"/>
                 <outlet property="hardnessIcon" destination="UmI-1Q-pZz" id="HkB-Ny-mmm"/>
-                <outlet property="isHot" destination="rvy-mN-ODA" id="VbG-4i-AhK"/>
                 <outlet property="isStared" destination="ARa-ya-D10" id="oQ9-wm-wOf"/>
                 <outlet property="order" destination="APF-5y-XKP" id="jJj-RH-baG"/>
                 <outlet property="problemName" destination="IqL-Ax-qBw" id="OtQ-E3-NrA"/>
@@ -85,8 +84,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Christmas_Star_Gold" width="48" height="48"/>
-        <image name="Fire" width="48" height="48"/>
+        <image name="Christmas_Star_Filled" width="22" height="22"/>
         <image name="easyIcon" width="21" height="21"/>
     </resources>
 </document>

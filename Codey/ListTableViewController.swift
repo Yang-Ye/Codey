@@ -20,7 +20,7 @@ class ListTableViewController: UITableViewController {
         tableView.register(UINib.init(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
         self.tableView.backgroundColor = CodeyManger.tableViewBackgroundColor()
         self.tableView.separatorStyle = .none
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = .white
     }
 
     override func viewWillLayoutSubviews() {
@@ -77,6 +77,7 @@ class ListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationController?.pushViewController(ListProblemTableViewController.init(list: codey.lists[indexPath.row]) , animated: true)
+        
     }
 
     // Override to support editing the table view.
@@ -103,9 +104,9 @@ class ListTableViewController: UITableViewController {
 
 
     @IBAction func addList(_ sender: Any) {
-        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Create a new list", message: nil, preferredStyle: .alert)
         alertVC.addTextField {[weak self] textField in
-            textField.placeholder = "Please enter a list name"
+            textField.placeholder = "Please enter a name for the list"
             textField.addTarget(self, action: #selector(self?.alertTextFieldDidChange(_:)), for: .editingChanged)
         }
 

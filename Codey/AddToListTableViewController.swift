@@ -12,6 +12,7 @@ class AddToListTableViewController: UITableViewController {
 
     let codey = CodeyManger.sharedInstance
     var problem: Problem!
+    var emptyLabel: UILabel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,17 @@ class AddToListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if codey.lists.count > 0{
+            emptyLabel?.removeFromSuperview()
+            emptyLabel = nil
+        } else if emptyLabel == nil {
+            emptyLabel = UILabel(frame: CGRect(x: 0, y: tableView.height/3, width: tableView.width, height: 100 ))
+            emptyLabel!.textAlignment = .center
+            emptyLabel!.font = UIFont(name: codeyFont, size: CodeyManger.emptyPageInfoSize())
+            emptyLabel!.textColor = UIColor.darkGray
+            emptyLabel!.text = "You don't have any lists."
+            tableView.addSubview(emptyLabel!)
+        }
         return codey.lists.count
     }
 
@@ -61,17 +73,31 @@ class AddToListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        (codey.lists[indexPath.row].problems).insert(problem.order)
+        let list = codey.lists[indexPath.row]
+        if !codey.lists[indexPath.row].problems.contains(problem.order) {
+            list.problems.insert(problem.order)
+            self.presentAlertWithMessage(message: "Added to list \(list.name)")
+        } else {
+            list.problems.remove(problem.order)
+            self.presentAlertWithMessage(message: "Removed from list \(list.name)")
+        }
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    func presentAlertWithMessage(message: String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 
     func setupNavigationBarItems() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = .white
 
         let leftButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Delete").withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(cancelAction))
         navigationItem.leftBarButtonItem = leftButtonItem
-
-        let rightButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(addAction))
+        let rightButtonItem = UIBarButtonItem(title: "Create a list", style: .done, target: self, action: #selector(addAction))
+        rightButtonItem.tintColor = .black
         navigationItem.rightBarButtonItem = rightButtonItem
     }
 
@@ -80,9 +106,9 @@ class AddToListTableViewController: UITableViewController {
     }
 
     func addAction() {
-        let alertVC = UIAlertController(title: "", message: nil, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Create a list", message: nil, preferredStyle: .alert)
         alertVC.addTextField {[weak self] textField in
-            textField.placeholder = "Please enter a list name"
+            textField.placeholder = "Please enter a name for the list."
             textField.addTarget(self, action: #selector(self?.alertTextFieldDidChange(_:)), for: .editingChanged)
         }
 

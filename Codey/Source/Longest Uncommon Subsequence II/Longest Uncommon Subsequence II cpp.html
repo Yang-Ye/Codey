@@ -1,0 +1,36 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span> <span style="color: #333333">{</span>
+<span style="color: #008800; font-weight: bold">public</span><span style="color: #333333">:</span>
+    <span style="color: #888888">//This is used to determine if a has common subsequence in b</span>
+    bool <span style="color: #0066BB; font-weight: bold">hasCommon</span><span style="color: #333333">(</span>string a<span style="color: #333333">,</span>string b<span style="color: #333333">){</span>
+        <span style="color: #333399; font-weight: bold">int</span> remine <span style="color: #333333">=</span> a<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+        <span style="color: #333399; font-weight: bold">int</span> remine2 <span style="color: #333333">=</span> b<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(;</span>remine<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">&amp;&amp;</span>remine2<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;){</span>
+            <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> a<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()-</span>remine<span style="color: #333333">;</span>
+            <span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> b<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">()-</span>remine2<span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>a<span style="color: #333333">.</span><span style="color: #0000CC">at</span><span style="color: #333333">(</span>i<span style="color: #333333">)</span> <span style="color: #333333">==</span> b<span style="color: #333333">.</span><span style="color: #0000CC">at</span><span style="color: #333333">(</span>j<span style="color: #333333">)){</span>
+                remine<span style="color: #333333">--;</span>remine2<span style="color: #333333">--;</span>
+            <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+                remine2<span style="color: #333333">--;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> remine<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">findLUSlength</span><span style="color: #333333">(</span>vector<span style="color: #333333">&lt;</span>string<span style="color: #333333">&gt;&amp;</span> strs<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #333399; font-weight: bold">int</span> maxLen <span style="color: #333333">=</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+        <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>i<span style="color: #333333">&lt;</span>strs<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();++</span>i<span style="color: #333333">){</span>
+            <span style="color: #333399; font-weight: bold">int</span> currentLen <span style="color: #333333">=</span> strs<span style="color: #333333">[</span>i<span style="color: #333333">].</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span>
+            bool all <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>j<span style="color: #333333">&lt;</span>strs<span style="color: #333333">.</span><span style="color: #0000CC">size</span><span style="color: #333333">();++</span>j<span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>i<span style="color: #333333">!=</span>j<span style="color: #333333">&amp;&amp;</span>hasCommon<span style="color: #333333">(</span>strs<span style="color: #333333">[</span>i<span style="color: #333333">],</span> strs<span style="color: #333333">[</span>j<span style="color: #333333">])){</span>
+                    all <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+                    <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+            <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>all<span style="color: #333333">){</span>
+                maxLen <span style="color: #333333">=</span> maxLen<span style="color: #333333">&lt;</span>currentLen<span style="color: #333333">?</span><span style="color: #997700; font-weight: bold">currentLen:</span>maxLen<span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">return</span> maxLen<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">};</span>
+</pre></div>

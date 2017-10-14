@@ -24,7 +24,8 @@ class ListProblemTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.tintColor = .black
         self.tableView.register(UINib.init(nibName: "ProblemCell", bundle: nil), forCellReuseIdentifier: "ProblemCell")
         self.tableView.backgroundColor = CodeyManger.tableViewBackgroundColor()
         self.tableView.separatorStyle = .none
@@ -55,7 +56,6 @@ class ListProblemTableViewController: UITableViewController {
             cell.problemName.text = problem.name
             cell.hardnessIcon.image = UIImage.hardnessIconFromHardness(hardness: problem.hardness.rawValue)
             cell.isStared.isHidden = !problem.isStared
-            cell.isHot.isHidden = !problem.isHot
             cell.selectionStyle = .none
             cell.order.text = "\(problem.order)"
         }
@@ -81,7 +81,8 @@ class ListProblemTableViewController: UITableViewController {
         let problemOrder = Array(list.problems)[indexPath.row]
         if let problem = codey.coreData?.fetchProblem(order: problemOrder) {
             let problemDetailVC = ProblemDetailViewController(problem: problem)
-            self.navigationController?.pushViewController(problemDetailVC, animated: true)
+            let naviVC = UINavigationController(rootViewController: problemDetailVC)
+            self.navigationController?.present(naviVC, animated: true, completion: nil)
         }
     }
 }

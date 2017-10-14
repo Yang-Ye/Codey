@@ -13,7 +13,6 @@ class ProblemCell: UITableViewCell {
 
     @IBOutlet var problemName: UILabel!
     @IBOutlet var isStared: UIImageView!
-    @IBOutlet var isHot: UIImageView!
     @IBOutlet var order: UILabel!
     @IBOutlet var hardnessIcon: UIImageView!
     @IBOutlet var customBackgroundView: UIView!
@@ -24,7 +23,6 @@ class ProblemCell: UITableViewCell {
 
     override func awakeFromNib() {
         self.isStared.isHidden = true
-        self.isHot.isHidden = true
         self.customBackgroundView.layer.cornerRadius = problemDetailViewCornerRadius
         self.contentView.backgroundColor = CodeyManger.tableViewBackgroundColor()
     }

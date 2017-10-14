@@ -42,7 +42,7 @@ class RefineViewController: UICollectionViewController, UICollectionViewDelegate
         dismissButtonItem.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = dismissButtonItem
 
-        let cleanButtonItem = UIBarButtonItem(title: "Clean", style: .plain, target: self, action: #selector(cleanAll))
+        let cleanButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(cleanAll))
         cleanButtonItem.tintColor = UIColor.black
         let applyButton = UIBarButtonItem(title: "Apply", style: .plain, target: self, action: #selector(applyRefine))
         applyButton.tintColor = UIColor.black
@@ -88,8 +88,8 @@ class RefineViewController: UICollectionViewController, UICollectionViewDelegate
         let text = dataSource[indexPath.section][indexPath.row]
         cell.title.text = text
         if self.selectedKeys[indexPath.section].contains(text) {
-            cell.background.backgroundColor = UIColor.blueFlat
-            cell.title.textColor = UIColor.white
+            cell.background.backgroundColor = UIColor.black
+            cell.title.textColor = UIColor.silverFlat
             cell.select = true
         } else {
             cell.background.backgroundColor = UIColor.silverFlat
@@ -102,8 +102,8 @@ class RefineViewController: UICollectionViewController, UICollectionViewDelegate
         let cell = self.collectionView?.cellForItem(at: indexPath) as! RefineCell
         if !cell.select {
             cell.select = true
-            cell.background.backgroundColor = UIColor.blueFlat
-            cell.title.textColor = UIColor.white
+            cell.background.backgroundColor = UIColor.black
+            cell.title.textColor = UIColor.silverFlat
             self.selectedKeys[indexPath.section].insert(self.dataSource[indexPath.section][indexPath.row])
         } else {
             cell.select = false

@@ -12,7 +12,6 @@ class SolutionCell: UITableViewCell {
 
     @IBOutlet var customBackgroundView: UIView!
     @IBOutlet var solutionTitle: UILabel!
-    @IBOutlet var solutionImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,7 +11,7 @@ class HeaderFloatingView: UIView {
 
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
-    @IBOutlet var title: UILabel!
+    @IBOutlet var middleButton: UIButton!
 
     override func draw(_ rect: CGRect) {
         self.layer.borderWidth = 0.3
