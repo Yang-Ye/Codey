@@ -39,7 +39,7 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
-        let whiteView = UIView(frame: .init(x: 0, y: -50, width: self.view.width, height: 50))
+        let whiteView = UIView(frame: .init(x: 0, y: -50, width: 3000, height: 50))
         whiteView.backgroundColor = .white
         self.navigationController?.navigationBar.addSubview(whiteView)
         self.navigationController?.navigationBar.isTranslucent = false
@@ -50,6 +50,8 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
         self.headerFloatingView.leftButton.addTarget(self, action: #selector(filterAction), for: .touchUpInside)
         self.headerFloatingView.rightButton.addTarget(self, action: #selector(pickOneAction), for: .touchUpInside)
         self.headerFloatingView.middleButton.addTarget(self, action: #selector(sortAction), for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: NSNotification.Name("PDPDismissed"), object: nil)
         super.viewDidLoad()
     }
     
@@ -65,6 +67,10 @@ class ProblemTableViewController: UIViewController, RefineViewControllerDelegate
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+    }
+    
+    func updateTableView() {
+        self.tableView.reloadData()
     }
 
     func setupSearchBar() {

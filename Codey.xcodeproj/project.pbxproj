@@ -83,6 +83,7 @@
 		A66573AB1EB977DB002A19E5 /* The Maze III java.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573831EB977DB002A19E5 /* The Maze III java.html */; };
 		A66573AC1EB977DB002A19E5 /* The Maze III py.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573841EB977DB002A19E5 /* The Maze III py.html */; };
 		A66573AD1EB977DB002A19E5 /* The Maze III source.html in Resources */ = {isa = PBXBuildFile; fileRef = A66573851EB977DB002A19E5 /* The Maze III source.html */; };
+		A68A511D2045A34100EF3C32 /* CodeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A511C2045A34100EF3C32 /* CodeyTests.swift */; };
 		A68AEFF31E634FC9002F296A /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68AEFF21E634FC9002F296A /* InfoCell.xib */; };
 		A68AEFF51E63C05D002F296A /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AEFF41E63C05D002F296A /* InfoCell.swift */; };
 		A68EBF441E73BACA00621231 /* CodeyUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68EBF431E73BACA00621231 /* CodeyUITabBarController.swift */; };
@@ -2033,6 +2034,16 @@
 		A6F72B6F1EA99D7000559CA0 /* Zuma Game source.html in Resources */ = {isa = PBXBuildFile; fileRef = A6F724351EA99D6E00559CA0 /* Zuma Game source.html */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A68A511F2045A34100EF3C32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A66008B71DDA33C500FA7764 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A66008BE1DDA33C500FA7764;
+			remoteInfo = Codey;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5F8F65DA8FC29B4CF479BD0E /* Pods-Codey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codey/Pods-Codey.release.xcconfig"; sourceTree = "<group>"; };
 		A6061FF91E417D6B00C087EC /* CodeyModel v7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v7.xcdatamodel"; sourceTree = "<group>"; };
@@ -2119,6 +2130,9 @@
 		A66573841EB977DB002A19E5 /* The Maze III py.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze III py.html"; sourceTree = "<group>"; };
 		A66573851EB977DB002A19E5 /* The Maze III source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "The Maze III source.html"; sourceTree = "<group>"; };
 		A67A3A231E80A46200EE98E9 /* CodeyModel v8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CodeyModel v8.xcdatamodel"; sourceTree = "<group>"; };
+		A68A511A2045A34100EF3C32 /* CodeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68A511C2045A34100EF3C32 /* CodeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeyTests.swift; sourceTree = "<group>"; };
+		A68A511E2045A34100EF3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68AEFF21E634FC9002F296A /* InfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		A68AEFF41E63C05D002F296A /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		A68EBF431E73BACA00621231 /* CodeyUITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeyUITabBarController.swift; sourceTree = "<group>"; };
@@ -4082,6 +4096,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A68A51172045A34100EF3C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -4118,6 +4139,7 @@
 			isa = PBXGroup;
 			children = (
 				A66008C11DDA33C500FA7764 /* Codey */,
+				A68A511B2045A34100EF3C32 /* CodeyTests */,
 				A66008C01DDA33C500FA7764 /* Products */,
 				6593F52AE0958541BEBF0E2D /* Pods */,
 				97AE18096245BFED1A7E24B4 /* Frameworks */,
@@ -4128,6 +4150,7 @@
 			isa = PBXGroup;
 			children = (
 				A66008BF1DDA33C500FA7764 /* Codey.app */,
+				A68A511A2045A34100EF3C32 /* CodeyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4312,6 +4335,15 @@
 				A66573851EB977DB002A19E5 /* The Maze III source.html */,
 			);
 			path = "The Maze III";
+			sourceTree = "<group>";
+		};
+		A68A511B2045A34100EF3C32 /* CodeyTests */ = {
+			isa = PBXGroup;
+			children = (
+				A68A511C2045A34100EF3C32 /* CodeyTests.swift */,
+				A68A511E2045A34100EF3C32 /* Info.plist */,
+			);
+			path = CodeyTests;
 			sourceTree = "<group>";
 		};
 		A6C36FE31F8DB2E2009D64D3 /* Word Abbreviation */ = {
@@ -10193,13 +10225,31 @@
 			productReference = A66008BF1DDA33C500FA7764 /* Codey.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A68A51192045A34100EF3C32 /* CodeyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A68A51232045A34100EF3C32 /* Build configuration list for PBXNativeTarget "CodeyTests" */;
+			buildPhases = (
+				A68A51162045A34100EF3C32 /* Sources */,
+				A68A51172045A34100EF3C32 /* Frameworks */,
+				A68A51182045A34100EF3C32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A68A51202045A34100EF3C32 /* PBXTargetDependency */,
+			);
+			name = CodeyTests;
+			productName = CodeyTests;
+			productReference = A68A511A2045A34100EF3C32 /* CodeyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A66008B71DDA33C500FA7764 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = YY;
 				TargetAttributes = {
@@ -10207,7 +10257,13 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4CQE952VKV;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Manual;
+					};
+					A68A51192045A34100EF3C32 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 4CQE952VKV;
 						ProvisioningStyle = Automatic;
+						TestTargetID = A66008BE1DDA33C500FA7764;
 					};
 				};
 			};
@@ -10225,6 +10281,7 @@
 			projectRoot = "";
 			targets = (
 				A66008BE1DDA33C500FA7764 /* Codey */,
+				A68A51192045A34100EF3C32 /* CodeyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -12224,6 +12281,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A68A51182045A34100EF3C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -12345,7 +12409,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A68A51162045A34100EF3C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68A511D2045A34100EF3C32 /* CodeyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A68A51202045A34100EF3C32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A66008BE1DDA33C500FA7764 /* Codey */;
+			targetProxy = A68A511F2045A34100EF3C32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A66008CF1DDA33C500FA7764 /* Debug */ = {
@@ -12370,9 +12450,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YANG YE (YK8GUZS7DS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANG YE (YK8GUZS7DS)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4CQE952VKV;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -12389,7 +12472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -12421,9 +12504,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG YE (4CQE952VKV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG YE (4CQE952VKV)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4CQE952VKV;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -12434,7 +12520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -12449,7 +12535,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YANG YE (YK8GUZS7DS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANG YE (YK8GUZS7DS)";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4CQE952VKV;
 				INFOPLIST_FILE = Codey/Info.plist;
@@ -12457,8 +12545,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.Awesome.Codey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "577b0f11-4200-42b2-a893-361f731f2b97";
+				PROVISIONING_PROFILE_SPECIFIER = "Codey-Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Codey/Codey-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -12471,17 +12559,73 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YANG YE (4CQE952VKV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YANG YE (4CQE952VKV)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4CQE952VKV;
 				INFOPLIST_FILE = Codey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.Awesome.Codey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3dd321b5-33d7-4eb2-bca1-1d584389a9fc";
+				PROVISIONING_PROFILE_SPECIFIER = Codey;
 				SWIFT_OBJC_BRIDGING_HEADER = "Codey/Codey-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A68A51212045A34100EF3C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CodeyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodeyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Codey.app/Codey";
+			};
+			name = Debug;
+		};
+		A68A51222045A34100EF3C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CodeyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodeyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Codey.app/Codey";
 			};
 			name = Release;
 		};
@@ -12502,6 +12646,15 @@
 			buildConfigurations = (
 				A66008D21DDA33C500FA7764 /* Debug */,
 				A66008D31DDA33C500FA7764 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A68A51232045A34100EF3C32 /* Build configuration list for PBXNativeTarget "CodeyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A68A51212045A34100EF3C32 /* Debug */,
+				A68A51222045A34100EF3C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

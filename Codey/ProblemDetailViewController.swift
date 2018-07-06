@@ -218,6 +218,7 @@ class ProblemDetailViewController: UITableViewController, UITextViewDelegate, UI
     }
     
     func dismissSelf() {
+        NotificationCenter.default.post(Notification(name: Notification.Name("PDPDismissed")))
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
